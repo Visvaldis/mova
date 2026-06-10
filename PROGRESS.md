@@ -391,3 +391,10 @@ CSS modules.
 - The selection pill went from a solid accent button to frosted glass: translucent blurred background (backdrop-filter + saturate), hairline accent border, accent-tinted ✦ glyph, soft accent-colored glow instead of the heavy shadow, slight letter-spacing.
 - Motion: gentle 0.16s pop with a soft overshoot, −1.5px lift on hover, scale-down on press; all disabled under prefers-reduced-motion.
 - Styling moved from inline to the component's CSS block (transform conflicts with hover states resolved); works in both themes via color-mix on existing tokens.
+
+## 2026-06-10 — Conlang deep-dive series (user request)
+
+- Three new bilingual articles (orders 19–21, topic conlangs), expanding the survey article #17: esperanto ("The Doctor Who Hoped" — Zamenhof/Białystok, 16 rules + word machine, Hitler/Stalin persecution per Lins, denaskuloj), tolkien-languages ("A World Built for Its Words" — A Secret Vice, Quenya/Finnish + Sindarin/Welsh, derived-from-proto sound laws, name compounds), hollywood-conlangs ("Speaking Klingon" — Okrand's statistically-perverse design, KLI/Hamlet, Speers, Frommer's Na'vi, Peterson's Dothraki/Valyrian, the ownership lawsuit).
+- Each pair: identical frontmatter, INTERACTIVE marker, pull quote, 4 sources, cross-links to sound-change / names / language-death / new-languages articles.
+- 3 new interactive specs added to CLAUDE.md (esperanto-machine, name-smith, alien-grammar-gym) + interactiveInfo entries (EN+UK) so placeholders render localized; board cards 260/270/280 created in tasks/todo/ for the build agent.
+- Verified: build clean, 6 pages render, home grid 21 cards, conlangs topic hub lists 4 articles, frontmatter pairs consistent.

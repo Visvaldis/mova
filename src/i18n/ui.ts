@@ -1685,6 +1685,30 @@ export const interactiveInfo: Record<
       uk: 'Складайте крихітний словник токіпони в нові значення, пройдіть хронологію від Lingua Ignota до валірійської і перевірте, скільки есперанто ви прочитаєте з ходу.',
     },
   },
+  'esperanto-machine': {
+    icon: '⚙️',
+    title: { en: 'The Esperanto word machine', uk: 'Машина слів есперанто' },
+    desc: {
+      en: 'Snap roots and affixes together with a live gloss, spin the no-exceptions verb dial, and measure how much Esperanto you can guess on sight.',
+      uk: 'Складайте корені й афікси з миттєвим перекладом, крутіть диск дієслівних часів без винятків і виміряйте, скільки есперанто ви вгадаєте з ходу.',
+    },
+  },
+  'name-smith': {
+    icon: '🗡️',
+    title: { en: 'Middle-earth name forge', uk: 'Кузня імен Середзем’я' },
+    desc: {
+      en: 'Forge place names from attested Elvish elements, compare the Finnish-flavored Quenya with the Welsh-flavored Sindarin, and watch fictional sound laws derive two languages from one.',
+      uk: 'Куйте топоніми із засвідчених ельфійських елементів, порівняйте «фінську» квенью з «валлійським» сіндарином і подивіться, як вигадані звукові закони виводять дві мови з однієї.',
+    },
+  },
+  'alien-grammar-gym': {
+    icon: '🛸',
+    title: { en: 'Alien grammar gym', uk: 'Спортзал чужої граматики' },
+    desc: {
+      en: 'Rearrange a sentence into Klingon’s mirror word order, mix phonemes until they stop sounding human, and match each screen language to its designer.',
+      uk: 'Переставте речення в дзеркальний клінгонський порядок слів, змішуйте звуки, доки вони не перестануть звучати по-людськи, і з’єднайте кожну екранну мову з її дизайнером.',
+    },
+  },
   'code-vs-speech': {
     icon: '🧠',
     title: { en: 'Code vs speech', uk: 'Код проти мовлення' },
