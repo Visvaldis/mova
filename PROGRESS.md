@@ -155,3 +155,15 @@ Phases:
 - Stemmer (`uk-stem.ts`): reflexive -ся/-сь handling, present-tense endings, -нути verbs,
   thematic-vowel second pass, verb-prefix stripping (з-будував → будувати), і↔о alternation
   stems on more lemmas. Test paragraph coverage: 41/41; function words don't false-positive.
+
+## ✅ Update — 2026-06-10 (playground dataset expansion)
+
+- **Babel Daily: 41 → 54 languages** (+Russian, Serbian, Slovenian, Macedonian, Welsh, Azerbaijani,
+  Kazakh, Uzbek, Mongolian, Thai, Tagalog, Tamil; +3 family defs: Kra-Dai, Mongolic, Dravidian).
+  Daily-pick stride still co-prime (gcd(17,54)=1).
+- **Cognate Rush: 24 → 42 pairs** (30 true incl. widow/вдова, sew/шити, corn/зерно; 12 false friends
+  incl. інсульт/insult, батон/baton, акуратний/accurate).
+- **Word Time Machine: 15 → 24 chains** (+wheel/коло, school/школа, robot/робот (Slavic export!),
+  disaster, companion, candidate, deadline, цибуля, salt/сіль).
+- **Conlang Forge: 12 → 18 concepts** (+moon, fire, hand, tree, fish, dog).
+- All entries sourced; data-integrity script passes (no dup ids, bilingual notes complete); build green.

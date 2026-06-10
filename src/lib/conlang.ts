@@ -33,6 +33,7 @@ export type PluralStyle = 'suffix' | 'redup' | 'prefix';
 // Concepts to generate; glossed via i18n at render time.
 export const CONCEPTS = [
   'water', 'sun', 'friend', 'big', 'small', 'eat', 'see', 'stone', 'bird', 'night', 'good', 'speak',
+  'moon', 'fire', 'hand', 'tree', 'fish', 'dog',
 ] as const;
 export type Concept = (typeof CONCEPTS)[number];
 
@@ -49,6 +50,12 @@ export const CONCEPT_GLOSS: Record<Concept, Record<Lang, string>> = {
   night: { en: 'night', uk: 'ніч' },
   good: { en: 'good', uk: 'добрий' },
   speak: { en: 'speak', uk: 'говорити' },
+  moon: { en: 'moon', uk: 'місяць' },
+  fire: { en: 'fire', uk: 'вогонь' },
+  hand: { en: 'hand', uk: 'рука' },
+  tree: { en: 'tree', uk: 'дерево' },
+  fish: { en: 'fish', uk: 'риба' },
+  dog: { en: 'dog', uk: 'пес' },
 };
 
 const BLOCKLIST = ['fuck', 'shit', 'cunt', 'dick', 'nazi', 'хуй', 'хуи', 'бля', 'пизд', 'їбат', 'ебат', 'сук'];
