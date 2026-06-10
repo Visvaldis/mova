@@ -75,6 +75,9 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
   const featured = FEATURED_WORDS.find((f) => eq(f.parts, parts));
   const target = challenge !== null ? CHALLENGES[challenge] : null;
   const solved = target ? eq(target.answer, parts) : false;
+  // A word "looks finished" once it carries an ending — only then is a
+  // non-matching build judged wrong (no nagging mid-assembly).
+  const finished = parts.some((id) => mof(id).kind === 'ending');
 
   // Canonical slot order: prefix < root < suffixes (click order) < o/a < j.
   const rank = (id: string) => {
@@ -153,6 +156,11 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
               </p>
             )}
             {target && solved && <p className={c.win}>✓ {t('esperantoMachine.solved')}</p>}
+            {target && !solved && finished && (
+              <p className={s.muted} role="status" style={{ margin: '0.3rem 0 0', fontWeight: 600 }}>
+                ✗ {t('esperantoMachine.notYet')} <strong>{target.target[lang]}</strong>
+              </p>
+            )}
           </div>
         )}
       </div>
@@ -176,7 +184,7 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
               data-active={challenge === i}
               aria-pressed={challenge === i}
               onClick={() => {
-                setChallenge(i);
+                setChallenge(challenge === i ? null : i);
                 setParts([]);
               }}
             >
@@ -187,6 +195,13 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
         {target && !solved && (
           <p className={s.caption} style={{ marginTop: '0.5rem' }}>
             {t('esperantoMachine.challengeHint')} <strong>{target.target[lang]}</strong>
+            {' · '}
+            <button
+              className={c.linkBtn}
+              onClick={() => setParts(target.answer)}
+            >
+              {t('esperantoMachine.showAnswer')}
+            </button>
           </p>
         )}
       </div>

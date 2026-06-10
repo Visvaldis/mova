@@ -425,3 +425,9 @@ All three conlang-series interactives are now live: esperanto-machine (other age
 - Word machine allowed unlimited stacking of any tile (bonbonbonbon…) with no selected state. Now real slot rules: one prefix, one root, one of -o/-a (replacing), distinct stackable suffixes in click order, -j always after the ending; tapping a selected tile removes it; insertion keeps canonical morpheme order regardless of click order (so challenges stay solvable any way you tap).
 - Tiles show selected state via aria-pressed (accent fill, readable gloss on accent).
 - 10 unit assertions on the slot algorithm — all green; tsc + build clean.
+
+## 2026-06-10 — esperanto-machine challenge feedback (user report)
+
+- Challenge mode previously gave no signal until the exact answer appeared. Now: once the built word carries an ending and doesn't match, the card shows "✗ Not it yet — the target is …"; a correct build still gets the ✓. No nagging mid-assembly (wrongness is judged only on "finished" words).
+- "Show the answer" link added next to the challenge hint (loads the answer morphemes into the builder); tapping the active challenge pill again deselects it.
+- 4 new esperantoMachine.* keys (EN+UK).
