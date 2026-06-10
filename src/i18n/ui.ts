@@ -226,6 +226,17 @@ export const ui = {
     'familyTree.collapseHint': 'Tap a branch to expand or collapse it; tap a language for its cognates.',
     'familyTree.mapNote': 'Schematic positions — where each branch is historically rooted, not exact borders.',
     'familyTree.unknownForm': '— = form not confidently attested',
+
+    'ukrainianTimeline.intro': 'Scroll a thousand years of Ukrainian, from Kyivan Rus to today. Bans are marked in red; revivals rise on the status line.',
+    'ukrainianTimeline.chartAria': 'Schematic chart of Ukrainian’s official standing across the eras, rising and falling over time.',
+    'ukrainianTimeline.chartHigh': 'state language',
+    'ukrainianTimeline.chartLow': 'suppressed',
+    'ukrainianTimeline.chartCaption': 'Official standing across the eras — a schematic reading of the article, not measured speaker numbers. Tap a point to jump.',
+    'ukrainianTimeline.prev': 'Earlier era',
+    'ukrainianTimeline.next': 'Later era',
+    'ukrainianTimeline.era': 'Era',
+    'ukrainianTimeline.banBadge': 'ban',
+    'ukrainianTimeline.revivalBadge': 'revival',
   },
   uk: {
     'brand': 'Мова',
@@ -444,6 +455,17 @@ export const ui = {
     'familyTree.collapseHint': 'Торкніться гілки, щоб розгорнути чи згорнути її; торкніться мови — побачите когнати.',
     'familyTree.mapNote': 'Схематичні позиції — де гілка історично вкорінена, а не точні кордони.',
     'familyTree.unknownForm': '— = форма не засвідчена впевнено',
+
+    'ukrainianTimeline.intro': 'Прогорніть тисячу років української — від Київської Русі до сьогодні. Заборони позначені червоним; відродження піднімають лінію статусу.',
+    'ukrainianTimeline.chartAria': 'Схематичний графік офіційного статусу української крізь епохи, що зростає і спадає з часом.',
+    'ukrainianTimeline.chartHigh': 'державна мова',
+    'ukrainianTimeline.chartLow': 'пригнічена',
+    'ukrainianTimeline.chartCaption': 'Офіційний статус крізь епохи — схематичне прочитання статті, а не виміряна кількість мовців. Торкніться точки, щоб перейти.',
+    'ukrainianTimeline.prev': 'Давніша епоха',
+    'ukrainianTimeline.next': 'Пізніша епоха',
+    'ukrainianTimeline.era': 'Епоха',
+    'ukrainianTimeline.banBadge': 'заборона',
+    'ukrainianTimeline.revivalBadge': 'відродження',
   },
 } as const;
 

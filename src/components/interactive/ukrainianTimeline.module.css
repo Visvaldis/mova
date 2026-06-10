@@ -1,0 +1,213 @@
+/* ============================================================
+   ukrainian-timeline — vertical scroll-driven era timeline.
+
+   CSS Module: locally scoped, can't leak into `.prose`. Colors are topic
+   variables inherited from <body data-topic="ukrainian">, except the semantic
+   "ban" red, which is a danger signal independent of the topic accent — defined
+   here as a scoped --ut-ban token (light + dark) rather than a bare hex.
+   ============================================================ */
+
+.wrap {
+  --ut-ban: #dc2626;
+  --ut-ban-soft: #fbeaea;
+}
+@media (prefers-color-scheme: dark) {
+  .wrap {
+    --ut-ban: #f87171;
+    --ut-ban-soft: #2a1212;
+  }
+}
+
+/* ---- status chart ---- */
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.chartDot {
+  cursor: pointer;
+}
+.chartDot:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- timeline spine + era list ---- */
+.list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0 0 0 1.6rem;
+  position: relative;
+}
+/* the vertical spine line */
+.list::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--line);
+}
+
+.item {
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* spine node */
+.dot {
+  position: absolute;
+  left: -1.6rem;
+  top: 0.55rem;
+  width: 13px;
+  height: 13px;
+  margin-left: -0.5px;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 2.5px solid var(--accent);
+  transform: translateX(6px) translateX(-50%);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.dotBan {
+  border-color: var(--ut-ban);
+}
+.dotActive {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  transform: translateX(6px) translateX(-50%) scale(1.18);
+}
+.dotActive.dotBan {
+  background: var(--ut-ban);
+  box-shadow: 0 0 0 4px var(--ut-ban-soft);
+}
+
+/* ---- era card ---- */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.05rem;
+}
+.cardBan {
+  border-left-color: var(--ut-ban);
+}
+.cardRevival {
+  border-left-color: var(--accent-2);
+}
+.cardActive {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.cardActive.cardBan {
+  border-color: var(--ut-ban);
+}
+
+/* progressive-enhancement entrance: only when JS adds .enhanced to .wrap
+   (and not under reduced motion — gated in the component). Base state stays
+   fully visible so no-JS / pre-hydration markup is readable. */
+.wrap.enhanced .card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.wrap.enhanced .card.inview {
+  opacity: 1;
+  transform: none;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.date {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+.dateBan {
+  color: var(--ut-ban);
+}
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0.15rem 0 0;
+}
+.titleBan {
+  text-decoration: line-through;
+  text-decoration-color: var(--ut-ban);
+  text-decoration-thickness: 2px;
+}
+
+/* ban / revival badge */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+}
+.badgeBan {
+  color: var(--ut-ban);
+  background: var(--ut-ban-soft);
+  border: 1px solid var(--ut-ban);
+}
+.badgeRevival {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+}
+
+.body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+}
+
+/* language-sample block */
+.sample {
+  margin-top: 0.7rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+}
+.sampleBan {
+  background: var(--ut-ban-soft);
+}
+.sampleLabel {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.sampleText {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.sampleStrike {
+  text-decoration: line-through;
+  text-decoration-color: var(--ut-ban);
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 420px) {
+  .list {
+    padding-left: 1.3rem;
+  }
+  .card {
+    padding: 0.7rem 0.8rem;
+  }
+}

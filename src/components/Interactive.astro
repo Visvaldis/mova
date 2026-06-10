@@ -18,7 +18,8 @@ import SoundShift from './interactive/SoundShift.tsx';
 import MythBuster from './interactive/MythBuster.tsx';
 import OriginsTimeline from './interactive/OriginsTimeline.tsx';
 import FamilyTree from './interactive/FamilyTree.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree']);
+import UkrainianTimeline from './interactive/UkrainianTimeline.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -27,6 +28,7 @@ const isBuilt = BUILT.has(id);
   {id === 'myth-buster' && <MythBuster client:visible lang={lang} />}
   {id === 'origins-timeline' && <OriginsTimeline client:visible lang={lang} />}
   {id === 'family-tree' && <FamilyTree client:visible lang={lang} />}
+  {id === 'ukrainian-timeline' && <UkrainianTimeline client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder
