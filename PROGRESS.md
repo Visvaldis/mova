@@ -349,3 +349,10 @@ CSS modules.
 - Revival panel: each mini-case shows its article-credited ingredient chips and a "Try this recipe" button that loads that language's playbook into the vitality gauge (also under the Hebrew curve); gauge shows whose playbook is loaded; manual toggles clear it.
 - 14 new/updated vitalityMap.* keys (EN+UK); new CSS honors prefers-reduced-motion.
 - Verified: tsc clean, build clean, new names render in both languages, data integrity script ALL OK, bundle ~7.5 KB gz.
+
+## 2026-06-10 — Home topic filter (task 320)
+
+- Home grid gets a topic chip row (All + 18 topics, derived from the live article set, labeled via topicNames). Chips pick up their topic accent colors from the existing [data-topic] CSS vars.
+- Progressive enhancement: cards render in Astro; a small inline script toggles [hidden] via data-topic. JS off → all cards show. Filter is shareable via #topic=<id> and restored on load.
+- 2 new home.filter* keys (EN+UK). Keyboard: native buttons + aria-pressed. Chips wrap at 375px.
+- Verified: build clean, 19 chips and localized labels in both /en/ and /uk/, filter script inlined.

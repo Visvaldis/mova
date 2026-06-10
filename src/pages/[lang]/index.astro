@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { LANGS, useTranslations, langFromId, type Lang } from '../../i18n/utils';
+import { topicNames } from '../../i18n/ui';
 
 export function getStaticPaths() {
   return LANGS.map((lang) => ({ params: { lang } }));
@@ -14,6 +15,9 @@ const t = useTranslations(lang);
 const articles = (await getCollection('articles', (e) => langFromId(e.id) === lang)).sort(
   (a, b) => a.data.order - b.data.order
 );
+
+// Topic chips derive from the live article set (new topics appear automatically).
+const topics = [...new Set(articles.map((a) => a.data.topic))];
 ---
 
 <BaseLayout lang={lang} title="" description={t('home.hero.subtitle')}>
@@ -25,6 +29,18 @@ const articles = (await getCollection('articles', (e) => langFromId(e.id) === la
 
   <section class="container">
     <h2 class="section-title">{t('home.articles')}</h2>
+
+    <div class="topic-filter" role="group" aria-label={t('home.filterAria')} data-topic-filter>
+      <button class="filter-chip" data-filter="" aria-pressed="true">{t('home.filterAll')}</button>
+      {
+        topics.map((topic) => (
+          <button class="filter-chip" data-filter={topic} data-topic={topic} aria-pressed="false">
+            {topicNames[topic]?.[lang] ?? topic}
+          </button>
+        ))
+      }
+    </div>
+
     <div class="card-grid">
       {
         articles.map((a) => (
@@ -42,3 +58,32 @@ const articles = (await getCollection('articles', (e) => langFromId(e.id) === la
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Progressive enhancement: with JS off, every card stays visible.
+  const bar = document.querySelector('[data-topic-filter]');
+  const chips = Array.from(bar?.querySelectorAll<HTMLButtonElement>('.filter-chip') ?? []);
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.card-grid .card'));
+
+  function apply(topic: string) {
+    for (const chip of chips) {
+      chip.setAttribute('aria-pressed', String((chip.dataset.filter ?? '') === topic));
+    }
+    for (const card of cards) {
+      card.hidden = topic !== '' && card.dataset.topic !== topic;
+    }
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      const topic = chip.dataset.filter ?? '';
+      apply(topic);
+      // Shareable URL — #topic=<id>, dropped when "All" is selected.
+      history.replaceState(null, '', topic ? `#topic=${topic}` : location.pathname + location.search);
+    });
+  }
+
+  // Restore a shared filter from the hash on load.
+  const m = location.hash.match(/^#topic=([\w-]+)$/);
+  if (m && chips.some((c) => c.dataset.filter === m[1])) apply(m[1]);
+</script>

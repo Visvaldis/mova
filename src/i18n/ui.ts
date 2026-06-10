@@ -28,6 +28,8 @@ export const ui = {
     'home.hero.subtitle':
       'From the first human words to artificial intelligence — six interactive stories about where language came from and where it is going.',
     'home.articles': 'Articles',
+    'home.filterAria': 'Filter articles by topic',
+    'home.filterAll': 'All topics',
 
     'card.read': 'Read',
     'card.minRead': 'min read',
@@ -620,6 +622,29 @@ export const ui = {
     'nameMap.notMatch': 'Not a match — try again.',
     'nameMap.reset': 'Reset',
 
+    'accentAtlas.tabsAria': 'Accent atlas views',
+    'accentAtlas.tabMap': 'Dialect map',
+    'accentAtlas.tabContinuum': 'Dialect or language?',
+    'accentAtlas.tabShibboleth': 'Shibboleth',
+    'accentAtlas.mapIntro':
+      'Standard Ukrainian is just one dialect among many. Tap a group to see what it preserves.',
+    'accentAtlas.mapAria': 'Schematic map of Ukraine’s three dialect groups',
+    'accentAtlas.mapSchematic':
+      'Schematic regions: the article names the three groups, not exact isoglosses.',
+    'accentAtlas.mapHint': 'Tap a dialect group on the map — or surzhyk below.',
+    'accentAtlas.contIntro':
+      'A dialect continuum: each village blends into the next. So where does one “language” end and the next begin? Drag the border and find out.',
+    'accentAtlas.contBorderAria': 'Drag to place the language border between villages',
+    'accentAtlas.contVerdict':
+      'Wherever you cut, the two villages straddling your line still understand each other. The border is political — drawn by flags, schoolbooks and armies, not by the language.',
+    'accentAtlas.contMetaphor':
+      'The smooth ramp illustrates speech blending village to village — a metaphor, not sampled dialect data.',
+    'accentAtlas.contCasesHead': 'It happens for real',
+    'accentAtlas.shibIntro':
+      'Accents work as passwords. Tap the two letters that betray a non-native speaker.',
+    'accentAtlas.shibBetraysLabel': 'Russian speakers reliably render it',
+    'accentAtlas.shibBiblicalHead': 'The original shibboleth',
+
     'thoughtLens.tabsAria': 'Choose a lens',
     'thoughtLens.tabColor': 'Colour',
     'thoughtLens.tabSpace': 'Space',
@@ -675,6 +700,8 @@ export const ui = {
     'home.hero.subtitle':
       'Від перших людських слів до штучного інтелекту — шість інтерактивних історій про те, звідки прийшла мова і куди вона прямує.',
     'home.articles': 'Статті',
+    'home.filterAria': 'Фільтрувати статті за темою',
+    'home.filterAll': 'Усі теми',
 
     'card.read': 'Читати',
     'card.minRead': 'хв читання',
@@ -1266,6 +1293,29 @@ export const ui = {
     'nameMap.matched': 'Збіг!',
     'nameMap.notMatch': 'Не пара — спробуйте ще.',
     'nameMap.reset': 'Скинути',
+
+    'accentAtlas.tabsAria': 'Подання атласу акцентів',
+    'accentAtlas.tabMap': 'Мапа наріч',
+    'accentAtlas.tabContinuum': 'Говірка чи мова?',
+    'accentAtlas.tabShibboleth': 'Шиболет',
+    'accentAtlas.mapIntro':
+      'Літературна українська — лише одна говірка з-поміж багатьох. Торкніться групи, щоб побачити, що вона зберігає.',
+    'accentAtlas.mapAria': 'Схематична мапа трьох наріч України',
+    'accentAtlas.mapSchematic':
+      'Схематичні регіони: стаття називає три групи, а не точні ізоглоси.',
+    'accentAtlas.mapHint': 'Торкніться наріччя на мапі — або суржику нижче.',
+    'accentAtlas.contIntro':
+      'Діалектний континуум: кожне село плавно переходить у наступне. То де ж закінчується одна «мова» й починається інша? Перетягніть кордон і дізнайтеся.',
+    'accentAtlas.contBorderAria': 'Перетягніть, щоб поставити мовний кордон між селами',
+    'accentAtlas.contVerdict':
+      'Хоч би де ви провели лінію, два села обабіч неї однаково розуміють одне одного. Кордон — політичний: його креслять прапори, підручники й армії, а не мова.',
+    'accentAtlas.contMetaphor':
+      'Плавний градієнт ілюструє, як мовлення перетікає від села до села, — це метафора, а не зібрані діалектні дані.',
+    'accentAtlas.contCasesHead': 'Так буває насправді',
+    'accentAtlas.shibIntro':
+      'Акценти працюють як паролі. Торкніться двох літер, що видають неносія.',
+    'accentAtlas.shibBetraysLabel': 'Російськомовні стабільно вимовляють це як',
+    'accentAtlas.shibBiblicalHead': 'Первісний шиболет',
 
     'thoughtLens.tabsAria': 'Оберіть лінзу',
     'thoughtLens.tabColor': 'Колір',
