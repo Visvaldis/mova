@@ -40,3 +40,33 @@ isoglosses, and **паляниця** as a shibboleth.
 
 - `TODO(seva)`: `content/uk/dialects-and-accents.md` is missing — the EN page works; the UK page (and
   the toggle to it) won't until the UK article is written by hand.
+
+## Done — 2026-06-10
+
+Designed + built `accent-atlas` as a three-tab island, following the `CLAUDE.md` › accent-atlas
+spec (the task predated that spec being added — it's there now, so I built to it):
+
+1. **Dialect map** — schematic SVG of Ukraine with the three groups (northern/Polissian,
+   southwestern, southeastern) as three *tints of the one `dialects` accent* (color-mix, no
+   hardcoded hex). Tap a zone → features card; a surzhyk chip opens the mixed-lect card. Caption
+   states plainly the regions are schematic (the article names the groups, not isoglosses).
+2. **Dialect or language?** — a continuum slider: drag a 🚩 border between villages; the verdict
+   makes the article's point (the cut is political — flags, schoolbooks, armies). Below it, the
+   article's four real cases (Scandinavian / Chinese / German / Ukrainian-as-"dialect"). The
+   gradient is labelled an explicit metaphor, not sampled data.
+3. **Shibboleth** — паляниця with the two article-named tells (и, ц) as tappable letters → tell
+   cards; shows the betraying rendering (palyanitsa / палянітса) + the Biblical original.
+
+Files: `AccentAtlas.tsx`, `accentAtlas.data.ts` (reuses NameMap's Ukraine projection),
+`AccentAtlas.module.css`; chrome `accentAtlas.*` added to `ui.ts` (EN+UK); registered in
+`Interactive.astro`. The `interactiveInfo['accent-atlas']` blurb already matched the build.
+
+**UK article now exists.** `content/uk/dialects-and-accents.md` was written since this task was
+filed, so the outdated note above is resolved — the UK page is live. I sourced every claim from
+**both** `content/en|uk/dialects-and-accents.md` and aligned the UK strings to the authoritative
+article wording (betraying form `палянітса`, pull-quote, гілеадці/єфремлян, opening line).
+
+`TODO(seva)`: the article gives no per-dialect *sample phrases*, so the map cards show the article's
+feature notes instead of inventing phrases. The only real samples (паляниця, surzhyk) live in their
+own tabs/cards. Standard checklist + the extra acceptance item (conveys "dialect ≠ broken language",
+claims traced) all pass; `npm run build` → 0 errors.
