@@ -744,6 +744,22 @@ export const ui = {
     'conlangWorkbench.translation': 'Translation',
     'conlangWorkbench.esperantoNote':
       'An illustrative sentence built to show Esperanto’s transparency; the article gives no sample sentence.',
+
+    'codeVsSpeech.intro':
+      'Programming languages borrowed our vocabulary — grammar, syntax, even dead languages. But are they languages? Run the checklist, then look at the brain.',
+    'codeVsSpeech.colNatural': 'Ukrainian',
+    'codeVsSpeech.colCode': 'Python',
+    'codeVsSpeech.scorecardHead': 'Hockett’s design-feature checklist',
+    'codeVsSpeech.scorecardHint': 'Tap a feature to see how each column does.',
+    'codeVsSpeech.pass': 'pass',
+    'codeVsSpeech.fail': 'fail',
+    'codeVsSpeech.brainHead': 'The brain’s verdict',
+    'codeVsSpeech.brainHint': 'Switch what you’re reading — watch which network lights up.',
+    'codeVsSpeech.brainReadNatural': 'Reading Ukrainian',
+    'codeVsSpeech.brainReadCode': 'Reading Python',
+    'codeVsSpeech.brainAria': 'Side view of a brain with two highlightable networks',
+    'codeVsSpeech.lit': 'lit',
+    'codeVsSpeech.mitLabel': 'The MIT result',
   },
   uk: {
     'brand': 'Мова',
@@ -1480,6 +1496,22 @@ export const ui = {
     'conlangWorkbench.translation': 'Переклад',
     'conlangWorkbench.esperantoNote':
       'Ілюстративне речення, складене, щоб показати прозорість есперанто; стаття не подає зразкового речення.',
+
+    'codeVsSpeech.intro':
+      'Мови програмування запозичили нашу термінологію — граматику, синтаксис, навіть мертві мови. Але чи вони мови? Прогоньмо чекліст, тоді погляньмо на мозок.',
+    'codeVsSpeech.colNatural': 'Українська',
+    'codeVsSpeech.colCode': 'Python',
+    'codeVsSpeech.scorecardHead': 'Чекліст ознак мови за Гокеттом',
+    'codeVsSpeech.scorecardHint': 'Торкніться ознаки, щоб побачити, як її складає кожен стовпчик.',
+    'codeVsSpeech.pass': 'проходить',
+    'codeVsSpeech.fail': 'не проходить',
+    'codeVsSpeech.brainHead': 'Вердикт мозку',
+    'codeVsSpeech.brainHint': 'Перемкніть, що ви читаєте, — подивіться, яка мережа загоряється.',
+    'codeVsSpeech.brainReadNatural': 'Читаю українською',
+    'codeVsSpeech.brainReadCode': 'Читаю Python',
+    'codeVsSpeech.brainAria': 'Вигляд мозку збоку з двома мережами, які можна підсвітити',
+    'codeVsSpeech.lit': 'активна',
+    'codeVsSpeech.mitLabel': 'Результат MIT',
   },
 } as const;
 
