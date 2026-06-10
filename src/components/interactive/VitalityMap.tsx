@@ -17,7 +17,9 @@ import {
   STATS,
   LAST_SPEAKERS,
   SHIFT,
+  SHIFT_KEPT,
   HEBREW,
+  HEBREW_RECIPE,
   MINI_CASES,
   RECIPE,
   bandFor,
@@ -96,8 +98,15 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
     return () => clearInterval(id);
   }, [reduced]);
 
-  // ---- last-speaker story ----
+  // ---- last-speaker memory wall ----
   const [openStory, setOpenStory] = useState<string | null>(null);
+  const story = LAST_SPEAKERS.find((ls) => ls.id === openStory);
+  const miniRef = useRef<HTMLDivElement | null>(null);
+
+  // ---- three-generation shift simulator ----
+  const [gen, setGen] = useState(1); // generations revealed: 1..3
+  const [keepHome, setKeepHome] = useState(false);
+  const shiftData = keepHome ? SHIFT_KEPT : SHIFT;
 
   // ---- Hebrew curve progressive draw ----
   const [prog, setProg] = useState(1);
@@ -136,8 +145,26 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
   const [active, setActive] = useState<Record<string, boolean>>(
     () => Object.fromEntries(RECIPE.map((r) => [r.id, false])),
   );
-  const toggle = (id: string) => setActive((a) => ({ ...a, [id]: !a[id] }));
-  const reset = () => setActive(Object.fromEntries(RECIPE.map((r) => [r.id, false])));
+  const [recipeSource, setRecipeSource] = useState<string | null>(null);
+  const recipeRef = useRef<HTMLElement | null>(null);
+  const toggle = (id: string) => {
+    setRecipeSource(null);
+    setActive((a) => ({ ...a, [id]: !a[id] }));
+  };
+  const reset = () => {
+    setRecipeSource(null);
+    setActive(Object.fromEntries(RECIPE.map((r) => [r.id, false])));
+  };
+  /** Flip the gauge toggles to a named language's article-credited playbook. */
+  const applyRecipe = (ids: string[], sourceName: string) => {
+    setActive(Object.fromEntries(RECIPE.map((r) => [r.id, ids.includes(r.id)])));
+    setRecipeSource(sourceName);
+    if (!reduced) recipeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+  const showRevival = (caseId: string) => {
+    setMiniId(caseId);
+    if (!reduced) miniRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
 
   const vitality = Math.round(
     RECIPE.reduce((sum, r) => sum + (active[r.id] ? r.weight : 0), 0) * 100,
@@ -194,69 +221,118 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
             <p className={v.tickerNote}>{t('vitalityMap.tickerNote')}</p>
           </div>
 
-          {/* last-speaker stories */}
+          {/* last-speaker memory wall */}
           <div>
             <p className={v.sectionHead}>{t('vitalityMap.lastSpeakerTitle')}</p>
             <p className={s.caption} style={{ margin: '0.2rem 0 0.5rem' }}>
               {t('vitalityMap.lastSpeakerHint')}
             </p>
-            <div className={v.storyList} role="group" aria-label={t('vitalityMap.lastSpeakerTitle')}>
+            <div className={v.wall} role="group" aria-label={t('vitalityMap.lastSpeakerTitle')}>
               {LAST_SPEAKERS.map((ls) => {
                 const open = openStory === ls.id;
                 return (
-                  <div key={ls.id}>
-                    <button
-                      className={v.storyBtn}
-                      aria-expanded={open}
-                      onClick={() => setOpenStory(open ? null : ls.id)}
-                    >
-                      <span>
-                        <span className={v.storyName}>{ls.name[lang]}</span>{' '}
-                        <span className={v.storyLang}>· {ls.language[lang]}</span>
-                      </span>
-                      <span className={v.storyChevron} aria-hidden="true">
-                        {open ? '−' : '+'}
-                      </span>
+                  <button
+                    key={ls.id}
+                    className={`${v.wallNode} ${open ? v.wallNodeOn : ''}`}
+                    aria-pressed={open}
+                    aria-label={`${ls.language[lang]}, ${ls.year} — ${ls.name[lang]}`}
+                    onClick={() => setOpenStory(open ? null : ls.id)}
+                  >
+                    <span className={`${v.wallCandle} ${open ? v.wallCandleOut : ''}`} aria-hidden="true">
+                      🕯️
+                    </span>
+                    <span className={v.wallYear}>{ls.year}</span>
+                    <span className={v.wallLang}>{ls.language[lang]}</span>
+                  </button>
+                );
+              })}
+            </div>
+            {story && (
+              <div className={v.storyCard} role="region" aria-live="polite">
+                <div className={v.storyMeta}>
+                  <span className={v.metaItem}>
+                    <span className={v.metaLabel}>{t('vitalityMap.lastSpeakerTitle')}</span>
+                    {story.name[lang]}
+                  </span>
+                  <span className={v.metaItem}>
+                    <span className={v.metaLabel}>{t('vitalityMap.died')}</span>
+                    {story.died[lang]}
+                  </span>
+                  <span className={v.metaItem}>
+                    <span className={v.metaLabel}>{t('vitalityMap.place')}</span>
+                    {story.place[lang]}
+                  </span>
+                </div>
+                <p className={v.storyText}>{story.story[lang]}</p>
+                {story.revivedAs && (
+                  <p className={v.revivedRow}>
+                    <span aria-hidden="true">🌱</span> {t('vitalityMap.revivedNote')}{' '}
+                    <button className={v.revivedBtn} onClick={() => showRevival(story.revivedAs!)}>
+                      {t('vitalityMap.seeRevival')} →
                     </button>
-                    {open && (
-                      <div className={v.storyCard} role="region">
-                        <div className={v.storyMeta}>
-                          <span className={v.metaItem}>
-                            <span className={v.metaLabel}>{t('vitalityMap.died')}</span>
-                            {ls.died[lang]}
-                          </span>
-                          <span className={v.metaItem}>
-                            <span className={v.metaLabel}>{t('vitalityMap.place')}</span>
-                            {ls.place[lang]}
-                          </span>
-                        </div>
-                        <p className={v.storyText}>{ls.story[lang]}</p>
-                      </div>
-                    )}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* death by shift — generation stepper */}
+          <div className={v.shift}>
+            <p className={v.sectionHead}>{t('vitalityMap.shiftTitle')}</p>
+            <p className={s.caption} style={{ margin: '0.2rem 0 0.5rem' }}>
+              {t('vitalityMap.shiftHint')}
+            </p>
+            <div className={v.shiftRow}>
+              {shiftData.map((st, i) => {
+                const revealed = i < gen;
+                return (
+                  <div key={st.id} className={`${v.shiftStep} ${revealed ? '' : v.shiftStepOff}`}>
+                    <span className={v.shiftWho}>{st.who[lang]}</span>
+                    <span className={v.shiftState}>{revealed ? st.state[lang] : '…'}</span>
+                    <div
+                      className={v.shiftMeter}
+                      role="img"
+                      aria-label={revealed ? `${st.who[lang]}: ${st.state[lang]}` : st.who[lang]}
+                    >
+                      <div
+                        className={v.shiftMeterFill}
+                        style={{ width: revealed ? `${st.fluency * 100}%` : '0%' }}
+                      />
+                    </div>
                   </div>
                 );
               })}
             </div>
-          </div>
 
-          {/* death by shift */}
-          <div className={v.shift}>
-            <p className={v.sectionHead}>{t('vitalityMap.shiftTitle')}</p>
-            <div className={v.shiftRow}>
-              {SHIFT.map((st) => (
-                <div key={st.id} className={v.shiftStep}>
-                  <span className={v.shiftWho}>{st.who[lang]}</span>
-                  <span className={v.shiftState}>{st.state[lang]}</span>
-                  <div
-                    className={v.shiftMeter}
-                    role="img"
-                    aria-label={`${st.who[lang]}: ${st.state[lang]}`}
-                  >
-                    <div className={v.shiftMeterFill} style={{ width: `${st.fluency * 100}%` }} />
-                  </div>
-                </div>
-              ))}
+            <div className={v.shiftControls}>
+              {gen < 3 ? (
+                <button className={s.pill} onClick={() => setGen((g) => Math.min(3, g + 1))}>
+                  {t('vitalityMap.shiftNext')} →
+                </button>
+              ) : (
+                <button className={s.pill} onClick={() => setGen(1)}>
+                  ↺ {t('vitalityMap.shiftRestart')}
+                </button>
+              )}
+              <label className={v.keepToggle}>
+                <input
+                  type="checkbox"
+                  checked={keepHome}
+                  onChange={(e) => setKeepHome(e.target.checked)}
+                />
+                <span aria-hidden="true">🏡</span> {t('vitalityMap.shiftKeepHome')}
+              </label>
             </div>
+
+            {gen === 3 && (
+              <p
+                className={`${v.shiftOutcome} ${keepHome ? v.shiftAlive : v.shiftDead}`}
+                role="status"
+                aria-live="polite"
+              >
+                {keepHome ? <>🌱 {t('vitalityMap.shiftAlive')}</> : <>🕯️ {t('vitalityMap.shiftDead')}</>}
+              </p>
+            )}
             <p className={s.caption}>{t('vitalityMap.shiftNote')}</p>
           </div>
         </section>
@@ -337,10 +413,17 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
               <p className={v.hebrewNote}>{t('vitalityMap.hebrewNote')}</p>
             </div>
             <p className={v.hebrewBody}>{t('vitalityMap.hebrewBody')}</p>
+            <button
+              className={s.pill}
+              style={{ marginTop: '0.4rem' }}
+              onClick={() => applyRecipe(HEBREW_RECIPE, lang === 'uk' ? 'Іврит' : 'Hebrew')}
+            >
+              ⚖️ {t('vitalityMap.tryRecipe')}
+            </button>
           </div>
 
           {/* mini-cases */}
-          <div>
+          <div ref={miniRef}>
             <p className={v.sectionHead}>{t('vitalityMap.miniTitle')}</p>
             <p className={s.caption} style={{ margin: '0.2rem 0 0.5rem' }}>
               {t('vitalityMap.miniHint')}
@@ -361,6 +444,19 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
             {mini && (
               <div className={v.miniDetail} role="status" aria-live="polite" style={{ marginTop: '0.5rem' }}>
                 <p>{mini.detail[lang]}</p>
+                <p className={v.miniIngredients} aria-hidden="true">
+                  {RECIPE.filter((r) => mini.recipe.includes(r.id)).map((r) => (
+                    <span key={r.id} className={v.ingredientChip}>
+                      {r.emoji} {r.label[lang]}
+                    </span>
+                  ))}
+                </p>
+                <button
+                  className={s.pill}
+                  onClick={() => applyRecipe(mini.recipe, mini.name[lang])}
+                >
+                  ⚖️ {t('vitalityMap.tryRecipe')}
+                </button>
               </div>
             )}
           </div>
@@ -368,7 +464,7 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
       </div>
 
       {/* ============ REVIVAL RECIPE ============ */}
-      <section className={s.panel} aria-label={t('vitalityMap.recipeTitle')}>
+      <section ref={recipeRef} className={s.panel} aria-label={t('vitalityMap.recipeTitle')}>
         <h3 className={v.colTitle} style={{ marginBottom: '0.3rem' }}>
           <span className={v.dot} aria-hidden="true">⚖️</span>
           {t('vitalityMap.recipeTitle')}
@@ -376,6 +472,11 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
         <p className={v.intro} style={{ marginBottom: '0.9rem' }}>
           {t('vitalityMap.recipeIntro')}
         </p>
+        {recipeSource && (
+          <p className={v.recipeChip} role="status">
+            {t('vitalityMap.recipeOf')} <strong>{recipeSource}</strong>
+          </p>
+        )}
 
         <div className={v.recipe}>
           {/* gauge */}

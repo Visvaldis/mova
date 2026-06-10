@@ -36,24 +36,79 @@ export const STATS = {
 };
 
 /* ----------------------------------------------------------------
-   (Left) Death — last-speaker story + the three-generation shift.
+   (Left) Death — last-speaker stories + the three-generation shift.
 
-   TODO(seva): the article documents only ONE last-speaker story in detail
-   (Eyak / Marie Smith Jones). More named last-speaker stories would each need
-   to be added to an article first, then surfaced here.
+   All six stories are now named in the article ("How a language actually
+   dies"): Pentreath/Cornish 1777, Udaina/Dalmatian 1898, Maddrell/Manx 1974,
+   Esenç/Ubykh 1992, Smith Jones/Eyak 2008, Boa Sr/Aka-Bo 2010.
+   `year` places the node on the memory-wall timeline.
    ---------------------------------------------------------------- */
 export interface LastSpeaker {
   id: string;
+  year: number;
   language: Record<Lang, string>;
   name: Record<Lang, string>;
   died: Record<Lang, string>;
   place: Record<Lang, string>;
   story: Record<Lang, string>;
+  /** id of a MINI_CASE if this language later returned (Cornish, Manx). */
+  revivedAs?: string;
 }
 
 export const LAST_SPEAKERS: LastSpeaker[] = [
   {
+    id: 'cornish',
+    year: 1777,
+    language: { en: 'Cornish', uk: 'Корнська' },
+    name: { en: 'Dolly Pentreath', uk: 'Доллі Пентріт' },
+    died: { en: '1777', uk: '1777 рік' },
+    place: { en: 'Mousehole, Cornwall', uk: 'Маусгол, Корнвол' },
+    story: {
+      en: 'Dolly Pentreath is traditionally counted as the last native speaker of Cornish. But Cornish left good records — and centuries later, it returned to families.',
+      uk: 'Доллі Пентріт за традицією вважають останньою носійкою корнської. Але корнська залишила добрі записи — і за століття повернулася в родини.',
+    },
+    revivedAs: 'cornish-manx',
+  },
+  {
+    id: 'dalmatian',
+    year: 1898,
+    language: { en: 'Dalmatian', uk: 'Далматинська' },
+    name: { en: 'Tuone Udaina', uk: 'Туоне Удайна' },
+    died: { en: '1898', uk: '1898 рік' },
+    place: { en: 'Krk, Adriatic', uk: 'Крк, Адріатика' },
+    story: {
+      en: 'Tuone Udaina, the last speaker of Dalmatian, was killed by a road explosion in 1898 — a linguist had interviewed him just the year before. That interview is most of what survives.',
+      uk: 'Туоне Удайна, останній мовець далматинської, загинув від вибуху на дорозі 1898 року — лише за рік до того його встиг записати лінгвіст. Той запис — майже все, що збереглося.',
+    },
+  },
+  {
+    id: 'manx',
+    year: 1974,
+    language: { en: 'Manx', uk: 'Менська' },
+    name: { en: 'Ned Maddrell', uk: 'Нед Маддрелл' },
+    died: { en: '1974', uk: '1974 рік' },
+    place: { en: 'Isle of Man', uk: 'Острів Мен' },
+    story: {
+      en: 'Ned Maddrell was the last native speaker of Manx. The recordings made of him became seeds of the language’s return — children speak Manx again today.',
+      uk: 'Нед Маддрелл був останнім носієм менської. Зроблені з ним записи стали насінням повернення мови — сьогодні менською знову говорять діти.',
+    },
+    revivedAs: 'cornish-manx',
+  },
+  {
+    id: 'ubykh',
+    year: 1992,
+    language: { en: 'Ubykh', uk: 'Убихська' },
+    name: { en: 'Tevfik Esenç', uk: 'Тевфік Есенч' },
+    died: { en: '1992', uk: '1992 рік' },
+    place: { en: 'Turkey', uk: 'Туреччина' },
+    story: {
+      en: 'Tevfik Esenç took with him Ubykh and its roughly eighty consonants — one of the richest sound systems ever documented.',
+      uk: 'Тевфік Есенч забрав із собою убихську з її приблизно вісімдесятьма приголосними — однією з найбагатших звукових систем, будь-коли задокументованих.',
+    },
+  },
+  {
     id: 'eyak',
+    year: 2008,
     language: { en: 'Eyak', uk: 'Еяк' },
     name: { en: 'Marie Smith Jones', uk: 'Марі Сміт Джонс' },
     died: { en: 'January 21, 2008', uk: '21 січня 2008 року' },
@@ -61,6 +116,18 @@ export const LAST_SPEAKERS: LastSpeaker[] = [
     story: {
       en: 'When Marie Smith Jones died, she was the last person on Earth who spoke Eyak. The language had existed for thousands of years; that morning, it stopped being anyone’s language at all.',
       uk: 'Коли померла Марі Сміт Джонс, вона була останньою людиною на Землі, що говорила мовою еяк. Мова існувала тисячі років; того ранку вона перестала бути будь-чиєю мовою взагалі.',
+    },
+  },
+  {
+    id: 'aka-bo',
+    year: 2010,
+    language: { en: 'Aka-Bo', uk: 'Ака-бо' },
+    name: { en: 'Boa Sr', uk: 'Боа Ср' },
+    died: { en: '2010', uk: '2010 рік' },
+    place: { en: 'Andaman Islands', uk: 'Андаманські острови' },
+    story: {
+      en: 'Boa Sr survived the 2004 tsunami on the Andaman Islands and died in 2010 as the last voice of Aka-Bo. Her songs are preserved on tape.',
+      uk: 'Боа Ср пережила цунамі 2004 року на Андаманських островах і померла 2010 року як останній голос мови ака-бо. Її пісні збереглися на плівці.',
     },
   },
 ];
@@ -97,6 +164,35 @@ export const SHIFT: ShiftStep[] = [
   },
 ];
 
+/**
+ * The same three generations when the chain is NOT broken — the article's
+ * counter-ingredient: "above all … intergenerational use at home." Fluency
+ * values are illustrative, mirroring SHIFT.
+ */
+export const SHIFT_KEPT: ShiftStep[] = [
+  {
+    id: 'grandparents',
+    who: { en: 'Grandparents', uk: 'Дідусі й бабусі' },
+    state: { en: 'Fluent', uk: 'Говорять вільно' },
+    fluency: 1,
+  },
+  {
+    id: 'parents',
+    who: { en: 'Parents', uk: 'Батьки' },
+    state: {
+      en: 'Keep speaking it at home',
+      uk: 'Далі говорять нею вдома',
+    },
+    fluency: 0.95,
+  },
+  {
+    id: 'children',
+    who: { en: 'Children', uk: 'Діти' },
+    state: { en: 'Grow up native speakers', uk: 'Виростають носіями' },
+    fluency: 1,
+  },
+];
+
 /* ----------------------------------------------------------------
    (Right) Revival — the Hebrew curve.
 
@@ -122,6 +218,11 @@ export interface MiniCase {
   name: Record<Lang, string>;
   tag: Record<Lang, string>;
   detail: Record<Lang, string>;
+  /**
+   * Which recipe ingredients (RECIPE ids) the article credits this revival
+   * with. Used by the "try this recipe" button to flip the gauge toggles.
+   */
+  recipe: string[];
 }
 
 export const MINI_CASES: MiniCase[] = [
@@ -133,6 +234,7 @@ export const MINI_CASES: MiniCase[] = [
       en: 'Legal status, mandatory schooling, and the S4C television channel — Welsh is now growing among the young.',
       uk: 'Юридичний статус, обов’язкова школа і телеканал S4C — валлійська тепер росте серед молоді.',
     },
+    recipe: ['state', 'school', 'media'],
   },
   {
     id: 'maori',
@@ -142,6 +244,7 @@ export const MINI_CASES: MiniCase[] = [
       en: 'Kōhanga reo — “language nests” where elders immerse preschoolers in the language. The model has been copied worldwide.',
       uk: 'Kōhanga reo — «мовні гнізда», де старші занурюють дошкільнят у мову. Модель скопіювали по всьому світу.',
     },
+    recipe: ['home', 'school'],
   },
   {
     id: 'hawaiian',
@@ -151,6 +254,7 @@ export const MINI_CASES: MiniCase[] = [
       en: 'Hawaiian built its own language nests — Pūnana Leo — on the Māori model.',
       uk: 'Гавайська створила власні мовні гнізда — Pūnana Leo — за моделлю маорі.',
     },
+    recipe: ['home', 'school'],
   },
   {
     id: 'crimean-tatar',
@@ -160,17 +264,36 @@ export const MINI_CASES: MiniCase[] = [
       en: 'Classified severely endangered after the 1944 deportation, it is the object of intense revival work — corpora, schooling, broadcasting — under the hardest possible conditions.',
       uk: 'Класифікована як серйозно загрожена після депортації 1944 року, вона є об’єктом інтенсивної відроджувальної роботи — корпуси, школи, мовлення — у найважчих можливих умовах.',
     },
+    recipe: ['school', 'media'],
   },
   {
     id: 'cornish-manx',
     name: { en: 'Cornish & Manx', uk: 'Корнська і менська' },
     tag: { en: 'back from “dead”', uk: 'повернулися з «мертвих»' },
     detail: {
-      en: 'They show that even a “dead” language with good records can return to families.',
-      uk: 'Вони показують: навіть «мертва» мова з добрими записами може повернутися в родини.',
+      en: 'They show that even a “dead” language with good records can return to families — Ned Maddrell’s tapes did exactly that.',
+      uk: 'Вони показують: навіть «мертва» мова з добрими записами може повернутися в родини — плівки Неда Маддрелла зробили саме це.',
     },
+    recipe: ['home'],
+  },
+  {
+    id: 'wampanoag',
+    name: { en: 'Wampanoag', uk: 'Вампаноаг' },
+    tag: { en: 'reawakened from records', uk: 'пробуджена із записів' },
+    detail: {
+      en: 'Silent for more than a century, Wampanoag was reawakened entirely from written records by Jessie Little Doe Baird — her daughter became its first native speaker in seven generations.',
+      uk: 'Мовчазна понад століття, вампаноаг була пробуджена виключно з письмових джерел зусиллями Джессі Літтл Доу Берд — її донька стала першою носійкою мови за сім поколінь.',
+    },
+    recipe: ['home'],
   },
 ];
+
+/**
+ * Hebrew's own playbook, for the button under the curve: Ben-Yehuda raised the
+ * first native speaker at home, pushed Hebrew into schools, and coined
+ * thousands of modern words so the language felt like the future (prestige).
+ */
+export const HEBREW_RECIPE: string[] = ['home', 'school', 'prestige'];
 
 /* ----------------------------------------------------------------
    (Bottom) Revival recipe — ingredients + weights.

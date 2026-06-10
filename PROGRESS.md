@@ -341,3 +341,11 @@ CSS modules.
 - `src/pages/[lang]/timeline.astro`: placeholder replaced with `client:visible` island.
 - i18n: 7 new `timeline.*` chrome keys (EN+UK).
 - Verified: tsc clean, static build clean, island + localized content present in both `/en/timeline/` and `/uk/timeline/`, bundle ~8.4 KB gz.
+
+## 2026-06-10 — Vitality-map refinement (user request)
+
+- Article (EN+UK): "How a language actually dies" now names six last speakers (Pentreath/Cornish 1777, Udaina/Dalmatian 1898, Maddrell/Manx 1974, Esenç/Ubykh 1992, Smith Jones/Eyak 2008, Boa Sr/Aka-Bo 2010); revival playbook adds Wampanoag (reawakened from written records). Keeps the no-invented-data rule intact.
+- Death panel: single Eyak accordion → memory wall of six candle nodes (1777→2010), tap to open the story; Cornish/Manx stories cross-link to their revival case in the right panel. Three-generation shift is now a stepper — advance generations, then flip "parents keep speaking it at home" to see the chain hold (SHIFT_KEPT variant).
+- Revival panel: each mini-case shows its article-credited ingredient chips and a "Try this recipe" button that loads that language's playbook into the vitality gauge (also under the Hebrew curve); gauge shows whose playbook is loaded; manual toggles clear it.
+- 14 new/updated vitalityMap.* keys (EN+UK); new CSS honors prefers-reduced-motion.
+- Verified: tsc clean, build clean, new names render in both languages, data integrity script ALL OK, bundle ~7.5 KB gz.

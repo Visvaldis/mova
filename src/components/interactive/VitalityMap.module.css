@@ -536,3 +536,157 @@
 @media (max-width: 420px) {
   .statNum { font-size: 2rem; }
 }
+
+/* ---- last-speaker memory wall ---- */
+.wall {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.15rem;
+  padding: 0.4rem 0.2rem 0.5rem;
+  border-bottom: 1px solid var(--line, rgba(128, 128, 128, 0.25));
+  margin-bottom: 0.6rem;
+}
+
+.wallNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.15rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  min-width: 0;
+}
+
+.wallNode:hover .wallCandle {
+  transform: translateY(-2px);
+}
+
+.wallNodeOn {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.wallCandle {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.18s, filter 0.3s;
+}
+
+.wallCandleOut {
+  filter: grayscale(1) brightness(0.75);
+}
+
+.wallYear {
+  font-size: 0.74rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.wallLang {
+  font-size: 0.62rem;
+  opacity: 0.65;
+  max-width: 4.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.revivedRow {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+}
+
+.revivedBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---- shift simulator ---- */
+.shiftStepOff {
+  opacity: 0.35;
+}
+
+.shiftStep,
+.shiftMeterFill {
+  transition: opacity 0.3s, width 0.5s ease;
+}
+
+.shiftControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.6rem 0 0.2rem;
+}
+
+.keepToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.keepToggle input {
+  accent-color: currentColor;
+}
+
+.shiftOutcome {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  animation: fadeIn 0.3s ease;
+}
+
+.shiftDead {
+  opacity: 0.8;
+}
+
+.shiftAlive {
+  color: var(--accent, inherit);
+}
+
+/* ---- per-case recipes ---- */
+.miniIngredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.ingredientChip {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  border-radius: 99px;
+}
+
+.recipeChip {
+  margin: -0.3rem 0 0.8rem;
+  font-size: 0.85rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wallCandle,
+  .shiftStep,
+  .shiftMeterFill {
+    transition: none;
+  }
+  .shiftOutcome,
+  .recipeChip {
+    animation: none;
+  }
+}
