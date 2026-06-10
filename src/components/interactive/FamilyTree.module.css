@@ -1,0 +1,368 @@
+/* ============================================================
+   family-tree — a real indented tree (connector lines) + a clean
+   schematic map (numbered pins + legend, no overlapping labels).
+
+   CSS Module: locally scoped, can't leak into `.prose`. Every color is a
+   topic variable inherited from <body data-topic="families"> — never bare hex.
+   ============================================================ */
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.hereKey {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0.2rem;
+}
+
+/* ============================================================
+   Tree view
+   ============================================================ */
+.tree {
+  margin-top: 0.5rem;
+}
+
+/* The PIE root — the trunk top. */
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  max-width: 100%;
+  box-shadow: var(--shadow);
+}
+.rootLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+.rootName {
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* a short stub from the root down into the branch list */
+.stub {
+  width: 2px;
+  height: 0.7rem;
+  margin-left: 1.1rem;
+  background: var(--line);
+}
+
+/* child lists. The vertical guide is assembled from each node's ::after,
+   so the last child can stop its line at the elbow (└ instead of ├). */
+.children {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.1rem;
+}
+.subChildren {
+  list-style: none;
+  margin: 0.3rem 0 0.5rem;
+  padding: 0 0 0 1.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  position: relative;
+}
+/* one continuous guide for the leaf row group */
+.subChildren::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: -0.3rem;
+  bottom: 0.4rem;
+  border-left: 2px solid var(--line);
+}
+
+.node {
+  position: relative;
+  padding-left: 1.15rem;
+  margin: 0.3rem 0;
+}
+/* vertical guide: full height so stacked nodes form one line… */
+.node::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid var(--line);
+}
+/* …except the last node, which only reaches its elbow. */
+.node:last-child::after {
+  bottom: auto;
+  height: 0.95rem;
+}
+/* horizontal elbow into the node */
+.node::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  width: 0.9rem;
+  border-top: 2px solid var(--line);
+}
+
+/* leaf rows live inside the wrapping .subChildren; their own connectors
+   would collide with the flex wrap, so they use the group guide instead. */
+.leafNode {
+  position: relative;
+}
+
+.branchBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.branchBtn:hover {
+  border-color: var(--accent);
+}
+.branchBtn[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.branchExtinct {
+  border-style: dashed;
+  color: var(--muted);
+}
+.here {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.caret {
+  font-size: 0.7rem;
+  color: var(--accent);
+  width: 0.7rem;
+  text-align: center;
+}
+.branchExtinct .caret {
+  color: var(--muted);
+}
+.count {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.flag {
+  font-size: 0.85rem;
+}
+
+.leafChip {
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+  white-space: nowrap;
+}
+.leafChip:hover {
+  border-color: var(--accent);
+}
+.leafChip[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.leafExtinct {
+  border-style: dashed;
+  color: var(--muted);
+}
+.leafExtinct[aria-pressed='true'] {
+  color: var(--on-accent);
+}
+.leafStar {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* ============================================================
+   Cognate card
+   ============================================================ */
+.cog {
+  margin-top: 0.9rem;
+}
+.cogHead {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+.cogTitle {
+  font-size: 1.05rem;
+}
+.cogMeta {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.cogGridHead {
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: block;
+  margin-top: 0.7rem;
+}
+.cogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  text-align: center;
+}
+.cogCell {
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.3rem;
+}
+.cogWord {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.cogGloss {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.cogPie {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.cogHint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.6rem 0 0;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   Map view — schematic Eurasia + numbered pins + legend
+   ============================================================ */
+.mapWrap {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.mapSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.land {
+  fill: var(--bg);
+  stroke: var(--line);
+  stroke-width: 1.4;
+}
+.pin {
+  cursor: pointer;
+}
+.pinDot {
+  fill: var(--accent);
+  stroke: var(--bg-elev);
+  stroke-width: 1.6;
+  transition: opacity 0.15s ease;
+}
+.pin:hover .pinDot {
+  opacity: 0.82;
+}
+.pinDotExtinct {
+  fill: var(--bg-elev);
+  stroke: var(--muted);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 2;
+}
+.pinNum {
+  fill: var(--on-accent);
+  font-size: 10px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+.pinNumExtinct {
+  fill: var(--muted);
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.4rem;
+}
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-align: left;
+  width: 100%;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.legendItem:hover {
+  border-color: var(--accent);
+}
+.legendNum {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.legendNumExtinct {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1.5px dashed var(--muted);
+}
+.legendName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.legendFlag {
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
