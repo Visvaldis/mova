@@ -42,3 +42,13 @@ diagram. All facts (pater→father, trēs→three, cornu→horn, два/two…) 
 ## Notes
 
 - This task also validates task 010's hook + shared styles in a real component.
+
+## Done — 2026-06-10
+
+Built in commit `984a753` (a concurrent session): `SoundShift.tsx`, `soundShift.data.ts`,
+`soundShift.*` strings in `ui.ts`, registered in `Interactive.astro`. Three panels working in EN+UK.
+
+Follow-up fix (this commit): `soundShift.note2` previously read *"After 2,000 more years of smaller
+changes…"* — an invented figure that violated CONVENTIONS ("no invented data"). Replaced (EN+UK)
+with the article-sourced Great Vowel Shift reference (`content/en/sound-change.md` L46, dated
+1400–1700). No other facts changed.
