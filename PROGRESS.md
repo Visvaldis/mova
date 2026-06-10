@@ -363,3 +363,10 @@ CSS modules.
 - Entry points: article-header topic chip now links to its hub; home filter shows an "Open topic page →" link when a topic chip is active (same progressive-enhancement script).
 - 7 new keys (topic.* + home.openTopic), EN+UK. Event rows stack at ≤540px.
 - Verified: tsc + build clean, 18×2 hub pages generated, sections conditionally render (no empty "Keep playing" when no toy relates).
+
+## 2026-06-10 — Self-hosted fonts (task 910)
+
+- Dropped the Google Fonts CDN. Inter variable (wght 100–900, OFL) self-hosted: 4 woff2 subsets (latin 48K, latin-ext 85K, cyrillic 19K, cyrillic-ext 26K) from @fontsource-variable/inter copied to public/fonts/.
+- @font-face in global.css registers them as family "Inter" with unicode-range splits — the font stack and weights (400–800) keep working unchanged, pages only download the subsets they render.
+- BaseLayout: googleapis link + 2 preconnects removed; latin subset preloaded everywhere, cyrillic additionally on UK pages.
+- Verified: build clean, zero external font references in dist, bundled CSS urls resolve under /mova/fonts/, preloads present (EN 1, UK 2).

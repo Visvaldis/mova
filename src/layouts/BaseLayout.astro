@@ -31,12 +31,24 @@ const fullTitle = title ? `${title} · ${t('brand')}` : t('brand');
     <meta property="og:title" content={fullTitle} />
     {description && <meta property="og:description" content={description} />}
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/* Self-hosted Inter (task 910) — @font-face lives in global.css; preload the
+        subsets every page actually uses (latin chrome everywhere, cyrillic on UK pages). */}
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=cyrillic,latin"
+      rel="preload"
+      href={`${import.meta.env.BASE_URL}/fonts/inter-latin-wght-normal.woff2`.replace(/\/+/g, '/')}
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    {lang === 'uk' && (
+      <link
+        rel="preload"
+        href={`${import.meta.env.BASE_URL}/fonts/inter-cyrillic-wght-normal.woff2`.replace(/\/+/g, '/')}
+        as="font"
+        type="font/woff2"
+        crossorigin
+      />
+    )}
   </head>
   <body data-topic={topic}>
     <a class="skip-link" href="#main">{t('skip')}</a>
