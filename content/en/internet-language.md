@@ -36,7 +36,7 @@ The same logic explains the "typographical tone of voice": the difference betwee
 
 ## Change at internet speed
 
-Sound shifts used to take centuries. Internet lexical change takes months. Words rise (*rizz*, *delulu*), peak, and become "cringe" markers of last year within a single school cycle. The mechanism is classical — innovation, diffusion through social networks, prestige dynamics — but the network is now global and the cycle compressed a hundredfold. Linguists can finally watch language change in high resolution, with timestamps.
+Sound shifts used to take centuries. Internet lexical change takes months. Words rise (*rizz*, *delulu*), peak, and become "cringe" markers of last year within a single school year. The mechanism is classical — innovation, diffusion through social networks, prestige dynamics — but the network is now global and the cycle compressed a hundredfold. Linguists can finally watch language change in high resolution, with timestamps.
 
 Ukrainian internet language runs the same experiment in parallel: English borrowings adapt to Cyrillic and Ukrainian morphology (*кринж*, *рофлити*, *скролити*, *забанити*), native coinages compete with them, and wartime reality generates vocabulary at record speed — *бавовна*, *приліт*, *двіж* — much of it studied by Ukrainian linguists in real time.
 

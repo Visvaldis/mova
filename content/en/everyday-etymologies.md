@@ -42,6 +42,6 @@ Ukrainian preserves its own gallery. *Вікно* ("window") grows from *око*
 
 ## Doublets: one word, two journeys
 
-Sometimes the same word enters a language twice by different routes and splits in meaning. Latin *cattivus* ("captive") reached English as both **captive** (straight from Latin) and **caitiff**; *regalis* arrived as **royal** (through French) and **regal** (from Latin directly). **Skirt** and **shirt** are the same Germanic garment — one stayed home, one went viking and came back Norse. Spotting doublets is like meeting twins separated at birth: same DNA, different accents.
+Sometimes the same word enters a language twice by different routes and splits in meaning. Latin *captivus* ("captive") reached English as both **captive** (straight from Latin) and **caitiff** (through Old French); *regalis* arrived as **royal** (through French) and **regal** (from Latin directly). **Skirt** and **shirt** are the same Germanic garment — one stayed home, one went viking and came back Norse. Spotting doublets is like meeting twins separated at birth: same DNA, different accents.
 
 None of this knowledge is necessary to speak. That's what makes it delightful: beneath the most boring sentence — *the candidate's salary was a disaster* — runs a hidden film strip of white togas, salt roads, and unlucky stars. Once you learn to x-ray words, no sentence is boring again.

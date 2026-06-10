@@ -28,7 +28,7 @@ Start with the most liberating fact in sociolinguistics: **you have an accent.**
 
 ## Where does a dialect end and a language begin?
 
-The folk answer — "dialects understand each other, languages don't" — dies on contact with the map. Swedes, Norwegians, and Danes converse across three "languages"; meanwhile so-called "dialects" of Chinese are mutually unintelligible, and a Bavarian and a Hamburger can defeat each other in "one" German. The boundary is drawn by flags, schoolbooks, and armies, which is why Max Weinreich's aphorism — *a language is a dialect with an army and navy* — became the field's favorite joke with a body count. Our Ukrainian history article showed the weaponized version: empires calling Ukrainian a "dialect" was never a linguistic claim, only a political one wearing a lab coat.
+The folk answer — "dialects understand each other, languages don't" — dies on contact with the map. Swedes, Norwegians, and Danes converse across three "languages"; meanwhile so-called "dialects" of Chinese are mutually unintelligible, and a Bavarian and a Hamburger can completely baffle each other inside "one" German. The boundary is drawn by flags, schoolbooks, and armies, which is why Max Weinreich's aphorism — *a language is a dialect with an army and navy* — became the field's favorite joke with a body count. Our Ukrainian history article showed the weaponized version: empires calling Ukrainian a "dialect" was never a linguistic claim, only a political one wearing a lab coat.
 
 Linguists prefer the honest picture: a **dialect continuum**, village blending into village, with "languages" as administrative cuts through smooth gradients.
 

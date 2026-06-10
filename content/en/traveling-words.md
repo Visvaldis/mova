@@ -34,7 +34,7 @@ Languages borrow whenever cultures touch, and the borrowings are stratified like
 
 ## Long-haul travelers
 
-Some words have itineraries that shame any backpacker. **Orange** left India as Sanskrit *nāraṅga*, rode through Persian *nārang* and Arabic *nāranj* into Spanish *naranja*, lost its initial *n* in French (*une norenge* → *une orenge*), and only *then* became the name of a color. **Sugar** made the same pilgrimage: Sanskrit *śarkarā* ("gravel") → Persian *shakar* → Arabic *sukkar* → medieval Latin *succarum* → English *sugar* — and, via German *Zucker* and Polish *cukier*, Ukrainian *цукор*. English and Ukrainian bought the same Indian gravel from different middlemen.
+Some words have itineraries that would put any backpacker to shame. **Orange** left India as Sanskrit *nāraṅga*, rode through Persian *nārang* and Arabic *nāranj* into Spanish *naranja*, lost its initial *n* in French (*une norenge* → *une orenge*), and only *then* became the name of a color. **Sugar** made the same pilgrimage: Sanskrit *śarkarā* ("gravel") → Persian *shakar* → Arabic *sukkar* → medieval Latin *succarum* → English *sugar* — and, via German *Zucker* and Polish *cukier*, Ukrainian *цукор*. English and Ukrainian bought the same Indian gravel from different middlemen.
 
 Ukrainian wears its history just as visibly: *майдан* came from Persian via Turkic; *кава* poured in through Turkish *kahve* from Arabic *qahwa*; *козак* itself is a Turkic word. And traffic flows both ways: *borshch*, *varenyky*, and *steppe* (from *степ*) are Ukraine's exports into the world's menus and dictionaries — *steppe* is one of the few Ukrainian-region words in every geography textbook on Earth.
 

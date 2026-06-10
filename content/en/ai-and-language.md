@@ -32,7 +32,7 @@ This is genuinely new. Not "the printing press again," not "television again." T
 
 Large language models are trained on human text, and their output flows back into the pool of text humans read, imitate, and train future models on. Linguists see three plausible futures, not mutually exclusive:
 
-**Homogenization.** Models favor statistically safe, fluent, mid-Atlantic prose. As AI-assisted writing spreads, regional flavor, idiosyncrasy, and "wrongness" — the raw material of language change — could get sanded off. Early evidence exists: the chatbot-favored words *delve*, *boast*, and *tapestry* spiked measurably in human-written abstracts and emails after 2023.
+**Homogenization.** Models favor statistically safe, fluent, placeless prose. As AI-assisted writing spreads, regional flavor, idiosyncrasy, and "wrongness" — the raw material of language change — could get sanded off. Early evidence exists: the chatbot-favored words *delve*, *boast*, and *tapestry* spiked measurably in human-written abstracts and emails after 2023.
 
 **Acceleration.** AI makes new coinages and styles spread faster than ever, and humans respond to AI-flavored text the way they always respond to a new prestige dialect — by imitating it or defining themselves against it. "That's so AI" as schoolyard slang is language change *about* AI within two years of its arrival.
 

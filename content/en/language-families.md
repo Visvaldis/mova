@@ -30,7 +30,7 @@ He was right. That source is now called Proto-Indo-European (PIE), spoken roughl
 
 ## How can we know an unwritten language?
 
-The comparative method works like genetics for words. Compare "mother": Sanskrit *mātár-*, Greek *mḗtēr*, Latin *māter*, Ukrainian *маті(р)*, English *mother*. Or "three": *tráyas*, *treîs*, *trēs*, *три*, *three*. When correspondences repeat *systematically* across hundreds of words, borrowing can't explain it — common descent can. From such patterns linguists reconstruct PIE forms like \*méh₂tēr and \*tréyes.
+The comparative method works like genetics for words. Compare "mother": Sanskrit *mātár-*, Greek *mḗtēr*, Latin *māter*, Ukrainian *мати*, English *mother*. Or "three": *tráyas*, *treîs*, *trēs*, *три*, *three*. When correspondences repeat *systematically* across hundreds of words, borrowing can't explain it — common descent can. From such patterns linguists reconstruct PIE forms like \*méh₂tēr and \*tréyes.
 
 > A reconstructed word is a hypothesis with the same logic as a dinosaur skeleton: no one has seen the animal, but the bones fit only one way.
 
@@ -38,7 +38,7 @@ The comparative method works like genetics for words. Compare "mother": Sanskrit
 
 PIE split into about ten branches as its speakers migrated. The big ones:
 
-**Indo-Iranian** — the largest by speakers: Hindi-Urdu, Bengali, Persian, Punjabi. **Romance** — Latin's children: Spanish, French, Italian, Portuguese, Romanian. **Germanic** — English, German, Dutch, the Scandinavian languages. **Balto-Slavic** — Ukrainian, Polish, Czech, Serbian, Lithuanian, Latvian. **Hellenic** — Greek, a branch of one. **Celtic** — Irish, Welsh, Breton, once spoken across half of Europe. Plus Armenian, Albanian, and the extinct Anatolian (Hittite) and Tocharian branches, both recovered from archaeology.
+**Indo-Iranian** — the largest by speakers: Hindi-Urdu, Bengali, Persian, Punjabi. **Romance** — Latin's children: Spanish, French, Italian, Portuguese, Romanian. **Germanic** — English, German, Dutch, the Scandinavian languages. **Balto-Slavic** — Ukrainian, Polish, Czech, Serbian, Lithuanian, Latvian. **Hellenic** — a branch with a single member: Greek. **Celtic** — Irish, Welsh, Breton, once spoken across half of Europe. Plus Armenian, Albanian, and the extinct Anatolian (Hittite) and Tocharian branches, both recovered from archaeology.
 
 English and Ukrainian sit on different branches — Germanic and Slavic — that separated perhaps 4,500 years ago. They are roughly as related as you and a tenth cousin: the kinship is real, provable, and invisible without the family tree.
 

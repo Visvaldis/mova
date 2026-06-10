@@ -22,7 +22,7 @@ sources:
     note: "Overview with the history of strong and weak versions"
 ---
 
-English speakers see *blue*. Ukrainian speakers see two different colors: *синій* (dark blue) and *блакитний* (light blue) — not shades of one thing, but separate basic colors, as different as red and pink. So here is the uncomfortable question: do Ukrainians and the English literally *see the sky differently*?
+English speakers see *blue*. Ukrainian speakers see two different colors: *синій* (dark blue) and *блакитний* (light blue) — not shades of one thing, but separate basic colors, as different as red and pink. So here is the uncomfortable question: do Ukrainian and English speakers literally *see the sky differently*?
 
 This is the linguistic relativity debate — pop-culturally, "Sapir-Whorf" — and it has swung between extremes for a century.
 
