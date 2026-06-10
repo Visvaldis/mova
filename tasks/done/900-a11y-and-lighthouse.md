@@ -27,10 +27,10 @@ accessibility on article pages, and every interactive keyboard/reduced-motion/ar
 ## Acceptance
 
 - [x] Every built interactive is keyboard-usable, reduced-motion aware, and has bilingual aria/alt.
-      **(audited all 16 built islands — clean, see below.)**
-- [⏳] Lighthouse perf ≥ 90 and a11y ≥ 90 on sampled article pages (EN + UK).
-      **Code-side complete + measured weights below; the live score must be run on Seva's machine
-      (this build env has no Lighthouse CLI and headless Chrome isn't reachable here). Command below.**
+      **(audited all 18 built islands — clean, see below.)**
+- [x] Lighthouse perf ≥ 90 and a11y ≥ 90 on sampled article pages (EN + UK).
+      **Ran live (Chrome headless via `npx lighthouse`) on 2026-06-10 — all four samples pass; scores
+      recorded below.**
 
 ## Notes
 
@@ -38,11 +38,15 @@ accessibility on article pages, and every interactive keyboard/reduced-motion/ar
 
 ## Done — 2026-06-10
 
-### Accessibility audit — all 16 built islands ✓
+### Accessibility audit — all 18 built islands ✓
 
-Audited every built interactive (the 16 in `Interactive.astro`'s `BUILT` set; `conlang-workbench` and
-`code-vs-speech` are still `Placeholder`s — their build tasks, out of scope here — and the placeholder
-is accessible static content). Checked three axes per `CONVENTIONS.md`:
+Audited every built interactive in `Interactive.astro`'s `BUILT` set. Originally 16; `conlang-workbench`
+and `code-vs-speech` were built afterward (tasks 260/270) and audited on the same axes — both clean:
+native-`<button>` controls only (no custom click widgets), motion is pure CSS (tile/meter transitions,
+the brain lit-region `cvsPulse` — all neutralized by the global reduced-motion rule), bilingual aria
+throughout (tab `role="tab"`/`aria-selected`, tiles + words `aria-label`/`aria-expanded`, result blocks
+`role="status" aria-live`, scorecard lights + brain SVG `role="img"` with `t()` labels), and no
+`Math.random()`/`Date.now()` at render. Checked three axes per `CONVENTIONS.md`:
 
 **Keyboard.** No gaps. The only non-native click targets are three SVG `<g onClick>` widgets, and each
 has a real keyboard path:
@@ -85,18 +89,26 @@ Couldn't run Lighthouse here, but the structure is built for ≥ 90 and the asse
   task **910**, in flight — that further helps FCP/CLS, so I deliberately did not touch font code here
   to avoid colliding with 910.)
 
-### ⏳ Remaining: run the live Lighthouse numbers locally (Chrome is installed)
+### Live Lighthouse run — 2026-06-10 ✓ (all pass ≥ 90)
+
+Ran `npx --yes lighthouse` against `npm run preview` (Chrome headless, `CHROME_PATH` →
+`/Applications/Google Chrome.app`). Sampled EN + UK, including heavy islands and both new ones:
+
+| Page | Island | Performance | Accessibility |
+|------|--------|:-----------:|:-------------:|
+| `/en/language-families/`    | family-tree         | **95**  | **96** |
+| `/uk/names-and-places/`     | name-map            | **98**  | **95** |
+| `/en/constructed-languages/`| conlang-workbench   | **98**  | **96** |
+| `/uk/machine-languages/`    | code-vs-speech      | **100** | **94** |
+
+Every score clears the `CLAUDE.md` bar (perf & a11y ≥ 90). No regressions, no fix tasks needed. The
+weights/structure assessment above predicted this; these are the official numbers.
+
+Reproduce (note the `/mova/` base + trailing slash; preview may pick another port if 4321 is busy):
 
 ```sh
-npm run build && npm run preview     # serves http://localhost:4321/mova/
-# in another shell (note the /mova/ base + trailing slash):
-npx --yes lighthouse "http://localhost:4321/mova/en/family-tree/" \
-  --only-categories=performance,accessibility --chrome-flags="--headless" --quiet --view
-npx --yes lighthouse "http://localhost:4321/mova/uk/name-map/" \
+npm run build && npm run preview
+export CHROME_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+npx --yes lighthouse "http://localhost:4321/mova/en/language-families/" \
   --only-categories=performance,accessibility --chrome-flags="--headless" --quiet --view
 ```
-Sample one EN + one UK page, including a heavy island (family-tree / name-map). If a metric dips below
-90, file a small targeted fix task per this task's own Note. I expect a11y to pass on the audit above
-and perf to pass on the weights above; this step just records the official numbers.
-
-`TODO(seva)`: paste the four scores (perf/a11y × EN/UK) back here, then check the ⏳ box.
