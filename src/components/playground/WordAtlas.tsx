@@ -208,6 +208,10 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
             </button>
           ))}
         </div>
+        {/* Scroll wrapper: on phones the full world is unreadable at 375px, so the
+            map keeps a minimum width and pans horizontally; zoom buttons live
+            outside this box so they never scroll away. */}
+        <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', borderRadius: 12 }}>
         <svg
           ref={svgRef}
           viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`}
@@ -220,8 +224,9 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
           onWheel={onWheel}
           onDoubleClick={onDoubleClick}
           style={{
-            width: '100%', height: 'auto', background: 'var(--accent-soft)', borderRadius: 12,
-            touchAction: zoom > 1.01 ? 'none' : 'pan-y pinch-zoom',
+            minWidth: 640, width: '100%', height: 'auto', background: 'var(--accent-soft)', borderRadius: 12,
+            display: 'block',
+            touchAction: zoom > 1.01 ? 'none' : 'manipulation',
             cursor: zoom > 1.01 ? 'grab' : 'default',
           }}
         >
@@ -297,6 +302,7 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
             );
           })}
         </svg>
+        </div>
       </div>
       <p className="muted" style={{ fontSize: '0.74rem', margin: '4px 0 0' }}>{t('pg.atlas.mapNote')}</p>
 

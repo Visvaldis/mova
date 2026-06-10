@@ -321,3 +321,15 @@ journey-question integrity, hardcoded-href scan, manual review of risk spots. Fi
 
 Note: `tsc` requires `.astro/types.d.ts` (run `npx astro sync` first) or it false-positives on
 CSS modules.
+
+## ✅ Update — 2026-06-10 (mobile styles pass)
+
+- **Word Atlas on phones**: the full world at 375px rendered labels ~4px. Map now keeps a 640px
+  minimum width inside a horizontally-pannable wrapper (zoom buttons sit outside it, always
+  visible); `touch-action: manipulation` when unzoomed so container pan + page scroll both work,
+  `none` only while zoomed.
+- **/words/ letter nav**: 59 letters collapsed to one horizontally-scrollable strip ≤540px;
+  badge row wraps under the entry.
+- **Global ≤540px**: header drops the tagline and wraps cleanly with 6 nav items; tighter toy/card
+  paddings, smaller pills, clamped big-word sizes, reduced section padding; hover transforms off.
+- Build green; astro sync + tsc clean. (Reminder: run `npx astro sync` before `tsc`.)

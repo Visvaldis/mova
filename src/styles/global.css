@@ -276,7 +276,20 @@ a:hover { text-decoration-color: var(--accent); }
 @media (max-width: 540px) {
   .pager { grid-template-columns: 1fr; }
   .nav-links { gap: 0.1rem; }
-  .nav-links a { padding: 0.4rem 0.5rem; font-size: 0.9rem; }
+  .nav-links a { padding: 0.35rem 0.45rem; font-size: 0.88rem; }
+  /* free header space: drop the tagline, let the bar stack when 6 items wrap */
+  .brand small { display: none; }
+  .site-header .bar { flex-wrap: wrap; row-gap: 0.1rem; padding-block: 0.5rem; }
+  /* tighter surfaces so toys don't waste 375px width on padding */
+  .toy { padding: 0.85rem; margin-top: 1rem; }
+  .toy .pill { padding: 0.35rem 0.7rem; font-size: 0.85rem; }
+  .toy .big-word { font-size: clamp(1.25rem, 6vw, 1.8rem); }
+  .pg-card { padding: 1rem; }
+  .page { padding-block: 1.25rem; }
+  .hero { padding-block: 1.75rem 1.25rem; }
+  .card-grid, .pg-hub-grid { gap: 0.8rem; }
+  /* hide hover-only affordances that just eat space on touch */
+  .pg-card:hover { transform: none; }
 }
 
 /* ---- Playground ------------------------------------------- */

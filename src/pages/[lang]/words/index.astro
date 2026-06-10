@@ -78,6 +78,15 @@ const toyHref = (href: string) => {
 <style>
   .words-stats { font-size: 0.95rem; }
   .letter-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.6rem 0 1.2rem; }
+  @media (max-width: 540px) {
+    /* one horizontally-scrollable strip instead of a tall block of 59 letters */
+    .letter-nav {
+      flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.3rem; scrollbar-width: thin;
+    }
+    .letter-nav a { flex: none; }
+    .w-badges { width: 100%; margin-left: 0; }
+  }
   .letter-nav a {
     min-width: 1.9rem; text-align: center; padding: 0.15rem 0.35rem; border-radius: 8px;
     text-decoration: none; font-weight: 700; font-size: 0.85rem;
