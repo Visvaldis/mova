@@ -716,6 +716,34 @@ export const ui = {
       'Guy Deutscher: languages differ not in what they let you think, but in what they oblige you to think about. One idea, two grammars — see what each forces into the open.',
     'thoughtLens.grammarEnTitle': 'English forces you to encode…',
     'thoughtLens.grammarUkTitle': 'Ukrainian forces you to encode…',
+
+    'conlangWorkbench.tabsAria': 'Choose a workbench',
+    'conlangWorkbench.tabBuild': 'Toki Pona builder',
+    'conlangWorkbench.tabTimeline': 'Conlang timeline',
+    'conlangWorkbench.tabEsperanto': 'Esperanto decoder',
+    'conlangWorkbench.buildIntro':
+      'Toki Pona has only about 120–140 words. Tap tiles to build a phrase and watch meaning assemble, Lego-like, from almost nothing.',
+    'conlangWorkbench.add': 'Add',
+    'conlangWorkbench.buildEmpty': 'Tap tiles above to start a phrase.',
+    'conlangWorkbench.buildLiteral': 'Literally',
+    'conlangWorkbench.buildMeaning': 'Recognized as',
+    'conlangWorkbench.recognized': 'Known phrase',
+    'conlangWorkbench.undo': 'Undo',
+    'conlangWorkbench.clear': 'Clear',
+    'conlangWorkbench.vocabNote':
+      'jan pona ("good person" = friend) is the article’s example; the other word glosses follow the official Toki Pona word list.',
+    'conlangWorkbench.timelineIntro':
+      'From a medieval abbess to a 21st-century minimalist — each language built as a tool, most escaping into a life of their own.',
+    'conlangWorkbench.esperantoIntro':
+      'Esperanto was built from transparent European roots. Tap each word — how many can you read on sight?',
+    'conlangWorkbench.esperantoMeter': 'Likely readable on sight:',
+    'conlangWorkbench.of': 'of',
+    'conlangWorkbench.words': 'words',
+    'conlangWorkbench.revealAll': 'Reveal all',
+    'conlangWorkbench.hide': 'Hide glosses',
+    'conlangWorkbench.translation': 'Translation',
+    'conlangWorkbench.esperantoNote':
+      'An illustrative sentence built to show Esperanto’s transparency; the article gives no sample sentence.',
   },
   uk: {
     'brand': 'Мова',
@@ -1424,6 +1452,34 @@ export const ui = {
       'Ґай Дойчер: мови різняться не тим, що дозволяють думати, а тим, про що зобов’язують думати. Одна думка, дві граматики — погляньте, що кожна виштовхує назовні.',
     'thoughtLens.grammarEnTitle': 'Англійська змушує вас закодувати…',
     'thoughtLens.grammarUkTitle': 'Українська змушує вас закодувати…',
+
+    'conlangWorkbench.tabsAria': 'Оберіть майстерню',
+    'conlangWorkbench.tabBuild': 'Конструктор токі-пона',
+    'conlangWorkbench.tabTimeline': 'Хронологія штучних мов',
+    'conlangWorkbench.tabEsperanto': 'Декодер есперанто',
+    'conlangWorkbench.buildIntro':
+      'Токі-пона має лише близько 120–140 слів. Торкайтеся плиток, щоб скласти фразу й побачити, як зміст збирається, наче з Lego, майже з нічого.',
+    'conlangWorkbench.add': 'Додати',
+    'conlangWorkbench.buildEmpty': 'Торкніться плиток вище, щоб почати фразу.',
+    'conlangWorkbench.buildLiteral': 'Дослівно',
+    'conlangWorkbench.buildMeaning': 'Розпізнано як',
+    'conlangWorkbench.recognized': 'Відома фраза',
+    'conlangWorkbench.undo': 'Скасувати',
+    'conlangWorkbench.clear': 'Очистити',
+    'conlangWorkbench.vocabNote':
+      'jan pona («добра людина» = друг) — приклад зі статті; інші тлумачення слів — за офіційним словником токі-пона.',
+    'conlangWorkbench.timelineIntro':
+      'Від середньовічної абатиси до мінімаліста XXI століття — кожну мову збудовано як інструмент, а більшість утекла у власне життя.',
+    'conlangWorkbench.esperantoIntro':
+      'Есперанто збудоване з прозорих європейських коренів. Торкніться кожного слова — скільки прочитаєте з першого погляду?',
+    'conlangWorkbench.esperantoMeter': 'Імовірно зрозуміло відразу:',
+    'conlangWorkbench.of': 'з',
+    'conlangWorkbench.words': 'слів',
+    'conlangWorkbench.revealAll': 'Показати все',
+    'conlangWorkbench.hide': 'Сховати тлумачення',
+    'conlangWorkbench.translation': 'Переклад',
+    'conlangWorkbench.esperantoNote':
+      'Ілюстративне речення, складене, щоб показати прозорість есперанто; стаття не подає зразкового речення.',
   },
 } as const;
 

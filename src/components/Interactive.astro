@@ -30,7 +30,8 @@ import RootsGarden from './interactive/RootsGarden.tsx';
 import NameMap from './interactive/NameMap.tsx';
 import ThoughtLens from './interactive/ThoughtLens.tsx';
 import AccentAtlas from './interactive/AccentAtlas.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas']);
+import ConlangWorkbench from './interactive/ConlangWorkbench.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas', 'conlang-workbench']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -51,6 +52,7 @@ const isBuilt = BUILT.has(id);
   {id === 'name-map' && <NameMap client:visible lang={lang} />}
   {id === 'thought-lens' && <ThoughtLens client:visible lang={lang} />}
   {id === 'accent-atlas' && <AccentAtlas client:visible lang={lang} />}
+  {id === 'conlang-workbench' && <ConlangWorkbench client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder
