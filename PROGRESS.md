@@ -208,3 +208,10 @@ Phases:
   per-conversation from the history list. Export format unit-tested.
 - AskAi bundle: 6.5 KB gz (budget 25). Note: forget-key does NOT wipe history (separate concerns);
   clear-history is its own button.
+
+## 📐 Planned — 2026-06-10 (Word Atlas)
+
+- New playground toy spec: `docs/WORD-ATLAS.md` — world map of how a word sounds across ~30
+  languages, dots colored by etymological origin group (tea/chai generalized). 24 curated words,
+  hero-8 first (tea, coffee, pineapple/ananas, tomato, chocolate, mother, robot, sugar).
+  Board task: `tasks/todo/510-word-atlas.md`.
