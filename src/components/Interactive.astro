@@ -11,20 +11,20 @@ const icon = info?.icon ?? '✦';
 const title = info?.title[lang] ?? id;
 const desc = info?.desc[lang] ?? '';
 
-// Registry of real interactive islands, keyed by the article's `interactive` id.
-// Empty for now — every id renders the styled Placeholder. As components are
-// built, import them and add entries here, e.g.:
-//   import SoundShift from './interactive/SoundShift.tsx';
-//   const registry = { 'sound-shift': SoundShift };
-const registry: Record<string, any> = {};
-const Comp = registry[id];
+// Built interactive islands. Astro can't attach client directives to dynamic
+// component variables, so each built id gets an explicit conditional render
+// below; ids not in BUILT render the styled Placeholder.
+import SoundShift from './interactive/SoundShift.tsx';
+import MythBuster from './interactive/MythBuster.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster']);
+const isBuilt = BUILT.has(id);
 ---
 
 <div class="interactive-wrap" data-interactive={id}>
+  {id === 'sound-shift' && <SoundShift client:visible lang={lang} />}
+  {id === 'myth-buster' && <MythBuster client:visible lang={lang} />}
   {
-    Comp ? (
-      <Comp client:visible lang={lang} />
-    ) : (
+    !isBuilt && (
       <Placeholder
         icon={icon}
         title={title}

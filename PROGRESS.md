@@ -105,3 +105,16 @@ Phases:
 - Datasets: `src/data/playground/uk-lexicon.json`, `src/data/playground/cognates.json` — every entry sourced.
 - Build verified green (64 pages). Logic smoke-tested via node (stemmer hits козак/майдан/ночі/словами;
   generator deterministic per seed).
+
+## ✅ Update — 2026-06-10 (first article interactives)
+
+- **`sound-shift` is live** (task 100): prototype ported to `src/components/interactive/SoundShift.tsx`
+  + `soundShift.data.ts`; chrome strings in `ui.ts` (`soundShift.*`); topic CSS vars (no hardcoded hex);
+  pop animation gated on `useReducedMotion`; internal lang-toggle removed per CONVENTIONS.
+- **`myth-buster` is live** (task 230): 8 claims from the article in `mythBuster.data.ts`,
+  real/myth buttons, per-claim explanations, score + ranking end screen.
+- **Registry note:** Astro can't put client directives on dynamic component variables —
+  `Interactive.astro` now uses explicit `{id === '…' && <Comp client:visible …/>}` renders plus a
+  `BUILT` set for the placeholder fallback. Follow this pattern for the remaining 16.
+- Board: moved 050, 055, 100, 230, 400 → done (050/055 were closed by the content session; 400 by
+  Playground P1+P2). Build green: 64 pages.
