@@ -1,16 +1,19 @@
-// Storage for the Ask-AI feature: provider config (localStorage or sessionStorage
-// in session-only mode) and the per-page chat thread (sessionStorage).
-import type { LlmConfig } from './llm';
-import type { ChatMessage } from './llm';
+// Storage for the Ask-AI feature.
+// - Provider config: localStorage (or sessionStorage in session-only mode).
+// - Chat history: persistent conversations in localStorage ('mova:askai:history:v1'),
+//   capped at MAX_CONVOS; each conversation remembers its page, selection, and messages.
+import type { ChatMessage, LlmConfig } from './llm';
 
 const CFG_KEY = 'mova:askai:v1';
+const HISTORY_KEY = 'mova:askai:history:v1';
+const MAX_CONVOS = 50;
+const MAX_MESSAGES = 40;
 
 interface StoredCfg extends LlmConfig {
   v: 1;
 }
 
 function storages(): Storage[] {
-  // Check both: session-only configs live in sessionStorage.
   try {
     return [window.sessionStorage, window.localStorage];
   } catch {
@@ -46,22 +49,99 @@ export function forgetConfig(): void {
   }
 }
 
-// ---- per-page thread (dies with the tab on purpose) ----------------------
-function threadKey(): string {
-  return `mova:askai:thread:${location.pathname}`;
+// ---- conversation history ---------------------------------------------------
+
+export interface Conversation {
+  id: string;
+  /** Page pathname + human title, so history reads well across articles. */
+  page: string;
+  pageTitle: string;
+  selection: string;
+  lang: string;
+  createdAt: number;
+  updatedAt: number;
+  messages: ChatMessage[];
 }
 
-export function loadThread(): ChatMessage[] {
+export function newConversation(selection: string, lang: string): Conversation {
+  const now = Date.now();
+  return {
+    id: `${now.toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
+    page: location.pathname,
+    pageTitle: document.title.split('·')[0].trim(),
+    selection,
+    lang,
+    createdAt: now,
+    updatedAt: now,
+    messages: [],
+  };
+}
+
+export function listConversations(): Conversation[] {
   try {
-    const raw = sessionStorage.getItem(threadKey());
-    return raw ? (JSON.parse(raw) as ChatMessage[]) : [];
+    const raw = localStorage.getItem(HISTORY_KEY);
+    const list = raw ? (JSON.parse(raw) as Conversation[]) : [];
+    return list.sort((a, b) => b.updatedAt - a.updatedAt);
   } catch {
     return [];
   }
 }
 
-export function saveThread(messages: ChatMessage[]): void {
+/** Insert or update a conversation. Empty conversations are not persisted. */
+export function saveConversation(convo: Conversation): void {
+  if (convo.messages.length === 0) return;
   try {
-    sessionStorage.setItem(threadKey(), JSON.stringify(messages.slice(-20)));
+    const list = listConversations().filter((c) => c.id !== convo.id);
+    list.unshift({ ...convo, messages: convo.messages.slice(-MAX_MESSAGES), updatedAt: Date.now() });
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(list.slice(0, MAX_CONVOS)));
   } catch {}
+}
+
+export function deleteConversation(id: string): void {
+  try {
+    const list = listConversations().filter((c) => c.id !== id);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+  } catch {}
+}
+
+export function clearHistory(): void {
+  try {
+    localStorage.removeItem(HISTORY_KEY);
+  } catch {}
+}
+
+// ---- export -----------------------------------------------------------------
+
+/** First user message carries the context block; show/export only the question part. */
+export function displayContent(m: ChatMessage, index: number): string {
+  return index === 0 && m.role === 'user' ? m.content.split('\n\n').slice(-1)[0] : m.content;
+}
+
+export function exportMarkdown(convo: Conversation, labels: { you: string; ai: string; selection: string }): string {
+  const date = new Date(convo.createdAt).toISOString().slice(0, 10);
+  const lines = [
+    `# Mova chat — ${convo.pageTitle}`,
+    ``,
+    `_${date} · ${location.origin}${convo.page}_`,
+    ``,
+    `> ${labels.selection}: “${convo.selection}”`,
+    ``,
+  ];
+  convo.messages.forEach((m, i) => {
+    lines.push(`**${m.role === 'user' ? labels.you : labels.ai}:** ${displayContent(m, i)}`, ``);
+  });
+  return lines.join('\n');
+}
+
+export function downloadMarkdown(convo: Conversation, labels: { you: string; ai: string; selection: string }): void {
+  const md = exportMarkdown(convo, labels);
+  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `mova-chat-${new Date(convo.createdAt).toISOString().slice(0, 10)}-${convo.id.slice(0, 5)}.md`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
 }

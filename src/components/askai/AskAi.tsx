@@ -4,7 +4,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Lang, UIKey } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { stream, testKey, LlmError, DEFAULT_OPENAI_BASE, type ChatMessage, type LlmConfig, type Provider } from '../../lib/llm';
-import { loadConfig, saveConfig, forgetConfig, loadThread, saveThread } from '../../lib/askai-store';
+import {
+  loadConfig, saveConfig, forgetConfig,
+  newConversation, listConversations, saveConversation, deleteConversation, clearHistory,
+  displayContent, downloadMarkdown, type Conversation,
+} from '../../lib/askai-store';
 
 const SYSTEM: Record<Lang, string> = {
   en: `You are the reading companion of "Mova", a bilingual (English/Ukrainian) website about language evolution: etymology, sound change, language families, the history of Ukrainian, writing systems, sociolinguistics. The reader selected a passage and wants help. Answer in English unless asked otherwise. Be concise — under 150 words unless asked for more. It is good to say "linguists aren't sure" when that is true. Never invent etymologies; if a popular story is folk etymology, say so. Plain text only, no markdown headings.`,
@@ -29,6 +33,9 @@ export default function AskAi({ lang }: { lang: Lang }) {
   const [pill, setPill] = useState<{ x: number; y: number } | null>(null);
   const [sel, setSel] = useState<SelectionCtx | null>(null);
   const [open, setOpen] = useState(false);
+  const [view, setView] = useState<'chat' | 'history'>('chat');
+  const [convo, setConvo] = useState<Conversation | null>(null);
+  const [history, setHistory] = useState<Conversation[]>([]);
   const [cfg, setCfg] = useState<LlmConfig | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
@@ -41,7 +48,6 @@ export default function AskAi({ lang }: { lang: Lang }) {
 
   useEffect(() => {
     setCfg(loadConfig());
-    setMessages(loadThread());
   }, []);
 
   // ---- selection pill ----------------------------------------------------
@@ -101,12 +107,33 @@ export default function AskAi({ lang }: { lang: Lang }) {
     abortRef.current?.abort();
     setOpen(false);
     setBusy(false);
+    setView('chat');
     (anchorRef.current as HTMLElement | null)?.focus?.();
+  }, []);
+
+  /** Start a fresh conversation from the current selection (pill click). */
+  const startFromSelection = useCallback(() => {
+    if (!sel) return;
+    setConvo(newConversation(sel.text, lang));
+    setMessages([]);
+    setError('');
+    setView('chat');
+    setOpen(true);
+    setPill(null);
+  }, [sel, lang]);
+
+  /** Reopen a saved conversation from history. */
+  const resume = useCallback((c: Conversation) => {
+    setConvo(c);
+    setMessages(c.messages);
+    setSel({ text: c.selection, paragraph: c.selection });
+    setError('');
+    setView('chat');
   }, []);
 
   const ask = useCallback(
     async (question: string) => {
-      if (!cfg || !sel || busy || !question.trim()) return;
+      if (!cfg || !sel || !convo || busy || !question.trim()) return;
       setError('');
       setInput('');
       const userMsg: ChatMessage = {
@@ -123,26 +150,29 @@ export default function AskAi({ lang }: { lang: Lang }) {
           acc += delta;
           setMessages([...next, { role: 'assistant', content: acc }]);
         }
-        saveThread([...next, { role: 'assistant', content: acc }]);
+        const finished = [...next, { role: 'assistant' as const, content: acc }];
+        const updated = { ...convo, messages: finished };
+        setConvo(updated);
+        saveConversation(updated);
       } catch (e) {
         const kind = e instanceof LlmError ? e.kind : 'other';
         setError(t(`askai.err.${kind}` as UIKey) + (kind === 'other' ? ` ${(e as Error).message}` : ''));
         setMessages(next);
+        const updated = { ...convo, messages: next };
+        setConvo(updated);
+        saveConversation(updated);
       } finally {
         setBusy(false);
       }
     },
-    [cfg, sel, busy, messages, lang, t],
+    [cfg, sel, convo, busy, messages, lang, t],
   );
 
   return (
     <div data-askai>
       {pill && sel && !open && (
         <button
-          onClick={() => {
-            setOpen(true);
-            setPill(null);
-          }}
+          onClick={startFromSelection}
           style={{
             position: 'absolute', left: pill.x, top: pill.y, transform: 'translateX(-50%)',
             zIndex: 90, border: 'none', borderRadius: 999, cursor: 'pointer',
@@ -169,15 +199,74 @@ export default function AskAi({ lang }: { lang: Lang }) {
             inset: 'auto 0 0 auto', width: 'min(420px, 100vw)', height: 'min(640px, 100dvh)',
           }}
         >
-          <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 1rem', borderBottom: '1px solid var(--line)' }}>
+          <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, padding: '0.8rem 1rem', borderBottom: '1px solid var(--line)' }}>
             <strong>💬 {t('askai.title')}</strong>
-            <button onClick={close} aria-label={t('askai.close')} style={{ border: 'none', background: 'transparent', cursor: 'pointer', fontSize: '1.1rem', color: 'var(--muted)' }}>
-              ✕
-            </button>
+            <span style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+              {cfg && (
+                <button
+                  onClick={() => {
+                    if (view === 'chat') setHistory(listConversations());
+                    setView(view === 'chat' ? 'history' : 'chat');
+                  }}
+                  aria-pressed={view === 'history'}
+                  style={{ border: 'none', background: view === 'history' ? 'var(--accent-soft)' : 'transparent', borderRadius: 8, cursor: 'pointer', font: 'inherit', fontSize: '0.82rem', fontWeight: 600, color: 'var(--text)', padding: '0.25rem 0.6rem' }}
+                >
+                  🕘 {t('askai.history')}
+                </button>
+              )}
+              {cfg && convo && messages.length > 0 && view === 'chat' && (
+                <button
+                  onClick={() => downloadMarkdown({ ...convo, messages }, { you: t('askai.you'), ai: t('askai.ai'), selection: t('askai.selection') })}
+                  style={{ border: 'none', background: 'transparent', borderRadius: 8, cursor: 'pointer', font: 'inherit', fontSize: '0.82rem', fontWeight: 600, color: 'var(--text)', padding: '0.25rem 0.6rem' }}
+                >
+                  ⤓ {t('askai.export')}
+                </button>
+              )}
+              <button onClick={close} aria-label={t('askai.close')} style={{ border: 'none', background: 'transparent', cursor: 'pointer', fontSize: '1.1rem', color: 'var(--muted)' }}>
+                ✕
+              </button>
+            </span>
           </header>
 
           {!cfg ? (
             <SetupSheet lang={lang} onSaved={(c) => setCfg(c)} />
+          ) : view === 'history' ? (
+            <div style={{ flex: 1, overflowY: 'auto', padding: '0.9rem 1rem', display: 'grid', gap: '0.6rem', alignContent: 'start' }}>
+              {history.length === 0 ? (
+                <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>{t('askai.historyEmpty')}</p>
+              ) : (
+                <>
+                  {history.map((c) => (
+                    <div key={c.id} style={{ border: '1px solid var(--line)', borderRadius: 10, padding: '0.6rem 0.8rem', display: 'grid', gap: 2 }}>
+                      <button onClick={() => resume(c)}
+                        style={{ border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit', textAlign: 'left', color: 'var(--text)', padding: 0 }}>
+                        <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>
+                          “{c.selection.length > 70 ? c.selection.slice(0, 70) + '…' : c.selection}”
+                        </span>
+                        <br />
+                        <span style={{ fontSize: '0.75rem', color: 'var(--muted)' }}>
+                          {c.pageTitle} · {new Date(c.updatedAt).toLocaleDateString()} · {c.messages.length} ✉
+                        </span>
+                      </button>
+                      <span style={{ display: 'flex', gap: 10 }}>
+                        <button onClick={() => downloadMarkdown(c, { you: t('askai.you'), ai: t('askai.ai'), selection: t('askai.selection') })}
+                          style={{ border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit', fontSize: '0.74rem', color: 'var(--muted)', textDecoration: 'underline', padding: 0 }}>
+                          ⤓ {t('askai.export')}
+                        </button>
+                        <button onClick={() => { deleteConversation(c.id); setHistory(listConversations()); }}
+                          style={{ border: 'none', background: 'transparent', cursor: 'pointer', font: 'inherit', fontSize: '0.74rem', color: '#dc2626', textDecoration: 'underline', padding: 0 }}>
+                          {t('askai.delete')}
+                        </button>
+                      </span>
+                    </div>
+                  ))}
+                  <button onClick={() => { clearHistory(); setHistory([]); }}
+                    style={{ border: '1.5px solid var(--line)', background: 'transparent', borderRadius: 999, cursor: 'pointer', font: 'inherit', fontSize: '0.8rem', color: 'var(--muted)', padding: '0.35rem 0.8rem', justifySelf: 'start' }}>
+                    🗑 {t('askai.clearHistory')}
+                  </button>
+                </>
+              )}
+            </div>
           ) : (
             <>
               <div style={{ padding: '0.7rem 1rem', borderBottom: '1px solid var(--line)' }}>
@@ -208,7 +297,7 @@ export default function AskAi({ lang }: { lang: Lang }) {
                     background: m.role === 'user' ? 'var(--accent)' : 'var(--accent-soft)',
                     color: m.role === 'user' ? 'var(--on-accent)' : 'var(--text)',
                   }}>
-                    {i === 0 && m.role === 'user' ? m.content.split('\n\n').slice(-1)[0] : m.content}
+                    {displayContent(m, i)}
                     {busy && i === messages.length - 1 && m.role === 'assistant' && <span style={{ opacity: 0.6 }}>▍</span>}
                   </div>
                 ))}

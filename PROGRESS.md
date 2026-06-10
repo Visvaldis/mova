@@ -197,3 +197,14 @@ Phases:
   etymologies; suggested questions; streaming with stop; Esc/focus-return; aria-live log.
 - Board: 500 → done. Build green. NOTE for deploy: feature calls api.anthropic.com / user's base URL
   from the browser — if a CSP is ever added, allow-list these.
+
+## ✅ Update — 2026-06-10 (Ask-AI: history + export)
+
+- **Chat history**: conversations now persist in `localStorage` (`mova:askai:history:v1`, capped at
+  50 convos / 40 msgs each). 🕘 History view in the drawer header: reopen, export, or delete any past
+  chat; "clear all history" button. New selection always starts a new conversation.
+- **Export**: ⤓ exports the full chat as Markdown (.md download) — title, page URL, date, quoted
+  selection, You/Mova-AI turns (context block stripped from the first message). Export also available
+  per-conversation from the history list. Export format unit-tested.
+- AskAi bundle: 6.5 KB gz (budget 25). Note: forget-key does NOT wipe history (separate concerns);
+  clear-history is its own button.
