@@ -100,4 +100,17 @@ const topicName = topicNames[entry.data.topic]?.[lang] ?? entry.data.topic;
       }
     </nav>
   </article>
+
+  <script is:inline define:vars={{ slug: entry.data.slug }}>
+    // Journey visit beacon — local only, read by /journey/ (see docs/JOURNEY.md).
+    try {
+      const k = 'mova:journey:v1';
+      const s = JSON.parse(localStorage.getItem(k) || '{"v":1,"visited":[],"passed":[]}');
+      if (!s.visited.includes(slug)) {
+        s.visited.push(slug);
+        s.startedAt = s.startedAt || Date.now();
+        localStorage.setItem(k, JSON.stringify(s));
+      }
+    } catch {}
+  </script>
 </BaseLayout>

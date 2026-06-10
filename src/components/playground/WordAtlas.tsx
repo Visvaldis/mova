@@ -1,7 +1,8 @@
 // word-atlas — pick a word, see how the world says it; region color = origin group
 // (same color = same etymological source). Spec: docs/WORD-ATLAS.md.
 // Zoom/pan: viewBox-based, no libs — buttons, double-click, ctrl+wheel, pinch, drag.
-import { useMemo, useRef, useState } from 'react';
+// Deep link: ?word=<id> opens a specific word (used by /words/ and shareable URLs).
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
@@ -51,6 +52,10 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
   const [wordId, setWordId] = useState(WORDS[0].id);
   const [activeForm, setActiveForm] = useState<Form | null>(null);
   const [dimmed, setDimmed] = useState<string | null>(null); // origin id to KEEP (others dim)
+  useEffect(() => {
+    const q = new URLSearchParams(location.search).get('word');
+    if (q && WORDS.some((w) => w.id === q)) setWordId(q);
+  }, []);
   const [reduced] = useState(
     () => typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
   );

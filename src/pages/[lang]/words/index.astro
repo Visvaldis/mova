@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WordFilter from '../../../components/words/WordFilter.tsx';
+import { LANGS, useTranslations, localizedPath, withBase, type Lang } from '../../../i18n/utils';
+import { buildWordIndex, groupByLetter } from '../../../lib/word-index';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const entries = buildWordIndex();
+const groups = groupByLetter(entries);
+const total = entries.length;
+const richCount = entries.filter((e) => e.rich).length;
+
+/** Toy hrefs in the index are lang-less app paths like "playground/word-atlas?word=tea". */
+const toyHref = (href: string) => {
+  const [path, query] = href.split('?');
+  return localizedPath(lang, ...path.split('/')) + (query ? `?${query}` : '');
+};
+---
+
+<BaseLayout lang={lang} title={t('words.title')} description={t('words.intro')} topic="borrowing" slug="words">
+  <section class="page" style="max-width: 56rem;">
+    <h1>{t('words.title')}</h1>
+    <p>{t('words.intro')}</p>
+    <p class="words-stats">
+      <strong>{total.toLocaleString(lang === 'uk' ? 'uk-UA' : 'en-US')}</strong> {t('words.stats')} ·
+      {richCount} {t('words.statsRich')}
+    </p>
+
+    <WordFilter client:visible lang={lang} />
+
+    <nav class="letter-nav" aria-label={t('words.letterNav')}>
+      {groups.map((g) => <a href={`#letter-${encodeURIComponent(g.letter)}`}>{g.letter}</a>)}
+    </nav>
+
+    {
+      groups.map((g) => (
+        <section class="letter-section" data-wletter id={`letter-${encodeURIComponent(g.letter)}`}>
+          <h2 class="letter-head">{g.letter}</h2>
+          <ul class="word-list">
+            {g.entries.map((e) => (
+              <li data-wkey={e.key} class={e.rich ? 'rich' : 'plain'}>
+                <details>
+                  <summary>
+                    <span class="w-display">{e.display}</span>
+                    {e.gloss && <span class="w-gloss">{e.gloss[lang]}</span>}
+                    <span class="w-badges" aria-hidden="true">
+                      {[...new Set(e.appearances.map((a) => a.kind))].map((k) =>
+                        k === 'etymology' ? '⏳' : k === 'atlas' ? '🌐' : k === 'cognate' ? '⚡' : k === 'lexicon' ? '🪨' : '🌍',
+                      )}
+                    </span>
+                  </summary>
+                  <ul class="w-appearances">
+                    {e.appearances.map((a) => (
+                      <li>
+                        <a href={toyHref(a.href)}>{a.label[lang]}</a>
+                        {a.snippet && <span class="w-snippet"> — {a.snippet[lang]}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    <p class="words-foot">{t('words.note')}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .words-stats { font-size: 0.95rem; }
+  .letter-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.6rem 0 1.2rem; }
+  .letter-nav a {
+    min-width: 1.9rem; text-align: center; padding: 0.15rem 0.35rem; border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .letter-section { margin-bottom: 1.2rem; }
+  .letter-head {
+    font-size: 1.3rem; color: var(--accent); border-bottom: 2px solid var(--accent-soft);
+    margin-bottom: 0.4rem; scroll-margin-top: 5rem;
+  }
+  .word-list { list-style: none; padding: 0; margin: 0; }
+  .word-list li { border-bottom: 1px solid var(--line); }
+  .word-list li.plain { opacity: 0.92; }
+  .word-list summary {
+    display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+    cursor: pointer; padding: 0.45rem 0.2rem; list-style: none;
+  }
+  .word-list summary::-webkit-details-marker { display: none; }
+  .word-list summary:hover { background: var(--accent-soft); }
+  .w-display { font-weight: 700; }
+  .w-gloss { color: var(--muted); font-size: 0.85rem; }
+  .w-badges { margin-left: auto; font-size: 0.8rem; letter-spacing: 0.15em; }
+  .w-appearances { list-style: none; padding: 0.2rem 0 0.7rem 1rem; margin: 0; display: grid; gap: 0.3rem; }
+  .w-appearances li { border: none; font-size: 0.92rem; }
+  .w-snippet { color: var(--muted); }
+  .words-foot { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; }
+</style>

@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+// Deep link: ?w=<id> opens a specific word (used by /words/).
+import { useEffect, useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import data from '../../data/playground/etymologies.json';
@@ -28,6 +29,10 @@ export default function WordTimeMachine({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
   const [activeId, setActiveId] = useState<string>(WORDS[0].id);
   const [query, setQuery] = useState('');
+  useEffect(() => {
+    const q = new URLSearchParams(location.search).get('w');
+    if (q && WORDS.some((w) => w.id === q)) setActiveId(q);
+  }, []);
 
   const word = WORDS.find((w) => w.id === activeId)!;
   const filtered = useMemo(() => {

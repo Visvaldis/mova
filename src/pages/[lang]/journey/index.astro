@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Journey from '../../../components/journey/Journey.tsx';
+import { LANGS, useTranslations, langFromId, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const all = await getCollection('articles');
+const articles = all
+  .filter((e) => langFromId(e.id) === lang)
+  .map((e) => ({ slug: e.data.slug, title: e.data.title }));
+---
+
+<BaseLayout lang={lang} title={t('journey.title')} description={t('journey.intro')} topic="origins" slug="journey">
+  <section class="page" style="max-width: 48rem;">
+    <h1>🧭 {t('journey.title')}</h1>
+    <p>{t('journey.intro')}</p>
+    <Journey client:visible lang={lang} articles={articles} />
+  </section>
+</BaseLayout>

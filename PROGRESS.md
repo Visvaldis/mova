@@ -286,3 +286,18 @@ Phases:
 - `docs/WORD-INDEX.md` — `/words/`: build-time aggregation of the five curated datasets
   (~1,000 entries) into one searchable, crawlable index; deep-link params for WordAtlas/WTM.
   Board: tasks/todo/530.
+
+## ✅ Update — 2026-06-10 (Word Index + Journey shipped, tasks 530 + 520)
+
+- **/words/ live** (spec: docs/WORD-INDEX.md): build-time aggregator (`src/lib/word-index.ts`)
+  over the five playground datasets → **1,527 entries**, 59 letter sections (А–Я then A–Z),
+  rich-first ordering, `<details>` expansion (works JS-off), filter island (DOM-filtering, no
+  data payload), letter jump-nav. Multi-source merge verified (чай/робот show ⏳🌐 badges).
+  Page 47 KB gz. Deep links added: WordAtlas `?word=`, WordTimeMachine `?w=` (maps now shareable).
+- **/journey/ live** (spec: docs/JOURNEY.md): 6 chapters over all 18 articles + 6 toys;
+  36 bilingual checkpoint questions in `src/data/journey-questions.json` (each carries its
+  source article slug; pass 2/3, free retry); visit beacon in the article page (local-only,
+  3 lines); progress `mova:journey:v1`; completion unlocks the canvas certificate —
+  name + its Grimm's-Law transformation via `soundlaws.ts`. Nav: + Journey, + Words (6 items —
+  verify 375px wrap in the a11y pass, task 900).
+- ui.ts partial-staged again (agent mid-flight on roots-garden strings). Board: 520, 530 → done.
