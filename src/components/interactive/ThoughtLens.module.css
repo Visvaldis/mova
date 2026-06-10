@@ -1,0 +1,291 @@
+/* Scoped styles for the thought-lens island. Topic variables only — except the
+   blue gradient, whose literal blues ARE the experiment's subject matter. */
+
+.root {
+  font-size: 1rem;
+}
+
+/* ── tabs ─────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+.tab {
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.tab:hover {
+  border-color: var(--accent);
+}
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* ── Tab 1: colour ────────────────────────────────────────────────── */
+.gradientStack {
+  margin: 1.2rem 0 1rem;
+}
+.gradient {
+  position: relative;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  /* literal blues: blue IS the subject here, not theme colour */
+  background: linear-gradient(90deg, #bfe3ff 0%, #6db3f2 38%, #2f6fd0 70%, #173a8f 100%);
+  border: 1px solid var(--line);
+}
+.youMarker {
+  position: absolute;
+  top: -7px;
+  bottom: -7px;
+  width: 2px;
+  background: var(--text);
+  transform: translateX(-1px);
+}
+.youFlag {
+  position: absolute;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  padding: 0 0.3rem;
+  border-radius: var(--radius-sm);
+}
+.band {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+.bandName {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  align-self: center;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.bandTrack {
+  flex: 1;
+  display: flex;
+  gap: 3px;
+  overflow: hidden;
+}
+.segEn,
+.segUk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.segEn {
+  flex: 1;
+}
+.segUk {
+  flex-basis: 0;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.segGloss {
+  display: block;
+  margin-top: 0.1rem;
+  font-weight: 400;
+  font-size: 0.7rem;
+  font-style: normal;
+  color: var(--muted);
+}
+
+/* ── Tab 2: space ─────────────────────────────────────────────────── */
+.scene {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0.6rem auto;
+}
+.table {
+  fill: var(--bg);
+  stroke: var(--line);
+  stroke-width: 2;
+}
+.plate {
+  fill: var(--bg-elev);
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+.cup {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+.cupHandle {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+.objLabel {
+  fill: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.objLabelSm {
+  fill: var(--text);
+  font-size: 9px;
+  font-weight: 700;
+}
+.viewer circle {
+  fill: var(--accent);
+}
+.nose {
+  fill: var(--accent);
+}
+.compass line {
+  stroke: var(--muted);
+  stroke-width: 2;
+}
+.compass text {
+  fill: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+}
+.compassN {
+  fill: var(--accent);
+}
+.bigCaption {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+}
+.bigCaption[data-mode='geo'] {
+  color: var(--accent);
+}
+
+/* ── Tab 3: gender ────────────────────────────────────────────────── */
+.bridgeWrap {
+  text-align: center;
+  margin: 1rem 0;
+}
+.bridge {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  stroke: var(--accent);
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bridgeWord {
+  font-size: 1.15rem;
+  margin: 0.6rem 0 0.55rem;
+}
+.adjRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.adjTag {
+  background: var(--accent-soft);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-weight: 600;
+}
+.caveat {
+  margin-top: 1.1rem;
+  border: 1px dashed var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  background: var(--bg);
+}
+.caveatBadge {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.caveat p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ── Tab 4: grammar ───────────────────────────────────────────────── */
+.grammarGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
+.gCard {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem;
+}
+.gTitle {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+.gSentence {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0 0 0.7rem;
+}
+.gForced {
+  background: var(--accent-soft);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 0.15rem;
+  font-weight: 700;
+}
+.gGloss {
+  margin: 0 0 0.6rem;
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+}
+.gGloss li {
+  margin: 0.22rem 0;
+}
+.closing {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .grammarGrid {
+    grid-template-columns: 1fr;
+  }
+  .bandName {
+    width: 4.2rem;
+    font-size: 0.76rem;
+  }
+}

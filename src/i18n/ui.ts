@@ -601,6 +601,42 @@ export const ui = {
     'nameMap.matched': 'Matched!',
     'nameMap.notMatch': 'Not a match — try again.',
     'nameMap.reset': 'Reset',
+
+    'thoughtLens.tabsAria': 'Choose a lens',
+    'thoughtLens.tabColor': 'Colour',
+    'thoughtLens.tabSpace': 'Space',
+    'thoughtLens.tabGender': 'Gender',
+    'thoughtLens.tabGrammar': 'Grammar',
+    'thoughtLens.colorIntro':
+      'Where does light blue become dark blue? Drag to place your own boundary — then reveal where each language draws it.',
+    'thoughtLens.colorSliderAria': 'Drag to place your colour boundary',
+    'thoughtLens.colorYou': 'your line',
+    'thoughtLens.colorReveal': 'Reveal the languages',
+    'thoughtLens.colorHide': 'Hide the languages',
+    'thoughtLens.colorEnHead': 'English',
+    'thoughtLens.colorUkHead': 'Ukrainian',
+    'thoughtLens.colorIllustrative':
+      'The exact line is illustrative — the article gives no precise boundary.',
+    'thoughtLens.spaceIntro':
+      'How do you say where the cup is? Switch lenses, then change seats and watch what happens to each description.',
+    'thoughtLens.spaceModeEgo': 'Your language (left / right)',
+    'thoughtLens.spaceModeGeo': 'Guugu Yimithirr (compass)',
+    'thoughtLens.spaceSceneAria': 'Top-down view of a table with a plate and, north of it, a cup, and you seated at one edge',
+    'thoughtLens.spaceN': 'N',
+    'thoughtLens.spaceCup': 'cup',
+    'thoughtLens.spacePlate': 'plate',
+    'thoughtLens.spaceTurn': 'Change seat',
+    'thoughtLens.spaceTurnAria': 'Move to the opposite edge of the table',
+    'thoughtLens.genderIntro':
+      'Does a noun’s grammatical gender colour how it feels? Flip between two languages whose word for “bridge” has opposite genders.',
+    'thoughtLens.genderDe': 'German',
+    'thoughtLens.genderEs': 'Spanish',
+    'thoughtLens.genderCaveatTitle': 'Contested research',
+    'thoughtLens.genderBridgeAria': 'A simple line drawing of an arch bridge',
+    'thoughtLens.grammarIntro':
+      'Guy Deutscher: languages differ not in what they let you think, but in what they oblige you to think about. One idea, two grammars — see what each forces into the open.',
+    'thoughtLens.grammarEnTitle': 'English forces you to encode…',
+    'thoughtLens.grammarUkTitle': 'Ukrainian forces you to encode…',
   },
   uk: {
     'brand': 'Мова',
@@ -1194,6 +1230,42 @@ export const ui = {
     'nameMap.matched': 'Збіг!',
     'nameMap.notMatch': 'Не пара — спробуйте ще.',
     'nameMap.reset': 'Скинути',
+
+    'thoughtLens.tabsAria': 'Оберіть лінзу',
+    'thoughtLens.tabColor': 'Колір',
+    'thoughtLens.tabSpace': 'Простір',
+    'thoughtLens.tabGender': 'Рід',
+    'thoughtLens.tabGrammar': 'Граматика',
+    'thoughtLens.colorIntro':
+      'Де світло-синій стає темно-синім? Перетягніть, щоб поставити власну межу, а тоді покажіть, де її проводить кожна мова.',
+    'thoughtLens.colorSliderAria': 'Перетягніть, щоб поставити межу кольору',
+    'thoughtLens.colorYou': 'ваша межа',
+    'thoughtLens.colorReveal': 'Показати мови',
+    'thoughtLens.colorHide': 'Сховати мови',
+    'thoughtLens.colorEnHead': 'Англійська',
+    'thoughtLens.colorUkHead': 'Українська',
+    'thoughtLens.colorIllustrative':
+      'Точна межа — ілюстративна: стаття не подає точної межі.',
+    'thoughtLens.spaceIntro':
+      'Як ви скажете, де чашка? Перемкніть лінзу, тоді пересядьте — і подивіться, що стається з кожним описом.',
+    'thoughtLens.spaceModeEgo': 'Ваша мова (ліворуч / праворуч)',
+    'thoughtLens.spaceModeGeo': 'Гуугу-їмітір (компас)',
+    'thoughtLens.spaceSceneAria': 'Вид згори на стіл: тарілка, на північ від неї чашка, а ви сидите з одного краю',
+    'thoughtLens.spaceN': 'Пн',
+    'thoughtLens.spaceCup': 'чашка',
+    'thoughtLens.spacePlate': 'тарілка',
+    'thoughtLens.spaceTurn': 'Пересісти',
+    'thoughtLens.spaceTurnAria': 'Перейти до протилежного краю столу',
+    'thoughtLens.genderIntro':
+      'Чи забарвлює граматичний рід іменника те, яким він здається? Перемкніться між двома мовами, де слово «міст» має протилежний рід.',
+    'thoughtLens.genderDe': 'Німецька',
+    'thoughtLens.genderEs': 'Іспанська',
+    'thoughtLens.genderCaveatTitle': 'Спірне дослідження',
+    'thoughtLens.genderBridgeAria': 'Простий лінійний малюнок арочного мосту',
+    'thoughtLens.grammarIntro':
+      'Ґай Дойчер: мови різняться не тим, що дозволяють думати, а тим, про що зобов’язують думати. Одна думка, дві граматики — погляньте, що кожна виштовхує назовні.',
+    'thoughtLens.grammarEnTitle': 'Англійська змушує вас закодувати…',
+    'thoughtLens.grammarUkTitle': 'Українська змушує вас закодувати…',
   },
 } as const;
 
@@ -1347,8 +1419,8 @@ export const interactiveInfo: Record<
     icon: '🔵',
     title: { en: 'Thought lens', uk: 'Лінза мислення' },
     desc: {
-      en: 'Place your own boundary on a blue gradient, then see where English (one blue) and Ukrainian (синій/блакитний) conventionally cut it — and compare what each grammar forces you to encode.',
-      uk: 'Поставте власну межу на синьому градієнті, а тоді побачте, де її проводять англійська (один синій) та українська (синій/блакитний) — і порівняйте, що кожна граматика змушує вас кодувати.',
+      en: 'Four lenses on linguistic relativity: split a blue gradient like Ukrainian does, give directions by compass instead of left/right, watch a bridge change gender, and see what each grammar forces you to encode.',
+      uk: 'Чотири лінзи мовної відносності: поділіть синій градієнт, як українська, давайте напрямки за компасом замість «ліворуч/праворуч», подивіться, як міст міняє рід, і побачте, що кожна граматика змушує вас кодувати.',
     },
   },
   'accent-atlas': {
