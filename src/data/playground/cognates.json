@@ -1,30 +1,467 @@
 {
   "_comment": "EN↔UK cognate pairs (shared PIE root; see language-families & sound-change articles) and curated false friends. Roots per standard references (Wiktionary PIE entries, etymonline, ЕСУМ).",
   "pairs": [
-    { "id": "night", "a": "night", "b": "ніч", "false": false, "root": "*nókʷts", "note": { "en": "The classic textbook cognate set.", "uk": "Класичний підручниковий ряд когнатів." } },
-    { "id": "three", "a": "three", "b": "три", "false": false, "root": "*tréyes", "note": { "en": "Grimm's Law: t→th in Germanic; Ukrainian kept t.", "uk": "Закон Ґрімма: t→th у германських; українська зберегла t." } },
-    { "id": "two", "a": "two", "b": "два", "false": false, "root": "*dwóh₁", "note": { "en": "Grimm's Law: d→t in Germanic.", "uk": "Закон Ґрімма: d→t у германських." } },
-    { "id": "mother", "a": "mother", "b": "мати", "false": false, "root": "*méh₂tēr", "note": { "en": "Six millennia, same word.", "uk": "Шість тисячоліть — те саме слово." } },
-    { "id": "brother", "a": "brother", "b": "брат", "false": false, "root": "*bʰréh₂tēr", "note": { "en": "bʰ→b in both branches, different paths.", "uk": "bʰ→b в обох гілках, різними шляхами." } },
-    { "id": "sister", "a": "sister", "b": "сестра", "false": false, "root": "*swésōr", "note": { "en": "Norse-influenced in English.", "uk": "В англійській — зі скандинавським впливом." } },
-    { "id": "sun", "a": "sun", "b": "сонце", "false": false, "root": "*sóh₂wl̥", "note": { "en": "Ukrainian adds the diminutive -це.", "uk": "Українська додає демінутив -це." } },
-    { "id": "new", "a": "new", "b": "новий", "false": false, "root": "*néwos", "note": { "en": "One of the most stable adjectives.", "uk": "Один із найстабільніших прикметників." } },
-    { "id": "nose", "a": "nose", "b": "ніс", "false": false, "root": "*néh₂s-", "note": { "en": "Ukrainian і from o in a closed syllable.", "uk": "Українське і з о в закритому складі." } },
-    { "id": "water", "a": "water", "b": "вода", "false": false, "root": "*wódr̥", "note": { "en": "Also Greek hydōr — same root.", "uk": "Грецьке hydōr — той самий корінь." } },
-    { "id": "heart", "a": "heart", "b": "серце", "false": false, "root": "*ḱérd-", "note": { "en": "Also Latin cor, Greek kardía.", "uk": "Також лат. cor, грец. kardía." } },
-    { "id": "eat", "a": "eat", "b": "їсти", "false": false, "root": "*h₁ed-", "note": { "en": "Also Latin edere.", "uk": "Також лат. edere." } },
-    { "id": "live", "a": "live", "b": "жити", "false": false, "root": "*gʷih₃w-", "note": { "en": "Also Latin vivere — gʷ went three ways.", "uk": "Також лат. vivere — gʷ розійшлося трьома шляхами." } },
-    { "id": "salt", "a": "salt", "b": "сіль", "false": false, "root": "*séh₂l", "note": { "en": "Also Latin sal — see the salary myth.", "uk": "Також лат. sal — згадайте міф про salary." } },
-    { "id": "snow", "a": "snow", "b": "сніг", "false": false, "root": "*sneygʷʰ-", "note": { "en": "Also Latin nix, nivis.", "uk": "Також лат. nix, nivis." } },
-    { "id": "wolf", "a": "wolf", "b": "вовк", "false": false, "root": "*wĺ̥kʷos", "note": { "en": "Also Latin lupus, Greek lýkos.", "uk": "Також лат. lupus, грец. lýkos." } },
-    { "id": "beard", "a": "beard", "b": "борода", "false": false, "root": "*bʰardʰeh₂", "note": { "en": "Full pleophony in Ukrainian: -oro-.", "uk": "Повноголосся в українській: -оро-." } },
-    { "id": "sit", "a": "sit", "b": "сидіти", "false": false, "root": "*sed-", "note": { "en": "Also Latin sedēre.", "uk": "Також лат. sedēre." } },
-
-    { "id": "magazine", "a": "magazine", "b": "магазин", "false": true, "root": "", "note": { "en": "Same Arabic source (makhāzin 'storehouses'), but EN means a periodical, UK means a shop. A false friend by meaning-drift.", "uk": "Те саме арабське джерело (makhāzin «склади»), але англ. — часопис, укр. — крамниця. Фальшивий друг через дрейф значень." } },
-    { "id": "fabric", "a": "fabric", "b": "фабрика", "false": true, "root": "", "note": { "en": "EN fabric = cloth; UK фабрика = factory. Both from Latin fabrica, meanings split.", "uk": "Англ. fabric — тканина; укр. фабрика — завод. Обоє з лат. fabrica, значення розійшлися." } },
-    { "id": "intelligent", "a": "intelligent", "b": "інтелігентний", "false": true, "root": "", "note": { "en": "UK інтелігентний = cultured/refined, not 'smart'.", "uk": "Англ. intelligent — розумний; укр. інтелігентний — вихований, культурний." } },
-    { "id": "sympathetic", "a": "sympathetic", "b": "симпатичний", "false": true, "root": "", "note": { "en": "UK симпатичний = cute/likeable; EN sympathetic = compassionate.", "uk": "Укр. симпатичний — милий; англ. sympathetic — співчутливий." } },
-    { "id": "actual", "a": "actual", "b": "актуальний", "false": true, "root": "", "note": { "en": "UK актуальний = topical/relevant; EN actual = real.", "uk": "Укр. актуальний — на часі; англ. actual — справжній." } },
-    { "id": "novel", "a": "novel", "b": "новела", "false": true, "root": "", "note": { "en": "EN novel = роман; UK новела = a short story.", "uk": "Англ. novel — роман; укр. новела — коротке оповідання." } }
+    {
+      "id": "night",
+      "a": "night",
+      "b": "ніч",
+      "false": false,
+      "root": "*nókʷts",
+      "note": {
+        "en": "The classic textbook cognate set.",
+        "uk": "Класичний підручниковий ряд когнатів."
+      }
+    },
+    {
+      "id": "three",
+      "a": "three",
+      "b": "три",
+      "false": false,
+      "root": "*tréyes",
+      "note": {
+        "en": "Grimm's Law: t→th in Germanic; Ukrainian kept t.",
+        "uk": "Закон Ґрімма: t→th у германських; українська зберегла t."
+      }
+    },
+    {
+      "id": "two",
+      "a": "two",
+      "b": "два",
+      "false": false,
+      "root": "*dwóh₁",
+      "note": {
+        "en": "Grimm's Law: d→t in Germanic.",
+        "uk": "Закон Ґрімма: d→t у германських."
+      }
+    },
+    {
+      "id": "mother",
+      "a": "mother",
+      "b": "мати",
+      "false": false,
+      "root": "*méh₂tēr",
+      "note": {
+        "en": "Six millennia, same word.",
+        "uk": "Шість тисячоліть — те саме слово."
+      }
+    },
+    {
+      "id": "brother",
+      "a": "brother",
+      "b": "брат",
+      "false": false,
+      "root": "*bʰréh₂tēr",
+      "note": {
+        "en": "bʰ→b in both branches, different paths.",
+        "uk": "bʰ→b в обох гілках, різними шляхами."
+      }
+    },
+    {
+      "id": "sister",
+      "a": "sister",
+      "b": "сестра",
+      "false": false,
+      "root": "*swésōr",
+      "note": {
+        "en": "Norse-influenced in English.",
+        "uk": "В англійській — зі скандинавським впливом."
+      }
+    },
+    {
+      "id": "sun",
+      "a": "sun",
+      "b": "сонце",
+      "false": false,
+      "root": "*sóh₂wl̥",
+      "note": {
+        "en": "Ukrainian adds the diminutive -це.",
+        "uk": "Українська додає демінутив -це."
+      }
+    },
+    {
+      "id": "new",
+      "a": "new",
+      "b": "новий",
+      "false": false,
+      "root": "*néwos",
+      "note": {
+        "en": "One of the most stable adjectives.",
+        "uk": "Один із найстабільніших прикметників."
+      }
+    },
+    {
+      "id": "nose",
+      "a": "nose",
+      "b": "ніс",
+      "false": false,
+      "root": "*néh₂s-",
+      "note": {
+        "en": "Ukrainian і from o in a closed syllable.",
+        "uk": "Українське і з о в закритому складі."
+      }
+    },
+    {
+      "id": "water",
+      "a": "water",
+      "b": "вода",
+      "false": false,
+      "root": "*wódr̥",
+      "note": {
+        "en": "Also Greek hydōr — same root.",
+        "uk": "Грецьке hydōr — той самий корінь."
+      }
+    },
+    {
+      "id": "heart",
+      "a": "heart",
+      "b": "серце",
+      "false": false,
+      "root": "*ḱérd-",
+      "note": {
+        "en": "Also Latin cor, Greek kardía.",
+        "uk": "Також лат. cor, грец. kardía."
+      }
+    },
+    {
+      "id": "eat",
+      "a": "eat",
+      "b": "їсти",
+      "false": false,
+      "root": "*h₁ed-",
+      "note": {
+        "en": "Also Latin edere.",
+        "uk": "Також лат. edere."
+      }
+    },
+    {
+      "id": "live",
+      "a": "live",
+      "b": "жити",
+      "false": false,
+      "root": "*gʷih₃w-",
+      "note": {
+        "en": "Also Latin vivere — gʷ went three ways.",
+        "uk": "Також лат. vivere — gʷ розійшлося трьома шляхами."
+      }
+    },
+    {
+      "id": "salt",
+      "a": "salt",
+      "b": "сіль",
+      "false": false,
+      "root": "*séh₂l",
+      "note": {
+        "en": "Also Latin sal — see the salary myth.",
+        "uk": "Також лат. sal — згадайте міф про salary."
+      }
+    },
+    {
+      "id": "snow",
+      "a": "snow",
+      "b": "сніг",
+      "false": false,
+      "root": "*sneygʷʰ-",
+      "note": {
+        "en": "Also Latin nix, nivis.",
+        "uk": "Також лат. nix, nivis."
+      }
+    },
+    {
+      "id": "wolf",
+      "a": "wolf",
+      "b": "вовк",
+      "false": false,
+      "root": "*wĺ̥kʷos",
+      "note": {
+        "en": "Also Latin lupus, Greek lýkos.",
+        "uk": "Також лат. lupus, грец. lýkos."
+      }
+    },
+    {
+      "id": "beard",
+      "a": "beard",
+      "b": "борода",
+      "false": false,
+      "root": "*bʰardʰeh₂",
+      "note": {
+        "en": "Full pleophony in Ukrainian: -oro-.",
+        "uk": "Повноголосся в українській: -оро-."
+      }
+    },
+    {
+      "id": "sit",
+      "a": "sit",
+      "b": "сидіти",
+      "false": false,
+      "root": "*sed-",
+      "note": {
+        "en": "Also Latin sedēre.",
+        "uk": "Також лат. sedēre."
+      }
+    },
+    {
+      "id": "magazine",
+      "a": "magazine",
+      "b": "магазин",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "Same Arabic source (makhāzin 'storehouses'), but EN means a periodical, UK means a shop. A false friend by meaning-drift.",
+        "uk": "Те саме арабське джерело (makhāzin «склади»), але англ. — часопис, укр. — крамниця. Фальшивий друг через дрейф значень."
+      }
+    },
+    {
+      "id": "fabric",
+      "a": "fabric",
+      "b": "фабрика",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "EN fabric = cloth; UK фабрика = factory. Both from Latin fabrica, meanings split.",
+        "uk": "Англ. fabric — тканина; укр. фабрика — завод. Обоє з лат. fabrica, значення розійшлися."
+      }
+    },
+    {
+      "id": "intelligent",
+      "a": "intelligent",
+      "b": "інтелігентний",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK інтелігентний = cultured/refined, not 'smart'.",
+        "uk": "Англ. intelligent — розумний; укр. інтелігентний — вихований, культурний."
+      }
+    },
+    {
+      "id": "sympathetic",
+      "a": "sympathetic",
+      "b": "симпатичний",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK симпатичний = cute/likeable; EN sympathetic = compassionate.",
+        "uk": "Укр. симпатичний — милий; англ. sympathetic — співчутливий."
+      }
+    },
+    {
+      "id": "actual",
+      "a": "actual",
+      "b": "актуальний",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK актуальний = topical/relevant; EN actual = real.",
+        "uk": "Укр. актуальний — на часі; англ. actual — справжній."
+      }
+    },
+    {
+      "id": "novel",
+      "a": "novel",
+      "b": "новела",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "EN novel = роман; UK новела = a short story.",
+        "uk": "Англ. novel — роман; укр. новела — коротке оповідання."
+      }
+    },
+    {
+      "id": "be",
+      "a": "be",
+      "b": "бути",
+      "false": false,
+      "root": "*bʰuH-",
+      "note": {
+        "en": "Also Latin fuī 'I was'.",
+        "uk": "Також лат. fuī «я був»."
+      }
+    },
+    {
+      "id": "widow",
+      "a": "widow",
+      "b": "вдова",
+      "false": false,
+      "root": "*h₁widʰéwh₂",
+      "note": {
+        "en": "A textbook cognate set, also Latin vidua.",
+        "uk": "Підручниковий ряд; також лат. vidua."
+      }
+    },
+    {
+      "id": "son",
+      "a": "son",
+      "b": "син",
+      "false": false,
+      "root": "*suHnús",
+      "note": {
+        "en": "Also Sanskrit sūnú-.",
+        "uk": "Також санскр. sūnú-."
+      }
+    },
+    {
+      "id": "daughter",
+      "a": "daughter",
+      "b": "дочка",
+      "false": false,
+      "root": "*dʰugh₂tḗr",
+      "note": {
+        "en": "Also Greek thygátēr.",
+        "uk": "Також грец. thygátēr."
+      }
+    },
+    {
+      "id": "eye",
+      "a": "eye",
+      "b": "око",
+      "false": false,
+      "root": "*h₃okʷ-",
+      "note": {
+        "en": "Also Latin oculus.",
+        "uk": "Також лат. oculus."
+      }
+    },
+    {
+      "id": "mouse",
+      "a": "mouse",
+      "b": "миша",
+      "false": false,
+      "root": "*muh₂s",
+      "note": {
+        "en": "Also Latin mūs — and the muscle story.",
+        "uk": "Також лат. mūs — згадайте історію про м'яз."
+      }
+    },
+    {
+      "id": "goose",
+      "a": "goose",
+      "b": "гуска",
+      "false": false,
+      "root": "*ǵʰh₂éns",
+      "note": {
+        "en": "Also German Gans, Latin anser.",
+        "uk": "Також нім. Gans, лат. anser."
+      }
+    },
+    {
+      "id": "apple",
+      "a": "apple",
+      "b": "яблуко",
+      "false": false,
+      "root": "*h₂ébōl",
+      "note": {
+        "en": "A shared northern-European word.",
+        "uk": "Спільне північноєвропейське слово."
+      }
+    },
+    {
+      "id": "birch",
+      "a": "birch",
+      "b": "береза",
+      "false": false,
+      "root": "*bʰerHǵos",
+      "note": {
+        "en": "Named for its bright bark ('to shine').",
+        "uk": "Назване за світлу кору («сяяти»)."
+      }
+    },
+    {
+      "id": "sew",
+      "a": "sew",
+      "b": "шити",
+      "false": false,
+      "root": "*syuh₁-",
+      "note": {
+        "en": "Also Latin suere — and English seam.",
+        "uk": "Також лат. suere — і англ. seam."
+      }
+    },
+    {
+      "id": "corn",
+      "a": "corn",
+      "b": "зерно",
+      "false": false,
+      "root": "*ǵr̥h₂nóm",
+      "note": {
+        "en": "Corn is the native English cognate; grain came via Latin.",
+        "uk": "Corn — питомий англійський когнат; grain прийшло з латини."
+      }
+    },
+    {
+      "id": "stand",
+      "a": "stand",
+      "b": "стояти",
+      "false": false,
+      "root": "*steh₂-",
+      "note": {
+        "en": "One of the most prolific PIE roots.",
+        "uk": "Один із найплідніших ПІЄ-коренів."
+      }
+    },
+    {
+      "id": "artist",
+      "a": "artist",
+      "b": "артист",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK артист = stage performer; EN artist = художник (painter).",
+        "uk": "Укр. артист — виконавець на сцені; англ. artist — художник."
+      }
+    },
+    {
+      "id": "list",
+      "a": "list",
+      "b": "лист",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK лист = letter or leaf; EN list = список.",
+        "uk": "Укр. лист — послання або листок; англ. list — список."
+      }
+    },
+    {
+      "id": "baton",
+      "a": "baton",
+      "b": "батон",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK батон = a loaf of bread; EN baton = диригентська паличка.",
+        "uk": "Укр. батон — хлібина; англ. baton — паличка диригента чи естафети."
+      }
+    },
+    {
+      "id": "diversion",
+      "a": "diversion",
+      "b": "диверсія",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK диверсія = sabotage; EN diversion = відвернення уваги, розвага.",
+        "uk": "Укр. диверсія — саботаж; англ. diversion — відвернення уваги, розвага."
+      }
+    },
+    {
+      "id": "accurate",
+      "a": "accurate",
+      "b": "акуратний",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK акуратний = tidy, neat; EN accurate = точний.",
+        "uk": "Укр. акуратний — охайний; англ. accurate — точний."
+      }
+    },
+    {
+      "id": "insult",
+      "a": "insult",
+      "b": "інсульт",
+      "false": true,
+      "root": "",
+      "note": {
+        "en": "UK інсульт = a stroke (medical); EN insult = образа. Same Latin insultare, wildly split.",
+        "uk": "Укр. інсульт — крововилив у мозок; англ. insult — образа. Та сама лат. insultare, значення розлетілися."
+      }
+    }
   ]
 }

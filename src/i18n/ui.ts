@@ -237,6 +237,19 @@ export const ui = {
     'ukrainianTimeline.era': 'Era',
     'ukrainianTimeline.banBadge': 'ban',
     'ukrainianTimeline.revivalBadge': 'revival',
+
+    'slangDecoder.tabEras': 'Across the eras',
+    'slangDecoder.tabEmoji': 'Emoji = gesture',
+    'slangDecoder.eraIntro':
+      'The same message, flipped through four eras of “informal writing”. (Illustrative — built from the article’s own examples, not a verbatim quote.)',
+    'slangDecoder.emojiIntro':
+      'The fear that emoji replace words gets it backwards: emoji are gesture. Match each one to the job it does.',
+    'slangDecoder.emojiPick': 'Pick an emoji, then tap the job it does — or drag it across.',
+    'slangDecoder.selectEmoji': 'Select emoji',
+    'slangDecoder.assignTo': 'Assign the selected emoji to',
+    'slangDecoder.wrong': 'Not that one — try another job.',
+    'slangDecoder.matched': 'Matched all four — that’s emoji as gesture.',
+    'slangDecoder.reset': 'Reset',
   },
   uk: {
     'brand': 'Мова',
@@ -466,6 +479,19 @@ export const ui = {
     'ukrainianTimeline.era': 'Епоха',
     'ukrainianTimeline.banBadge': 'заборона',
     'ukrainianTimeline.revivalBadge': 'відродження',
+
+    'slangDecoder.tabEras': 'Через епохи',
+    'slangDecoder.tabEmoji': 'Емодзі = жест',
+    'slangDecoder.eraIntro':
+      'Те саме повідомлення, прогорнуте крізь чотири епохи «неформального письма». (Ілюстративно — зібрано з прикладів самої статті, а не дослівна цитата.)',
+    'slangDecoder.emojiIntro':
+      'Страх, що емодзі замінюють слова, плутає все догори дриґом: емодзі — це жест. Зіставте кожне з роллю, яку воно грає.',
+    'slangDecoder.emojiPick': 'Оберіть емодзі, а потім торкніться його ролі — або перетягніть.',
+    'slangDecoder.selectEmoji': 'Обрати емодзі',
+    'slangDecoder.assignTo': 'Призначити обране емодзі до',
+    'slangDecoder.wrong': 'Не це — спробуйте іншу роль.',
+    'slangDecoder.matched': 'Усі чотири зіставлено — ось вам емодзі як жест.',
+    'slangDecoder.reset': 'Скинути',
   },
 } as const;
 
