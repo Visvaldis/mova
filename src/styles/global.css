@@ -146,7 +146,7 @@ a:hover { text-decoration-color: var(--accent); }
 .brand { display: flex; align-items: baseline; gap: 0.5rem; font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
 .brand .dot { color: var(--accent); }
 .brand small { font-weight: 500; font-size: 0.8rem; color: var(--muted); }
-.nav-links { display: flex; align-items: center; gap: 0.35rem; }
+.nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0.35rem; }
 .nav-links a { padding: 0.4rem 0.7rem; border-radius: 999px; text-decoration: none; color: var(--muted); font-weight: 600; font-size: 0.95rem; }
 .nav-links a:hover, .nav-links a[aria-current='page'] { color: var(--text); background: var(--accent-soft); }
 

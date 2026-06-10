@@ -45,8 +45,8 @@ export const SIM = {
  *  index per generation (length GENERATIONS + 1, starting at BASELINE). */
 export function simulate(ai: number, innovation: number): number[] {
   const { GENERATIONS, BASELINE, CAP, K } = SIM;
-  const series = [BASELINE];
-  let d = BASELINE;
+  const series: number[] = [BASELINE];
+  let d: number = BASELINE;
   for (let g = 0; g < GENERATIONS; g++) {
     d = d - ai * K * d + innovation * K * (CAP - d);
     d = Math.max(0, Math.min(CAP, d));

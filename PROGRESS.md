@@ -301,3 +301,23 @@ Phases:
   name + its Grimm's-Law transformation via `soundlaws.ts`. Nav: + Journey, + Words (6 items —
   verify 375px wrap in the a11y pass, task 900).
 - ui.ts partial-staged again (agent mid-flight on roots-garden strings). Board: 520, 530 → done.
+
+## ✅ Update — 2026-06-10 (codebase audit)
+
+Audit run: `tsc --noEmit` (after `astro sync`), i18n parity script, t()-usage vs ui.ts keys,
+journey-question integrity, hardcoded-href scan, manual review of risk spots. Findings & fixes:
+
+1. **Journey answer-position bias (real bug):** all 36 questions stored correct=0 and were served
+   unshuffled — "always pick the first" would pass every checkpoint. Fixed: options shuffled
+   per-serve in `startQuiz`, correct index remapped.
+2. **Stratigraph dark mode:** the dataset's `colorDark` variants were never used — light layer
+   colors rendered in dark mode. Fixed: theme-aware `layerColor` via matchMedia (SSR-safe).
+3. **Nav overflow:** 6 nav items + lang toggle had no flex-wrap → overflow at 375px. Fixed in CSS.
+4. **TS strict errors:** `WordFilter` useRef without initial value; `aiLanguageLab.data.ts`
+   literal-type narrowing from `as const` (`series`, `d`). Fixed; `tsc --noEmit` now 0 errors.
+5. Verified clean: i18n en/uk parity (517/517 keys), no missing t() keys (480 used), no
+   hardcoded internal hrefs, journey covers all 18 articles with 6 valid Qs/chapter, Babel
+   streak logic traced correct, no console.log leftovers. Build green.
+
+Note: `tsc` requires `.astro/types.d.ts` (run `npx astro sync` first) or it false-positives on
+CSS modules.

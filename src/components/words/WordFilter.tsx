@@ -8,7 +8,7 @@ export default function WordFilter({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
   const [q, setQ] = useState('');
   const [shown, setShown] = useState<number | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     clearTimeout(timer.current);

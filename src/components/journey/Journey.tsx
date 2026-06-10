@@ -62,7 +62,19 @@ export default function Journey({ lang, articles }: { lang: Lang; articles: Arti
 
   const startQuiz = (chapter: number) => {
     const pool = QUESTIONS.filter((q) => q.chapter === chapter);
-    const picked = [...pool].sort(() => Math.random() - 0.5).slice(0, 3);
+    // Shuffle answer options per question (the bank stores correct at index 0 —
+    // serving them unshuffled would teach "always pick the first").
+    const picked = [...pool]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3)
+      .map((q) => {
+        const order = q.options.map((_, i) => i).sort(() => Math.random() - 0.5);
+        return {
+          ...q,
+          options: order.map((i) => q.options[i]),
+          correct: order.indexOf(q.correct),
+        };
+      });
     setQuiz({ chapter, picked, at: 0, answers: [] });
     setAnswered(null);
   };

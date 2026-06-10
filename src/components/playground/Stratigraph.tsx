@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import lexData from '../../data/playground/uk-lexicon.json';
@@ -16,16 +16,23 @@ const LEX = buildLexicon(WORDS);
 
 const EXAMPLE = 'Козак на майдані пʼє каву під дахом і мріє про море.';
 
-function layerColor(id: string): string {
-  // Light/dark handled via CSS color-mix on a fixed pair; simplest: use light color and let
-  // dark mode get the dark variant via a CSS variable we set inline on both.
-  return LAYERS[id]?.color ?? '#888';
-}
-
 export default function Stratigraph({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
   const [text, setText] = useState('');
   const [active, setActive] = useState<LexEntry | null>(null);
+  // The dataset ships light AND dark variants per layer; pick by theme so layer
+  // colors stay readable in dark mode (SSR defaults to light, corrected on mount).
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia?.('(prefers-color-scheme: dark)');
+    if (!mql) return;
+    const update = () => setDark(mql.matches);
+    update();
+    mql.addEventListener?.('change', update);
+    return () => mql.removeEventListener?.('change', update);
+  }, []);
+  const layerColor = (id: string): string =>
+    (dark ? LAYERS[id]?.colorDark : LAYERS[id]?.color) ?? '#8b8696';
 
   const tokens = useMemo(() => tokenize(text), [text]);
   const analyzed = useMemo(
