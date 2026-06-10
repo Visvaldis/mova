@@ -413,3 +413,9 @@ CSS modules.
 - 27 alienGym.* keys (EN+UK); wired into Interactive.astro on top of the other agent's freshly landed esperanto-machine (waited for their commit to avoid sweeping their staged work). Bundle 3.3 KB gz; tsc/build clean.
 
 All three conlang-series interactives are now live: esperanto-machine (other agent, task 260), name-smith (270), alien-grammar-gym (280).
+
+## 2026-06-10 — Conlang series integration: timeline + Journey (user catch)
+
+- Master timeline: 1887 Esperanto and 1984 Klingon events re-pointed from the survey article to the new deep dives; 4 new events added (1905 Fundamento, 1931 A Secret Vice, 1937 Esperantists under terror, 2009 the Peterson era) — all article-sourced. Conlangs now traces 1879→2009 on the shared axis.
+- Journey: new chapter 7 «The invented tongues / Вигадані мови» (🛸, esperanto + tolkien-languages + hollywood-conlangs, toy conlang-forge) + 6 new bilingual checkpoint questions (3 options each, matching the bank's format — my first draft had 4 and was trimmed). Done-screen now says seven chapters / twenty-one articles (EN+UK); hero subtitle, Journey.tsx header, docs/JOURNEY.md counts updated.
+- Process fix (per Seva): added an "Adding a new article — integration checklist" section to tasks/CONVENTIONS.md and a pointer section in CLAUDE.md, so future agents wire new articles into timeline/Journey/interactives/counts as part of definition-of-done.

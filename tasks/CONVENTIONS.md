@@ -72,3 +72,22 @@ Every `int-*` task is done only when:
 - [ ] Every fact traces to the article (or is marked `TODO(seva)`).
 - [ ] Registered in `Interactive.astro`; the placeholder no longer shows for that id.
 - [ ] File moved to `tasks/done/` with a `## Done` note.
+
+## Adding a new article — integration checklist
+
+A new article is NOT done when the two MD files land. Every new article must also be wired into
+the site's aggregating features, in the same change set or an immediately following task:
+
+1. **Master timeline** (`src/data/timelineEvents.ts`): add every *dated* event the article
+   contains, `slug` pointing at the new article. If an event already exists from an older survey
+   article, re-point it to the deeper article rather than duplicating the year.
+2. **Journey** (`src/components/journey/journey.data.ts` + `src/data/journey-questions.json`):
+   add the slug to an existing chapter or create a new one; every chapter needs 6 questions
+   (2 per article is the norm), bilingual, `correct: 0` (the UI shuffles at runtime).
+3. **Interactive**: spec in `CLAUDE.md`, `interactiveInfo` entry in `ui.ts` (localized
+   placeholder), and a board task card if the component isn't built in the same change.
+4. **Stale counts**: grep for hardcoded article/chapter counts and update them —
+   `home.hero.subtitle`, `journey.done.body` (EN+UK), `docs/JOURNEY.md`, `Journey.tsx` header.
+   (These have gone stale twice already; check every time.)
+5. Topic hubs, word index, home grid, and topic filter pick the article up automatically —
+   no action needed, but verify in the built output.

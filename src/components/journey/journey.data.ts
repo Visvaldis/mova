@@ -46,4 +46,10 @@ export const CHAPTERS: Chapter[] = [
     slugs: ['internet-language', 'ai-and-language', 'constructed-languages', 'machine-languages'],
     toy: 'conlang-forge',
   },
+  {
+    num: 7, icon: '🛸',
+    title: { en: 'The invented tongues', uk: 'Вигадані мови' },
+    slugs: ['esperanto', 'tolkien-languages', 'hollywood-conlangs'],
+    toy: 'conlang-forge',
+  },
 ];

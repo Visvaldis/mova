@@ -150,9 +150,19 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     blurb: { en: 'No native speakers for ~1,700 years; Ben-Yehuda raises the first one — today ~9 million.', uk: '~1 700 років без носіїв; Бен-Єгуда виховує першого — сьогодні ~9 мільйонів.' },
   },
   {
-    year: 1887, topic: 'conlangs', slug: 'constructed-languages',
+    year: 1887, topic: 'conlangs', slug: 'esperanto',
     title: { en: 'Esperanto', uk: 'Есперанто' },
-    blurb: { en: 'Zamenhof’s sixteen exception-free rules; today up to two million learners — and native-speaking children who bend the rules.', uk: 'Шістнадцять правил Заменгофа без винятків; нині до двох мільйонів учнів — і діти-носії, що гнуть правила.' },
+    blurb: { en: 'Doktoro Esperanto — “the doctor who hopes” — publishes sixteen exception-free rules; the pseudonym swallows the project.', uk: 'Doktoro Esperanto — «лікар, який сподівається» — видає шістнадцять правил без винятків; псевдонім поглинає проєкт.' },
+  },
+  {
+    year: 1905, topic: 'conlangs', slug: 'esperanto',
+    title: { en: 'The Fundamento', uk: 'Fundamento' },
+    blurb: { en: 'Esperanto’s grammar is frozen as its untouchable constitution; the first World Congress meets the same year.', uk: 'Граматику есперанто заморожено як недоторканну конституцію; того ж року збирається перший Всесвітній конгрес.' },
+  },
+  {
+    year: 1931, topic: 'conlangs', slug: 'tolkien-languages',
+    title: { en: 'A Secret Vice', uk: 'A Secret Vice' },
+    blurb: { en: 'Tolkien confesses language invention as a private art form — the foundation his stories were built to house.', uk: 'Толкін зізнається у вигадуванні мов як приватному мистецтві — фундаменті, для якого й були збудовані його історії.' },
   },
   {
     year: 1923, topic: 'ukrainian', slug: 'ukrainian-language-history',
@@ -163,6 +173,11 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     year: 1933, topic: 'ukrainian', slug: 'ukrainian-language-history',
     title: { en: 'The letter ґ abolished', uk: 'Ліквідовано літеру ґ' },
     blurb: { en: 'The 1928 orthography is scrapped as “nationalist”; the Executed Renaissance is repressed.', uk: 'Правопис 1928 року скасовано як «націоналістичний»; Розстріляне відродження репресовано.' },
+  },
+  {
+    year: 1937, topic: 'conlangs', slug: 'esperanto',
+    title: { en: 'Esperantists under terror', uk: 'Есперантисти під терором' },
+    blurb: { en: '1937–38: Soviet Esperantists branded “spies of the international bourgeoisie” — arrested, deported, shot in the thousands.', uk: '1937–38: радянських есперантистів таврують «шпигунами міжнародної буржуазії» — арешти, депортації, розстріли тисячами.' },
   },
   {
     year: 1944, topic: 'revival', slug: 'language-death-and-revival',
@@ -180,9 +195,9 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     blurb: { en: 'Deaf schools open in Managua; the children build a new language — and scientists watch grammar appear.', uk: 'У Манагуа відкриваються школи для глухих; діти будують нову мову — і науковці бачать появу граматики.' },
   },
   {
-    year: 1984, topic: 'conlangs', slug: 'constructed-languages',
+    year: 1984, topic: 'conlangs', slug: 'hollywood-conlangs',
     title: { en: 'Klingon', uk: 'Клінгонська' },
-    blurb: { en: 'Built deliberately alien — and it acquires Shakespeare translations anyway.', uk: 'Збудована навмисно чужою — і однаково обростає перекладами Шекспіра.' },
+    blurb: { en: 'Okrand builds it deliberately alien — object–verb–subject, an impossible ensemble of real sounds — and it acquires Shakespeare anyway.', uk: 'Окранд будує її навмисно чужою — додаток–дієслово–підмет, неможливий ансамбль справжніх звуків — і вона однаково обростає Шекспіром.' },
   },
   {
     year: 1989, topic: 'ukrainian', slug: 'ukrainian-language-history',
@@ -193,6 +208,11 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     year: 2001, topic: 'conlangs', slug: 'constructed-languages',
     title: { en: 'Toki Pona', uk: 'Токіпона' },
     blurb: { en: 'Sonja Lang’s 120–140-word language of good things — linguistic relativity as a usable toy.', uk: '120–140 слів Соні Ланг — мовна відносність як іграшка, якою можна користуватись.' },
+  },
+  {
+    year: 2009, topic: 'conlangs', slug: 'hollywood-conlangs',
+    title: { en: 'The Peterson era', uk: 'Епоха Пітерсона' },
+    blurb: { en: 'Frommer’s Na’vi hits screens; the Language Creation Society contest hands Peterson Dothraki — conlanging becomes a profession.', uk: 'На’ві Фроммера виходить на екрани; конкурс Language Creation Society віддає Пітерсону дотракійську — конлангінг стає професією.' },
   },
   {
     year: 2008, topic: 'revival', slug: 'language-death-and-revival',

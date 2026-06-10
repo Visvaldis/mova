@@ -1,190 +1,1139 @@
 {
   "_comment": "Journey checkpoint questions (docs/JOURNEY.md). RULE: every answer must be verifiable in the named article; 'why' closely paraphrases it. 6 per chapter, 3 served at random, pass at 2/3.",
   "questions": [
-    { "chapter": 1, "article": "origins-of-language",
-      "q": { "en": "According to the 2025 Miyagawa study, linguistic capacity was present in our species at least…", "uk": "За дослідженням Міяґави 2025 року, мовна здатність була в нашого виду щонайменше…" },
-      "options": [ { "en": "135,000 years ago", "uk": "135 000 років тому" }, { "en": "10,000 years ago", "uk": "10 000 років тому" }, { "en": "1 million years ago", "uk": "1 мільйон років тому" } ],
+    {
+      "chapter": 1,
+      "article": "origins-of-language",
+      "q": {
+        "en": "According to the 2025 Miyagawa study, linguistic capacity was present in our species at least…",
+        "uk": "За дослідженням Міяґави 2025 року, мовна здатність була в нашого виду щонайменше…"
+      },
+      "options": [
+        {
+          "en": "135,000 years ago",
+          "uk": "135 000 років тому"
+        },
+        {
+          "en": "10,000 years ago",
+          "uk": "10 000 років тому"
+        },
+        {
+          "en": "1 million years ago",
+          "uk": "1 мільйон років тому"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "All living populations have language, so capacity must predate the earliest population split — dated genomically to ~135,000 years ago.", "uk": "Усі сучасні популяції мають мову, тож здатність мусить передувати найранішому розділенню популяцій — геномно датованому ~135 000 років тому." } },
-    { "chapter": 1, "article": "origins-of-language",
-      "q": { "en": "What did the Linguistic Society of Paris famously do in 1866?", "uk": "Що знаменито зробило Паризьке лінгвістичне товариство 1866 року?" },
-      "options": [ { "en": "Banned debate on the origin of language", "uk": "Заборонило дискусії про походження мови" }, { "en": "Published the first etymological dictionary", "uk": "Видало перший етимологічний словник" }, { "en": "Declared French the world's oldest language", "uk": "Оголосило французьку найдавнішою мовою світу" } ],
+      "why": {
+        "en": "All living populations have language, so capacity must predate the earliest population split — dated genomically to ~135,000 years ago.",
+        "uk": "Усі сучасні популяції мають мову, тож здатність мусить передувати найранішому розділенню популяцій — геномно датованому ~135 000 років тому."
+      }
+    },
+    {
+      "chapter": 1,
+      "article": "origins-of-language",
+      "q": {
+        "en": "What did the Linguistic Society of Paris famously do in 1866?",
+        "uk": "Що знаменито зробило Паризьке лінгвістичне товариство 1866 року?"
+      },
+      "options": [
+        {
+          "en": "Banned debate on the origin of language",
+          "uk": "Заборонило дискусії про походження мови"
+        },
+        {
+          "en": "Published the first etymological dictionary",
+          "uk": "Видало перший етимологічний словник"
+        },
+        {
+          "en": "Declared French the world's oldest language",
+          "uk": "Оголосило французьку найдавнішою мовою світу"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The question seemed so unanswerable that the Society officially banned the debate.", "uk": "Питання здавалося настільки безнадійним, що Товариство офіційно заборонило дискусії." } },
-    { "chapter": 1, "article": "origins-of-language",
-      "q": { "en": "What makes human language different from vervet alarm calls and bee dances?", "uk": "Що відрізняє людську мову від сигналів тривоги верветок і танців бджіл?" },
-      "options": [ { "en": "It is combinatorial — finite sounds build infinite new sentences", "uk": "Вона комбінаторна — скінченні звуки будують нескінченні нові речення" }, { "en": "It is louder and carries further", "uk": "Вона гучніша і чутна далі" }, { "en": "It uses the mouth instead of the body", "uk": "Вона використовує рот замість тіла" } ],
+      "why": {
+        "en": "The question seemed so unanswerable that the Society officially banned the debate.",
+        "uk": "Питання здавалося настільки безнадійним, що Товариство офіційно заборонило дискусії."
+      }
+    },
+    {
+      "chapter": 1,
+      "article": "origins-of-language",
+      "q": {
+        "en": "What makes human language different from vervet alarm calls and bee dances?",
+        "uk": "Що відрізняє людську мову від сигналів тривоги верветок і танців бджіл?"
+      },
+      "options": [
+        {
+          "en": "It is combinatorial — finite sounds build infinite new sentences",
+          "uk": "Вона комбінаторна — скінченні звуки будують нескінченні нові речення"
+        },
+        {
+          "en": "It is louder and carries further",
+          "uk": "Вона гучніша і чутна далі"
+        },
+        {
+          "en": "It uses the mouth instead of the body",
+          "uk": "Вона використовує рот замість тіла"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Animal systems are closed lists of signals; human language builds sentences never uttered before.", "uk": "Тваринні системи — закриті переліки сигналів; людська мова будує речення, яких ніхто раніше не вимовляв." } },
-    { "chapter": 1, "article": "new-languages",
-      "q": { "en": "Who turned the rough sign system of Nicaragua's deaf schools into a full grammatical language?", "uk": "Хто перетворив грубу жестову систему нікарагуанських шкіл для глухих на повноцінну граматичну мову?" },
-      "options": [ { "en": "The younger children of the second cohort", "uk": "Молодші діти другої когорти" }, { "en": "The Spanish-speaking teachers", "uk": "Іспаномовні вчителі" }, { "en": "Visiting linguists", "uk": "Запрошені лінгвісти" } ],
+      "why": {
+        "en": "Animal systems are closed lists of signals; human language builds sentences never uttered before.",
+        "uk": "Тваринні системи — закриті переліки сигналів; людська мова будує речення, яких ніхто раніше не вимовляв."
+      }
+    },
+    {
+      "chapter": 1,
+      "article": "new-languages",
+      "q": {
+        "en": "Who turned the rough sign system of Nicaragua's deaf schools into a full grammatical language?",
+        "uk": "Хто перетворив грубу жестову систему нікарагуанських шкіл для глухих на повноцінну граматичну мову?"
+      },
+      "options": [
+        {
+          "en": "The younger children of the second cohort",
+          "uk": "Молодші діти другої когорти"
+        },
+        {
+          "en": "The Spanish-speaking teachers",
+          "uk": "Іспаномовні вчителі"
+        },
+        {
+          "en": "Visiting linguists",
+          "uk": "Запрошені лінгвісти"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Ann Senghas showed the younger cohort regularized and transformed the system — the grammar came from the children.", "uk": "Енн Сенгас показала, що молодша когорта впорядкувала й перетворила систему — граматика прийшла від дітей." } },
-    { "chapter": 1, "article": "new-languages",
-      "q": { "en": "A pidgin becomes a creole when…", "uk": "Піджин стає креолом, коли…" },
-      "options": [ { "en": "children grow up speaking it as their primary input", "uk": "діти виростають із ним як основним мовним потоком" }, { "en": "a government grants it official status", "uk": "уряд надає йому офіційний статус" }, { "en": "it gets a writing system", "uk": "він отримує писемність" } ],
+      "why": {
+        "en": "Ann Senghas showed the younger cohort regularized and transformed the system — the grammar came from the children.",
+        "uk": "Енн Сенгас показала, що молодша когорта впорядкувала й перетворила систему — граматика прийшла від дітей."
+      }
+    },
+    {
+      "chapter": 1,
+      "article": "new-languages",
+      "q": {
+        "en": "A pidgin becomes a creole when…",
+        "uk": "Піджин стає креолом, коли…"
+      },
+      "options": [
+        {
+          "en": "children grow up speaking it as their primary input",
+          "uk": "діти виростають із ним як основним мовним потоком"
+        },
+        {
+          "en": "a government grants it official status",
+          "uk": "уряд надає йому офіційний статус"
+        },
+        {
+          "en": "it gets a writing system",
+          "uk": "він отримує писемність"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Children expand fragmentary pidgin input into a complete natural language with stable grammar.", "uk": "Діти розгортають фрагментарний піджин у повну природну мову зі стабільною граматикою." } },
-    { "chapter": 1, "article": "language-and-thought",
-      "q": { "en": "In the 'Russian blues' experiment, speakers with two basic blue terms…", "uk": "В експерименті з «російськими синіми» мовці з двома базовими термінами для синього…" },
-      "options": [ { "en": "discriminated cross-boundary blues faster — until verbal interference removed the edge", "uk": "швидше розрізняли сині через межу — доки вербальна інтерференція не знімала перевагу" }, { "en": "could not perceive light blue at all", "uk": "взагалі не сприймали блакитний" }, { "en": "showed no difference from English speakers", "uk": "не відрізнялися від англомовних" } ],
+      "why": {
+        "en": "Children expand fragmentary pidgin input into a complete natural language with stable grammar.",
+        "uk": "Діти розгортають фрагментарний піджин у повну природну мову зі стабільною граматикою."
+      }
+    },
+    {
+      "chapter": 1,
+      "article": "language-and-thought",
+      "q": {
+        "en": "In the 'Russian blues' experiment, speakers with two basic blue terms…",
+        "uk": "В експерименті з «російськими синіми» мовці з двома базовими термінами для синього…"
+      },
+      "options": [
+        {
+          "en": "discriminated cross-boundary blues faster — until verbal interference removed the edge",
+          "uk": "швидше розрізняли сині через межу — доки вербальна інтерференція не знімала перевагу"
+        },
+        {
+          "en": "could not perceive light blue at all",
+          "uk": "взагалі не сприймали блакитний"
+        },
+        {
+          "en": "showed no difference from English speakers",
+          "uk": "не відрізнялися від англомовних"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The advantage vanished under verbal interference — showing language doing the work in real time.", "uk": "Перевага зникала під вербальною інтерференцією — мова робила цю роботу в реальному часі." } },
-
-    { "chapter": 2, "article": "language-families",
-      "q": { "en": "What did William Jones conclude in 1786 about Sanskrit, Latin and Greek?", "uk": "Якого висновку дійшов Вільям Джонс 1786 року щодо санскриту, латини та грецької?" },
-      "options": [ { "en": "They sprang from a common source that may no longer exist", "uk": "Вони постали зі спільного джерела, якого, можливо, вже не існує" }, { "en": "Sanskrit was the ancestor of the other two", "uk": "Санскрит був предком двох інших" }, { "en": "Their similarities came from trade borrowing", "uk": "Їхні подібності походять від торгових запозичень" } ],
+      "why": {
+        "en": "The advantage vanished under verbal interference — showing language doing the work in real time.",
+        "uk": "Перевага зникала під вербальною інтерференцією — мова робила цю роботу в реальному часі."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "language-families",
+      "q": {
+        "en": "What did William Jones conclude in 1786 about Sanskrit, Latin and Greek?",
+        "uk": "Якого висновку дійшов Вільям Джонс 1786 року щодо санскриту, латини та грецької?"
+      },
+      "options": [
+        {
+          "en": "They sprang from a common source that may no longer exist",
+          "uk": "Вони постали зі спільного джерела, якого, можливо, вже не існує"
+        },
+        {
+          "en": "Sanskrit was the ancestor of the other two",
+          "uk": "Санскрит був предком двох інших"
+        },
+        {
+          "en": "Their similarities came from trade borrowing",
+          "uk": "Їхні подібності походять від торгових запозичень"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "His 'common source' is what we now call Proto-Indo-European.", "uk": "Його «спільне джерело» ми тепер називаємо праіндоєвропейською." } },
-    { "chapter": 2, "article": "language-families",
-      "q": { "en": "English and Ukrainian sit on which branches of Indo-European?", "uk": "На яких гілках індоєвропейської сидять англійська та українська?" },
-      "options": [ { "en": "Germanic and Slavic", "uk": "Германській і слов'янській" }, { "en": "Romance and Baltic", "uk": "Романській і балтійській" }, { "en": "Celtic and Hellenic", "uk": "Кельтській і грецькій" } ],
+      "why": {
+        "en": "His 'common source' is what we now call Proto-Indo-European.",
+        "uk": "Його «спільне джерело» ми тепер називаємо праіндоєвропейською."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "language-families",
+      "q": {
+        "en": "English and Ukrainian sit on which branches of Indo-European?",
+        "uk": "На яких гілках індоєвропейської сидять англійська та українська?"
+      },
+      "options": [
+        {
+          "en": "Germanic and Slavic",
+          "uk": "Германській і слов'янській"
+        },
+        {
+          "en": "Romance and Baltic",
+          "uk": "Романській і балтійській"
+        },
+        {
+          "en": "Celtic and Hellenic",
+          "uk": "Кельтській і грецькій"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Branches that separated perhaps 4,500 years ago — cousins, provably related.", "uk": "Гілки, що розійшлися близько 4 500 років тому — родичі, спорідненість доказова." } },
-    { "chapter": 2, "article": "sound-change",
-      "q": { "en": "By Grimm's Law, Latin pater corresponds to English…", "uk": "За законом Ґрімма, латинське pater відповідає англійському…" },
-      "options": [ { "en": "father (p→f)", "uk": "father (p→f)" }, { "en": "paternal (no change)", "uk": "paternal (без зміни)" }, { "en": "brother (p→b)", "uk": "brother (p→b)" } ],
+      "why": {
+        "en": "Branches that separated perhaps 4,500 years ago — cousins, provably related.",
+        "uk": "Гілки, що розійшлися близько 4 500 років тому — родичі, спорідненість доказова."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "sound-change",
+      "q": {
+        "en": "By Grimm's Law, Latin pater corresponds to English…",
+        "uk": "За законом Ґрімма, латинське pater відповідає англійському…"
+      },
+      "options": [
+        {
+          "en": "father (p→f)",
+          "uk": "father (p→f)"
+        },
+        {
+          "en": "paternal (no change)",
+          "uk": "paternal (без зміни)"
+        },
+        {
+          "en": "brother (p→b)",
+          "uk": "brother (p→b)"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Where Latin has p, native English words have f — every time.", "uk": "Де латина має p, питомі англійські слова мають f — щоразу." } },
-    { "chapter": 2, "article": "sound-change",
-      "q": { "en": "The Neogrammarians' bold claim was that sound laws…", "uk": "Зухвала заява молодограматиків: звукові закони…" },
-      "options": [ { "en": "admit no exceptions", "uk": "не мають винятків" }, { "en": "apply only to written language", "uk": "діють лише в писемній мові" }, { "en": "are decided by academies", "uk": "ухвалюються академіями" } ],
+      "why": {
+        "en": "Where Latin has p, native English words have f — every time.",
+        "uk": "Де латина має p, питомі англійські слова мають f — щоразу."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "sound-change",
+      "q": {
+        "en": "The Neogrammarians' bold claim was that sound laws…",
+        "uk": "Зухвала заява молодограматиків: звукові закони…"
+      },
+      "options": [
+        {
+          "en": "admit no exceptions",
+          "uk": "не мають винятків"
+        },
+        {
+          "en": "apply only to written language",
+          "uk": "діють лише в писемній мові"
+        },
+        {
+          "en": "are decided by academies",
+          "uk": "ухвалюються академіями"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Apparent exceptions just mean you haven't found the second law yet — Verner's Law proved it.", "uk": "Позірні винятки означають лише, що ви ще не знайшли другий закон — закон Вернера це довів." } },
-    { "chapter": 2, "article": "dialects-and-accents",
-      "q": { "en": "Max Weinreich's famous aphorism: a language is a dialect with…", "uk": "Знаменитий афоризм Макса Вайнрайха: мова — це діалект з…" },
-      "options": [ { "en": "an army and navy", "uk": "армією і флотом" }, { "en": "a dictionary and grammar", "uk": "словником і граматикою" }, { "en": "a million speakers", "uk": "мільйоном мовців" } ],
+      "why": {
+        "en": "Apparent exceptions just mean you haven't found the second law yet — Verner's Law proved it.",
+        "uk": "Позірні винятки означають лише, що ви ще не знайшли другий закон — закон Вернера це довів."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "dialects-and-accents",
+      "q": {
+        "en": "Max Weinreich's famous aphorism: a language is a dialect with…",
+        "uk": "Знаменитий афоризм Макса Вайнрайха: мова — це діалект з…"
+      },
+      "options": [
+        {
+          "en": "an army and navy",
+          "uk": "армією і флотом"
+        },
+        {
+          "en": "a dictionary and grammar",
+          "uk": "словником і граматикою"
+        },
+        {
+          "en": "a million speakers",
+          "uk": "мільйоном мовців"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The boundary is drawn by power and politics, not linguistics.", "uk": "Межу проводять влада й політика, а не лінгвістика." } },
-    { "chapter": 2, "article": "dialects-and-accents",
-      "q": { "en": "The word паляниця is famous as a modern…", "uk": "Слово паляниця знамените як сучасний…" },
-      "options": [ { "en": "shibboleth — a one-word accent test", "uk": "шиболет — тест акценту з одного слова" }, { "en": "neologism coined in 2022", "uk": "неологізм 2022 року" }, { "en": "borrowing from Polish", "uk": "запозичення з польської" } ],
+      "why": {
+        "en": "The boundary is drawn by power and politics, not linguistics.",
+        "uk": "Межу проводять влада й політика, а не лінгвістика."
+      }
+    },
+    {
+      "chapter": 2,
+      "article": "dialects-and-accents",
+      "q": {
+        "en": "The word паляниця is famous as a modern…",
+        "uk": "Слово паляниця знамените як сучасний…"
+      },
+      "options": [
+        {
+          "en": "shibboleth — a one-word accent test",
+          "uk": "шиболет — тест акценту з одного слова"
+        },
+        {
+          "en": "neologism coined in 2022",
+          "uk": "неологізм 2022 року"
+        },
+        {
+          "en": "borrowing from Polish",
+          "uk": "запозичення з польської"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The soft ц and Ukrainian и betray any non-native speaker — border control in one word.", "uk": "М'яке ц та українське и виказують неносія — прикордонний контроль з одного слова." } },
-
-    { "chapter": 3, "article": "ukrainian-language-history",
-      "q": { "en": "The Valuev Circular (1863) claimed that a separate Ukrainian language…", "uk": "Валуєвський циркуляр (1863) стверджував, що окремої української мови…" },
-      "options": [ { "en": "\"never existed, does not exist, and cannot exist\"", "uk": "«не було, немає і бути не може»" }, { "en": "\"must be taught in all schools\"", "uk": "«слід навчати в усіх школах»" }, { "en": "\"is permitted in print but not theater\"", "uk": "«дозволена у друці, але не в театрі»" } ],
+      "why": {
+        "en": "The soft ц and Ukrainian и betray any non-native speaker — border control in one word.",
+        "uk": "М'яке ц та українське и виказують неносія — прикордонний контроль з одного слова."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "ukrainian-language-history",
+      "q": {
+        "en": "The Valuev Circular (1863) claimed that a separate Ukrainian language…",
+        "uk": "Валуєвський циркуляр (1863) стверджував, що окремої української мови…"
+      },
+      "options": [
+        {
+          "en": "\"never existed, does not exist, and cannot exist\"",
+          "uk": "«не було, немає і бути не може»"
+        },
+        {
+          "en": "\"must be taught in all schools\"",
+          "uk": "«слід навчати в усіх школах»"
+        },
+        {
+          "en": "\"is permitted in print but not theater\"",
+          "uk": "«дозволена у друці, але не в театрі»"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "A political claim wearing administrative language — one of dozens of restriction acts.", "uk": "Політичне твердження в адміністративній обгортці — один із десятків обмежувальних актів." } },
-    { "chapter": 3, "article": "ukrainian-language-history",
-      "q": { "en": "The conventional start of modern literary Ukrainian is…", "uk": "Умовний початок нової української літературної мови — це…" },
-      "options": [ { "en": "Kotliarevsky's Eneida (1798)", "uk": "«Енеїда» Котляревського (1798)" }, { "en": "The Ems Ukaz (1876)", "uk": "Емський указ (1876)" }, { "en": "The 1928 orthography", "uk": "Правопис 1928 року" } ],
+      "why": {
+        "en": "A political claim wearing administrative language — one of dozens of restriction acts.",
+        "uk": "Політичне твердження в адміністративній обгортці — один із десятків обмежувальних актів."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "ukrainian-language-history",
+      "q": {
+        "en": "The conventional start of modern literary Ukrainian is…",
+        "uk": "Умовний початок нової української літературної мови — це…"
+      },
+      "options": [
+        {
+          "en": "Kotliarevsky's Eneida (1798)",
+          "uk": "«Енеїда» Котляревського (1798)"
+        },
+        {
+          "en": "The Ems Ukaz (1876)",
+          "uk": "Емський указ (1876)"
+        },
+        {
+          "en": "The 1928 orthography",
+          "uk": "Правопис 1928 року"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "A burlesque retelling of Virgil in the living vernacular.", "uk": "Бурлескний переспів Верґілія живою народною мовою." } },
-    { "chapter": 3, "article": "ukrainian-word-origins",
-      "q": { "en": "The word мрія…", "uk": "Слово мрія…" },
-      "options": [ { "en": "was coined by Mykhailo Starytsky in the 19th century", "uk": "укарбував Михайло Старицький у XIX столітті" }, { "en": "is one of the oldest Proto-Slavic words", "uk": "є одним із найдавніших праслов'янських слів" }, { "en": "was borrowed from Polish", "uk": "запозичене з польської" } ],
+      "why": {
+        "en": "A burlesque retelling of Virgil in the living vernacular.",
+        "uk": "Бурлескний переспів Верґілія живою народною мовою."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "ukrainian-word-origins",
+      "q": {
+        "en": "The word мрія…",
+        "uk": "Слово мрія…"
+      },
+      "options": [
+        {
+          "en": "was coined by Mykhailo Starytsky in the 19th century",
+          "uk": "укарбував Михайло Старицький у XIX столітті"
+        },
+        {
+          "en": "is one of the oldest Proto-Slavic words",
+          "uk": "є одним із найдавніших праслов'янських слів"
+        },
+        {
+          "en": "was borrowed from Polish",
+          "uk": "запозичене з польської"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Created from the verb мріти ('to shimmer dimly') — a word with a birth certificate.", "uk": "Створене від дієслова мріти — слово зі свідоцтвом про народження." } },
-    { "chapter": 3, "article": "ukrainian-word-origins",
-      "q": { "en": "Лелека, the most Ukrainian of birds, carries a name borrowed from…", "uk": "Лелека, найукраїнськіший птах, носить ім'я, запозичене з…" },
-      "options": [ { "en": "Turkic (ultimately echoing Arabic laqlaq)", "uk": "тюркських мов (врешті відлуння арабського laqlaq)" }, { "en": "Greek church vocabulary", "uk": "грецької церковної лексики" }, { "en": "German via Polish", "uk": "німецької через польську" } ],
+      "why": {
+        "en": "Created from the verb мріти ('to shimmer dimly') — a word with a birth certificate.",
+        "uk": "Створене від дієслова мріти — слово зі свідоцтвом про народження."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "ukrainian-word-origins",
+      "q": {
+        "en": "Лелека, the most Ukrainian of birds, carries a name borrowed from…",
+        "uk": "Лелека, найукраїнськіший птах, носить ім'я, запозичене з…"
+      },
+      "options": [
+        {
+          "en": "Turkic (ultimately echoing Arabic laqlaq)",
+          "uk": "тюркських мов (врешті відлуння арабського laqlaq)"
+        },
+        {
+          "en": "Greek church vocabulary",
+          "uk": "грецької церковної лексики"
+        },
+        {
+          "en": "German via Polish",
+          "uk": "німецької через польську"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Even national symbols have passports.", "uk": "Навіть національні символи мають паспорти." } },
-    { "chapter": 3, "article": "names-and-places",
-      "q": { "en": "The name Київ grammatically means…", "uk": "Назва Київ граматично означає…" },
-      "options": [ { "en": "\"Kyi's town\" — a possessive of the legendary founder", "uk": "«місто Кия» — присвійна форма від легендарного засновника" }, { "en": "\"the city on hills\"", "uk": "«місто на пагорбах»" }, { "en": "\"the northern fortress\"", "uk": "«північна фортеця»" } ],
+      "why": {
+        "en": "Even national symbols have passports.",
+        "uk": "Навіть національні символи мають паспорти."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "names-and-places",
+      "q": {
+        "en": "The name Київ grammatically means…",
+        "uk": "Назва Київ граматично означає…"
+      },
+      "options": [
+        {
+          "en": "\"Kyi's town\" — a possessive of the legendary founder",
+          "uk": "«місто Кия» — присвійна форма від легендарного засновника"
+        },
+        {
+          "en": "\"the city on hills\"",
+          "uk": "«місто на пагорбах»"
+        },
+        {
+          "en": "\"the northern fortress\"",
+          "uk": "«північна фортеця»"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The old possessive suffix -ів still does the remembering.", "uk": "Давній присвійний суфікс -ів досі це пам'ятає." } },
-    { "chapter": 3, "article": "names-and-places",
-      "q": { "en": "The Ukrainian month листопад literally means…", "uk": "Українська назва місяця листопад буквально означає…" },
-      "options": [ { "en": "leaf-fall", "uk": "падіння листя" }, { "en": "first frost", "uk": "перший мороз" }, { "en": "harvest end", "uk": "кінець жнив" } ],
+      "why": {
+        "en": "The old possessive suffix -ів still does the remembering.",
+        "uk": "Давній присвійний суфікс -ів досі це пам'ятає."
+      }
+    },
+    {
+      "chapter": 3,
+      "article": "names-and-places",
+      "q": {
+        "en": "The Ukrainian month листопад literally means…",
+        "uk": "Українська назва місяця листопад буквально означає…"
+      },
+      "options": [
+        {
+          "en": "leaf-fall",
+          "uk": "падіння листя"
+        },
+        {
+          "en": "first frost",
+          "uk": "перший мороз"
+        },
+        {
+          "en": "harvest end",
+          "uk": "кінець жнив"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Ukrainian months are a nature documentary; English months are a Roman temple.", "uk": "Українські місяці — документалка про природу; англійські — римський храм." } },
-
-    { "chapter": 4, "article": "traveling-words",
-      "q": { "en": "Coastal nations say 'tea' because they bought it by sea from Dutch traders at…", "uk": "Прибережні нації кажуть tea, бо купували його морем у голландських торговців у…" },
-      "options": [ { "en": "the Fujian port of Amoy (Min 'te')", "uk": "фуцзянському порту Амой (міньське te)" }, { "en": "Canton (Cantonese 'cha')", "uk": "Кантоні (кантонське cha)" }, { "en": "Bombay (Hindi 'chai')", "uk": "Бомбеї (гінді chai)" } ],
+      "why": {
+        "en": "Ukrainian months are a nature documentary; English months are a Roman temple.",
+        "uk": "Українські місяці — документалка про природу; англійські — римський храм."
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "traveling-words",
+      "q": {
+        "en": "Coastal nations say 'tea' because they bought it by sea from Dutch traders at…",
+        "uk": "Прибережні нації кажуть tea, бо купували його морем у голландських торговців у…"
+      },
+      "options": [
+        {
+          "en": "the Fujian port of Amoy (Min 'te')",
+          "uk": "фуцзянському порту Амой (міньське te)"
+        },
+        {
+          "en": "Canton (Cantonese 'cha')",
+          "uk": "Кантоні (кантонське cha)"
+        },
+        {
+          "en": "Bombay (Hindi 'chai')",
+          "uk": "Бомбеї (гінді chai)"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Sea = te; the overland Silk Road carried chá → chay.", "uk": "Море = te; суходільний Шовковий шлях ніс chá → chay." } },
-    { "chapter": 4, "article": "traveling-words",
-      "q": { "en": "English sugar and Ukrainian цукор both trace back to…", "uk": "Англійське sugar та українське цукор обидва сягають…" },
-      "options": [ { "en": "Sanskrit śarkarā, 'gravel'", "uk": "санскритського śarkarā — «жорства»" }, { "en": "Latin dulcis, 'sweet'", "uk": "латинського dulcis — «солодкий»" }, { "en": "Arabic qahwa", "uk": "арабського qahwa" } ],
+      "why": {
+        "en": "Sea = te; the overland Silk Road carried chá → chay.",
+        "uk": "Море = te; суходільний Шовковий шлях ніс chá → chay."
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "traveling-words",
+      "q": {
+        "en": "English sugar and Ukrainian цукор both trace back to…",
+        "uk": "Англійське sugar та українське цукор обидва сягають…"
+      },
+      "options": [
+        {
+          "en": "Sanskrit śarkarā, 'gravel'",
+          "uk": "санскритського śarkarā — «жорства»"
+        },
+        {
+          "en": "Latin dulcis, 'sweet'",
+          "uk": "латинського dulcis — «солодкий»"
+        },
+        {
+          "en": "Arabic qahwa",
+          "uk": "арабського qahwa"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "The same Indian gravel, bought from different middlemen.", "uk": "Та сама індійська жорства, куплена в різних посередників." } },
-    { "chapter": 4, "article": "everyday-etymologies",
-      "q": { "en": "The Latin behind 'muscle' literally means…", "uk": "Латинське джерело слова muscle буквально означає…" },
-      "options": [ { "en": "little mouse", "uk": "мишеня" }, { "en": "strong rope", "uk": "міцна мотузка" }, { "en": "arm of iron", "uk": "залізна рука" } ],
+      "why": {
+        "en": "The same Indian gravel, bought from different middlemen.",
+        "uk": "Та сама індійська жорства, куплена в різних посередників."
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "everyday-etymologies",
+      "q": {
+        "en": "The Latin behind 'muscle' literally means…",
+        "uk": "Латинське джерело слова muscle буквально означає…"
+      },
+      "options": [
+        {
+          "en": "little mouse",
+          "uk": "мишеня"
+        },
+        {
+          "en": "strong rope",
+          "uk": "міцна мотузка"
+        },
+        {
+          "en": "arm of iron",
+          "uk": "залізна рука"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Musculus — the bulge under the skin looked like a mouse running.", "uk": "Musculus — горбик під шкірою здавався римлянам мишкою." } },
-    { "chapter": 4, "article": "everyday-etymologies",
-      "q": { "en": "Ведмідь is a taboo replacement meaning…", "uk": "Ведмідь — табуїстична заміна зі значенням…" },
-      "options": [ { "en": "honey-eater", "uk": "той, хто їсть мед" }, { "en": "forest king", "uk": "лісовий цар" }, { "en": "brown one", "uk": "бурий" } ],
+      "why": {
+        "en": "Musculus — the bulge under the skin looked like a mouse running.",
+        "uk": "Musculus — горбик під шкірою здавався римлянам мишкою."
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "everyday-etymologies",
+      "q": {
+        "en": "Ведмідь is a taboo replacement meaning…",
+        "uk": "Ведмідь — табуїстична заміна зі значенням…"
+      },
+      "options": [
+        {
+          "en": "honey-eater",
+          "uk": "той, хто їсть мед"
+        },
+        {
+          "en": "forest king",
+          "uk": "лісовий цар"
+        },
+        {
+          "en": "brown one",
+          "uk": "бурий"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Slavs avoided the bear's true name; the original PIE word vanished from all Slavic. ('The brown one' is English bear's taboo.)", "uk": "Слов'яни уникали справжнього імені ведмедя; первісне ПІЄ-слово зникло з усіх слов'янських. («Бурий» — це табу англійського bear.)" } },
-    { "chapter": 4, "article": "etymology-myths",
-      "q": { "en": "The story that 'posh' comes from 'Port Out, Starboard Home' is…", "uk": "Історія, що posh походить від «Port Out, Starboard Home», — це…" },
-      "options": [ { "en": "a myth — no such ticket was ever found", "uk": "міф — жодного такого квитка не знайдено" }, { "en": "documented in P&O shipping archives", "uk": "задокументована в архівах судноплавства P&O" }, { "en": "true only for first-class passengers", "uk": "правдива лише для пасажирів першого класу" } ],
+      "why": {
+        "en": "Slavs avoided the bear's true name; the original PIE word vanished from all Slavic. ('The brown one' is English bear's taboo.)",
+        "uk": "Слов'яни уникали справжнього імені ведмедя; первісне ПІЄ-слово зникло з усіх слов'янських. («Бурий» — це табу англійського bear.)"
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "etymology-myths",
+      "q": {
+        "en": "The story that 'posh' comes from 'Port Out, Starboard Home' is…",
+        "uk": "Історія, що posh походить від «Port Out, Starboard Home», — це…"
+      },
+      "options": [
+        {
+          "en": "a myth — no such ticket was ever found",
+          "uk": "міф — жодного такого квитка не знайдено"
+        },
+        {
+          "en": "documented in P&O shipping archives",
+          "uk": "задокументована в архівах судноплавства P&O"
+        },
+        {
+          "en": "true only for first-class passengers",
+          "uk": "правдива лише для пасажирів першого класу"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Almost no word older than the 20th century comes from an acronym.", "uk": "Майже жодне слово, старше за XX століття, не походить від акроніма." } },
-    { "chapter": 4, "article": "etymology-myths",
-      "q": { "en": "English bridegroom (from brydguma) is a textbook example of…", "uk": "Англійське bridegroom (від brydguma) — підручниковий приклад…" },
-      "options": [ { "en": "folk etymology genuinely reshaping a word", "uk": "народної етимології, що справді перебудувала слово" }, { "en": "an acronym entering marriage law", "uk": "акроніма у шлюбному праві" }, { "en": "a borrowing from Norse", "uk": "запозичення зі скандинавської" } ],
+      "why": {
+        "en": "Almost no word older than the 20th century comes from an acronym.",
+        "uk": "Майже жодне слово, старше за XX століття, не походить від акроніма."
+      }
+    },
+    {
+      "chapter": 4,
+      "article": "etymology-myths",
+      "q": {
+        "en": "English bridegroom (from brydguma) is a textbook example of…",
+        "uk": "Англійське bridegroom (від brydguma) — підручниковий приклад…"
+      },
+      "options": [
+        {
+          "en": "folk etymology genuinely reshaping a word",
+          "uk": "народної етимології, що справді перебудувала слово"
+        },
+        {
+          "en": "an acronym entering marriage law",
+          "uk": "акроніма у шлюбному праві"
+        },
+        {
+          "en": "a borrowing from Norse",
+          "uk": "запозичення зі скандинавської"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "When guma ('man') died, speakers patched in 'groom' — the misanalysis became the standard word.", "uk": "Коли guma («чоловік») вимерло, мовці підставили groom — переаналіз став нормою." } },
-
-    { "chapter": 5, "article": "writing-systems",
-      "q": { "en": "Writing was invented from scratch roughly…", "uk": "Письмо винаходили з нуля приблизно…" },
-      "options": [ { "en": "four times in history", "uk": "чотири рази в історії" }, { "en": "once, in Egypt", "uk": "один раз, у Єгипті" }, { "en": "hundreds of times", "uk": "сотні разів" } ],
+      "why": {
+        "en": "When guma ('man') died, speakers patched in 'groom' — the misanalysis became the standard word.",
+        "uk": "Коли guma («чоловік») вимерло, мовці підставили groom — переаналіз став нормою."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "writing-systems",
+      "q": {
+        "en": "Writing was invented from scratch roughly…",
+        "uk": "Письмо винаходили з нуля приблизно…"
+      },
+      "options": [
+        {
+          "en": "four times in history",
+          "uk": "чотири рази в історії"
+        },
+        {
+          "en": "once, in Egypt",
+          "uk": "один раз, у Єгипті"
+        },
+        {
+          "en": "hundreds of times",
+          "uk": "сотні разів"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Mesopotamia, Egypt, China, Mesoamerica — everything else descends or borrows.", "uk": "Месопотамія, Єгипет, Китай, Мезоамерика — все інше успадковане або запозичене." } },
-    { "chapter": 5, "article": "writing-systems",
-      "q": { "en": "The first written documents were…", "uk": "Перші письмові документи були…" },
-      "options": [ { "en": "receipts — accounting came before literature", "uk": "квитанціями — бухгалтерія раніше за літературу" }, { "en": "prayers to the gods", "uk": "молитвами богам" }, { "en": "royal genealogies", "uk": "королівськими родоводами" } ],
+      "why": {
+        "en": "Mesopotamia, Egypt, China, Mesoamerica — everything else descends or borrows.",
+        "uk": "Месопотамія, Єгипет, Китай, Мезоамерика — все інше успадковане або запозичене."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "writing-systems",
+      "q": {
+        "en": "The first written documents were…",
+        "uk": "Перші письмові документи були…"
+      },
+      "options": [
+        {
+          "en": "receipts — accounting came before literature",
+          "uk": "квитанціями — бухгалтерія раніше за літературу"
+        },
+        {
+          "en": "prayers to the gods",
+          "uk": "молитвами богам"
+        },
+        {
+          "en": "royal genealogies",
+          "uk": "королівськими родоводами"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Schmandt-Besserat traced cuneiform to clay accounting tokens for sheep and grain.", "uk": "Шмандт-Бессера простежила клинопис до глиняних облікових жетонів для овець і зерна." } },
-    { "chapter": 5, "article": "writing-systems",
-      "q": { "en": "The Greeks' crucial addition to the Phoenician alphabet was…", "uk": "Вирішальним грецьким доповненням фінікійського алфавіту були…" },
-      "options": [ { "en": "full vowels", "uk": "повноцінні голосні" }, { "en": "punctuation marks", "uk": "розділові знаки" }, { "en": "lowercase letters", "uk": "малі літери" } ],
+      "why": {
+        "en": "Schmandt-Besserat traced cuneiform to clay accounting tokens for sheep and grain.",
+        "uk": "Шмандт-Бессера простежила клинопис до глиняних облікових жетонів для овець і зерна."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "writing-systems",
+      "q": {
+        "en": "The Greeks' crucial addition to the Phoenician alphabet was…",
+        "uk": "Вирішальним грецьким доповненням фінікійського алфавіту були…"
+      },
+      "options": [
+        {
+          "en": "full vowels",
+          "uk": "повноцінні голосні"
+        },
+        {
+          "en": "punctuation marks",
+          "uk": "розділові знаки"
+        },
+        {
+          "en": "lowercase letters",
+          "uk": "малі літери"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "From Greek came Latin westward and, via Cyril and Methodius's students, Cyrillic.", "uk": "Від грецької пішла латинка на захід і, через учнів Кирила й Мефодія, кирилиця." } },
-    { "chapter": 5, "article": "language-death-and-revival",
-      "q": { "en": "Languages usually die because…", "uk": "Мови зазвичай помирають, бо…" },
-      "options": [ { "en": "one generation stops passing them to children (shift)", "uk": "одне покоління перестає передавати їх дітям (зсув)" }, { "en": "their speakers all die at once", "uk": "усі їхні мовці гинуть одночасно" }, { "en": "they become too grammatically complex", "uk": "вони стають заскладними граматично" } ],
+      "why": {
+        "en": "From Greek came Latin westward and, via Cyril and Methodius's students, Cyrillic.",
+        "uk": "Від грецької пішла латинка на захід і, через учнів Кирила й Мефодія, кирилиця."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "language-death-and-revival",
+      "q": {
+        "en": "Languages usually die because…",
+        "uk": "Мови зазвичай помирають, бо…"
+      },
+      "options": [
+        {
+          "en": "one generation stops passing them to children (shift)",
+          "uk": "одне покоління перестає передавати їх дітям (зсув)"
+        },
+        {
+          "en": "their speakers all die at once",
+          "uk": "усі їхні мовці гинуть одночасно"
+        },
+        {
+          "en": "they become too grammatically complex",
+          "uk": "вони стають заскладними граматично"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Grandparents fluent, parents passive, children with fragments — three generations is all it takes.", "uk": "Дідусі вільно, батьки пасивно, діти уривками — трьох поколінь достатньо." } },
-    { "chapter": 5, "article": "language-death-and-revival",
-      "q": { "en": "The only complete revival of a language with zero native speakers is…", "uk": "Єдине повне відродження мови з нулем носіїв — це…" },
-      "options": [ { "en": "Hebrew", "uk": "іврит" }, { "en": "Welsh", "uk": "валлійська" }, { "en": "Cornish", "uk": "корнська" } ],
+      "why": {
+        "en": "Grandparents fluent, parents passive, children with fragments — three generations is all it takes.",
+        "uk": "Дідусі вільно, батьки пасивно, діти уривками — трьох поколінь достатньо."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "language-death-and-revival",
+      "q": {
+        "en": "The only complete revival of a language with zero native speakers is…",
+        "uk": "Єдине повне відродження мови з нулем носіїв — це…"
+      },
+      "options": [
+        {
+          "en": "Hebrew",
+          "uk": "іврит"
+        },
+        {
+          "en": "Welsh",
+          "uk": "валлійська"
+        },
+        {
+          "en": "Cornish",
+          "uk": "корнська"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "From liturgical language to ~9 million native speakers in two generations.", "uk": "Від літургійної мови до ~9 мільйонів носіїв за два покоління." } },
-    { "chapter": 5, "article": "language-death-and-revival",
-      "q": { "en": "Māori 'language nests' (kōhanga reo) are…", "uk": "Маорійські «мовні гнізда» (kōhanga reo) — це…" },
-      "options": [ { "en": "preschools where elders immerse children in the language", "uk": "садочки, де старші занурюють дітей у мову" }, { "en": "radio stations broadcasting in Māori", "uk": "радіостанції маорійською" }, { "en": "summer camps for linguists", "uk": "літні табори для лінгвістів" } ],
+      "why": {
+        "en": "From liturgical language to ~9 million native speakers in two generations.",
+        "uk": "Від літургійної мови до ~9 мільйонів носіїв за два покоління."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "language-death-and-revival",
+      "q": {
+        "en": "Māori 'language nests' (kōhanga reo) are…",
+        "uk": "Маорійські «мовні гнізда» (kōhanga reo) — це…"
+      },
+      "options": [
+        {
+          "en": "preschools where elders immerse children in the language",
+          "uk": "садочки, де старші занурюють дітей у мову"
+        },
+        {
+          "en": "radio stations broadcasting in Māori",
+          "uk": "радіостанції маорійською"
+        },
+        {
+          "en": "summer camps for linguists",
+          "uk": "літні табори для лінгвістів"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "A model copied worldwide, including Hawaiian's Pūnana Leo.", "uk": "Модель, скопійована світом, зокрема гавайською (Pūnana Leo)." } },
-
-    { "chapter": 6, "article": "internet-language",
-      "q": { "en": "McCulloch's analysis shows emoji function in writing like…", "uk": "Аналіз Маккалок показує: емодзі функціонують у письмі як…" },
-      "options": [ { "en": "gesture — tone, not vocabulary", "uk": "жест — тон, а не лексика" }, { "en": "a replacement alphabet", "uk": "замінна абетка" }, { "en": "decorative punctuation", "uk": "декоративна пунктуація" } ],
+      "why": {
+        "en": "A model copied worldwide, including Hawaiian's Pūnana Leo.",
+        "uk": "Модель, скопійована світом, зокрема гавайською (Pūnana Leo)."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "internet-language",
+      "q": {
+        "en": "McCulloch's analysis shows emoji function in writing like…",
+        "uk": "Аналіз Маккалок показує: емодзі функціонують у письмі як…"
+      },
+      "options": [
+        {
+          "en": "gesture — tone, not vocabulary",
+          "uk": "жест — тон, а не лексика"
+        },
+        {
+          "en": "a replacement alphabet",
+          "uk": "замінна абетка"
+        },
+        {
+          "en": "decorative punctuation",
+          "uk": "декоративна пунктуація"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "A 😉 doesn't replace a sentence; it tells you how to take one — which is why nobody writes novels in emoji.", "uk": "😉 не замінює речення — воно каже, як його сприймати; тому ніхто не пише романів емодзі." } },
-    { "chapter": 6, "article": "ai-and-language",
-      "q": { "en": "Which chatbot-favored word measurably rose in human writing after 2023?", "uk": "Яке улюблене слово чат-ботів помітно почастішало в людських текстах після 2023 року?" },
-      "options": [ { "en": "delve", "uk": "delve" }, { "en": "selfie", "uk": "selfie" }, { "en": "google", "uk": "google" } ],
+      "why": {
+        "en": "A 😉 doesn't replace a sentence; it tells you how to take one — which is why nobody writes novels in emoji.",
+        "uk": "😉 не замінює речення — воно каже, як його сприймати; тому ніхто не пише романів емодзі."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "ai-and-language",
+      "q": {
+        "en": "Which chatbot-favored word measurably rose in human writing after 2023?",
+        "uk": "Яке улюблене слово чат-ботів помітно почастішало в людських текстах після 2023 року?"
+      },
+      "options": [
+        {
+          "en": "delve",
+          "uk": "delve"
+        },
+        {
+          "en": "selfie",
+          "uk": "selfie"
+        },
+        {
+          "en": "google",
+          "uk": "google"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Words statistically favored by chatbots (delve, tapestry) spiked in human abstracts and emails.", "uk": "Слова, які статистично полюбляють чат-боти (delve, tapestry), почастішали в людських анотаціях і листах." } },
-    { "chapter": 6, "article": "constructed-languages",
-      "q": { "en": "Esperanto was created in 1887 by…", "uk": "Есперанто створив 1887 року…" },
-      "options": [ { "en": "L. L. Zamenhof, a Warsaw oculist", "uk": "Л. Л. Заменгоф, варшавський окуліст" }, { "en": "Hildegard of Bingen", "uk": "Гільдеґарда Бінгенська" }, { "en": "Marc Okrand", "uk": "Марк Окранд" } ],
+      "why": {
+        "en": "Words statistically favored by chatbots (delve, tapestry) spiked in human abstracts and emails.",
+        "uk": "Слова, які статистично полюбляють чат-боти (delve, tapestry), почастішали в людських анотаціях і листах."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "constructed-languages",
+      "q": {
+        "en": "Esperanto was created in 1887 by…",
+        "uk": "Есперанто створив 1887 року…"
+      },
+      "options": [
+        {
+          "en": "L. L. Zamenhof, a Warsaw oculist",
+          "uk": "Л. Л. Заменгоф, варшавський окуліст"
+        },
+        {
+          "en": "Hildegard of Bingen",
+          "uk": "Гільдеґарда Бінгенська"
+        },
+        {
+          "en": "Marc Okrand",
+          "uk": "Марк Окранд"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Hildegard built Lingua Ignota in the 12th century; Okrand built Klingon in 1984.", "uk": "Гільдеґарда збудувала Lingua Ignota у XII столітті; Окранд — клінгонську 1984 року." } },
-    { "chapter": 6, "article": "constructed-languages",
-      "q": { "en": "Toki Pona's entire vocabulary is roughly…", "uk": "Увесь словник токіпони — це приблизно…" },
-      "options": [ { "en": "120–140 words", "uk": "120–140 слів" }, { "en": "2,000 words", "uk": "2 000 слів" }, { "en": "16 words", "uk": "16 слів" } ],
+      "why": {
+        "en": "Hildegard built Lingua Ignota in the 12th century; Okrand built Klingon in 1984.",
+        "uk": "Гільдеґарда збудувала Lingua Ignota у XII столітті; Окранд — клінгонську 1984 року."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "constructed-languages",
+      "q": {
+        "en": "Toki Pona's entire vocabulary is roughly…",
+        "uk": "Увесь словник токіпони — це приблизно…"
+      },
+      "options": [
+        {
+          "en": "120–140 words",
+          "uk": "120–140 слів"
+        },
+        {
+          "en": "2,000 words",
+          "uk": "2 000 слів"
+        },
+        {
+          "en": "16 words",
+          "uk": "16 слів"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Complexity is assembled Lego-like: jan pona, 'good person', is 'friend'.", "uk": "Складність складається, як з Lego: jan pona — «добра людина» — означає «друг»." } },
-    { "chapter": 6, "article": "machine-languages",
-      "q": { "en": "MIT scans showed that reading code mainly activates…", "uk": "Сканування MIT показали: читання коду переважно вмикає…" },
-      "options": [ { "en": "the multiple-demand network, not the language network", "uk": "мережу множинних завдань, а не мовну мережу" }, { "en": "the language network, like Esperanto", "uk": "мовну мережу, як есперанто" }, { "en": "the visual cortex only", "uk": "лише зорову кору" } ],
+      "why": {
+        "en": "Complexity is assembled Lego-like: jan pona, 'good person', is 'friend'.",
+        "uk": "Складність складається, як з Lego: jan pona — «добра людина» — означає «друг»."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "machine-languages",
+      "q": {
+        "en": "MIT scans showed that reading code mainly activates…",
+        "uk": "Сканування MIT показали: читання коду переважно вмикає…"
+      },
+      "options": [
+        {
+          "en": "the multiple-demand network, not the language network",
+          "uk": "мережу множинних завдань, а не мовну мережу"
+        },
+        {
+          "en": "the language network, like Esperanto",
+          "uk": "мовну мережу, як есперанто"
+        },
+        {
+          "en": "the visual cortex only",
+          "uk": "лише зорову кору"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Your brain files Python with Sudoku, not with Ukrainian.", "uk": "Мозок кладе Python на полицю до судоку, а не до української." } },
-    { "chapter": 6, "article": "machine-languages",
-      "q": { "en": "The Chomsky hierarchy, a failed theory of human grammar, succeeded inside…", "uk": "Ієрархія Хомського, невдала теорія людської граматики, досягла успіху всередині…" },
-      "options": [ { "en": "every compiler on Earth", "uk": "кожного компілятора Землі" }, { "en": "the United Nations", "uk": "Організації Об'єднаних Націй" }, { "en": "dictionary publishing", "uk": "словникарства" } ],
+      "why": {
+        "en": "Your brain files Python with Sudoku, not with Ukrainian.",
+        "uk": "Мозок кладе Python на полицю до судоку, а не до української."
+      }
+    },
+    {
+      "chapter": 6,
+      "article": "machine-languages",
+      "q": {
+        "en": "The Chomsky hierarchy, a failed theory of human grammar, succeeded inside…",
+        "uk": "Ієрархія Хомського, невдала теорія людської граматики, досягла успіху всередині…"
+      },
+      "options": [
+        {
+          "en": "every compiler on Earth",
+          "uk": "кожного компілятора Землі"
+        },
+        {
+          "en": "the United Nations",
+          "uk": "Організації Об'єднаних Націй"
+        },
+        {
+          "en": "dictionary publishing",
+          "uk": "словникарства"
+        }
+      ],
       "correct": 0,
-      "why": { "en": "Your regex engine speaks Chomsky level 3, your parser level 2 — linguistics' most successful export.", "uk": "Ваш регулярний вираз говорить третім рівнем Хомського, парсер — другим: найуспішніший експорт лінгвістики." } }
+      "why": {
+        "en": "Your regex engine speaks Chomsky level 3, your parser level 2 — linguistics' most successful export.",
+        "uk": "Ваш регулярний вираз говорить третім рівнем Хомського, парсер — другим: найуспішніший експорт лінгвістики."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "esperanto",
+      "q": {
+        "en": "Zamenhof published his language under the pseudonym…",
+        "uk": "Заменгоф видав свою мову під псевдонімом…"
+      },
+      "options": [
+        {
+          "en": "Doktoro Esperanto — “the doctor who hopes”",
+          "uk": "Doktoro Esperanto — «лікар, який сподівається»"
+        },
+        {
+          "en": "Doktoro Lingvo",
+          "uk": "Doktoro Lingvo"
+        },
+        {
+          "en": "La Majstro",
+          "uk": "La Majstro"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The pseudonym swallowed the project — the language itself became Esperanto, the hoping language.",
+        "uk": "Псевдонім поглинув проєкт — сама мова стала есперанто, мовою надії."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "esperanto",
+      "q": {
+        "en": "Roughly how many people speak Esperanto natively, from birth?",
+        "uk": "Приблизно скільки людей говорить есперанто від народження?"
+      },
+      "options": [
+        {
+          "en": "About a thousand",
+          "uk": "Близько тисячі"
+        },
+        {
+          "en": "None — a planned language can’t have native speakers",
+          "uk": "Жодної — планова мова не може мати носіїв"
+        },
+        {
+          "en": "About a million",
+          "uk": "Близько мільйона"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Children of couples who met through the language — and in their mouths the plan started drifting like any natural language.",
+        "uk": "Діти пар, що познайомилися через мову, — і в їхніх устах план почав дрейфувати, як будь-яка природна мова."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "tolkien-languages",
+      "q": {
+        "en": "Quenya and Sindarin are modeled on the sounds of…",
+        "uk": "Квенья та сіндарин змодельовані за звучанням…"
+      },
+      "options": [
+        {
+          "en": "Finnish and Welsh",
+          "uk": "Фінської та валлійської"
+        },
+        {
+          "en": "Latin and Greek",
+          "uk": "Латини та грецької"
+        },
+        {
+          "en": "Old Norse and Gothic",
+          "uk": "Давньоскандинавської та готської"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Quenya is the “Elf-Latin” of the Kalevala’s Finnish; Sindarin carries the mutating consonants and falling rhythms of Welsh.",
+        "uk": "Квенья — «ельфійська латина» фінської з «Калевали»; сіндарин несе мутації приголосних і спадні ритми валлійської."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "tolkien-languages",
+      "q": {
+        "en": "What did Tolkien say about his languages and his stories?",
+        "uk": "Що Толкін казав про свої мови та свої історії?"
+      },
+      "options": [
+        {
+          "en": "The stories were made to provide a world for the languages",
+          "uk": "Історії були створені, щоб дати мовам світ"
+        },
+        {
+          "en": "The languages were a marketing idea of his publisher",
+          "uk": "Мови були маркетинговою ідеєю його видавця"
+        },
+        {
+          "en": "He invented the languages only after the books were done",
+          "uk": "Він вигадав мови лише після завершення книжок"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "“The invention of languages is the foundation” — he derived Quenya and Sindarin from a proto-language by invented sound laws.",
+        "uk": "«Вигадування мов — це фундамент» — квенью й сіндарин він вивів з прамови вигаданими звуковими законами."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "hollywood-conlangs",
+      "q": {
+        "en": "What word order did Okrand give Klingon?",
+        "uk": "Який порядок слів Окранд дав клінгонській?"
+      },
+      "options": [
+        {
+          "en": "Object–verb–subject — among the rarest in human languages",
+          "uk": "Додаток–дієслово–підмет — один із найрідкісніших у людських мовах"
+        },
+        {
+          "en": "Subject–verb–object, like English",
+          "uk": "Підмет–дієслово–додаток, як в англійській"
+        },
+        {
+          "en": "Completely free word order",
+          "uk": "Цілком вільний порядок слів"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nothing in Klingon is impossible — the ensemble is. Real features placed where humans almost never put them.",
+        "uk": "У клінгонській немає нічого неможливого — неможливий ансамбль. Справжні риси там, куди люди їх майже не ставлять."
+      }
+    },
+    {
+      "chapter": 7,
+      "article": "hollywood-conlangs",
+      "q": {
+        "en": "How did David J. Peterson get the Game of Thrones job?",
+        "uk": "Як Девід Дж. Пітерсон отримав роботу над «Грою престолів»?"
+      },
+      "options": [
+        {
+          "en": "He won a contest run through the Language Creation Society",
+          "uk": "Виграв конкурс, проведений через Language Creation Society"
+        },
+        {
+          "en": "He was George R. R. Martin’s student",
+          "uk": "Був студентом Джорджа Р. Р. Мартіна"
+        },
+        {
+          "en": "He had already created Klingon",
+          "uk": "Він уже створив клінгонську"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "He then built Dothraki and High Valyrian outward from the few dozen words in Martin’s novels — proto-language, sound laws, season by season.",
+        "uk": "Далі він розгорнув дотракійську та високовалірійську з кількох десятків слів у романах Мартіна — прамова, звукові закони, сезон за сезоном."
+      }
+    }
   ]
 }

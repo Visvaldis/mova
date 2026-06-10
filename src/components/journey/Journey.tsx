@@ -1,4 +1,4 @@
-// The Journey — guided course mode (docs/JOURNEY.md): 6 chapters, checkpoints,
+// The Journey — guided course mode (docs/JOURNEY.md): 7 chapters, checkpoints,
 // localStorage progress, Grimm's-Law certificate. Orchestration of existing content.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lang, UIKey } from '../../i18n/ui';

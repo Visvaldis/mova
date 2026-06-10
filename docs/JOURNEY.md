@@ -1,7 +1,7 @@
 # JOURNEY.md — guided course mode ("The Journey / Мандрівка")
 
 Plan for `/{lang}/journey/`: a guided path through the whole site — 18 articles and 7 toys
-organized into 6 chapters, each with a 3-question checkpoint, progress tracked in
+organized into 7 chapters, each with a 3-question checkpoint, progress tracked in
 `localStorage`, ending in a generated, downloadable certificate. Pure orchestration of
 existing content: **no new facts are written for this feature** — questions are derived
 from article text, the certificate generator reuses `soundlaws.ts`.
@@ -13,7 +13,7 @@ obvious next step, and the toys don't know the articles exist as a sequence. The
 turns a 20-minute visit into a multi-session habit, and gives completionists a reason to
 read all 18.
 
-## 2. The path — 6 chapters
+## 2. The path — 7 chapters
 
 Each chapter = 2–4 articles + 1 toy + 1 checkpoint. Order teaches deliberately
 (mechanisms before case studies before frontiers):
@@ -51,7 +51,7 @@ this browser"). The Journey island reads it and renders chapter rings.
 
 ## 5. The certificate
 
-On completing all 6 chapters: a canvas-generated PNG (1200×850, both themes) —
+On completing all 7 chapters: a canvas-generated PNG (1200×850, both themes) —
 "Folk-Etymology-Proof / Стійкість до народної етимології", the user's typed name **plus
 its Grimm's Law transformation** (reusing `applyPack` from `soundlaws.ts` — the site's
 running joke pays off), date, chapter list. Download button; name never leaves the browser.

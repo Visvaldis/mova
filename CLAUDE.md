@@ -111,6 +111,14 @@ Middle-earth name forge. (a) Element tiles from attested names ONLY (mor 'dark',
 - Mobile-first; interactives must degrade gracefully to tap/step interactions on small screens.
 - Accessibility: all interactives keyboard-navigable, `prefers-reduced-motion` honored, alt/aria text in both languages.
 
+## Adding new articles later
+
+New articles are not done until they're integrated into the aggregating features — the master
+timeline (`src/data/timelineEvents.ts`, dated events with the article's slug), the Journey course
+(`journey.data.ts` chapter + 6 bilingual checkpoint questions), an interactive (spec here +
+`interactiveInfo` entry), and any hardcoded counts (home hero subtitle, Journey done-screen,
+docs). Full checklist: `tasks/CONVENTIONS.md` § "Adding a new article".
+
 ## Quality bar / definition of done
 
 - `npm run build` produces static output with zero errors.
