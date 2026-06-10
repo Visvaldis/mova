@@ -1,0 +1,85 @@
+/* ============================================================
+   Shared interactive-island styles.
+
+   CSS Module — class names are locally scoped, so these can't leak
+   into `.prose`. Import in any island:
+
+     import s from './interactive.module.css';
+     <div className={s.panel}> … <button className={s.pill}> …
+
+   Every value is a topic CSS variable inherited from <body data-topic>,
+   so islands auto-match the article accent in light AND dark mode.
+   Never add hardcoded hex here.
+   ============================================================ */
+
+/* Outer surface — the island's main container. */
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+}
+
+/* Inset card — for a result/explainer block inside a panel. */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.05rem;
+}
+
+/* Horizontal control cluster; wraps on narrow viewports. */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Pill button. Active via [aria-pressed='true'] or [data-active='true']
+   so it works for both toggle and selection patterns. */
+.pill {
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.pill:hover {
+  border-color: var(--accent);
+}
+.pill[aria-pressed='true'],
+.pill[data-active='true'],
+.pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Range slider — native control, keyboard-accessible for free. */
+.range {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Muted caption / footnote. */
+.caption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Inline text helpers. */
+.accent {
+  color: var(--accent);
+}
+.muted {
+  color: var(--muted);
+}
