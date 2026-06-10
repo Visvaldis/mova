@@ -6,6 +6,9 @@ import { TOYS } from '../../../components/playground/registry';
 import BabelDaily from '../../../components/playground/BabelDaily';
 import WordTimeMachine from '../../../components/playground/WordTimeMachine';
 import SoundShiftSandbox from '../../../components/playground/SoundShiftSandbox';
+import Stratigraph from '../../../components/playground/Stratigraph';
+import ConlangForge from '../../../components/playground/ConlangForge';
+import CognateRush from '../../../components/playground/CognateRush';
 
 export function getStaticPaths() {
   return LANGS.flatMap((lang) => TOYS.map((toy) => ({ params: { lang, toy: toy.id } })));
@@ -35,6 +38,9 @@ const related = toy.related
     {toy.id === 'babel-daily' && <BabelDaily client:visible lang={lang} />}
     {toy.id === 'word-time-machine' && <WordTimeMachine client:visible lang={lang} />}
     {toy.id === 'sound-shift-sandbox' && <SoundShiftSandbox client:visible lang={lang} />}
+    {toy.id === 'stratigraph' && <Stratigraph client:visible lang={lang} />}
+    {toy.id === 'conlang-forge' && <ConlangForge client:visible lang={lang} />}
+    {toy.id === 'cognate-rush' && <CognateRush client:visible lang={lang} />}
 
     {
       related.length > 0 && (

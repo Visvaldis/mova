@@ -1,0 +1,30 @@
+{
+  "_comment": "EN↔UK cognate pairs (shared PIE root; see language-families & sound-change articles) and curated false friends. Roots per standard references (Wiktionary PIE entries, etymonline, ЕСУМ).",
+  "pairs": [
+    { "id": "night", "a": "night", "b": "ніч", "false": false, "root": "*nókʷts", "note": { "en": "The classic textbook cognate set.", "uk": "Класичний підручниковий ряд когнатів." } },
+    { "id": "three", "a": "three", "b": "три", "false": false, "root": "*tréyes", "note": { "en": "Grimm's Law: t→th in Germanic; Ukrainian kept t.", "uk": "Закон Ґрімма: t→th у германських; українська зберегла t." } },
+    { "id": "two", "a": "two", "b": "два", "false": false, "root": "*dwóh₁", "note": { "en": "Grimm's Law: d→t in Germanic.", "uk": "Закон Ґрімма: d→t у германських." } },
+    { "id": "mother", "a": "mother", "b": "мати", "false": false, "root": "*méh₂tēr", "note": { "en": "Six millennia, same word.", "uk": "Шість тисячоліть — те саме слово." } },
+    { "id": "brother", "a": "brother", "b": "брат", "false": false, "root": "*bʰréh₂tēr", "note": { "en": "bʰ→b in both branches, different paths.", "uk": "bʰ→b в обох гілках, різними шляхами." } },
+    { "id": "sister", "a": "sister", "b": "сестра", "false": false, "root": "*swésōr", "note": { "en": "Norse-influenced in English.", "uk": "В англійській — зі скандинавським впливом." } },
+    { "id": "sun", "a": "sun", "b": "сонце", "false": false, "root": "*sóh₂wl̥", "note": { "en": "Ukrainian adds the diminutive -це.", "uk": "Українська додає демінутив -це." } },
+    { "id": "new", "a": "new", "b": "новий", "false": false, "root": "*néwos", "note": { "en": "One of the most stable adjectives.", "uk": "Один із найстабільніших прикметників." } },
+    { "id": "nose", "a": "nose", "b": "ніс", "false": false, "root": "*néh₂s-", "note": { "en": "Ukrainian і from o in a closed syllable.", "uk": "Українське і з о в закритому складі." } },
+    { "id": "water", "a": "water", "b": "вода", "false": false, "root": "*wódr̥", "note": { "en": "Also Greek hydōr — same root.", "uk": "Грецьке hydōr — той самий корінь." } },
+    { "id": "heart", "a": "heart", "b": "серце", "false": false, "root": "*ḱérd-", "note": { "en": "Also Latin cor, Greek kardía.", "uk": "Також лат. cor, грец. kardía." } },
+    { "id": "eat", "a": "eat", "b": "їсти", "false": false, "root": "*h₁ed-", "note": { "en": "Also Latin edere.", "uk": "Також лат. edere." } },
+    { "id": "live", "a": "live", "b": "жити", "false": false, "root": "*gʷih₃w-", "note": { "en": "Also Latin vivere — gʷ went three ways.", "uk": "Також лат. vivere — gʷ розійшлося трьома шляхами." } },
+    { "id": "salt", "a": "salt", "b": "сіль", "false": false, "root": "*séh₂l", "note": { "en": "Also Latin sal — see the salary myth.", "uk": "Також лат. sal — згадайте міф про salary." } },
+    { "id": "snow", "a": "snow", "b": "сніг", "false": false, "root": "*sneygʷʰ-", "note": { "en": "Also Latin nix, nivis.", "uk": "Також лат. nix, nivis." } },
+    { "id": "wolf", "a": "wolf", "b": "вовк", "false": false, "root": "*wĺ̥kʷos", "note": { "en": "Also Latin lupus, Greek lýkos.", "uk": "Також лат. lupus, грец. lýkos." } },
+    { "id": "beard", "a": "beard", "b": "борода", "false": false, "root": "*bʰardʰeh₂", "note": { "en": "Full pleophony in Ukrainian: -oro-.", "uk": "Повноголосся в українській: -оро-." } },
+    { "id": "sit", "a": "sit", "b": "сидіти", "false": false, "root": "*sed-", "note": { "en": "Also Latin sedēre.", "uk": "Також лат. sedēre." } },
+
+    { "id": "magazine", "a": "magazine", "b": "магазин", "false": true, "root": "", "note": { "en": "Same Arabic source (makhāzin 'storehouses'), but EN means a periodical, UK means a shop. A false friend by meaning-drift.", "uk": "Те саме арабське джерело (makhāzin «склади»), але англ. — часопис, укр. — крамниця. Фальшивий друг через дрейф значень." } },
+    { "id": "fabric", "a": "fabric", "b": "фабрика", "false": true, "root": "", "note": { "en": "EN fabric = cloth; UK фабрика = factory. Both from Latin fabrica, meanings split.", "uk": "Англ. fabric — тканина; укр. фабрика — завод. Обоє з лат. fabrica, значення розійшлися." } },
+    { "id": "intelligent", "a": "intelligent", "b": "інтелігентний", "false": true, "root": "", "note": { "en": "UK інтелігентний = cultured/refined, not 'smart'.", "uk": "Англ. intelligent — розумний; укр. інтелігентний — вихований, культурний." } },
+    { "id": "sympathetic", "a": "sympathetic", "b": "симпатичний", "false": true, "root": "", "note": { "en": "UK симпатичний = cute/likeable; EN sympathetic = compassionate.", "uk": "Укр. симпатичний — милий; англ. sympathetic — співчутливий." } },
+    { "id": "actual", "a": "actual", "b": "актуальний", "false": true, "root": "", "note": { "en": "UK актуальний = topical/relevant; EN actual = real.", "uk": "Укр. актуальний — на часі; англ. actual — справжній." } },
+    { "id": "novel", "a": "novel", "b": "новела", "false": true, "root": "", "note": { "en": "EN novel = роман; UK новела = a short story.", "uk": "Англ. novel — роман; укр. новела — коротке оповідання." } }
+  ]
+}

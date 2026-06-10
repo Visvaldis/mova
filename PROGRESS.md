@@ -93,3 +93,15 @@ Phases:
 - **Build verified: 52 pages, zero errors.** (Sandbox note: ran with a temp config overriding
   `outDir`/`cacheDir`; repo `dist/` is stale — rebuild on host with plain `npm run build`.)
 - **P2 remaining** (per `docs/PLAYGROUND.md`): `stratigraph`, `conlang-forge`, `cognate-rush`.
+
+## ✅ Update — 2026-06-10 (Playground P2)
+
+- **All six toys from `docs/PLAYGROUND.md` are now live**: added `stratigraph` (255-lemma curated
+  ЕСУМ-sourced lexicon + conservative stemmer in `src/lib/uk-stem.ts` — misses render honest-grey),
+  `conlang-forge` (seeded generator in `src/lib/conlang.ts`: 3 phoneme presets × word order × plural
+  style → 12-word lexicon, sample sentence, "fast-forward 500 years" drift with 2 sound laws + analogy),
+  and `cognate-rush` (60-second EN↔UK match game, 18 true cognate pairs + 6 false friends, best score
+  in `localStorage`).
+- Datasets: `src/data/playground/uk-lexicon.json`, `src/data/playground/cognates.json` — every entry sourced.
+- Build verified green (64 pages). Logic smoke-tested via node (stemmer hits козак/майдан/ночі/словами;
+  generator deterministic per seed).

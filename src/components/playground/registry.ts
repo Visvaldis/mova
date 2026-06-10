@@ -36,4 +36,25 @@ export const TOYS: ToyMeta[] = [
     minutes: 3,
     related: ['sound-change', 'language-families'],
   },
+  {
+    id: 'stratigraph',
+    icon: '🪨',
+    key: 'pg.str',
+    minutes: 5,
+    related: ['ukrainian-word-origins', 'traveling-words', 'ukrainian-language-history'],
+  },
+  {
+    id: 'conlang-forge',
+    icon: '🔨',
+    key: 'pg.clf',
+    minutes: 5,
+    related: ['constructed-languages', 'sound-change', 'new-languages'],
+  },
+  {
+    id: 'cognate-rush',
+    icon: '⚡',
+    key: 'pg.cgr',
+    minutes: 2,
+    related: ['language-families', 'everyday-etymologies', 'etymology-myths'],
+  },
 ];
