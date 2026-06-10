@@ -333,3 +333,11 @@ CSS modules.
 - **Global ≤540px**: header drops the tagline and wraps cleanly with 6 nav items; tighter toy/card
   paddings, smaller pills, clamped big-word sizes, reduced section padding; hover transforms off.
 - Build green; astro sync + tsc clean. (Reminder: run `npx astro sync` before `tsc`.)
+
+## 2026-06-10 — Master timeline (tasks 300 + 310)
+
+- `src/data/timelineEvents.ts`: ~40 dated events across all 18 articles (−7,000,000 chimp-lineage split → 2023 AI), bilingual title+blurb, topic + source slug per event. Every fact traced to article text; BCE encoded as negative years.
+- `src/components/interactive/MasterTimeline.tsx`: log-scaled axis (8M ybp → today), topic-colored nodes with staggered heights for the dense modern end, tap-to-isolate topic legend, keyboard-focusable node hit targets, Earlier/Later step buttons for mobile, event card linking to the source article via `localizedPath`.
+- `src/pages/[lang]/timeline.astro`: placeholder replaced with `client:visible` island.
+- i18n: 7 new `timeline.*` chrome keys (EN+UK).
+- Verified: tsc clean, static build clean, island + localized content present in both `/en/timeline/` and `/uk/timeline/`, bundle ~8.4 KB gz.

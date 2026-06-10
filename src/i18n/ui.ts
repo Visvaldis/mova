@@ -47,6 +47,13 @@ export const ui = {
     'timeline.title': 'The whole story, on one timeline',
     'timeline.intro':
       'Key dated moments from every article, from deep prehistory to today.',
+    'timeline.legend': 'Filter by topic',
+    'timeline.axisLabel': 'Timeline of language history, logarithmic scale',
+    'timeline.today': 'today',
+    'timeline.logNote': 'Logarithmic scale: years before present (M = million, k = thousand)',
+    'timeline.prev': 'Earlier',
+    'timeline.next': 'Later',
+    'timeline.openArticle': 'Read the article',
 
     'about.title': 'About Mova',
     'about.p1':
@@ -676,6 +683,13 @@ export const ui = {
     'timeline.title': 'Уся історія на одній шкалі',
     'timeline.intro':
       'Ключові датовані моменти з усіх статей — від глибокої праісторії до сьогодні.',
+    'timeline.legend': 'Фільтр за темою',
+    'timeline.axisLabel': 'Шкала історії мови, логарифмічний масштаб',
+    'timeline.today': 'сьогодні',
+    'timeline.logNote': 'Логарифмічна шкала: років тому (M = мільйон, k = тисяча)',
+    'timeline.prev': 'Раніше',
+    'timeline.next': 'Пізніше',
+    'timeline.openArticle': 'Читати статтю',
 
     'about.title': 'Про Мову',
     'about.p1':

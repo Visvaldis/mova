@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MasterTimeline from '../../components/interactive/MasterTimeline.tsx';
 import { LANGS, useTranslations, type Lang } from '../../i18n/utils';
 
 export function getStaticPaths() {
@@ -16,19 +17,7 @@ const t = useTranslations(lang);
     <p>{t('timeline.intro')}</p>
 
     <div class="interactive-wrap">
-      <div class="placeholder">
-        <div class="head">
-          <div class="icon" aria-hidden="true">🗺️</div>
-          <div>
-            <div class="badge">{t('interactive.badge')} · {t('interactive.comingSoon')}</div>
-            <div class="title">{t('timeline.title')}</div>
-          </div>
-        </div>
-        <p class="desc">{t('timeline.intro')}</p>
-        <div class="pulse-row" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
+      <MasterTimeline client:visible lang={lang} />
     </div>
   </section>
 </BaseLayout>
