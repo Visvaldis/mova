@@ -375,3 +375,13 @@ CSS modules.
 
 - Seva deployed to GitHub Pages; live site verified at https://visvaldis.github.io/mova/ (current build: filter chips, hubs, fonts all present). Board card 920 → done.
 - Fixed stale hero subtitle: "six interactive stories" → "eighteen" (EN+UK).
+
+## 2026-06-10 — Conlang Forge expansion (user request)
+
+- New sound options: word length (short/medium/long), tones toggle (deterministic pitch mark per word — Mandarin/Yoruba note), vowel harmony toggle (front/back agreement, Turkish-style ö/ü). Decorations post-process stems, so toggling them keeps the same lexicon for a seed.
+- New grammar: adjective position (big bird ⇄ bird big) and question formation (particle at end …ka? / at start czy…? / intonation-only ↗); step 2 renamed Grammar.
+- New morphology: past tense — suffix, prefix, or ablaut (sing → sang); step 3 renamed Morphology. RNG draw order fixed so plural/past/question morphs never reshuffle stems.
+- Drift is now repeatable: +500-year presses stack to 1500 years (2 fresh rules per round from a seed-shuffled deck, round 2 extends round 1), with back-to-year-0 reset; drift also applies to morphs and the question particle.
+- Sample output grew to four lines: statement with adjective, question, past, plural; passport copy includes the new settings and sentences.
+- 31 new pg.clf.* keys (EN+UK). 20 unit assertions on the lib (determinism, stem stability, harmony/ablaut correctness, sentence arrangement, drift monotonicity) — all green. Build clean, island 4.6 KB gz.
+- Note: ConlangWorkbench tsc errors in the tree are the other agent's in-flight task (untracked files, keys pending) — not introduced by this change.
