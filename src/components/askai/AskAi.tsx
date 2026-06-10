@@ -51,39 +51,58 @@ export default function AskAi({ lang }: { lang: Lang }) {
   }, []);
 
   // ---- selection pill ----------------------------------------------------
+  // Responsiveness: mouseup/touchend trigger ~immediately (selection is final
+  // the moment the button is released); selectionchange keeps a short debounce
+  // only as the keyboard-selection path.
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
-    const onSelection = () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        const s = window.getSelection();
-        if (!s || s.isCollapsed || open) {
-          setPill(null);
-          return;
-        }
-        const text = s.toString().trim();
-        if (text.length < 3 || text.length > 1000) {
-          setPill(null);
-          return;
-        }
-        // Ignore selections inside the drawer itself.
-        const node = s.anchorNode?.parentElement;
-        if (node?.closest('[data-askai]')) return;
-        const range = s.getRangeAt(0);
-        const rect = range.getBoundingClientRect();
-        const paragraph = node?.closest('p, li, blockquote, h2, h3, figcaption')?.textContent ?? text;
-        anchorRef.current = node ?? null;
-        setSel({ text, paragraph });
-        setPill({
-          x: Math.min(Math.max(rect.left + rect.width / 2, 80), window.innerWidth - 80),
-          y: rect.bottom + window.scrollY + 8,
-        });
-      }, 300);
+
+    const compute = () => {
+      const s = window.getSelection();
+      if (!s || s.isCollapsed || open) {
+        setPill(null);
+        return;
+      }
+      const text = s.toString().trim();
+      if (text.length < 3 || text.length > 1000) {
+        setPill(null);
+        return;
+      }
+      // Ignore selections inside the drawer itself.
+      const node = s.anchorNode?.parentElement;
+      if (node?.closest('[data-askai]')) return;
+      const range = s.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const paragraph = node?.closest('p, li, blockquote, h2, h3, figcaption')?.textContent ?? text;
+      anchorRef.current = node ?? null;
+      setSel({ text, paragraph });
+      // Above the selection (doesn't cover the next line); flip below near the top.
+      const above = rect.top + window.scrollY - 34;
+      const below = rect.bottom + window.scrollY + 6;
+      setPill({
+        x: Math.min(Math.max(rect.left + rect.width / 2, 60), window.innerWidth - 60),
+        y: rect.top > 60 ? above : below,
+      });
     };
-    document.addEventListener('selectionchange', onSelection);
+
+    const onPointerUp = () => {
+      clearTimeout(timer);
+      // One tick so the browser finalizes the selection before we read it.
+      timer = setTimeout(compute, 10);
+    };
+    const onSelectionChange = () => {
+      clearTimeout(timer);
+      timer = setTimeout(compute, 120);
+    };
+
+    document.addEventListener('mouseup', onPointerUp);
+    document.addEventListener('touchend', onPointerUp);
+    document.addEventListener('selectionchange', onSelectionChange);
     return () => {
       clearTimeout(timer);
-      document.removeEventListener('selectionchange', onSelection);
+      document.removeEventListener('mouseup', onPointerUp);
+      document.removeEventListener('touchend', onPointerUp);
+      document.removeEventListener('selectionchange', onSelectionChange);
     };
   }, [open]);
 
@@ -173,12 +192,15 @@ export default function AskAi({ lang }: { lang: Lang }) {
       {pill && sel && !open && (
         <button
           onClick={startFromSelection}
+          onMouseDown={(e) => e.preventDefault() /* keep the selection */}
+          className="askai-pill"
           style={{
             position: 'absolute', left: pill.x, top: pill.y, transform: 'translateX(-50%)',
             zIndex: 90, border: 'none', borderRadius: 999, cursor: 'pointer',
             background: 'var(--accent)', color: 'var(--on-accent)',
-            padding: '0.45rem 0.95rem', fontWeight: 700, fontSize: '0.88rem',
-            boxShadow: 'var(--shadow-lg)', font: 'inherit',
+            padding: '0.18rem 0.6rem', fontWeight: 600, fontSize: '0.78rem',
+            lineHeight: 1.5, boxShadow: 'var(--shadow)', font: 'inherit',
+            display: 'inline-flex', alignItems: 'center', gap: 4, whiteSpace: 'nowrap',
           }}
         >
           ✨ {t('askai.pill')}
@@ -343,7 +365,13 @@ export default function AskAi({ lang }: { lang: Lang }) {
           )}
         </div>
       )}
-      <style>{`@media (max-width: 640px) { .askai-drawer { inset: auto 0 0 0 !important; width: 100vw !important; height: min(75dvh, 560px) !important; border-left: none !important; border-top: 1px solid var(--line) !important; } }`}</style>
+      <style>{`
+        .askai-pill { animation: askai-pop 0.12s ease-out; }
+        .askai-pill:hover { box-shadow: var(--shadow-lg); }
+        @keyframes askai-pop { from { opacity: 0; transform: translateX(-50%) translateY(3px) scale(0.95); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
+        @media (prefers-reduced-motion: reduce) { .askai-pill { animation: none; } }
+        @media (max-width: 640px) { .askai-drawer { inset: auto 0 0 0 !important; width: 100vw !important; height: min(75dvh, 560px) !important; border-left: none !important; border-top: 1px solid var(--line) !important; } }
+      `}</style>
     </div>
   );
 }
