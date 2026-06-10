@@ -177,3 +177,9 @@ Phases:
   "неясно" out loud), modern (quarantine, vaccine).
 - Picker now grouped into 4 labeled sections (data carries bilingual group names); search
   still filters across all. No ui.ts changes (agent was mid-flight on task 150 there).
+
+## 📐 Planned — 2026-06-10 (Ask-AI selection chat)
+
+- New feature spec: `docs/ASK-AI.md` — BYOK "select text → ask AI" chat drawer (Anthropic browser
+  CORS as primary path, OpenAI-compatible as secondary; key in localStorage with session-only
+  option, forget-key, honest security copy). Board task: `tasks/todo/500-ask-ai-selection-chat.md`.
