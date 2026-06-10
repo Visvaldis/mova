@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { LANGS, useTranslations, langFromId, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const articles = (await getCollection('articles', (e) => langFromId(e.id) === lang)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout lang={lang} title="" description={t('home.hero.subtitle')}>
+  <section class="container hero">
+    <p class="kicker">{t('home.hero.kicker')}</p>
+    <h1>{t('home.hero.title')}</h1>
+    <p>{t('home.hero.subtitle')}</p>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">{t('home.articles')}</h2>
+    <div class="card-grid">
+      {
+        articles.map((a) => (
+          <ArticleCard
+            lang={lang}
+            slug={a.data.slug}
+            title={a.data.title}
+            summary={a.data.summary}
+            topic={a.data.topic}
+            readingTime={a.data.readingTime}
+            interactive={a.data.interactive}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

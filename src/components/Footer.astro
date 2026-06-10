@@ -1,0 +1,17 @@
+---
+import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+
+const { lang } = Astro.props as { lang: Lang };
+const t = useTranslations(lang);
+---
+
+<footer class="site-footer">
+  <div class="container bar">
+    <span>{t('footer.tagline')}</span>
+    <nav class="nav-links" aria-label="Footer">
+      <a href={localizedPath(lang)}>{t('nav.home')}</a>
+      <a href={localizedPath(lang, 'timeline')}>{t('nav.timeline')}</a>
+      <a href={localizedPath(lang, 'about')}>{t('nav.about')}</a>
+    </nav>
+  </div>
+</footer>

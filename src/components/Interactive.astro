@@ -1,0 +1,38 @@
+---
+import Placeholder from './interactive/Placeholder.tsx';
+import { interactiveInfo } from '../i18n/ui';
+import { useTranslations, type Lang } from '../i18n/utils';
+
+const { id, lang } = Astro.props as { id: string; lang: Lang };
+const t = useTranslations(lang);
+
+const info = interactiveInfo[id];
+const icon = info?.icon ?? '✦';
+const title = info?.title[lang] ?? id;
+const desc = info?.desc[lang] ?? '';
+
+// Registry of real interactive islands, keyed by the article's `interactive` id.
+// Empty for now — every id renders the styled Placeholder. As components are
+// built, import them and add entries here, e.g.:
+//   import SoundShift from './interactive/SoundShift.tsx';
+//   const registry = { 'sound-shift': SoundShift };
+const registry: Record<string, any> = {};
+const Comp = registry[id];
+---
+
+<div class="interactive-wrap" data-interactive={id}>
+  {
+    Comp ? (
+      <Comp client:visible lang={lang} />
+    ) : (
+      <Placeholder
+        icon={icon}
+        title={title}
+        desc={desc}
+        badge={t('interactive.badge')}
+        comingSoon={t('interactive.comingSoon')}
+        note={t('interactive.note')}
+      />
+    )
+  }
+</div>

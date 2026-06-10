@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEFAULT_LANG, useTranslations, localizedPath } from '../i18n/utils';
+
+const lang = DEFAULT_LANG;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('notfound.title')}>
+  <section class="page">
+    <h1>{t('notfound.title')}</h1>
+    <p>{t('notfound.body')}</p>
+    <p style="margin-top:1.5rem">
+      <a class="btn btn-accent" href={localizedPath(lang)}>{t('notfound.home')}</a>
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+// Root entry: detect the visitor's language (saved choice → browser → default)
+// and redirect to /{lang}/. Static page; redirect happens client-side.
+import { DEFAULT_LANG, LANGS } from '../i18n/utils';
+
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const fallback = `${base}/${DEFAULT_LANG}/`;
+---
+
+<!doctype html>
+<html lang={DEFAULT_LANG}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mova</title>
+    <meta http-equiv="refresh" content={`0; url=${fallback}`} />
+    <script is:inline define:vars={{ base, langs: LANGS, def: DEFAULT_LANG }}>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('mova-lang');
+        } catch (e) {}
+        var nav = (navigator.language || '').toLowerCase();
+        var lang =
+          stored && langs.indexOf(stored) >= 0
+            ? stored
+            : nav.indexOf('uk') === 0
+              ? 'uk'
+              : def;
+        location.replace(base + '/' + lang + '/');
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting… <a href={fallback}>Continue</a></p>
+  </body>
+</html>

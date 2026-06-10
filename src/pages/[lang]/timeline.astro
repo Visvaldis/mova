@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { LANGS, useTranslations, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={t('timeline.title')} description={t('timeline.intro')}>
+  <section class="page">
+    <h1>{t('timeline.title')}</h1>
+    <p>{t('timeline.intro')}</p>
+
+    <div class="interactive-wrap">
+      <div class="placeholder">
+        <div class="head">
+          <div class="icon" aria-hidden="true">🗺️</div>
+          <div>
+            <div class="badge">{t('interactive.badge')} · {t('interactive.comingSoon')}</div>
+            <div class="title">{t('timeline.title')}</div>
+          </div>
+        </div>
+        <p class="desc">{t('timeline.intro')}</p>
+        <div class="pulse-row" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

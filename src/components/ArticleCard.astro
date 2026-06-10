@@ -1,0 +1,29 @@
+---
+import { localizedPath, useTranslations, type Lang } from '../i18n/utils';
+import { topicNames, interactiveInfo } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+  title: string;
+  summary: string;
+  topic: string;
+  readingTime: number;
+  interactive: string;
+}
+
+const { lang, slug, title, summary, topic, readingTime, interactive } = Astro.props;
+const t = useTranslations(lang);
+const icon = interactiveInfo[interactive]?.icon ?? '✦';
+const topicName = topicNames[topic]?.[lang] ?? topic;
+---
+
+<a class="card" href={localizedPath(lang, slug)} data-topic={topic}>
+  <div class="preview" aria-hidden="true">{icon}</div>
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  <div class="meta">
+    <span class="chip">{topicName}</span>
+    <span>{readingTime} {t('card.minRead')}</span>
+  </div>
+</a>
