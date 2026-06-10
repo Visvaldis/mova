@@ -230,3 +230,16 @@ Phases:
   horizontal-pan map under 640px. Island 11.3 KB gz incl. data.
 - Integrity script: no unknown langs/origins, bilingual notes complete. Board: 510 → done.
 - M2 backlog: remaining 16 words; M3: speechSynthesis 🔊, arrow-key dot walk, PNG share.
+
+## ✅ Update — 2026-06-10 (Word Atlas real coastlines)
+
+- Replaced the hand-traced map blobs with **real Natural Earth coastlines** (land-110m via the
+  `world-atlas` npm package), processed at build time and embedded as a constant in `src/lib/geo.ts`
+  — still zero runtime map libraries. Pipeline: equirectangular projection (75°N–55°S, −170..180) →
+  rings split at antimeridian jumps (fixes the Chukotka/Fiji full-width sliver; Eurasia stays intact) →
+  Douglas-Peucker eps 1.3px (closed-ring midpoint split to avoid the degenerate-baseline collapse) →
+  islets < 50px² and Antarctica dropped. Result: 34 rings, ~15 KB raw / 6.3 KB gz.
+- WordAtlas island: 17.6 KB gz total (was 11.3). Visual QA: Eurasia/Americas/Africa/Australia/
+  Greenland all present, dots land on the right coasts.
+- **Regenerate**: `npm i --no-save world-atlas topojson-client`, then the generator script in this
+  entry's commit (gen-world) → paste output into `WORLD_PATH`.
