@@ -14,12 +14,15 @@ interface Word {
   id: string;
   lemma: Record<Lang, string>;
   icon: string;
+  group: string;
   chain: Stage[];
   cognates: { form: string; lang: Record<Lang, string> }[];
   source: string;
 }
 
-const WORDS = (data as { words: Word[] }).words;
+const WORDS = (data as unknown as { words: Word[] }).words;
+const GROUPS = (data as unknown as { groups: Record<string, Record<Lang, string>> }).groups;
+const GROUP_ORDER = ['deep', 'travel', 'ukrainian', 'modern'];
 
 export default function WordTimeMachine({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
@@ -60,18 +63,29 @@ export default function WordTimeMachine({ lang }: { lang: Lang }) {
       {filtered.length === 0 ? (
         <p className="muted" style={{ marginTop: '1rem' }}>{t('pg.wtm.empty')}</p>
       ) : (
-        <div className="row" role="group" aria-label={t('pg.wtm.pick')} style={{ marginTop: '0.8rem' }}>
-          {filtered.map((w) => (
-            <button
-              key={w.id}
-              className="pill"
-              aria-pressed={w.id === activeId}
-              onClick={() => setActiveId(w.id)}
-            >
-              {w.icon} {w.lemma[lang]}
-            </button>
-          ))}
-        </div>
+        GROUP_ORDER.map((g) => {
+          const inGroup = filtered.filter((w) => w.group === g);
+          if (inGroup.length === 0) return null;
+          return (
+            <div key={g} style={{ marginTop: '0.9rem' }}>
+              <div className="muted" style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
+                {GROUPS?.[g]?.[lang] ?? g} · {inGroup.length}
+              </div>
+              <div className="row" role="group" aria-label={GROUPS?.[g]?.[lang] ?? g}>
+                {inGroup.map((w) => (
+                  <button
+                    key={w.id}
+                    className="pill"
+                    aria-pressed={w.id === activeId}
+                    onClick={() => setActiveId(w.id)}
+                  >
+                    {w.icon} {w.lemma[lang]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        })
       )}
 
       <div style={{ marginTop: '1.4rem' }} aria-live="polite">

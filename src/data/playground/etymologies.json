@@ -97,7 +97,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/father"
+      "source": "etymonline.com/word/father",
+      "group": "deep"
     },
     {
       "id": "mother",
@@ -179,7 +180,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/мати); etymonline.com/word/mother"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/мати); etymonline.com/word/mother",
+      "group": "deep"
     },
     {
       "id": "three",
@@ -261,7 +263,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/three"
+      "source": "etymonline.com/word/three",
+      "group": "deep"
     },
     {
       "id": "night",
@@ -343,7 +346,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ніч); etymonline.com/word/night"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ніч); etymonline.com/word/night",
+      "group": "deep"
     },
     {
       "id": "sugar",
@@ -450,7 +454,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/sugar; ЕСУМ (goroh.pp.ua/Етимологія/цукор)"
+      "source": "etymonline.com/word/sugar; ЕСУМ (goroh.pp.ua/Етимологія/цукор)",
+      "group": "travel"
     },
     {
       "id": "tea",
@@ -532,7 +537,8 @@
           }
         }
       ],
-      "source": "qz.com/1176962 (tea if by sea, cha if by land); etymonline.com/word/tea"
+      "source": "qz.com/1176962 (tea if by sea, cha if by land); etymonline.com/word/tea",
+      "group": "travel"
     },
     {
       "id": "orange",
@@ -632,7 +638,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/orange"
+      "source": "etymonline.com/word/orange",
+      "group": "travel"
     },
     {
       "id": "kava",
@@ -723,7 +730,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/кава); etymonline.com/word/coffee"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/кава); etymonline.com/word/coffee",
+      "group": "travel"
     },
     {
       "id": "maidan",
@@ -791,7 +799,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/майдан)"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/майдан)",
+      "group": "ukrainian"
     },
     {
       "id": "kozak",
@@ -851,7 +860,8 @@
         }
       ],
       "cognates": [],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/козак)"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/козак)",
+      "group": "ukrainian"
     },
     {
       "id": "mriya",
@@ -911,7 +921,8 @@
         }
       ],
       "cognates": [],
-      "source": "uk.wikipedia.org/wiki/Мрія; ЕСУМ"
+      "source": "uk.wikipedia.org/wiki/Мрія; ЕСУМ",
+      "group": "ukrainian"
     },
     {
       "id": "vedmid",
@@ -986,7 +997,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ведмідь); etymonline.com/word/bear"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ведмідь); etymonline.com/word/bear",
+      "group": "ukrainian"
     },
     {
       "id": "muscle",
@@ -1054,7 +1066,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/muscle"
+      "source": "etymonline.com/word/muscle",
+      "group": "travel"
     },
     {
       "id": "wine",
@@ -1129,7 +1142,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/wine; ЕСУМ (goroh.pp.ua/Етимологія/вино)"
+      "source": "etymonline.com/word/wine; ЕСУМ (goroh.pp.ua/Етимологія/вино)",
+      "group": "travel"
     },
     {
       "id": "window",
@@ -1189,7 +1203,8 @@
         }
       ],
       "cognates": [],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/вікно); etymonline.com/word/window"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/вікно); etymonline.com/word/window",
+      "group": "ukrainian"
     },
     {
       "id": "wheel",
@@ -1271,7 +1286,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/wheel"
+      "source": "etymonline.com/word/wheel",
+      "group": "deep"
     },
     {
       "id": "school",
@@ -1353,7 +1369,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/school; ЕСУМ (goroh.pp.ua/Етимологія/школа)"
+      "source": "etymonline.com/word/school; ЕСУМ (goroh.pp.ua/Етимологія/школа)",
+      "group": "travel"
     },
     {
       "id": "robot",
@@ -1421,7 +1438,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/robot"
+      "source": "etymonline.com/word/robot",
+      "group": "modern"
     },
     {
       "id": "disaster",
@@ -1489,7 +1507,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/disaster"
+      "source": "etymonline.com/word/disaster",
+      "group": "travel"
     },
     {
       "id": "companion",
@@ -1557,7 +1576,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/companion"
+      "source": "etymonline.com/word/companion",
+      "group": "travel"
     },
     {
       "id": "candidate",
@@ -1625,7 +1645,8 @@
           }
         }
       ],
-      "source": "etymonline.com/word/candidate"
+      "source": "etymonline.com/word/candidate",
+      "group": "travel"
     },
     {
       "id": "deadline",
@@ -1685,7 +1706,8 @@
         }
       ],
       "cognates": [],
-      "source": "etymonline.com/word/deadline"
+      "source": "etymonline.com/word/deadline",
+      "group": "modern"
     },
     {
       "id": "tsybulia",
@@ -1760,7 +1782,8 @@
           }
         }
       ],
-      "source": "ЕСУМ (goroh.pp.ua/Етимологія/цибуля); etymonline.com/word/onion"
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/цибуля); etymonline.com/word/onion",
+      "group": "travel"
     },
     {
       "id": "salt",
@@ -1835,7 +1858,2066 @@
           }
         }
       ],
-      "source": "etymonline.com/word/salt; ЕСУМ (goroh.pp.ua/Етимологія/сіль)"
+      "source": "etymonline.com/word/salt; ЕСУМ (goroh.pp.ua/Етимологія/сіль)",
+      "group": "deep"
+    },
+    {
+      "id": "heart",
+      "lemma": {
+        "en": "heart / серце",
+        "uk": "серце / heart"
+      },
+      "icon": "❤️",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "ḱérd-",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "hertô",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "Grimm's Law: ḱ→h, d→t.",
+            "uk": "Закон Ґрімма: ḱ→h, d→t."
+          }
+        },
+        {
+          "form": "heorte → heart",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian серце: the same root plus the diminutive -це.",
+            "uk": "Українське серце: той самий корінь плюс демінутив -це."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "cor",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "kardía",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "серце",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "eye",
+      "lemma": {
+        "en": "eye / око",
+        "uk": "око / eye"
+      },
+      "icon": "👁️",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "h₃okʷ-",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "augô",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "kʷ shifted; the vowel broadened.",
+            "uk": "kʷ зсунулося; голосний розширився."
+          }
+        },
+        {
+          "form": "ēage → eye",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian око: barely changed in six millennia.",
+            "uk": "Українське око: майже не змінилося за шість тисячоліть."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "oculus",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "око",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        },
+        {
+          "form": "ákṣi",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "two",
+      "lemma": {
+        "en": "two / два",
+        "uk": "два / two"
+      },
+      "icon": "2️⃣",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "dwóh₁",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "twai",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "Grimm's Law: d→t.",
+            "uk": "Закон Ґрімма: d→t."
+          }
+        },
+        {
+          "form": "twā → two",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian два: kept the original d that English turned into t.",
+            "uk": "Українське два: зберегло первісне d, яке англійська обернула на t."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "duo",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "dúo",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "два",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "widow",
+      "lemma": {
+        "en": "widow / вдова",
+        "uk": "вдова / widow"
+      },
+      "icon": "🕯️",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "h₁widʰéwh₂",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "widuwō",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "dʰ→d per Grimm's Law.",
+            "uk": "dʰ→d за законом Ґрімма."
+          }
+        },
+        {
+          "form": "widewe → widow",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian вдова: a textbook correspondence, sound for sound.",
+            "uk": "Українське вдова: підручникова відповідність, звук у звук."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "vidua",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "вдова",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        },
+        {
+          "form": "vidhávā",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "son",
+      "lemma": {
+        "en": "son / син",
+        "uk": "син / son"
+      },
+      "icon": "👦",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "suHnús",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "sunuz",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "Little for Grimm to do here — no stops to shift.",
+            "uk": "Закону Ґрімма тут майже нічого робити — нема проривних."
+          }
+        },
+        {
+          "form": "sunu → son",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian син: the u survived in both lines.",
+            "uk": "Українське син: u вижило в обох лініях."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "син",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        },
+        {
+          "form": "sūnús",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        },
+        {
+          "form": "sūnus",
+          "lang": {
+            "en": "Lithuanian",
+            "uk": "литовська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "daughter",
+      "lemma": {
+        "en": "daughter / дочка",
+        "uk": "дочка / daughter"
+      },
+      "icon": "👧",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "dʰugh₂tḗr",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "duhtēr",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "Grimm's Law: dʰ→d.",
+            "uk": "Закон Ґрімма: dʰ→d."
+          }
+        },
+        {
+          "form": "dohtor → daughter",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian дочка: with the affectionate -ка added.",
+            "uk": "Українське дочка: з лагідним суфіксом -ка."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "thygátēr",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "духитар (duhitár-)",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        },
+        {
+          "form": "дочка",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "mouse",
+      "lemma": {
+        "en": "mouse / миша",
+        "uk": "миша / mouse"
+      },
+      "icon": "🐁",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "muh₂s",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "mūs",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The vowel later rode the Great Vowel Shift to 'ou'.",
+            "uk": "Голосний пізніше проїхався Великим зсувом до «au»."
+          }
+        },
+        {
+          "form": "mūs → mouse",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian миша: same little animal — see the muscle story in Word X-ray.",
+            "uk": "Українське миша: та сама тваринка — згадайте історію про м'яз."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "mūs",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "mŷs",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "миша",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "name",
+      "lemma": {
+        "en": "name / ім'я",
+        "uk": "ім'я / name"
+      },
+      "icon": "🏷️",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "h₁nómn̥",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "namô",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "One of the most widespread roots on Earth.",
+            "uk": "Один із найпоширеніших коренів на Землі."
+          }
+        },
+        {
+          "form": "nama → name",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian ім'я: from Proto-Slavic *jьmę — same root, heavy disguise.",
+            "uk": "Українське ім'я: з праслов'янського *jьmę — той самий корінь у щільній масці."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "nōmen",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "ónoma",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "nāman",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "snow2",
+      "lemma": {
+        "en": "snow / сніг",
+        "uk": "сніг / snow"
+      },
+      "icon": "❄️",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "sneygʷʰ-",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "snaiwaz",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "gʷʰ simplified on the way.",
+            "uk": "gʷʰ спростилося дорогою."
+          }
+        },
+        {
+          "form": "snāw → snow",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian сніг: with і from o in the closed syllable.",
+            "uk": "Українське сніг: з і з о в закритому складі."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "nix, nivis",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "сніг",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "wolf2",
+      "lemma": {
+        "en": "wolf / вовк",
+        "uk": "вовк / wolf"
+      },
+      "icon": "🐺",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "wĺ̥kʷos",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "wulfaz",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "kʷ→f at the edge of Grimm's Law.",
+            "uk": "kʷ→f на краю закону Ґрімма."
+          }
+        },
+        {
+          "form": "wulf → wolf",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian вовк: with the Ukrainian в-в echo of the old syllabic l.",
+            "uk": "Українське вовк: з українським в-в — відлунням давнього складового l."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "lupus",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        },
+        {
+          "form": "lýkos",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "vṛ́ka-",
+          "lang": {
+            "en": "Sanskrit",
+            "uk": "санскрит"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "water2",
+      "lemma": {
+        "en": "water / вода",
+        "uk": "вода / water"
+      },
+      "icon": "💧",
+      "group": "deep",
+      "chain": [
+        {
+          "form": "wódr̥",
+          "lang": {
+            "en": "Proto-Indo-European",
+            "uk": "праіндоєвропейська"
+          },
+          "period": {
+            "en": "~4500 BCE",
+            "uk": "~4500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The shared ancestor form.",
+            "uk": "Спільна предкова форма."
+          }
+        },
+        {
+          "form": "watōr",
+          "lang": {
+            "en": "Proto-Germanic",
+            "uk": "прагерманська"
+          },
+          "period": {
+            "en": "~500 BCE",
+            "uk": "~500 до н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "t held steady; vowels drifted.",
+            "uk": "t встояло; голосні дрейфували."
+          }
+        },
+        {
+          "form": "wæter → water",
+          "lang": {
+            "en": "Old English → Modern English",
+            "uk": "давньоанглійська → сучасна англійська"
+          },
+          "period": {
+            "en": "~900 CE → today",
+            "uk": "~900 н.е. → сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian вода: an r/n-stem so old it predates gender.",
+            "uk": "Українське вода: основа на r/n, давніша за граматичний рід."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "hydōr",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          }
+        },
+        {
+          "form": "вода",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        },
+        {
+          "form": "unda 'wave'",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          }
+        }
+      ],
+      "source": "etymonline.com; Wiktionary PIE"
+    },
+    {
+      "id": "paper",
+      "lemma": {
+        "en": "paper / папір",
+        "uk": "папір / paper"
+      },
+      "icon": "📄",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "pápyros",
+          "lang": {
+            "en": "Ancient Greek",
+            "uk": "давньогрецька"
+          },
+          "period": {
+            "en": "antiquity",
+            "uk": "давнина"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The Nile reed Egyptians pressed into writing sheets.",
+            "uk": "Нільський очерет, який єгиптяни пресували в аркуші для письма."
+          }
+        },
+        {
+          "form": "papyrus",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          },
+          "period": {
+            "en": "Roman era",
+            "uk": "римська доба"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Rome wrote its empire on it.",
+            "uk": "Рим записав на ньому свою імперію."
+          }
+        },
+        {
+          "form": "Papier → papier → папір",
+          "lang": {
+            "en": "German → Polish → Ukrainian",
+            "uk": "німецька → польська → українська"
+          },
+          "period": {
+            "en": "early modern",
+            "uk": "ранньомодерна доба"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "English paper came via Old French papier — same reed, different river.",
+            "uk": "Англійське paper прийшло через старофранцузьке papier — той самий очерет, інша річка."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "paper",
+          "lang": {
+            "en": "English",
+            "uk": "англійська"
+          }
+        },
+        {
+          "form": "Papier",
+          "lang": {
+            "en": "German",
+            "uk": "німецька"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/paper; ЕСУМ (goroh.pp.ua/Етимологія/папір)"
+    },
+    {
+      "id": "checkmate",
+      "lemma": {
+        "en": "checkmate / шах і мат",
+        "uk": "шах і мат / checkmate"
+      },
+      "icon": "♟️",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "šāh māt",
+          "lang": {
+            "en": "Persian",
+            "uk": "перська"
+          },
+          "period": {
+            "en": "medieval",
+            "uk": "середньовіччя"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'The king is helpless/dead' — chess vocabulary from the game's Persian homeland.",
+            "uk": "«Король безпорадний/мертвий» — шахова лексика з перської батьківщини гри."
+          }
+        },
+        {
+          "form": "eschec mat",
+          "lang": {
+            "en": "Old French (via Arabic)",
+            "uk": "старофранцузька (через арабську)"
+          },
+          "period": {
+            "en": "~1100s",
+            "uk": "~XII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Crusade-era Europe learned chess and its words together.",
+            "uk": "Європа доби хрестових походів вчила шахи разом зі словами."
+          }
+        },
+        {
+          "form": "checkmate / шах і мат",
+          "lang": {
+            "en": "English / Ukrainian",
+            "uk": "англійська / українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Even 'check' (a halt, a verification) and 'cheque' descend from the Persian king.",
+            "uk": "Навіть англ. check («зупинка», «перевірка») і cheque походять від перського короля."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "шахи",
+          "lang": {
+            "en": "Ukrainian — the game itself is 'the kings'",
+            "uk": "українська — сама гра названа «королями»"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/checkmate"
+    },
+    {
+      "id": "lemon",
+      "lemma": {
+        "en": "lemon / лимон",
+        "uk": "лимон / lemon"
+      },
+      "icon": "🍋",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "līmū",
+          "lang": {
+            "en": "Persian",
+            "uk": "перська"
+          },
+          "period": {
+            "en": "medieval",
+            "uk": "середньовіччя"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Citrus moved west with Persian and Arab gardens.",
+            "uk": "Цитруси йшли на захід із перськими та арабськими садами."
+          }
+        },
+        {
+          "form": "laymūn",
+          "lang": {
+            "en": "Arabic",
+            "uk": "арабська"
+          },
+          "period": {
+            "en": "~1000s",
+            "uk": "~XI ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Arab agronomy carried it into the Mediterranean.",
+            "uk": "Арабська агрономія принесла його в Середземномор'я."
+          }
+        },
+        {
+          "form": "limone → lemon / лимон",
+          "lang": {
+            "en": "Italian → English / Ukrainian",
+            "uk": "італійська → англійська / українська"
+          },
+          "period": {
+            "en": "1300s+",
+            "uk": "з XIV ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Both languages bought the same Persian fruit from Italian middlemen.",
+            "uk": "Обидві мови купили той самий перський фрукт в італійських посередників."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "lime",
+          "lang": {
+            "en": "English — the same word's smaller sibling",
+            "uk": "англійська — менший родич того самого слова"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/lemon"
+    },
+    {
+      "id": "bank",
+      "lemma": {
+        "en": "bank / банк",
+        "uk": "банк / bank"
+      },
+      "icon": "🏦",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "banca",
+          "lang": {
+            "en": "Italian",
+            "uk": "італійська"
+          },
+          "period": {
+            "en": "~1400s",
+            "uk": "~XV ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The money-changer's bench in a market square.",
+            "uk": "Лава міняйла на ринковій площі."
+          }
+        },
+        {
+          "form": "banque / Bank",
+          "lang": {
+            "en": "French / German",
+            "uk": "французька / німецька"
+          },
+          "period": {
+            "en": "1500s",
+            "uk": "XVI ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The bench became an institution.",
+            "uk": "Лава стала інституцією."
+          }
+        },
+        {
+          "form": "bank / банк",
+          "lang": {
+            "en": "English / Ukrainian",
+            "uk": "англійська / українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Bankrupt is banca rotta — 'broken bench': a failed changer's bench was smashed.",
+            "uk": "Банкрут — це banca rotta, «розбита лава»: лаву збанкрутілого міняйла трощили."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "банкрут",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/bank"
+    },
+    {
+      "id": "alcohol",
+      "lemma": {
+        "en": "alcohol / алкоголь",
+        "uk": "алкоголь / alcohol"
+      },
+      "icon": "⚗️",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "al-kuḥl",
+          "lang": {
+            "en": "Arabic",
+            "uk": "арабська"
+          },
+          "period": {
+            "en": "medieval",
+            "uk": "середньовіччя"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Originally fine antimony powder for eyelids — kohl.",
+            "uk": "Первісно тонкий порошок сурми для повік — кохль."
+          }
+        },
+        {
+          "form": "alcohol",
+          "lang": {
+            "en": "Alchemists' Latin",
+            "uk": "латина алхіміків"
+          },
+          "period": {
+            "en": "~1500s",
+            "uk": "~XVI ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Generalized to any refined essence, then to 'spirit of wine'.",
+            "uk": "Узагальнилося до будь-якої очищеної есенції, потім до «винного спирту»."
+          }
+        },
+        {
+          "form": "alcohol / алкоголь",
+          "lang": {
+            "en": "English / Ukrainian",
+            "uk": "англійська / українська"
+          },
+          "period": {
+            "en": "1700s+",
+            "uk": "з XVIII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "From eyeliner to liquor in three centuries of chemistry.",
+            "uk": "Від підводки для очей до трунку — за три століття хімії."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "etymonline.com/word/alcohol"
+    },
+    {
+      "id": "jeans",
+      "lemma": {
+        "en": "jeans / джинси",
+        "uk": "джинси / jeans"
+      },
+      "icon": "👖",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "Gênes (Genoa)",
+          "lang": {
+            "en": "French",
+            "uk": "французька"
+          },
+          "period": {
+            "en": "~1500s",
+            "uk": "~XVI ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Sturdy 'jean' cloth was named for Genoa, its port of origin.",
+            "uk": "Міцну тканину «джин» назвали за Генуєю — портом походження."
+          }
+        },
+        {
+          "form": "jeans",
+          "lang": {
+            "en": "American English",
+            "uk": "американська англійська"
+          },
+          "period": {
+            "en": "1800s",
+            "uk": "XIX ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Denim, meanwhile, is serge de Nîmes — another city sewn into your wardrobe.",
+            "uk": "А denim — це serge de Nîmes: ще одне місто, вшите у ваш гардероб."
+          }
+        },
+        {
+          "form": "джинси",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "20th c.",
+            "uk": "XX ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Two French city names, riveted together by California.",
+            "uk": "Два французькі топоніми, склепані Каліфорнією."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "etymonline.com/word/jeans"
+    },
+    {
+      "id": "groshi",
+      "lemma": {
+        "en": "гроші (money)",
+        "uk": "гроші"
+      },
+      "icon": "🪙",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "(denarius) grossus",
+          "lang": {
+            "en": "Medieval Latin",
+            "uk": "середньовічна латина"
+          },
+          "period": {
+            "en": "~1200s",
+            "uk": "~XIII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'The thick denarius' — a heavyweight silver coin.",
+            "uk": "«Товстий денарій» — повновага срібна монета."
+          }
+        },
+        {
+          "form": "groš / grosz",
+          "lang": {
+            "en": "Czech / Polish",
+            "uk": "чеська / польська"
+          },
+          "period": {
+            "en": "1300s",
+            "uk": "XIV ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Central Europe minted the Latin adjective into coinage.",
+            "uk": "Центральна Європа викарбувала латинський прикметник у монету."
+          }
+        },
+        {
+          "form": "гроші",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "One specific coin widened into money itself — English 'groat' is the same coin.",
+            "uk": "Одна конкретна монета розширилася до грошей узагалі — англ. groat є тією ж монетою."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "groat",
+          "lang": {
+            "en": "English",
+            "uk": "англійська"
+          }
+        },
+        {
+          "form": "Groschen",
+          "lang": {
+            "en": "German",
+            "uk": "німецька"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/гроші)"
+    },
+    {
+      "id": "parasolka",
+      "lemma": {
+        "en": "парасолька (umbrella)",
+        "uk": "парасолька"
+      },
+      "icon": "☂️",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "para + sole",
+          "lang": {
+            "en": "Italian",
+            "uk": "італійська"
+          },
+          "period": {
+            "en": "~1600s",
+            "uk": "~XVII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'Wards off the sun'.",
+            "uk": "«Захищає від сонця»."
+          }
+        },
+        {
+          "form": "parasol",
+          "lang": {
+            "en": "French → Polish",
+            "uk": "французька → польська"
+          },
+          "period": {
+            "en": "1700s",
+            "uk": "XVIII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Polish added the affectionate -ka.",
+            "uk": "Польська додала лагідне -ka."
+          }
+        },
+        {
+          "form": "парасолька",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "A sun-shield that Ukrainians use mostly against rain — etymology preserved, climate ignored.",
+            "uk": "Щит від сонця, яким українці затуляються здебільшого від дощу: етимологію збережено, клімат проігноровано."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "umbrella",
+          "lang": {
+            "en": "English — from Latin umbra 'shade': same idea, other word",
+            "uk": "англійська — від лат. umbra «тінь»: та сама ідея, інше слово"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/парасолька)"
+    },
+    {
+      "id": "kravatka",
+      "lemma": {
+        "en": "краватка (necktie)",
+        "uk": "краватка"
+      },
+      "icon": "👔",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "Hrvat (Croat)",
+          "lang": {
+            "en": "Croatian",
+            "uk": "хорватська"
+          },
+          "period": {
+            "en": "1600s",
+            "uk": "XVII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Croatian mercenaries in Paris wore striking neck scarves.",
+            "uk": "Хорватські найманці в Парижі носили примітні шийні хустки."
+          }
+        },
+        {
+          "form": "cravate",
+          "lang": {
+            "en": "French",
+            "uk": "французька"
+          },
+          "period": {
+            "en": "1650s",
+            "uk": "1650-ті"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The fashion took the ethnonym with it: à la croate.",
+            "uk": "Мода забрала етнонім із собою: à la croate."
+          }
+        },
+        {
+          "form": "Krawatte → краватка",
+          "lang": {
+            "en": "German → Ukrainian",
+            "uk": "німецька → українська"
+          },
+          "period": {
+            "en": "1800s+",
+            "uk": "з XIX ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "A whole nation knotted around necks worldwide.",
+            "uk": "Цілий народ, зав'язаний на шиях світу."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "cravat",
+          "lang": {
+            "en": "English",
+            "uk": "англійська"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/cravat; ЕСУМ (goroh.pp.ua/Етимологія/краватка)"
+    },
+    {
+      "id": "vokzal",
+      "lemma": {
+        "en": "вокзал (rail station)",
+        "uk": "вокзал"
+      },
+      "icon": "🚉",
+      "group": "travel",
+      "chain": [
+        {
+          "form": "Vauxhall",
+          "lang": {
+            "en": "English (London)",
+            "uk": "англійська (Лондон)"
+          },
+          "period": {
+            "en": "1700s",
+            "uk": "XVIII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "A famous London pleasure garden by the Thames.",
+            "uk": "Знаменитий лондонський сад розваг на березі Темзи."
+          }
+        },
+        {
+          "form": "воксалъ",
+          "lang": {
+            "en": "Russian",
+            "uk": "російська"
+          },
+          "period": {
+            "en": "1800s",
+            "uk": "XIX ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Russia named an entertainment pavilion at its first railway after it — then the station itself.",
+            "uk": "У Росії так назвали розважальний павільйон першої залізниці — а потім і саму станцію."
+          }
+        },
+        {
+          "form": "вокзал",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "A London garden that became every ex-Soviet train station — toponym → common noun.",
+            "uk": "Лондонський сад, що став кожним вокзалом колишнього СРСР: топонім → загальна назва."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/вокзал)"
+    },
+    {
+      "id": "quarantine",
+      "lemma": {
+        "en": "quarantine / карантин",
+        "uk": "карантин / quarantine"
+      },
+      "icon": "🏥",
+      "group": "modern",
+      "chain": [
+        {
+          "form": "quaranta giorni",
+          "lang": {
+            "en": "Venetian Italian",
+            "uk": "венеційська італійська"
+          },
+          "period": {
+            "en": "1300s–1400s",
+            "uk": "XIV–XV ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'Forty days' — plague-era Venice held arriving ships offshore that long.",
+            "uk": "«Сорок днів» — Венеція чумної доби тримала прибулі кораблі на рейді саме стільки."
+          }
+        },
+        {
+          "form": "quarantaine",
+          "lang": {
+            "en": "French",
+            "uk": "французька"
+          },
+          "period": {
+            "en": "1600s",
+            "uk": "XVII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The number froze into an institution.",
+            "uk": "Число замерзло в інституцію."
+          }
+        },
+        {
+          "form": "quarantine / карантин",
+          "lang": {
+            "en": "English / Ukrainian",
+            "uk": "англійська / українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "2020 made a Venetian number the most-spoken word on Earth.",
+            "uk": "2020 рік зробив венеційське число найуживанішим словом планети."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "etymonline.com/word/quarantine"
+    },
+    {
+      "id": "vaccine",
+      "lemma": {
+        "en": "vaccine / вакцина",
+        "uk": "вакцина / vaccine"
+      },
+      "icon": "💉",
+      "group": "modern",
+      "chain": [
+        {
+          "form": "vacca",
+          "lang": {
+            "en": "Latin",
+            "uk": "латина"
+          },
+          "period": {
+            "en": "Roman era",
+            "uk": "римська доба"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'Cow'.",
+            "uk": "«Корова»."
+          }
+        },
+        {
+          "form": "vaccine (variolae vaccinae)",
+          "lang": {
+            "en": "Scientific Latin / English",
+            "uk": "наукова латина / англійська"
+          },
+          "period": {
+            "en": "1796–1800s",
+            "uk": "1796–XIX ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Jenner used cowpox ('vaccinia') against smallpox — the cure kept the cow's name.",
+            "uk": "Дженнер використав коров'ячу віспу (vaccinia) проти натуральної — ліки зберегли ім'я корови."
+          }
+        },
+        {
+          "form": "вакцина",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Every vaccine on Earth still moos, etymologically.",
+            "uk": "Кожна вакцина на Землі досі мукає — етимологічно."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "etymonline.com/word/vaccine"
+    },
+    {
+      "id": "vyriy",
+      "lemma": {
+        "en": "вирій (birds' winterland)",
+        "uk": "вирій"
+      },
+      "icon": "🕊️",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "*vyrьjь / *irьjь",
+          "lang": {
+            "en": "Proto-Slavic",
+            "uk": "праслов'янська"
+          },
+          "period": {
+            "en": "pre-Christian",
+            "uk": "дохристиянська доба"
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "The mythical warm land where birds vanish each autumn — a pre-Christian otherworld.",
+            "uk": "Міфічна тепла земля, куди щоосені зникають птахи, — дохристиянський потойбіч."
+          }
+        },
+        {
+          "form": "вирій",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "ЕСУМ marks the deeper origin debated ('неясно') — honest etymology at work. The word outlived the religion that built it.",
+            "uk": "ЕСУМ позначає глибше походження як дискусійне («неясно») — чесна етимологія в дії. Слово пережило релігію, що його збудувала."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/вирій)"
+    },
+    {
+      "id": "leleka",
+      "lemma": {
+        "en": "лелека (stork)",
+        "uk": "лелека"
+      },
+      "icon": "🪶",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "laqlaq",
+          "lang": {
+            "en": "Arabic / Persian (onomatopoeic)",
+            "uk": "арабська / перська (звуконаслідувальне)"
+          },
+          "period": {
+            "en": "ancient",
+            "uk": "давнина"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "An imitation of the bird's bill-clattering.",
+            "uk": "Наслідування клекоту-тріскотіння дзьоба."
+          }
+        },
+        {
+          "form": "leylek",
+          "lang": {
+            "en": "Turkic",
+            "uk": "тюркські"
+          },
+          "period": {
+            "en": "medieval",
+            "uk": "середньовіччя"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Crossed the steppe with the rest of the eastern layer.",
+            "uk": "Перетнуло степ разом із рештою східного шару."
+          }
+        },
+        {
+          "form": "лелека",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The most Ukrainian of birds wears an imported name — even national symbols have passports.",
+            "uk": "Найукраїнськіший птах носить імпортоване ім'я — навіть національні символи мають паспорти."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "чорногуз, бусол",
+          "lang": {
+            "en": "Ukrainian — native synonyms exist too",
+            "uk": "українська — є й питомі синоніми"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/лелека)"
+    },
+    {
+      "id": "kokhaty",
+      "lemma": {
+        "en": "кохати (to love)",
+        "uk": "кохати"
+      },
+      "icon": "💛",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "*koxati",
+          "lang": {
+            "en": "Proto-Slavic (West-leaning)",
+            "uk": "праслов'янська (західний ареал)"
+          },
+          "period": {
+            "en": "~500 CE",
+            "uk": "~500 н.е."
+          },
+          "reconstructed": true,
+          "note": {
+            "en": "Shared with Polish kochać; the deeper root is genuinely debated.",
+            "uk": "Спільне з польським kochać; глибший корінь — предмет справжньої дискусії."
+          }
+        },
+        {
+          "form": "кохати",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Ukrainian splits loving in two: кохати for romance, любити for everything else — a distinction English lacks.",
+            "uk": "Українська ділить любов надвоє: кохати — для романтики, любити — для решти. Розрізнення, якого англійській бракує."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "kochać",
+          "lang": {
+            "en": "Polish",
+            "uk": "польська"
+          }
+        },
+        {
+          "form": "любити",
+          "lang": {
+            "en": "Ukrainian — the other love, PIE *lewbʰ-",
+            "uk": "українська — інша любов, ПІЄ *lewbʰ-"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/кохати)"
+    },
+    {
+      "id": "palianytsia",
+      "lemma": {
+        "en": "паляниця",
+        "uk": "паляниця"
+      },
+      "icon": "🍞",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "палити",
+          "lang": {
+            "en": "Ukrainian (from Proto-Slavic *paliti)",
+            "uk": "українська (від праслов'янського *paliti)"
+          },
+          "period": {
+            "en": "ancient",
+            "uk": "давнина"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'To burn, to fire' — bread baked on the hearth flame.",
+            "uk": "«Палити, обпікати» — хліб, печений на черені при вогні."
+          }
+        },
+        {
+          "form": "паляниця",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Since 2022, the world's most famous shibboleth: the soft ц and Ukrainian и betray any non-native speaker (see the dialects article).",
+            "uk": "Від 2022 року — найвідоміший шиболет світу: м'яке ц та українське и виказують будь-якого неносія (див. статтю про діалекти)."
+          }
+        }
+      ],
+      "cognates": [],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/паляниця)"
+    },
+    {
+      "id": "khata",
+      "lemma": {
+        "en": "хата",
+        "uk": "хата"
+      },
+      "icon": "🏠",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "*kata-",
+          "lang": {
+            "en": "Iranian (Scythian-Sarmatian)",
+            "uk": "іранська (скіфо-сарматська)"
+          },
+          "period": {
+            "en": "~1st millennium BCE",
+            "uk": "~I тис. до н.е."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "'Dug dwelling, chamber' — per ЕСУМ, an ancient steppe-frontier loan.",
+            "uk": "«Викопане житло, покій» — за ЕСУМ, давнє запозичення степового прикордоння."
+          }
+        },
+        {
+          "form": "хата",
+          "lang": {
+            "en": "Ukrainian",
+            "uk": "українська"
+          },
+          "period": {
+            "en": "today",
+            "uk": "сьогодні"
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "The archetypal Ukrainian home is a souvenir of Scythian neighbors — older than the Slavic expansion itself.",
+            "uk": "Архетипна українська оселя — сувенір від скіфських сусідів, старший за саме слов'янське розселення."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "kata",
+          "lang": {
+            "en": "Avestan 'chamber'",
+            "uk": "авестійська «покій»"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/хата)"
+    },
+    {
+      "id": "step",
+      "lemma": {
+        "en": "степ / steppe",
+        "uk": "степ / steppe"
+      },
+      "icon": "🌾",
+      "group": "ukrainian",
+      "chain": [
+        {
+          "form": "степ",
+          "lang": {
+            "en": "Ukrainian / East Slavic",
+            "uk": "українська / східнослов'янські"
+          },
+          "period": {
+            "en": "attested by 1600s",
+            "uk": "засвідчене до XVII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Origin genuinely unclear — ЕСУМ lists competing guesses and commits to none.",
+            "uk": "Походження справді неясне — ЕСУМ наводить конкурентні версії і не обирає жодної."
+          }
+        },
+        {
+          "form": "steppe",
+          "lang": {
+            "en": "English, French, German, world",
+            "uk": "англійська, французька, німецька, світ"
+          },
+          "period": {
+            "en": "1600s+",
+            "uk": "з XVII ст."
+          },
+          "reconstructed": false,
+          "note": {
+            "en": "Whatever its source, it became the region's great lexical export — in every geography textbook on Earth.",
+            "uk": "Хай яке джерело, слово стало великим лексичним експортом регіону — воно в кожному підручнику географії на Землі."
+          }
+        }
+      ],
+      "cognates": [
+        {
+          "form": "steppe",
+          "lang": {
+            "en": "English",
+            "uk": "англійська"
+          }
+        },
+        {
+          "form": "Steppe",
+          "lang": {
+            "en": "German",
+            "uk": "німецька"
+          }
+        }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/степ); etymonline.com/word/steppe"
     }
-  ]
+  ],
+  "groups": {
+    "deep": {
+      "en": "Deep Indo-European roots",
+      "uk": "Глибокі індоєвропейські корені"
+    },
+    "travel": {
+      "en": "World travelers",
+      "uk": "Світові мандрівники"
+    },
+    "ukrainian": {
+      "en": "Ukrainian stories",
+      "uk": "Українські історії"
+    },
+    "modern": {
+      "en": "Born recently",
+      "uk": "Народжені нещодавно"
+    }
+  }
 }

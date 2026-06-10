@@ -167,3 +167,13 @@ Phases:
   disaster, companion, candidate, deadline, цибуля, salt/сіль).
 - **Conlang Forge: 12 → 18 concepts** (+moon, fire, hand, tree, fish, dog).
 - All entries sourced; data-integrity script passes (no dup ids, bilingual notes complete); build green.
+
+## ✅ Update — 2026-06-10 (Word Time Machine ×2)
+
+- **24 → 53 etymology chains**, every stage sourced (etymonline / ЕСУМ / Wiktionary PIE).
+  New deep-roots set (heart, eye, two, widow, son, daughter, mouse, name…), travelers
+  (paper, checkmate, lemon, bank, alcohol, jeans, гроші, парасолька, краватка, вокзал),
+  Ukrainian stories (вирій, лелека, кохати, паляниця, хата, степ — debated origins say
+  "неясно" out loud), modern (quarantine, vaccine).
+- Picker now grouped into 4 labeled sections (data carries bilingual group names); search
+  still filters across all. No ui.ts changes (agent was mid-flight on task 150 there).
