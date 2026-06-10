@@ -1,0 +1,405 @@
+/* accent-atlas — dialect map, dialect-vs-language continuum, паляниця shibboleth.
+   Scoped via CSS modules; every colour is the `dialects` topic accent var or a
+   color-mix of it, so the island matches the article in light AND dark mode.
+   The three dialect zones are three tints of the SAME accent (not hardcoded
+   hex). All motion is pure CSS → neutralized under prefers-reduced-motion. */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* ── tabs ─────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.tab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.caption {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.story {
+  margin: 0.2rem 0 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+.muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* shared card head */
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.cardWord {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+
+/* ── Tab 1: dialect map ───────────────────────────────────────────── */
+.mapWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.map {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  background: color-mix(in srgb, var(--accent-soft) 18%, var(--bg));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: block;
+}
+.land {
+  fill: color-mix(in srgb, var(--accent-soft) 40%, var(--bg));
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+/* three tints of the one accent, so the zones read as distinct but on-theme */
+.zone {
+  stroke: var(--bg-elev);
+  stroke-width: 1;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.zone:focus {
+  outline: none;
+}
+.zoneNorth {
+  fill: color-mix(in srgb, var(--accent) 28%, var(--bg));
+}
+.zoneSouthwest {
+  fill: color-mix(in srgb, var(--accent) 52%, var(--bg));
+}
+.zoneSoutheast {
+  fill: color-mix(in srgb, var(--accent) 78%, var(--bg));
+}
+.zone:hover {
+  opacity: 0.82;
+}
+.zoneOn {
+  stroke: var(--accent-2);
+  stroke-width: 3;
+}
+.zone:focus-visible {
+  stroke: var(--accent-2);
+  stroke-width: 3;
+}
+.zoneLabel {
+  fill: var(--text);
+  font-size: 17px;
+  font-weight: 800;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: var(--bg-elev);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.chip {
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.chip:hover {
+  border-color: var(--accent);
+}
+.chipOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.varieties {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+/* ── Tab 2: continuum ─────────────────────────────────────────────── */
+.contWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.endpoints {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+/* the smooth ramp = speech blending village to village (a metaphor, labelled) */
+.rail {
+  position: relative;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--accent) 12%, var(--bg)),
+    var(--accent)
+  );
+}
+.villages {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  pointer-events: none;
+}
+.village {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 2px solid var(--accent-2);
+}
+.border {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 3px;
+  background: var(--accent-2);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.borderFlag {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.95rem;
+}
+.sides {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+}
+.verdict {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.05rem;
+}
+
+/* real cases */
+.casesHead {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+}
+.cases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.case {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-soft) 22%, var(--bg));
+  padding: 0.6rem 0.7rem;
+}
+.casePair {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.caseVerdict {
+  display: inline-block;
+  margin: 0.25rem 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.caseReality {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ── Tab 3: shibboleth ────────────────────────────────────────────── */
+.shibWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.word {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.05em;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0.2rem 0;
+}
+.letter {
+  color: var(--text);
+}
+.tellLetter {
+  appearance: none;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--accent-2);
+  padding: 0 0.02em;
+  border-bottom: 4px solid var(--accent);
+  transition: color 0.15s, background 0.15s;
+  border-radius: 4px 4px 0 0;
+}
+.tellLetter:hover,
+.tellOn {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.betrays {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.betraysWord {
+  font-weight: 800;
+  font-style: italic;
+  color: var(--accent-2);
+}
+.tellCards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tellCard {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  padding: 0.7rem 0.85rem;
+  transition: box-shadow 0.15s;
+}
+.tellCardOn {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.tellCardHead {
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+.tellGlyph {
+  display: inline-block;
+  min-width: 1.4em;
+  text-align: center;
+  margin-right: 0.4rem;
+  color: var(--accent-2);
+}
+.biblical {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-soft) 24%, var(--bg));
+  padding: 0.7rem 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.payoff {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* ── shared framing ───────────────────────────────────────────────── */
+.pullQuote {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--accent-2);
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8rem;
+  line-height: 1.55;
+}
+
+/* ── mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .cases {
+    grid-template-columns: 1fr;
+  }
+  .zoneLabel {
+    font-size: 20px;
+  }
+}
