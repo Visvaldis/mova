@@ -2,8 +2,10 @@
 
 _Last updated: 2026-06-09_
 
-Tracking doc for the build. `CLAUDE.md` is the product spec; `README.md` is setup/deploy.
-This file is **what's done** and **what's next**.
+Narrative status. `CLAUDE.md` is the product spec; `README.md` is setup/deploy.
+**The live, actionable backlog now lives in [`tasks/`](tasks/README.md)** — one file per task,
+status tracked by folder (`todo/` → `doing/` → `done/`). To advance the build, tell an agent
+*"do the next task"* (protocol in `tasks/README.md`). This file is the high-level summary.
 
 Legend: ✅ done · 🟡 placeholder/partial · ⬜ not started
 
@@ -30,70 +32,64 @@ Legend: ✅ done · 🟡 placeholder/partial · ⬜ not started
 
 ---
 
-## ⬜ To do — next
+## ⬜ To do — next (see [`tasks/`](tasks/README.md) for the live backlog)
 
-### 1. Interactive components (the core work)
+**The core work is the interactive components** — all currently render a 🟡 placeholder via the
+registry in `src/components/Interactive.astro`. Then features, then a playground, then ship.
+Granular task files live in `tasks/todo/`; tell an agent *"do the next task"* to advance.
 
-Content has **14 articles**, each naming an `interactive`. All currently render a 🟡 styled **placeholder**
-via the registry in `src/components/Interactive.astro`. The first 6 have full specs in `CLAUDE.md`; the
-other 8 need an interaction designed from the article's own content (no spec exists yet).
+Phases:
 
-| # | Topic | `interactive` id | Article slug | Spec | Status |
-|---|-------|------------------|--------------|------|--------|
-| 1 | origins | `origins-timeline` | origins-of-language | CLAUDE.md | 🟡 |
-| 2 | families | `family-tree` | language-families | CLAUDE.md | 🟡 |
-| 3 | sound | `sound-shift` | sound-change | CLAUDE.md (+ `prototype-sound-shift.html`) | 🟡 |
-| 4 | ukrainian | `ukrainian-timeline` | ukrainian-language-history | CLAUDE.md | 🟡 |
-| 5 | internet | `slang-decoder` | internet-language | CLAUDE.md | 🟡 |
-| 6 | ai | `ai-language-lab` | ai-and-language | CLAUDE.md | 🟡 |
-| 7 | birth | `creole-lab` | new-languages | needs design | 🟡 |
-| 8 | revival | `vitality-map` | language-death-and-revival | needs design | 🟡 |
-| 9 | writing | `script-evolver` | writing-systems | needs design | 🟡 |
-| 10 | borrowing | `word-traveler` | traveling-words | needs design | 🟡 |
-| 11 | everyday | `word-xray` | everyday-etymologies | needs design | 🟡 |
-| 12 | roots | `roots-garden` | ukrainian-word-origins | needs design | 🟡 |
-| 13 | names | `name-map` | names-and-places | needs design | 🟡 |
-| 14 | myths | `myth-buster` | etymology-myths | needs design | 🟡 |
+1. **Foundation** (`010`) + **new-article wiring** (`050`/`055`) — shared island infra and metadata
+   for the two newest articles.
+2. **Interactives** (`100`–`250`) — one island per article. 14 have specs in `CLAUDE.md`; **start with
+   `sound-shift`** (a prototype exists in `prototype-sound-shift.html`). The two newest ones
+   (`thought-lens`, `accent-atlas`) carry their own design step inside the task (done in plan mode).
+3. **Features** (`300`–`340`) — master timeline page, topic selection/filtering, animated home-card previews.
+4. **Playground** (`400`) — open-ended; designs (in plan mode) and builds in one task.
+5. **Polish & ship** (`900`–`920`) — accessibility + Lighthouse ≥ 90, self-hosted fonts, deploy.
 
-Suggested order: start with **`sound-shift`** (a prototype already exists), then the rest of the
-CLAUDE.md six, then design the eight.
-
-**Recipe to ship one:**
-1. Build `src/components/interactive/<Name>.tsx` as a React island; accept a `lang` prop, pull all UI text
-   from `src/i18n/ui.ts` (add keys there — never hardcode strings).
-2. Register it by id in `src/components/Interactive.astro` (`const registry = { 'sound-shift': SoundShift }`);
-   it auto-mounts at the marker with `client:visible`.
-3. Keep every fact sourced from the article. If you need a number that isn't in the article, mark it
-   `TODO(seva)` in code and list it here.
-
-### 2. Aggregated timeline page ⬜
-`/{lang}/timeline` is a placeholder. Build the master interactive timeline (~135,000 BCE → today,
-log-scaled) aggregating key dated events from all articles (hardcode events from article content).
-Replace the placeholder block in `src/pages/[lang]/timeline.astro`.
-
-### 3. Home-card live previews ⬜
-CLAUDE.md asks each card to show "a small animated preview of its interactive." Cards currently show a
-static topic icon — upgrade to a mini animated preview once components exist.
-
-### 4. Definition-of-done checks (from CLAUDE.md) ⬜
-- [ ] Lighthouse ≥ 90 performance **and** accessibility on article pages (not yet measured).
-- [ ] Each interactive keyboard-navigable + `prefers-reduced-motion` aware + bilingual aria/alt text.
-- [ ] All interactives functional at 375px.
-- [ ] Consider self-hosting fonts (Fixel / e-Ukraine) instead of the Google Fonts CDN for perf + offline.
-
-### 5. Deploy — one-time user actions ⬜
-- [ ] `git push -u origin main`
-- [ ] Repo **Settings → Pages → Source = "GitHub Actions"**.
-- [ ] If the default branch isn't `main`, update the trigger in `.github/workflows/deploy.yml`.
+### Current content snapshot
+- **16 articles** authored (`content/en/` has 16; `content/uk/` has 15) — all render today (placeholders).
+- ⚠️ **`content/uk/dialects-and-accents.md` is missing** → the EN page works but the language toggle
+  404s for it. Article prose is hand-authored, so this is a `TODO(seva)` writing task.
+- ⚠️ Topics `thought` / `dialects` and interactives `thought-lens` / `accent-atlas` are **not yet wired**
+  into `src/i18n/ui.ts` (topic names + blurbs) or `src/styles/global.css` (accent colors) → tasks `050`/`055`.
 
 ---
 
 ## Notes / decisions
 
-- **14 articles, not 6.** CLAUDE.md specs 6 interactives; the content folder added 8 more topics/articles.
-  The 8 extra placeholders' descriptions are derived from each article's authored `summary` — no invented data.
+- **16 articles and growing.** `CLAUDE.md` carries full interactive specs for 14 of them; the two
+  newest (`language-and-thought` → `thought-lens`, `dialects-and-accents` → `accent-atlas`) post-date
+  the spec, so their tasks (`tasks/240`/`250`) design **and** build in one go — the design step runs
+  in plan mode for review. Placeholder blurbs are derived from each article's authored `summary` —
+  no invented data. New articles get onboarded via the checklist in `tasks/README.md`.
 - **Loader gotcha (resolved).** Astro's glob loader uses frontmatter `slug` as the id by default, collapsing
   EN+UK; `generateId` forces path-based ids. See comment in `src/content.config.ts`.
 - **Base path.** Every internal link must go through `withBase()` / `localizedPath()` or it 404s under `/mova/`.
   Local dev serves at `http://localhost:4321/mova/`, not bare `/`.
 - **No backend / CMS / search / analytics** — out of scope per spec.
+
+---
+
+## ✅ Update — 2026-06-10 (content/playground session)
+
+- **Content complete: 18 articles × 2 languages.** The previously-missing `content/uk/dialects-and-accents.md`
+  now exists, plus `constructed-languages` and `machine-languages` (EN+UK). All EN/UK pairs verified.
+- **`CLAUDE.md` now has specs for all 18 interactives** (added `thought-lens`, `accent-atlas`,
+  `conlang-workbench`, `code-vs-speech`) — the "needs design" gap is closed.
+- **Wiring done** (former tasks `050`/`055` scope): `src/i18n/ui.ts` has topic names + interactive blurbs for
+  `thought` / `dialects` / `conlangs` / `machine`; `src/styles/global.css` has their light+dark accents.
+- **Playground P1 shipped** (spec: `docs/PLAYGROUND.md`):
+  - Hub `/{lang}/playground/` + nav link; registry in `src/components/playground/registry.ts`.
+  - `babel-daily` — daily guess-the-language (UDHR Art. 1, 41 languages), hints, streak/stats in
+    `localStorage` (`mova:playground:babel`), emoji share, practice mode.
+  - `word-time-machine` — 15 hand-curated etymology chains (`src/data/playground/etymologies.json`,
+    every entry sourced: etymonline/ЕСУМ), cognate fans, * marks reconstructions.
+  - `sound-shift-sandbox` — Grimm / Ukrainian ikavism / Great Vowel Shift rule packs in
+    `src/lib/soundlaws.ts` (single-pass chain-shift application), per-character diff highlighting.
+  - Shared `.toy` / `.pg-card` styles in `global.css`; `prefers-reduced-motion` honored; all strings i18n'd.
+- **Build verified: 52 pages, zero errors.** (Sandbox note: ran with a temp config overriding
+  `outDir`/`cacheDir`; repo `dist/` is stale — rebuild on host with plain `npm run build`.)
+- **P2 remaining** (per `docs/PLAYGROUND.md`): `stratigraph`, `conlang-forge`, `cognate-rush`.

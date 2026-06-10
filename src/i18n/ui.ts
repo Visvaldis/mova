@@ -16,6 +16,7 @@ export const ui = {
 
     'nav.home': 'Home',
     'nav.timeline': 'Timeline',
+    'nav.playground': 'Playground',
     'nav.about': 'About',
 
     'lang.label': 'EN',
@@ -60,6 +61,57 @@ export const ui = {
     'notfound.home': 'Go home',
 
     'footer.tagline': 'An open, bilingual project about the evolution of language.',
+
+    'pg.title': 'Playground',
+    'pg.intro':
+      'Free-play language toys. Bring your own words — the linguistics responds. Everything runs in your browser; nothing is sent anywhere.',
+    'pg.related': 'Related articles',
+    'pg.daily': 'Daily',
+    'pg.minutes': 'min',
+    'pg.backToHub': 'All toys',
+    'pg.growing': 'curated entries — and growing',
+
+    'pg.babel.title': 'Babel Daily',
+    'pg.babel.blurb': 'One mystery language a day. Guess it in 4 tries — every miss unlocks a hint.',
+    'pg.babel.prompt': 'This sentence is the same in every puzzle — Article 1 of the Universal Declaration of Human Rights. Which language is it?',
+    'pg.babel.placeholder': 'Type a language…',
+    'pg.babel.guess': 'Guess',
+    'pg.babel.giveUp': 'Reveal',
+    'pg.babel.win': 'Solved!',
+    'pg.babel.lose': 'The answer was',
+    'pg.babel.hint.family': 'Family',
+    'pg.babel.hint.region': 'Region',
+    'pg.babel.hint.speakers': 'Speakers',
+    'pg.babel.wrongFamily': 'wrong family',
+    'pg.babel.rightFamily': 'right family!',
+    'pg.babel.rightBranch': 'right branch!',
+    'pg.babel.streak': 'Streak',
+    'pg.babel.played': 'Played',
+    'pg.babel.share': 'Copy result',
+    'pg.babel.copied': 'Copied!',
+    'pg.babel.next': 'Next puzzle at midnight UTC',
+    'pg.babel.practice': 'Practice round (random)',
+    'pg.babel.unknown': 'Not in our language list — try another spelling',
+
+    'pg.wtm.title': 'Word Time Machine',
+    'pg.wtm.blurb': 'Pick a word and ride it back through the centuries — some routes go 6,000 years deep.',
+    'pg.wtm.pick': 'Pick a word',
+    'pg.wtm.surprise': 'Surprise me',
+    'pg.wtm.reconstructed': '* = reconstructed form (never written down — inferred by the comparative method)',
+    'pg.wtm.cognates': 'Same root, other routes',
+    'pg.wtm.source': 'Source',
+    'pg.wtm.search': 'Search the curated set…',
+    'pg.wtm.empty': 'Not in our hand-checked set yet. We only show etymologies we can source — see the myths article for why that matters.',
+
+    'pg.sss.title': 'Sound Shift Sandbox',
+    'pg.sss.blurb': 'Type your name and run it through real historical sound laws. What would Grimm’s Law do to you?',
+    'pg.sss.input': 'Type a word or name…',
+    'pg.sss.pack': 'Sound law',
+    'pg.sss.apply': 'What fired',
+    'pg.sss.noChange': 'Shift-proof! No rule in this pack applies to your word. 🛡️',
+    'pg.sss.note': 'A toy, honestly labeled: real laws applied outside their real language and era. The rules themselves are genuine — see the article.',
+    'pg.sss.before': 'Before',
+    'pg.sss.after': 'After',
   },
   uk: {
     'brand': 'Мова',
@@ -68,6 +120,7 @@ export const ui = {
 
     'nav.home': 'Головна',
     'nav.timeline': 'Хронологія',
+    'nav.playground': 'Майданчик',
     'nav.about': 'Про проєкт',
 
     'lang.label': 'УК',
@@ -112,6 +165,57 @@ export const ui = {
     'notfound.home': 'На головну',
 
     'footer.tagline': 'Відкритий двомовний проєкт про еволюцію мови.',
+
+    'pg.title': 'Майданчик',
+    'pg.intro':
+      'Мовні іграшки для вільної гри. Приносьте власні слова — лінгвістика відповість. Усе працює у вашому браузері; нічого нікуди не надсилається.',
+    'pg.related': 'Повʼязані статті',
+    'pg.daily': 'Щоденна',
+    'pg.minutes': 'хв',
+    'pg.backToHub': 'Усі іграшки',
+    'pg.growing': 'перевірених записів — і колекція росте',
+
+    'pg.babel.title': 'Вавилон щодня',
+    'pg.babel.blurb': 'Одна загадкова мова на день. Вгадайте за 4 спроби — кожен промах відкриває підказку.',
+    'pg.babel.prompt': 'Це речення однакове в кожній загадці — стаття 1 Загальної декларації прав людини. Якою це мовою?',
+    'pg.babel.placeholder': 'Введіть мову…',
+    'pg.babel.guess': 'Вгадати',
+    'pg.babel.giveUp': 'Показати',
+    'pg.babel.win': 'Розгадано!',
+    'pg.babel.lose': 'Відповідь:',
+    'pg.babel.hint.family': 'Родина',
+    'pg.babel.hint.region': 'Регіон',
+    'pg.babel.hint.speakers': 'Мовці',
+    'pg.babel.wrongFamily': 'не та родина',
+    'pg.babel.rightFamily': 'родина правильна!',
+    'pg.babel.rightBranch': 'гілка правильна!',
+    'pg.babel.streak': 'Серія',
+    'pg.babel.played': 'Зіграно',
+    'pg.babel.share': 'Скопіювати результат',
+    'pg.babel.copied': 'Скопійовано!',
+    'pg.babel.next': 'Наступна загадка опівночі за UTC',
+    'pg.babel.practice': 'Тренувальний раунд (випадковий)',
+    'pg.babel.unknown': 'Немає в нашому списку мов — спробуйте інше написання',
+
+    'pg.wtm.title': 'Машина часу для слів',
+    'pg.wtm.blurb': 'Оберіть слово і проїдьте з ним крізь століття — деякі маршрути сягають 6 000 років.',
+    'pg.wtm.pick': 'Оберіть слово',
+    'pg.wtm.surprise': 'Здивуйте мене',
+    'pg.wtm.reconstructed': '* = реконструйована форма (ніколи не записана — виведена порівняльним методом)',
+    'pg.wtm.cognates': 'Той самий корінь, інші маршрути',
+    'pg.wtm.source': 'Джерело',
+    'pg.wtm.search': 'Пошук у перевіреному наборі…',
+    'pg.wtm.empty': 'Цього слова ще немає в нашому перевіреному наборі. Ми показуємо лише етимології з джерелами — стаття про міфи пояснює, чому це важливо.',
+
+    'pg.sss.title': 'Пісочниця звукових зсувів',
+    'pg.sss.blurb': 'Введіть своє імʼя і прокрутіть його крізь справжні історичні звукові закони. Що зробив би з вами закон Ґрімма?',
+    'pg.sss.input': 'Введіть слово або імʼя…',
+    'pg.sss.pack': 'Звуковий закон',
+    'pg.sss.apply': 'Що спрацювало',
+    'pg.sss.noChange': 'Стійке до зсувів! Жодне правило цього набору не застосовне. 🛡️',
+    'pg.sss.note': 'Іграшка з чесною етикеткою: справжні закони поза їхньою мовою та епохою. Самі правила автентичні — див. статтю.',
+    'pg.sss.before': 'До',
+    'pg.sss.after': 'Після',
   },
 } as const;
 
@@ -131,6 +235,10 @@ export const topicNames: Record<string, Record<Lang, string>> = {
   roots: { en: 'Roots', uk: 'Корені' },
   names: { en: 'Names', uk: 'Назви' },
   myths: { en: 'Myths', uk: 'Міфи' },
+  thought: { en: 'Language & thought', uk: 'Мова і мислення' },
+  dialects: { en: 'Dialects', uk: 'Діалекти' },
+  conlangs: { en: 'Constructed languages', uk: 'Штучні мови' },
+  machine: { en: 'Machine languages', uk: 'Машинні мови' },
 };
 
 // Per-interactive title + one-line description of what the (future) component does.
@@ -255,6 +363,38 @@ export const interactiveInfo: Record<
     desc: {
       en: 'Bust viral word myths — no, “posh” isn’t an acronym and Cossacks aren’t named after goats — and see how some mistakes become the language.',
       uk: 'Розвінчайте вірусні міфи про слова — ні, «posh» не акронім, а козаки не від кози — і подивіться, як деякі помилки стають мовою.',
+    },
+  },
+  'thought-lens': {
+    icon: '🔵',
+    title: { en: 'Thought lens', uk: 'Лінза мислення' },
+    desc: {
+      en: 'Place your own boundary on a blue gradient, then see where English (one blue) and Ukrainian (синій/блакитний) conventionally cut it — and compare what each grammar forces you to encode.',
+      uk: 'Поставте власну межу на синьому градієнті, а тоді побачте, де її проводять англійська (один синій) та українська (синій/блакитний) — і порівняйте, що кожна граматика змушує вас кодувати.',
+    },
+  },
+  'accent-atlas': {
+    icon: '🗣️',
+    title: { en: 'Accent atlas', uk: 'Атлас акцентів' },
+    desc: {
+      en: 'Explore Ukraine’s three dialect groups on a map, slide along a village-to-village continuum, and see phonetically why паляниця works as a shibboleth.',
+      uk: 'Дослідіть три наріччя України на мапі, проїдьтеся континуумом від села до села і побачте фонетично, чому паляниця працює як шиболет.',
+    },
+  },
+  'conlang-workbench': {
+    icon: '🧪',
+    title: { en: 'Conlang workbench', uk: 'Майстерня штучних мов' },
+    desc: {
+      en: 'Combine Toki Pona’s tiny vocabulary into new meanings, walk the timeline from Lingua Ignota to Valyrian, and test how much Esperanto you can read on sight.',
+      uk: 'Складайте крихітний словник токіпони в нові значення, пройдіть хронологію від Lingua Ignota до валірійської і перевірте, скільки есперанто ви прочитаєте з ходу.',
+    },
+  },
+  'code-vs-speech': {
+    icon: '🧠',
+    title: { en: 'Code vs speech', uk: 'Код проти мовлення' },
+    desc: {
+      en: 'Score a Ukrainian sentence against a Python snippet on Hockett’s design features — then see which brain network each one lights up.',
+      uk: 'Оцініть українське речення проти фрагмента Python за ознаками мови Гокетта — і побачте, яку мережу мозку вмикає кожне.',
     },
   },
 };

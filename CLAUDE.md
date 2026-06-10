@@ -36,6 +36,7 @@ Render markdown body → page. Pull-quotes (`> blockquote`) should be styled lar
 - **Article pages**: `/{lang}/{slug}/` — article body with embedded interactive component, reading progress bar, "Explore further" panel, prev/next navigation.
 - **Timeline page** `/timeline`: a master interactive timeline aggregating key dated events from all articles (hardcode the events from article content; ~135,000 BCE → today, log-scaled).
 - **About page**: short, explain the project and bilingual nature.
+- **Playground** `/{lang}/playground/`: standalone free-play language toys — full spec in `docs/PLAYGROUND.md`.
 
 ## Interactive component specs (one per article)
 
@@ -81,9 +82,21 @@ Tabbed component. Tab 1: SVG map of Ukraine with tappable toponyms (Київ, Д
 ### `myth-buster` — for `etymology-myths`
 Swipeable card quiz: "real or myth?" — 8 etymology claims (posh acronym, sirloin knighting, козак←коза, bridegroom reshaping, female respelling, salt salary, golf acronym, ведмідь taboo). User swipes/buttons true-false, gets explanation + running score; end screen ranks them "folk-etymology-proof". Visual style: tabloid-vs-dictionary card flip.
 
+### `thought-lens` — for `language-and-thought`
+Two experiments. (a) Blue-boundary lab: a continuous blue gradient strip; user drags to place the boundary where "one color becomes another", then overlays show where EN (one basic term) vs UK (синій/блакитний) conventionally split it. (b) Obligatory-info switcher: the same simple sentence shown as "what EN forces you to encode" vs "what UK forces you to encode" (articles vs aspect/vocative), with forced bits highlighted. Include a caveat badge on the gender-association demo (contested research).
+
+### `accent-atlas` — for `dialects-and-accents`
+Tab 1: SVG dialect map of Ukraine — three dialect groups colored (northern, southwestern, southeastern), tap a region for features + sample phrase. Tab 2: continuum slider — a row of "villages" between two cities; drag to hear/see speech gradually blending, with a movable "border" showing how language lines are arbitrary cuts. Tab 3: shibboleth tester — паляниця story card with phonetic breakdown of why it works (no audio recording required; visual phonetics).
+
+### `conlang-workbench` — for `constructed-languages`
+(a) Toki Pona builder: ~14 word tiles; user combines them (jan+pona=friend, telo+nasa="weird water"=alcohol) with live gloss. (b) Conlang timeline: Lingua Ignota → Volapük → Esperanto → Klingon → Na'vi → Dothraki/Valyrian → Toki Pona, each with one-line fate. (c) Esperanto decoder: a sentence shown; user hovers words to see how many they can guess from European roots — recognizability meter.
+
+### `code-vs-speech` — for `machine-languages`
+Hockett checklist scorecard: two columns (Ukrainian sentence vs Python snippet); user toggles each design feature (discreteness, productivity, ambiguity, lying/irony, child acquisition…) and sees pass/fail lights with a one-liner. Ends with brain panel: language network vs multiple-demand network — simple two-region brain SVG lighting up per column. Keep the MIT result verbatim from the article.
+
 ## Design direction
 
-- Feel: editorial + playful science museum. Big type, generous whitespace, one accent color per topic area (origins=ochre, families=teal, sound=violet, ukrainian=blue/yellow duo, internet=pink, ai=green, birth=coral, revival=amber, writing=sepia, borrowing=sky, everyday=lime, roots=raspberry, names=plum, myths=rust).
+- Feel: editorial + playful science museum. Big type, generous whitespace, one accent color per topic area (origins=ochre, families=teal, sound=violet, ukrainian=blue/yellow duo, internet=pink, ai=green, birth=coral, revival=amber, writing=sepia, borrowing=sky, everyday=lime, roots=raspberry, names=plum, myths=rust, thought=indigo, dialects=olive, conlangs=magenta, machine=graphite).
 - Dark/light mode respecting `prefers-color-scheme`.
 - Typography must handle Cyrillic well (e.g. Inter, Fixel, or e-Ukraine font families).
 - Mobile-first; interactives must degrade gracefully to tap/step interactions on small screens.
@@ -94,7 +107,7 @@ Swipeable card quiz: "real or myth?" — 8 etymology claims (posh acronym, sirlo
 - `npm run build` produces static output with zero errors.
 - Lighthouse ≥ 90 performance & accessibility on article pages.
 - Language toggle works on every page, no untranslated UI strings.
-- All 14 interactive components functional on mobile viewport (375px).
+- All 18 interactive components functional on mobile viewport (375px).
 - Every fact shown inside interactives must come from the articles — no invented data. If you need a number that isn't in an article, mark it `TODO(seva)` in code and list it at the end of your run.
 
 ## Out of scope

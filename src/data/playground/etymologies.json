@@ -1,0 +1,229 @@
+{
+  "_comment": "Hand-curated etymology chains. Sources: Online Etymology Dictionary (etymonline.com), ЕСУМ via goroh.pp.ua, Wiktionary for PIE reconstructions. reconstructed=true forms render with *. Periods are approximate scholarly conventions.",
+  "words": [
+    {
+      "id": "father",
+      "lemma": { "en": "father", "uk": "father (англ.)" },
+      "icon": "👨",
+      "chain": [
+        { "form": "ph₂tḗr", "lang": { "en": "Proto-Indo-European", "uk": "праіндоєвропейська" }, "period": { "en": "~4500 BCE", "uk": "~4500 до н.е." }, "reconstructed": true, "note": { "en": "The reconstructed root shared by half the world's languages.", "uk": "Реконструйований корінь, спільний для половини мов світу." } },
+        { "form": "fadēr", "lang": { "en": "Proto-Germanic", "uk": "прагерманська" }, "period": { "en": "~500 BCE", "uk": "~500 до н.е." }, "reconstructed": true, "note": { "en": "Grimm's Law fired: p→f, t→þ(d).", "uk": "Спрацював закон Ґрімма: p→f, t→þ(d)." } },
+        { "form": "fæder", "lang": { "en": "Old English", "uk": "давньоанглійська" }, "period": { "en": "~900 CE", "uk": "~900 н.е." }, "reconstructed": false, "note": { "en": "Attested in Beowulf-era manuscripts.", "uk": "Засвідчено в рукописах доби «Беовульфа»." } },
+        { "form": "father", "lang": { "en": "Modern English", "uk": "сучасна англійська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "The -th- spelling settled in the 1500s.", "uk": "Написання з -th- усталилося в XVI столітті." } }
+      ],
+      "cognates": [
+        { "form": "pater", "lang": { "en": "Latin", "uk": "латина" } },
+        { "form": "πατήρ (patḗr)", "lang": { "en": "Ancient Greek", "uk": "давньогрецька" } },
+        { "form": "pitā́", "lang": { "en": "Sanskrit", "uk": "санскрит" } }
+      ],
+      "source": "etymonline.com/word/father"
+    },
+    {
+      "id": "mother",
+      "lemma": { "en": "mother / мати", "uk": "мати / mother" },
+      "icon": "👩",
+      "chain": [
+        { "form": "méh₂tēr", "lang": { "en": "Proto-Indo-European", "uk": "праіндоєвропейська" }, "period": { "en": "~4500 BCE", "uk": "~4500 до н.е." }, "reconstructed": true, "note": { "en": "Where English mother and Ukrainian мати meet.", "uk": "Тут зустрічаються англійське mother і українське мати." } },
+        { "form": "mati (матере-)", "lang": { "en": "Proto-Slavic", "uk": "праслов'янська" }, "period": { "en": "~500 CE", "uk": "~500 н.е." }, "reconstructed": true, "note": { "en": "The Slavic line; the stem matere- survives in відмінки.", "uk": "Слов'янська лінія; основа матере- живе у відмінках." } },
+        { "form": "мати", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "Essentially the same word, six millennia on.", "uk": "По суті те саме слово, шість тисячоліть по тому." } }
+      ],
+      "cognates": [
+        { "form": "mother", "lang": { "en": "English", "uk": "англійська" } },
+        { "form": "māter", "lang": { "en": "Latin", "uk": "латина" } },
+        { "form": "mātár-", "lang": { "en": "Sanskrit", "uk": "санскрит" } }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/мати); etymonline.com/word/mother"
+    },
+    {
+      "id": "three",
+      "lemma": { "en": "three / три", "uk": "три / three" },
+      "icon": "3️⃣",
+      "chain": [
+        { "form": "tréyes", "lang": { "en": "Proto-Indo-European", "uk": "праіндоєвропейська" }, "period": { "en": "~4500 BCE", "uk": "~4500 до н.е." }, "reconstructed": true, "note": { "en": "Numbers are among the most stable words of all.", "uk": "Числівники — серед найстабільніших слів узагалі." } },
+        { "form": "þrīz", "lang": { "en": "Proto-Germanic", "uk": "прагерманська" }, "period": { "en": "~500 BCE", "uk": "~500 до н.е." }, "reconstructed": true, "note": { "en": "Grimm's Law: t→þ (the th sound).", "uk": "Закон Ґрімма: t→þ (звук th)." } },
+        { "form": "three", "lang": { "en": "Modern English", "uk": "сучасна англійська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "Ukrainian три kept the original t.", "uk": "Українське три зберегло первісне t." } }
+      ],
+      "cognates": [
+        { "form": "три", "lang": { "en": "Ukrainian", "uk": "українська" } },
+        { "form": "trēs", "lang": { "en": "Latin", "uk": "латина" } },
+        { "form": "tráyas", "lang": { "en": "Sanskrit", "uk": "санскрит" } }
+      ],
+      "source": "etymonline.com/word/three"
+    },
+    {
+      "id": "night",
+      "lemma": { "en": "night / ніч", "uk": "ніч / night" },
+      "icon": "🌙",
+      "chain": [
+        { "form": "nókʷts", "lang": { "en": "Proto-Indo-European", "uk": "праіндоєвропейська" }, "period": { "en": "~4500 BCE", "uk": "~4500 до н.е." }, "reconstructed": true, "note": { "en": "One of the classic textbook cognate sets.", "uk": "Один із класичних підручникових рядів когнатів." } },
+        { "form": "noktь", "lang": { "en": "Proto-Slavic", "uk": "праслов'янська" }, "period": { "en": "~500 CE", "uk": "~500 н.е." }, "reconstructed": true, "note": { "en": "kt softened toward the Slavic ч.", "uk": "kt пом'якшилося в бік слов'янського ч." } },
+        { "form": "ніч", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "The і appeared via Ukrainian's signature o/e→i shift in closed syllables.", "uk": "І з'явилося через фірмовий український перехід о/е→і в закритих складах." } }
+      ],
+      "cognates": [
+        { "form": "night", "lang": { "en": "English", "uk": "англійська" } },
+        { "form": "nox / noctis", "lang": { "en": "Latin", "uk": "латина" } },
+        { "form": "νύξ (núx)", "lang": { "en": "Ancient Greek", "uk": "давньогрецька" } }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ніч); etymonline.com/word/night"
+    },
+    {
+      "id": "sugar",
+      "lemma": { "en": "sugar / цукор", "uk": "цукор / sugar" },
+      "icon": "🍬",
+      "chain": [
+        { "form": "śarkarā", "lang": { "en": "Sanskrit", "uk": "санскрит" }, "period": { "en": "ancient India", "uk": "давня Індія" }, "reconstructed": false, "note": { "en": "Literally 'gravel, grit' — granulated sugar.", "uk": "Буквально «жорства, крупинки» — цукор-пісок." } },
+        { "form": "shakar", "lang": { "en": "Persian", "uk": "перська" }, "period": { "en": "via trade", "uk": "через торгівлю" }, "reconstructed": false, "note": { "en": "Rode west along the trade routes.", "uk": "Поїхало на захід торговими шляхами." } },
+        { "form": "sukkar", "lang": { "en": "Arabic", "uk": "арабська" }, "period": { "en": "~800 CE", "uk": "~800 н.е." }, "reconstructed": false, "note": { "en": "Arab agronomy spread the crop into the Mediterranean.", "uk": "Арабська агрономія принесла культуру в Середземномор'я." } },
+        { "form": "succarum / zucchero", "lang": { "en": "Medieval Latin / Italian", "uk": "середньовічна латина / італійська" }, "period": { "en": "~1100s", "uk": "~XII ст." }, "reconstructed": false, "note": { "en": "Crusades-era trade Latin.", "uk": "Торгова латина доби хрестових походів." } },
+        { "form": "Zucker → cukier → цукор", "lang": { "en": "German → Polish → Ukrainian", "uk": "німецька → польська → українська" }, "period": { "en": "early modern", "uk": "ранньомодерна доба" }, "reconstructed": false, "note": { "en": "Ukrainian bought the same Indian gravel via different middlemen than English (sugar, via French).", "uk": "Українська купила ту саму індійську жорству через інших посередників, ніж англійська (sugar, через французьку)." } }
+      ],
+      "cognates": [
+        { "form": "sugar", "lang": { "en": "English (via Old French)", "uk": "англійська (через старофранцузьку)" } },
+        { "form": "azúcar", "lang": { "en": "Spanish (with Arabic article al-)", "uk": "іспанська (з арабським артиклем аль-)" } }
+      ],
+      "source": "etymonline.com/word/sugar; ЕСУМ (goroh.pp.ua/Етимологія/цукор)"
+    },
+    {
+      "id": "tea",
+      "lemma": { "en": "tea / чай", "uk": "чай / tea" },
+      "icon": "🍵",
+      "chain": [
+        { "form": "茶", "lang": { "en": "Chinese", "uk": "китайська" }, "period": { "en": "ancient China", "uk": "давній Китай" }, "reconstructed": false, "note": { "en": "One character, two readings: Min coastal 'te', Mandarin 'chá'.", "uk": "Один ієрогліф, два читання: прибережне міньське «те», мандаринське «ча»." } },
+        { "form": "chay (چای)", "lang": { "en": "Persian", "uk": "перська" }, "period": { "en": "overland routes", "uk": "суходільні шляхи" }, "reconstructed": false, "note": { "en": "The land road: Mandarin chá + Persian -y.", "uk": "Сухопутна дорога: мандаринське chá + перське -й." } },
+        { "form": "чай", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "~1600s+", "uk": "~з XVII ст." }, "reconstructed": false, "note": { "en": "Ukraine drank by land. Coastal Europe (tea, thé, Tee) bought by sea from the Min port of Amoy.", "uk": "Україна пила «суходолом». Прибережна Європа (tea, thé, Tee) купувала морем у міньському порту Амой." } }
+      ],
+      "cognates": [
+        { "form": "tea", "lang": { "en": "English (sea route, Min te)", "uk": "англійська (морський шлях, міньське te)" } },
+        { "form": "chai", "lang": { "en": "Hindi (land route)", "uk": "гінді (сухопутний шлях)" } },
+        { "form": "çay", "lang": { "en": "Turkish (land route)", "uk": "турецька (сухопутний шлях)" } }
+      ],
+      "source": "qz.com/1176962 (tea if by sea, cha if by land); etymonline.com/word/tea"
+    },
+    {
+      "id": "orange",
+      "lemma": { "en": "orange", "uk": "orange (англ.)" },
+      "icon": "🍊",
+      "chain": [
+        { "form": "nāraṅga", "lang": { "en": "Sanskrit", "uk": "санскрит" }, "period": { "en": "ancient India", "uk": "давня Індія" }, "reconstructed": false, "note": { "en": "The fruit left India with its name.", "uk": "Фрукт покинув Індію разом з іменем." } },
+        { "form": "nārang", "lang": { "en": "Persian", "uk": "перська" }, "period": { "en": "via trade", "uk": "через торгівлю" }, "reconstructed": false, "note": { "en": "Westward through Persia…", "uk": "На захід через Персію…" } },
+        { "form": "nāranj", "lang": { "en": "Arabic", "uk": "арабська" }, "period": { "en": "~900 CE", "uk": "~900 н.е." }, "reconstructed": false, "note": { "en": "…into Arab-ruled Iberia.", "uk": "…до арабської Іберії." } },
+        { "form": "naranja → une norenge → une orenge", "lang": { "en": "Spanish → Old French", "uk": "іспанська → старофранцузька" }, "period": { "en": "~1200s", "uk": "~XIII ст." }, "reconstructed": false, "note": { "en": "French speakers re-cut the word boundary: the n migrated into the article.", "uk": "Французи перекроїли межу слова: n перейшло в артикль." } },
+        { "form": "orange", "lang": { "en": "English", "uk": "англійська" }, "period": { "en": "1300s; color sense ~1500s", "uk": "XIV ст.; колір ~XVI ст." }, "reconstructed": false, "note": { "en": "The fruit named the color — not the other way around.", "uk": "Фрукт дав ім'я кольору, а не навпаки." } }
+      ],
+      "cognates": [
+        { "form": "помаранч(евий)", "lang": { "en": "Ukrainian (via Polish from Italian pomo + arancia)", "uk": "українська (через польську з італійського pomo + arancia)" } }
+      ],
+      "source": "etymonline.com/word/orange"
+    },
+    {
+      "id": "kava",
+      "lemma": { "en": "кава (coffee)", "uk": "кава" },
+      "icon": "☕",
+      "chain": [
+        { "form": "qahwa (قهوة)", "lang": { "en": "Arabic", "uk": "арабська" }, "period": { "en": "~1400s Yemen", "uk": "~XV ст., Ємен" }, "reconstructed": false, "note": { "en": "Coffee culture starts with Sufi monasteries of Yemen.", "uk": "Кавова культура починається із суфійських обителей Ємену." } },
+        { "form": "kahve", "lang": { "en": "Ottoman Turkish", "uk": "османська турецька" }, "period": { "en": "~1500s", "uk": "~XVI ст." }, "reconstructed": false, "note": { "en": "Istanbul's coffeehouses conquer the empire.", "uk": "Кав'ярні Стамбула завойовують імперію." } },
+        { "form": "kawa", "lang": { "en": "Polish", "uk": "польська" }, "period": { "en": "~1600s", "uk": "~XVII ст." }, "reconstructed": false, "note": { "en": "Into Central Europe after the Ottoman wars.", "uk": "До Центральної Європи після османських воєн." } },
+        { "form": "кава", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "English coffee took the sea route via Italian caffè and Dutch koffie — same Yemeni word, different ship.", "uk": "Англійське coffee пливло морем через італійське caffè і нідерландське koffie — те саме єменське слово, інший корабель." } }
+      ],
+      "cognates": [
+        { "form": "coffee", "lang": { "en": "English", "uk": "англійська" } },
+        { "form": "caffè", "lang": { "en": "Italian", "uk": "італійська" } }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/кава); etymonline.com/word/coffee"
+    },
+    {
+      "id": "maidan",
+      "lemma": { "en": "майдан (square)", "uk": "майдан" },
+      "icon": "🏛️",
+      "chain": [
+        { "form": "maydān (میدان)", "lang": { "en": "Persian", "uk": "перська" }, "period": { "en": "medieval", "uk": "середньовіччя" }, "reconstructed": false, "note": { "en": "'Open field, arena' — the great squares of Isfahan still carry it.", "uk": "«Відкрите поле, арена» — великі площі Ісфагана досі носять це слово." } },
+        { "form": "meydan", "lang": { "en": "Turkic languages", "uk": "тюркські мови" }, "period": { "en": "steppe contact", "uk": "степовий контакт" }, "reconstructed": false, "note": { "en": "Carried across the steppe frontier.", "uk": "Принесено через степове прикордоння." } },
+        { "form": "майдан", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "attested for centuries; world news 2004 & 2014", "uk": "засвідчене століттями; світові новини 2004 і 2014" }, "reconstructed": false, "note": { "en": "A Persian word, via the steppe, became the name of Ukrainian civic life itself.", "uk": "Перське слово через степ стало іменем самого українського громадського життя." } }
+      ],
+      "cognates": [
+        { "form": "maidan", "lang": { "en": "Hindi-Urdu (same Persian source)", "uk": "гінді-урду (те саме перське джерело)" } }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/майдан)"
+    },
+    {
+      "id": "kozak",
+      "lemma": { "en": "козак (Cossack)", "uk": "козак" },
+      "icon": "🐎",
+      "chain": [
+        { "form": "qazaq", "lang": { "en": "Turkic (Cuman/Kipchak)", "uk": "тюркська (половецька/кипчацька)" }, "period": { "en": "~1200s–1300s", "uk": "~XIII–XIV ст." }, "reconstructed": false, "note": { "en": "'Free man, wanderer, adventurer' — the same root as the ethnonym Kazakh.", "uk": "«Вільна людина, мандрівник, шукач пригод» — той самий корінь, що в етнонімі казах." } },
+        { "form": "козакъ", "lang": { "en": "Old Ukrainian chancery", "uk": "староукраїнська канцелярія" }, "period": { "en": "1492 first attestations", "uk": "перші згадки 1492" }, "reconstructed": false, "note": { "en": "Attested for steppe freemen of the Dnipro frontier.", "uk": "Засвідчене щодо степових вільних людей дніпровського прикордоння." } },
+        { "form": "козак", "lang": { "en": "Ukrainian (→ world)", "uk": "українська (→ світ)" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "Exported into English (Cossack), French (cosaque) — NOT from коза 'goat'; that's folk etymology (see the myths article).", "uk": "Експортоване в англійську (Cossack), французьку (cosaque). НЕ від «коза» — це народна етимологія (див. статтю про міфи)." } }
+      ],
+      "cognates": [],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/козак)"
+    },
+    {
+      "id": "mriya",
+      "lemma": { "en": "мрія (dream)", "uk": "мрія" },
+      "icon": "💭",
+      "chain": [
+        { "form": "мріти", "lang": { "en": "Ukrainian (verb)", "uk": "українська (дієслово)" }, "period": { "en": "folk language", "uk": "народна мова" }, "reconstructed": false, "note": { "en": "'To shimmer dimly in the distance' — the raw material.", "uk": "«Тьмяно мерехтіти вдалині» — сировина." } },
+        { "form": "мрія", "lang": { "en": "coined by Mykhailo Starytsky", "uk": "укарбоване Михайлом Старицьким" }, "period": { "en": "1870s", "uk": "1870-ті" }, "reconstructed": false, "note": { "en": "A word with a birth certificate: deliberately created during the era of print bans, and now indistinguishable from ancient vocabulary.", "uk": "Слово зі свідоцтвом про народження: свідомо створене в добу заборон друку — і тепер невідрізненне від давньої лексики." } },
+        { "form": "АН-225 «Мрія»", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "1988", "uk": "1988" }, "reconstructed": false, "note": { "en": "The largest aircraft ever built was named after the invented word.", "uk": "Найбільший літак в історії назвали на честь вигаданого слова." } }
+      ],
+      "cognates": [],
+      "source": "uk.wikipedia.org/wiki/Мрія; ЕСУМ"
+    },
+    {
+      "id": "vedmid",
+      "lemma": { "en": "ведмідь (bear)", "uk": "ведмідь" },
+      "icon": "🐻",
+      "chain": [
+        { "form": "h₂ŕ̥tḱos", "lang": { "en": "Proto-Indo-European", "uk": "праіндоєвропейська" }, "period": { "en": "~4500 BCE", "uk": "~4500 до н.е." }, "reconstructed": true, "note": { "en": "The bear's true name — preserved in Latin ursus, Greek árktos.", "uk": "Справжнє ім'я ведмедя — збережене в латинському ursus, грецькому árktos." } },
+        { "form": "medvědь", "lang": { "en": "Proto-Slavic (taboo replacement)", "uk": "праслов'янська (табуїстична заміна)" }, "period": { "en": "~before 500 CE", "uk": "~до 500 н.е." }, "reconstructed": true, "note": { "en": "'Honey-eater' (medu + ěd-): Slavs avoided the true name lest they summon the beast.", "uk": "«Той, хто їсть мед» (medu + ěd-): слов'яни уникали справжнього імені, щоб не накликати звіра." } },
+        { "form": "ведмідь", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "Ukrainian also flipped the halves (мед-відь → вед-мідь). The original PIE name vanished from all Slavic — fear is the strongest editor.", "uk": "Українська ще й переставила половинки (мед-відь → вед-мідь). Первісне ПІЄ-ім'я зникло з усіх слов'янських мов — страх є найсильнішим редактором." } }
+      ],
+      "cognates": [
+        { "form": "bear", "lang": { "en": "English — itself a taboo word: 'the brown one'", "uk": "англійська — теж табу-слово: «бурий»" } },
+        { "form": "ursus", "lang": { "en": "Latin (kept the old name)", "uk": "латина (зберегла старе ім'я)" } }
+      ],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/ведмідь); etymonline.com/word/bear"
+    },
+    {
+      "id": "muscle",
+      "lemma": { "en": "muscle", "uk": "muscle (англ.)" },
+      "icon": "🐭",
+      "chain": [
+        { "form": "mūs", "lang": { "en": "Latin", "uk": "латина" }, "period": { "en": "classical Rome", "uk": "класичний Рим" }, "reconstructed": false, "note": { "en": "'Mouse' — same PIE root as Ukrainian миша.", "uk": "«Миша» — той самий ПІЄ-корінь, що в українському миша." } },
+        { "form": "musculus", "lang": { "en": "Latin (diminutive)", "uk": "латина (демінутив)" }, "period": { "en": "classical Rome", "uk": "класичний Рим" }, "reconstructed": false, "note": { "en": "'Little mouse' — the bulge rippling under the skin looked like one running.", "uk": "«Мишеня» — горбик, що біжить під шкірою, здавався римлянам мишкою." } },
+        { "form": "muscle", "lang": { "en": "English (via French)", "uk": "англійська (через французьку)" }, "period": { "en": "1300s+", "uk": "з XIV ст." }, "reconstructed": false, "note": { "en": "The frozen picture nobody sees anymore — until now.", "uk": "Замерзла картинка, якої вже ніхто не бачить. До цього моменту." } }
+      ],
+      "cognates": [
+        { "form": "м'яз (від м'ясо)", "lang": { "en": "Ukrainian — honest anatomy: from 'meat'", "uk": "українська — чесна анатомія: від «м'ясо»" } }
+      ],
+      "source": "etymonline.com/word/muscle"
+    },
+    {
+      "id": "wine",
+      "lemma": { "en": "wine / вино", "uk": "вино / wine" },
+      "icon": "🍷",
+      "chain": [
+        { "form": "wóyh₁nom", "lang": { "en": "Proto-Indo-European (or an older Mediterranean wander-word)", "uk": "праіндоєвропейська (або давніше середземноморське мандрівне слово)" }, "period": { "en": "very ancient", "uk": "дуже давнє" }, "reconstructed": true, "note": { "en": "So old its ultimate origin is genuinely debated — possibly pre-IE. Real etymology says 'unclear' out loud.", "uk": "Таке давнє, що його кінцеве джерело справді дискусійне — можливо, доіндоєвропейське. Справжня етимологія вміє казати «неясно»." } },
+        { "form": "vīnum", "lang": { "en": "Latin", "uk": "латина" }, "period": { "en": "classical Rome", "uk": "класичний Рим" }, "reconstructed": false, "note": { "en": "Spread with the vine across the empire.", "uk": "Поширилося з виноградною лозою по імперії." } },
+        { "form": "вино / wine", "lang": { "en": "Slavic & Germanic (early borrowings from Latin)", "uk": "слов'янські та германські (ранні запозичення з латини)" }, "period": { "en": "first centuries CE", "uk": "перші століття н.е." }, "reconstructed": false, "note": { "en": "Both language families bought the word with the drink.", "uk": "Обидві мовні родини купили слово разом із напоєм." } }
+      ],
+      "cognates": [
+        { "form": "οἶνος (oînos)", "lang": { "en": "Ancient Greek", "uk": "давньогрецька" } },
+        { "form": "gvino (ღვინო)", "lang": { "en": "Georgian — the Caucasus is wine's archaeological homeland", "uk": "грузинська — Кавказ є археологічною батьківщиною вина" } }
+      ],
+      "source": "etymonline.com/word/wine; ЕСУМ (goroh.pp.ua/Етимологія/вино)"
+    },
+    {
+      "id": "window",
+      "lemma": { "en": "window / вікно", "uk": "вікно / window" },
+      "icon": "🪟",
+      "chain": [
+        { "form": "okъno ← oko", "lang": { "en": "Proto-Slavic", "uk": "праслов'янська" }, "period": { "en": "~500 CE", "uk": "~500 н.е." }, "reconstructed": true, "note": { "en": "From oko 'eye': the window is the house's eye.", "uk": "Від око: вікно — це око хати." } },
+        { "form": "вікно", "lang": { "en": "Ukrainian", "uk": "українська" }, "period": { "en": "today", "uk": "сьогодні" }, "reconstructed": false, "note": { "en": "The o→i closed-syllable shift, again.", "uk": "Знову перехід о→і в закритому складі." } },
+        { "form": "vindauga → window", "lang": { "en": "Old Norse → English", "uk": "давньоскандинавська → англійська" }, "period": { "en": "Viking-age borrowing", "uk": "запозичення доби вікінгів" }, "reconstructed": false, "note": { "en": "'Wind-eye' — a different language, the very same metaphor. Two cultures independently saw a house looking back.", "uk": "«Вітрове око» — інша мова, та сама метафора. Дві культури незалежно побачили, як хата дивиться у відповідь." } }
+      ],
+      "cognates": [],
+      "source": "ЕСУМ (goroh.pp.ua/Етимологія/вікно); etymonline.com/word/window"
+    }
+  ]
+}

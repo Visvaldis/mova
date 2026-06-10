@@ -54,6 +54,11 @@ a { color: inherit; }
 [data-topic='roots']     { --accent: #15803d; --accent-soft: #d6efdf; --accent-2: #15803d; }
 [data-topic='names']     { --accent: #4f46e5; --accent-soft: #e1e0fb; --accent-2: #4f46e5; }
 [data-topic='myths']     { --accent: #dc2626; --accent-soft: #fbdcdc; --accent-2: #dc2626; }
+[data-topic='thought']   { --accent: #4338ca; --accent-soft: #e2e2fa; --accent-2: #4338ca; }
+[data-topic='dialects']  { --accent: #4d7c0f; --accent-soft: #e6f0d2; --accent-2: #4d7c0f; }
+[data-topic='conlangs']  { --accent: #c026d3; --accent-soft: #f8dcfb; --accent-2: #c026d3; }
+[data-topic='machine']   { --accent: #475569; --accent-soft: #e4e9ef; --accent-2: #475569; }
+[data-topic='playground']{ --accent: #d97706; --accent-soft: #fdeed2; --accent-2: #d97706; }
 
 /* ---- Dark mode -------------------------------------------- */
 @media (prefers-color-scheme: dark) {
@@ -83,6 +88,11 @@ a { color: inherit; }
   [data-topic='roots']     { --accent: #4ade80; --accent-soft: #0a2616; --accent-2: #4ade80; }
   [data-topic='names']     { --accent: #818cf8; --accent-soft: #1a1840; --accent-2: #818cf8; }
   [data-topic='myths']     { --accent: #f87171; --accent-soft: #320f0f; --accent-2: #f87171; }
+  [data-topic='thought']   { --accent: #a5b4fc; --accent-soft: #1c1b45; --accent-2: #a5b4fc; }
+  [data-topic='dialects']  { --accent: #a3e635; --accent-soft: #1c270c; --accent-2: #a3e635; }
+  [data-topic='conlangs']  { --accent: #e879f9; --accent-soft: #2f0e33; --accent-2: #e879f9; }
+  [data-topic='machine']   { --accent: #94a3b8; --accent-soft: #1d2530; --accent-2: #94a3b8; }
+  [data-topic='playground']{ --accent: #fbbf24; --accent-soft: #2e2208; --accent-2: #fbbf24; }
 }
 
 /* ---- Base ------------------------------------------------- */
@@ -268,3 +278,73 @@ a:hover { text-decoration-color: var(--accent); }
   .nav-links { gap: 0.1rem; }
   .nav-links a { padding: 0.4rem 0.5rem; font-size: 0.9rem; }
 }
+
+/* ---- Playground ------------------------------------------- */
+.pg-hub-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); margin-top: 1.5rem; }
+.pg-card {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 0.5rem;
+  background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.4rem; text-decoration: none; box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.pg-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--accent); }
+.pg-card:hover { transform: translateY(-3px) rotate(-0.4deg); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.pg-card .icon { font-size: 2rem; }
+.pg-card h3 { font-size: 1.2rem; letter-spacing: -0.01em; }
+.pg-card p { color: var(--muted); font-size: 0.95rem; }
+.pg-card .meta { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 0.5rem; }
+
+.toy {
+  background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: clamp(1.1rem, 3vw, 1.8rem); margin-top: 1.5rem;
+}
+.toy h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.toy .toy-note { font-size: 0.82rem; color: var(--muted); margin-top: 1rem; line-height: 1.5; }
+.toy input[type='text'] {
+  width: 100%; padding: 0.7rem 1rem; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line); background: var(--bg); color: var(--text);
+}
+.toy input[type='text']:focus { border-color: var(--accent); outline: none; }
+.toy .row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.toy .pill {
+  border: 1.5px solid var(--line); background: transparent; color: var(--text);
+  border-radius: 999px; padding: 0.4rem 0.9rem; font-weight: 600; font-size: 0.9rem; cursor: pointer;
+}
+.toy .pill[aria-pressed='true'], .toy .pill.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.toy .big-word { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; letter-spacing: 0.01em; overflow-wrap: anywhere; }
+.toy .accent { color: var(--accent); }
+.toy .muted { color: var(--muted); }
+.toy .stage-card {
+  border: 1px solid var(--line); border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm); padding: 0.8rem 1rem; background: var(--bg);
+}
+.toy .tiles { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.toy .tile {
+  width: 2rem; height: 2rem; border-radius: 6px; display: grid; place-items: center;
+  font-weight: 800; font-size: 0.95rem; background: var(--accent-soft); color: var(--text);
+}
+.toy .tile.good { background: #15803d; color: #fff; }
+.toy .tile.near { background: #ca8a04; color: #fff; }
+.toy .tile.bad  { background: var(--line); }
+.toy .feedback { font-size: 0.9rem; font-weight: 600; }
+.toy .hint-card { border: 1px dashed var(--accent); border-radius: var(--radius-sm); padding: 0.55rem 0.9rem; font-size: 0.92rem; }
+.toy .statline { display: flex; gap: 1.2rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; }
+.toy .pop { display: inline-block; animation: toy-pop 0.45s ease; }
+@keyframes toy-pop {
+  0% { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toy .pop { animation: none; }
+  .pg-card:hover { transform: none; }
+}
+.toy .chain { display: grid; gap: 0; }
+.toy .chain-link { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.7rem; }
+.toy .chain-rail { position: relative; }
+.toy .chain-rail::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: color-mix(in srgb, var(--accent) 45%, transparent); transform: translateX(-50%); }
+.toy .chain-dot { position: absolute; left: 50%; top: 1.05rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); transform: translate(-50%, -50%); }
+.toy .chain-body { padding-block: 0.45rem; }
+.toy .word-form { font-weight: 800; font-size: 1.15rem; }
+.toy .word-meta { font-size: 0.8rem; color: var(--muted); }
+.toy .word-note { font-size: 0.9rem; margin-top: 0.15rem; }

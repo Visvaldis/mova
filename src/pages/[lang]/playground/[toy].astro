@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGS, useTranslations, localizedPath, langFromId, type Lang, type UIKey } from '../../../i18n/utils';
+import { TOYS } from '../../../components/playground/registry';
+import BabelDaily from '../../../components/playground/BabelDaily';
+import WordTimeMachine from '../../../components/playground/WordTimeMachine';
+import SoundShiftSandbox from '../../../components/playground/SoundShiftSandbox';
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => TOYS.map((toy) => ({ params: { lang, toy: toy.id } })));
+}
+
+const { lang, toy: toyId } = Astro.params as { lang: Lang; toy: string };
+const t = useTranslations(lang);
+const toy = TOYS.find((x) => x.id === toyId)!;
+const title = t(`${toy.key}.title` as UIKey);
+const blurb = t(`${toy.key}.blurb` as UIKey);
+
+// Related article links (same language).
+const all = await getCollection('articles');
+const related = toy.related
+  .map((slug) => all.find((e) => e.data.slug === slug && langFromId(e.id) === lang))
+  .filter(Boolean);
+---
+
+<BaseLayout lang={lang} title={title} description={blurb} topic="playground" slug={`playground/${toy.id}`}>
+  <section class="page">
+    <p>
+      <a href={localizedPath(lang, 'playground')}>← {t('pg.backToHub')}</a>
+    </p>
+    <h1>{toy.icon} {title}</h1>
+    <p>{blurb}</p>
+
+    {toy.id === 'babel-daily' && <BabelDaily client:visible lang={lang} />}
+    {toy.id === 'word-time-machine' && <WordTimeMachine client:visible lang={lang} />}
+    {toy.id === 'sound-shift-sandbox' && <SoundShiftSandbox client:visible lang={lang} />}
+
+    {
+      related.length > 0 && (
+        <aside style="margin-top: 2.5rem;">
+          <h2 class="section-title">{t('pg.related')}</h2>
+          <ul style="list-style: none; padding: 0; display: grid; gap: 0.6rem;">
+            {related.map((entry) => (
+              <li>
+                <a href={localizedPath(lang, entry!.data.slug)}>{entry!.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+  </section>
+</BaseLayout>
