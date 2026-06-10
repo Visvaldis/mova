@@ -1,0 +1,126 @@
+/* master-timeline — vertical, log-proportionally-spaced timeline.
+   Topic dot colors come from the component's TOPIC_COLOR map (the one place that
+   needs all 18 topic accents at once); everything else uses theme vars. All motion
+   is pure CSS → neutralized under prefers-reduced-motion. */
+
+/* wrapper carries the continuous spine so it reaches the "today" endcap below the list */
+.rail {
+  position: relative;
+}
+.rail::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0.9rem;
+  bottom: 0.45rem;
+  width: 2px;
+  background: var(--line);
+  border-radius: 2px;
+}
+
+.list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  padding-left: 30px;
+}
+.item[data-dimmed='true'] {
+  opacity: 0.3;
+}
+
+.row {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.5rem 0.45rem 0;
+  display: block;
+  color: var(--text);
+}
+.row:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.dot {
+  position: absolute;
+  left: 1px;
+  top: 0.62rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-elev);
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.item[data-active='true'] .dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--text) 9%, transparent);
+}
+
+.year {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.title {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 1px;
+  transition: color 0.12s ease;
+}
+.item[data-active='true'] .title {
+  font-weight: 800;
+}
+
+.detail {
+  margin: 0.1rem 0 0.5rem;
+  padding: 0.55rem 0.8rem;
+  border-left: 3px solid var(--line);
+  background: var(--bg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.blurb {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.link {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* terminal "today" marker at the bottom of the spine */
+.endcap {
+  position: relative;
+  padding-left: 30px;
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--muted);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.endcapDot {
+  position: absolute;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-elev);
+  box-sizing: border-box;
+  background: var(--text);
+}

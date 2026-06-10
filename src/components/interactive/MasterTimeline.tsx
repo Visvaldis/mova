@@ -1,16 +1,19 @@
 // master-timeline (task 310) — every dated milestone from every article on one
-// log-scaled axis, colored by topic, clicking through to the source article.
-import { useMemo, useState } from 'react';
+// timeline, colored by topic, clicking through to the source article.
+// Vertical layout: oldest at the top, today at the bottom. The log scale is kept
+// as *proportional spacing between rows* — huge gaps across deep time, tight in the
+// modern era — so every title stays horizontally readable (the horizontal axis
+// crammed them onto one line). Selecting a row expands its blurb + article link.
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { topicNames } from '../../i18n/ui';
 import { useTranslations, localizedPath, type Lang } from '../../i18n/utils';
+import { useReducedMotion } from './useReducedMotion';
 import { TIMELINE_EVENTS } from '../../data/timelineEvents';
 import s from './interactive.module.css';
+import m from './MasterTimeline.module.css';
 
 const NOW = 2026;
-const W = 760;
-const PAD = 30;
-const AXIS_MIN_YBP = 2; // right edge ≈ today
-const AXIS_MAX_YBP = 8_000_000;
+const AXIS_MIN_YBP = 2; // floor so "today" stays on the log scale
 
 /** Mid-tone topic colors readable on both themes (mirrors global accents). */
 const TOPIC_COLOR: Record<string, string> = {
@@ -22,11 +25,6 @@ const TOPIC_COLOR: Record<string, string> = {
 };
 
 const ybpOf = (year: number) => Math.max(AXIS_MIN_YBP, NOW - year);
-function x(ybp: number): number {
-  const lo = Math.log10(AXIS_MIN_YBP);
-  const hi = Math.log10(AXIS_MAX_YBP);
-  return PAD + (1 - (Math.log10(ybp) - lo) / (hi - lo)) * (W - 2 * PAD);
-}
 
 function fmtYear(year: number, lang: Lang): string {
   if (year <= -10000) {
@@ -39,20 +37,42 @@ function fmtYear(year: number, lang: Lang): string {
 
 export default function MasterTimeline({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
+  const reduced = useReducedMotion();
+  // Oldest first → reads top (deep past) to bottom (today).
   const events = useMemo(() => [...TIMELINE_EVENTS].sort((a, b) => a.year - b.year), []);
-  const [idx, setIdx] = useState(events.length - 1); // start on today’s end
+  const [idx, setIdx] = useState(0);
   const [onlyTopic, setOnlyTopic] = useState<string | null>(null);
 
   const topics = useMemo(() => [...new Set(events.map((e) => e.topic))], [events]);
   const active = events[idx];
   const visible = (topic: string) => onlyTopic === null || onlyTopic === topic;
 
+  const rowRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const mounted = useRef(false);
+
+  // Keep the chosen row in view when stepping; never scroll on first paint.
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+      return;
+    }
+    rowRefs.current[idx]?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest' });
+  }, [idx, reduced]);
+
+  // Step to the next/previous non-filtered event (Earlier = up, Later = down).
   const step = (dir: 1 | -1) => {
     let i = idx;
     do {
       i = Math.min(events.length - 1, Math.max(0, i + dir));
-    } while (i > 0 && i < events.length - 1 && !visible(events[i].topic) && events[i] !== events[idx]);
+    } while (i > 0 && i < events.length - 1 && !visible(events[i].topic));
     setIdx(i);
+  };
+
+  // Vertical gap before row i, proportional to the log-time jump from the row above.
+  const gapBefore = (i: number): number => {
+    if (i === 0) return 0;
+    const d = Math.log10(ybpOf(events[i - 1].year)) - Math.log10(ybpOf(events[i].year));
+    return Math.min(64, Math.max(0, d * 40));
   };
 
   return (
@@ -73,56 +93,58 @@ export default function MasterTimeline({ lang }: { lang: Lang }) {
         ))}
       </div>
 
-      {/* axis */}
-      <svg viewBox={`0 0 ${W} 96`} role="img" aria-label={t('timeline.axisLabel')} style={{ width: '100%', height: 'auto', marginTop: 12 }}>
-        <line x1={PAD} y1={56} x2={W - PAD} y2={56} stroke="var(--line)" strokeWidth="2" />
-        {[7_000_000, 100_000, 5_000, 1_000, 200, 10].map((tick) => (
-          <g key={tick}>
-            <line x1={x(tick)} y1={52} x2={x(tick)} y2={60} stroke="var(--muted)" strokeWidth="1.2" />
-            <text x={x(tick)} y={74} textAnchor="middle" fontSize="9" fill="var(--muted)">
-              {tick >= 1_000_000 ? `${tick / 1_000_000}M` : tick >= 1000 ? `${tick / 1000}k` : tick}
-            </text>
-          </g>
-        ))}
-        <text x={W - PAD} y={74} textAnchor="end" fontSize="9" fill="var(--muted)">{t('timeline.today')}</text>
+      <p className={s.caption} style={{ margin: '8px 0 0' }}>{t('timeline.logNote')}</p>
 
-        {events.map((e, i) => {
-          const cx = x(ybpOf(e.year));
-          const isActive = i === idx;
-          const dimmed = !visible(e.topic);
-          // stagger node heights a little so dense modern decades stay tappable
-          const cy = 56 - (isActive ? 0 : (i % 3) * 7);
-          return (
-            <g key={`${e.slug}-${e.year}`} opacity={dimmed ? 0.18 : 1} style={{ cursor: 'pointer', transition: 'opacity 0.2s' }} onClick={() => setIdx(i)}>
-              <line x1={cx} y1={cy} x2={cx} y2={56} stroke={TOPIC_COLOR[e.topic]} strokeWidth="1" opacity="0.6" />
-              <circle cx={cx} cy={cy} r={isActive ? 8 : 4.5} fill={TOPIC_COLOR[e.topic]} stroke="var(--bg-elev)" strokeWidth={isActive ? 2 : 1} />
-              <circle
-                cx={cx} cy={cy} r={12} fill="transparent" tabIndex={dimmed ? -1 : 0} role="button"
-                aria-label={`${fmtYear(e.year, lang)} — ${e.title[lang]}`}
-                onKeyDown={(ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); setIdx(i); } }}
-              />
-            </g>
-          );
-        })}
-      </svg>
-      <p className={s.muted} style={{ textAlign: 'center', fontSize: '0.75rem', margin: '2px 0 0' }}>{t('timeline.logNote')}</p>
-
-      {/* step buttons (mobile-friendly scrub) */}
+      {/* step buttons (keyboard / mobile scrub) */}
       <div className={s.row} style={{ justifyContent: 'center', marginTop: 8 }}>
-        <button className={s.pill} onClick={() => step(-1)} disabled={idx === 0} aria-label={t('timeline.prev')}>← {t('timeline.prev')}</button>
-        <button className={s.pill} onClick={() => step(1)} disabled={idx === events.length - 1} aria-label={t('timeline.next')}>{t('timeline.next')} →</button>
+        <button className={s.pill} onClick={() => step(-1)} disabled={idx === 0} aria-label={t('timeline.prev')}>↑ {t('timeline.prev')}</button>
+        <button className={s.pill} onClick={() => step(1)} disabled={idx === events.length - 1} aria-label={t('timeline.next')}>{t('timeline.next')} ↓</button>
       </div>
 
-      {/* event card */}
-      <div className={s.card} style={{ marginTop: 12, borderLeftColor: TOPIC_COLOR[active.topic] }} aria-live="polite" key={`${active.slug}-${active.year}`}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'baseline', flexWrap: 'wrap' }}>
-          <strong style={{ fontSize: '1.05rem' }}>{active.title[lang]}</strong>
-          <span style={{ color: TOPIC_COLOR[active.topic], fontWeight: 800, fontSize: '0.9rem' }}>{fmtYear(active.year, lang)}</span>
-        </div>
-        <p className={s.muted} style={{ fontSize: '0.95rem', margin: '6px 0 8px' }}>{active.blurb[lang]}</p>
-        <a href={localizedPath(lang, active.slug)} style={{ fontSize: '0.9rem', fontWeight: 600 }}>
-          {t('timeline.openArticle')} →
-        </a>
+      {/* vertical timeline */}
+      <div className={m.rail}>
+      <ol className={m.list} aria-label={t('timeline.axisLabel')}>
+        {events.map((e, i) => {
+          const isActive = i === idx;
+          const dimmed = !visible(e.topic);
+          const color = TOPIC_COLOR[e.topic] ?? 'var(--muted)';
+          return (
+            <li
+              key={`${e.slug}-${e.year}`}
+              className={m.item}
+              data-active={isActive}
+              data-dimmed={dimmed}
+              style={{ marginTop: i === 0 ? 0 : gapBefore(i) }}
+            >
+              <button
+                ref={(el) => {
+                  rowRefs.current[i] = el;
+                }}
+                className={m.row}
+                aria-expanded={isActive}
+                aria-label={`${fmtYear(e.year, lang)} — ${e.title[lang]}`}
+                onClick={() => setIdx(i)}
+              >
+                <span className={m.dot} style={{ background: color }} aria-hidden="true" />
+                <span className={m.year} style={{ color }}>{fmtYear(e.year, lang)}</span>
+                <span className={m.title}>{e.title[lang]}</span>
+              </button>
+              {isActive && (
+                <div className={m.detail} style={{ borderLeftColor: color }} aria-live="polite">
+                  <p className={m.blurb}>{e.blurb[lang]}</p>
+                  <a className={m.link} href={localizedPath(lang, e.slug)}>{t('timeline.openArticle')} →</a>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+
+      {/* terminal marker — the bottom of the spine is now */}
+      <p className={m.endcap}>
+        <span className={m.endcapDot} aria-hidden="true" />
+        {t('timeline.today')}
+      </p>
       </div>
     </div>
   );
