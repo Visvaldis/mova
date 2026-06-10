@@ -2088,6 +2088,3781 @@
         }
       ],
       "source": "etymonline.com/word/sugar; ЕСУМ (цукор); Wiktionary translations"
+    },
+    {
+      "id": "wine",
+      "icon": "🍷",
+      "gloss": {
+        "en": "wine",
+        "uk": "вино"
+      },
+      "origins": [
+        {
+          "id": "vinum",
+          "label": "vīnum / *wayn",
+          "story": {
+            "en": "An ancient Mediterranean wander-word so old its source is debated — Latin vīnum, Greek oînos, Hebrew yayin all carry it.",
+            "uk": "Давнє середземноморське мандрівне слово, таке старе, що джерело дискусійне: лат. vīnum, грец. oînos, івр. yayin — усі несуть його."
+          }
+        },
+        {
+          "id": "sharab",
+          "label": "šarāb",
+          "story": {
+            "en": "Arabic šarāb 'drink' spread east with Persian.",
+            "uk": "Арабське šarāb «напій» пішло на схід із перською."
+          }
+        },
+        {
+          "id": "wain",
+          "label": "wine (English)",
+          "story": {
+            "en": "Recent English re-export to East Asia.",
+            "uk": "Нещодавній англійський реекспорт до Східної Азії."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Independent words: Hungarian bor (Turkic origin), modern Greek krasí ('mixed'), Chinese 'grape-alcohol' calque, Indonesian anggur (Persian 'grape').",
+            "uk": "Незалежні слова: угор. bor (тюркське), новогрец. krasí («змішане»), китайська калька «виноградний алкоголь», індонез. anggur (перське «виноград»)."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 41.7,
+        "lon": 44.8,
+        "label": {
+          "en": "South Caucasus — archaeology's oldest winemaking",
+          "uk": "Південний Кавказ — найдавніше виноробство за археологією"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "wine",
+          "origin": "vinum"
+        },
+        {
+          "lang": "french",
+          "form": "vin",
+          "origin": "vinum"
+        },
+        {
+          "lang": "german",
+          "form": "Wein",
+          "origin": "vinum"
+        },
+        {
+          "lang": "dutch",
+          "form": "wijn",
+          "origin": "vinum"
+        },
+        {
+          "lang": "spanish",
+          "form": "vino",
+          "origin": "vinum"
+        },
+        {
+          "lang": "italian",
+          "form": "vino",
+          "origin": "vinum"
+        },
+        {
+          "lang": "portuguese",
+          "form": "vinho",
+          "origin": "vinum"
+        },
+        {
+          "lang": "polish",
+          "form": "wino",
+          "origin": "vinum"
+        },
+        {
+          "lang": "czech",
+          "form": "víno",
+          "origin": "vinum"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "vyno",
+          "origin": "vinum",
+          "native": "вино"
+        },
+        {
+          "lang": "russian",
+          "form": "vino",
+          "origin": "vinum",
+          "native": "вино"
+        },
+        {
+          "lang": "swedish",
+          "form": "vin",
+          "origin": "vinum"
+        },
+        {
+          "lang": "finnish",
+          "form": "viini",
+          "origin": "vinum"
+        },
+        {
+          "lang": "romanian",
+          "form": "vin",
+          "origin": "vinum"
+        },
+        {
+          "lang": "hebrew",
+          "form": "yayin",
+          "origin": "vinum",
+          "native": "יין",
+          "note": {
+            "en": "Semitic *wayn — the same ancient wander-word",
+            "uk": "Семітське *wayn — те саме давнє мандрівне слово"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "vang",
+          "origin": "vinum",
+          "note": {
+            "en": "From French vin (rượu vang)",
+            "uk": "Від французького vin (rượu vang)"
+          }
+        },
+        {
+          "lang": "swahili",
+          "form": "divai",
+          "origin": "vinum",
+          "note": {
+            "en": "From French du vin",
+            "uk": "Від французького du vin"
+          }
+        },
+        {
+          "lang": "georgian",
+          "form": "ghvino",
+          "origin": "unclear",
+          "native": "ღვინო",
+          "note": {
+            "en": "Wine's archaeological homeland; whether ghvino is native or related to vīnum is genuinely debated",
+            "uk": "Археологічна батьківщина вина; чи ghvino питоме, чи споріднене з vīnum — справжня дискусія"
+          }
+        },
+        {
+          "lang": "turkish",
+          "form": "şarap",
+          "origin": "sharab"
+        },
+        {
+          "lang": "persian",
+          "form": "sharāb",
+          "origin": "sharab",
+          "native": "شراب"
+        },
+        {
+          "lang": "hindi",
+          "form": "sharāb",
+          "origin": "sharab",
+          "native": "शराब",
+          "note": {
+            "en": "Means liquor generally",
+            "uk": "Означає алкоголь загалом"
+          }
+        },
+        {
+          "lang": "japanese",
+          "form": "wain",
+          "origin": "wain",
+          "native": "ワイン"
+        },
+        {
+          "lang": "korean",
+          "form": "wain",
+          "origin": "wain",
+          "native": "와인"
+        },
+        {
+          "lang": "thai",
+          "form": "wai",
+          "origin": "wain",
+          "native": "ไวน์"
+        },
+        {
+          "lang": "hungarian",
+          "form": "bor",
+          "origin": "other",
+          "note": {
+            "en": "A Turkic-origin word — Hungary's own route",
+            "uk": "Слово тюркського походження — власний маршрут Угорщини"
+          }
+        },
+        {
+          "lang": "greek",
+          "form": "krasí",
+          "origin": "other",
+          "native": "κρασί",
+          "note": {
+            "en": "From 'mixing' (wine with water); ancient oînos is the vīnum cognate",
+            "uk": "Від «змішування» (вина з водою); давнє oînos — когнат vīnum"
+          }
+        },
+        {
+          "lang": "arabic",
+          "form": "nabīdh",
+          "origin": "other",
+          "native": "نبيذ"
+        },
+        {
+          "lang": "mandarin",
+          "form": "pútaojiǔ",
+          "origin": "other",
+          "native": "葡萄酒",
+          "note": {
+            "en": "'Grape alcohol'",
+            "uk": "«Виноградний алкоголь»"
+          }
+        },
+        {
+          "lang": "indonesian",
+          "form": "anggur",
+          "origin": "other",
+          "note": {
+            "en": "From Persian angur 'grape'",
+            "uk": "Від перського angur «виноград»"
+          }
+        },
+        {
+          "lang": "tagalog",
+          "form": "alak",
+          "origin": "other",
+          "note": {
+            "en": "From Arabic ʿaraq",
+            "uk": "Від арабського ʿaraq"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/wine; Wiktionary translations"
+    },
+    {
+      "id": "beer",
+      "icon": "🍺",
+      "gloss": {
+        "en": "beer",
+        "uk": "пиво"
+      },
+      "origins": [
+        {
+          "id": "bier",
+          "label": "bier",
+          "story": {
+            "en": "The West European word (possibly Latin bibere 'to drink'), exported worldwide.",
+            "uk": "Західноєвропейське слово (можливо, від лат. bibere «пити»), експортоване світом."
+          }
+        },
+        {
+          "id": "pivo",
+          "label": "pivo",
+          "story": {
+            "en": "Slavic: simply 'the drink' (from piti, 'to drink').",
+            "uk": "Слов'янське: просто «напій» (від пити)."
+          }
+        },
+        {
+          "id": "cerveza",
+          "label": "cervēsia",
+          "story": {
+            "en": "Iberian Latin kept a Celtic word — Gaulish brewers' legacy.",
+            "uk": "Іберійська латина зберегла кельтське слово — спадок галльських броварів."
+          }
+        },
+        {
+          "id": "ale",
+          "label": "*aluþ (ale/öl)",
+          "story": {
+            "en": "The old Germanic 'ale' word survives in Scandinavia and as a Finnish loan.",
+            "uk": "Давнє германське «ель» живе в Скандинавії та як фінське запозичення."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Independent words: Korean 'barley alcohol' calque, Persian 'barley water', Georgian ludi, Hungarian sör.",
+            "uk": "Незалежні слова: корейська калька «ячмінний алкоголь», перська «ячмінна вода», грузинське ludi, угорське sör."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 50,
+        "lon": 10,
+        "label": {
+          "en": "Central Europe's brewing belt",
+          "uk": "Броварський пояс Центральної Європи"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "beer",
+          "origin": "bier"
+        },
+        {
+          "lang": "french",
+          "form": "bière",
+          "origin": "bier"
+        },
+        {
+          "lang": "german",
+          "form": "Bier",
+          "origin": "bier"
+        },
+        {
+          "lang": "dutch",
+          "form": "bier",
+          "origin": "bier"
+        },
+        {
+          "lang": "italian",
+          "form": "birra",
+          "origin": "bier"
+        },
+        {
+          "lang": "romanian",
+          "form": "bere",
+          "origin": "bier"
+        },
+        {
+          "lang": "greek",
+          "form": "býra",
+          "origin": "bier",
+          "native": "μπύρα"
+        },
+        {
+          "lang": "turkish",
+          "form": "bira",
+          "origin": "bier"
+        },
+        {
+          "lang": "arabic",
+          "form": "bīra",
+          "origin": "bier",
+          "native": "بيرة"
+        },
+        {
+          "lang": "hebrew",
+          "form": "bira",
+          "origin": "bier",
+          "native": "בירה"
+        },
+        {
+          "lang": "hindi",
+          "form": "biyar",
+          "origin": "bier",
+          "native": "बियर"
+        },
+        {
+          "lang": "japanese",
+          "form": "bīru",
+          "origin": "bier",
+          "native": "ビール",
+          "note": {
+            "en": "Via Dutch traders at Nagasaki",
+            "uk": "Через голландських торговців у Нагасакі"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "bia",
+          "origin": "bier",
+          "note": {
+            "en": "Via French bière",
+            "uk": "Через французьке bière"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "bia",
+          "origin": "bier",
+          "native": "เบียร์"
+        },
+        {
+          "lang": "indonesian",
+          "form": "bir",
+          "origin": "bier"
+        },
+        {
+          "lang": "swahili",
+          "form": "bia",
+          "origin": "bier"
+        },
+        {
+          "lang": "mandarin",
+          "form": "píjiǔ",
+          "origin": "bier",
+          "native": "啤酒",
+          "note": {
+            "en": "pí transcribes 'beer' + jiǔ 'alcohol'",
+            "uk": "pí передає «beer» + jiǔ «алкоголь»"
+          }
+        },
+        {
+          "lang": "ukrainian",
+          "form": "pyvo",
+          "origin": "pivo",
+          "native": "пиво"
+        },
+        {
+          "lang": "polish",
+          "form": "piwo",
+          "origin": "pivo"
+        },
+        {
+          "lang": "czech",
+          "form": "pivo",
+          "origin": "pivo"
+        },
+        {
+          "lang": "russian",
+          "form": "pivo",
+          "origin": "pivo",
+          "native": "пиво"
+        },
+        {
+          "lang": "spanish",
+          "form": "cerveza",
+          "origin": "cerveza"
+        },
+        {
+          "lang": "portuguese",
+          "form": "cerveja",
+          "origin": "cerveza"
+        },
+        {
+          "lang": "tagalog",
+          "form": "serbesa",
+          "origin": "cerveza",
+          "note": {
+            "en": "Via Spanish",
+            "uk": "Через іспанську"
+          }
+        },
+        {
+          "lang": "swedish",
+          "form": "öl",
+          "origin": "ale"
+        },
+        {
+          "lang": "finnish",
+          "form": "olut",
+          "origin": "ale"
+        },
+        {
+          "lang": "korean",
+          "form": "maekju",
+          "origin": "other",
+          "native": "맥주",
+          "note": {
+            "en": "'Barley alcohol' (麥酒)",
+            "uk": "«Ячмінний алкоголь» (麥酒)"
+          }
+        },
+        {
+          "lang": "persian",
+          "form": "âbjo",
+          "origin": "other",
+          "native": "آبجو",
+          "note": {
+            "en": "'Barley water'",
+            "uk": "«Ячмінна вода»"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "sör",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "ludi",
+          "origin": "other",
+          "native": "ლუდი"
+        }
+      ],
+      "source": "etymonline.com/word/beer; Wiktionary translations"
+    },
+    {
+      "id": "bread",
+      "icon": "🍞",
+      "gloss": {
+        "en": "bread",
+        "uk": "хліб"
+      },
+      "origins": [
+        {
+          "id": "bread",
+          "label": "bread (Germanic)",
+          "story": {
+            "en": "The English-Scandinavian branch's own word.",
+            "uk": "Власне слово англо-скандинавської гілки."
+          }
+        },
+        {
+          "id": "hlaifs",
+          "label": "hlaifs (Gothic)",
+          "story": {
+            "en": "Gothic hlaifs, borrowed by Slavic and Baltic Finnic peoples — Ukrainian хліб carries a 1,700-year-old Germanic loan.",
+            "uk": "Готське hlaifs, запозичене слов'янами та прибалтійськими фінами — українське хліб несе германське запозичення віком 1 700 років."
+          }
+        },
+        {
+          "id": "panis",
+          "label": "pānis (Latin)",
+          "story": {
+            "en": "Latin pānis — and via Portuguese missionaries, Japanese pan and Korean ppang. Thai khanom-pang took French pain.",
+            "uk": "Латинське pānis — а через португальських місіонерів японське pan і корейське ppang. Тайське khanom-pang узяло французьке pain."
+          }
+        },
+        {
+          "id": "roti",
+          "label": "roṭī",
+          "story": {
+            "en": "The Indian flatbread word traveled the Indian Ocean with traders.",
+            "uk": "Індійське слово для коржа помандрувало Індійським океаном із торгівцями."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "A crowd of independent words: naan, khubz, lechem, 'flour-bun' calques.",
+            "uk": "Юрба незалежних слів: naan, khubz, lechem, кальки «борошняна булка»."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 52,
+        "lon": 10,
+        "label": {
+          "en": "Gothic lands — hlaifs spreads east",
+          "uk": "Готські землі — hlaifs іде на схід"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "bread",
+          "origin": "bread"
+        },
+        {
+          "lang": "german",
+          "form": "Brot",
+          "origin": "bread"
+        },
+        {
+          "lang": "dutch",
+          "form": "brood",
+          "origin": "bread"
+        },
+        {
+          "lang": "swedish",
+          "form": "bröd",
+          "origin": "bread"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "khlib",
+          "origin": "hlaifs",
+          "native": "хліб"
+        },
+        {
+          "lang": "polish",
+          "form": "chleb",
+          "origin": "hlaifs"
+        },
+        {
+          "lang": "czech",
+          "form": "chléb",
+          "origin": "hlaifs"
+        },
+        {
+          "lang": "russian",
+          "form": "khleb",
+          "origin": "hlaifs",
+          "native": "хлеб"
+        },
+        {
+          "lang": "finnish",
+          "form": "leipä",
+          "origin": "hlaifs",
+          "note": {
+            "en": "The same Gothic loan, Finnic route",
+            "uk": "Те саме готське запозичення, фінський маршрут"
+          }
+        },
+        {
+          "lang": "french",
+          "form": "pain",
+          "origin": "panis"
+        },
+        {
+          "lang": "spanish",
+          "form": "pan",
+          "origin": "panis"
+        },
+        {
+          "lang": "italian",
+          "form": "pane",
+          "origin": "panis"
+        },
+        {
+          "lang": "portuguese",
+          "form": "pão",
+          "origin": "panis"
+        },
+        {
+          "lang": "romanian",
+          "form": "pâine",
+          "origin": "panis"
+        },
+        {
+          "lang": "japanese",
+          "form": "pan",
+          "origin": "panis",
+          "native": "パン",
+          "note": {
+            "en": "From Portuguese pão, 16th-century missionaries",
+            "uk": "Від португальського pão, місіонери XVI ст."
+          }
+        },
+        {
+          "lang": "korean",
+          "form": "ppang",
+          "origin": "panis",
+          "native": "빵",
+          "note": {
+            "en": "Via Japanese, from Portuguese",
+            "uk": "Через японську, з португальської"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "khanom pang",
+          "origin": "panis",
+          "native": "ขนมปัง",
+          "note": {
+            "en": "pang is French pain",
+            "uk": "pang — це французьке pain"
+          }
+        },
+        {
+          "lang": "hindi",
+          "form": "roṭī",
+          "origin": "roti",
+          "native": "रोटी"
+        },
+        {
+          "lang": "indonesian",
+          "form": "roti",
+          "origin": "roti",
+          "note": {
+            "en": "From Hindi, across the Indian Ocean",
+            "uk": "З гінді, через Індійський океан"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "kenyér",
+          "origin": "other"
+        },
+        {
+          "lang": "greek",
+          "form": "psomí",
+          "origin": "other",
+          "native": "ψωμί"
+        },
+        {
+          "lang": "turkish",
+          "form": "ekmek",
+          "origin": "other"
+        },
+        {
+          "lang": "arabic",
+          "form": "khubz",
+          "origin": "other",
+          "native": "خبز"
+        },
+        {
+          "lang": "hebrew",
+          "form": "lechem",
+          "origin": "other",
+          "native": "לחם"
+        },
+        {
+          "lang": "persian",
+          "form": "nân",
+          "origin": "other",
+          "native": "نان",
+          "note": {
+            "en": "The naan word",
+            "uk": "Слово naan"
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "miànbāo",
+          "origin": "other",
+          "native": "面包",
+          "note": {
+            "en": "'Flour bun'",
+            "uk": "«Борошняна булка»"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "bánh mì",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "tinapay",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "mkate",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "puri",
+          "origin": "other",
+          "native": "პური"
+        }
+      ],
+      "source": "etymonline.com/word/bread; ЕСУМ (хліб); Wiktionary translations"
+    },
+    {
+      "id": "salt",
+      "icon": "🧂",
+      "gloss": {
+        "en": "salt",
+        "uk": "сіль"
+      },
+      "origins": [
+        {
+          "id": "sal",
+          "label": "*séh₂l (PIE)",
+          "story": {
+            "en": "One Proto-Indo-European root salted the whole family — salt, sel, sal, sól, сіль, aláti.",
+            "uk": "Один праіндоєвропейський корінь посолив усю родину — salt, sel, sal, sól, сіль, aláti."
+          }
+        },
+        {
+          "id": "milh",
+          "label": "*milḥ (Semitic)",
+          "story": {
+            "en": "The Semitic root: Arabic milḥ, Hebrew melach.",
+            "uk": "Семітський корінь: араб. milḥ, івр. melach."
+          }
+        },
+        {
+          "id": "namak",
+          "label": "namak (Iranian)",
+          "story": {
+            "en": "Persian namak, borrowed into Hindi and across Central Asia.",
+            "uk": "Перське namak, запозичене в гінді та по Центральній Азії."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Every other family has its own: tuz, só, shio, garam, chumvi…",
+            "uk": "У кожної іншої родини своє: tuz, só, shio, garam, chumvi…"
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *séh₂l",
+          "uk": "Понтійсько-каспійський степ — *séh₂l"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "salt",
+          "origin": "sal"
+        },
+        {
+          "lang": "french",
+          "form": "sel",
+          "origin": "sal"
+        },
+        {
+          "lang": "german",
+          "form": "Salz",
+          "origin": "sal"
+        },
+        {
+          "lang": "dutch",
+          "form": "zout",
+          "origin": "sal"
+        },
+        {
+          "lang": "spanish",
+          "form": "sal",
+          "origin": "sal"
+        },
+        {
+          "lang": "italian",
+          "form": "sale",
+          "origin": "sal"
+        },
+        {
+          "lang": "portuguese",
+          "form": "sal",
+          "origin": "sal"
+        },
+        {
+          "lang": "polish",
+          "form": "sól",
+          "origin": "sal"
+        },
+        {
+          "lang": "czech",
+          "form": "sůl",
+          "origin": "sal"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "sil",
+          "origin": "sal",
+          "native": "сіль"
+        },
+        {
+          "lang": "russian",
+          "form": "sol",
+          "origin": "sal",
+          "native": "соль"
+        },
+        {
+          "lang": "swedish",
+          "form": "salt",
+          "origin": "sal"
+        },
+        {
+          "lang": "romanian",
+          "form": "sare",
+          "origin": "sal"
+        },
+        {
+          "lang": "greek",
+          "form": "aláti",
+          "origin": "sal",
+          "native": "αλάτι"
+        },
+        {
+          "lang": "finnish",
+          "form": "suola",
+          "origin": "sal",
+          "note": {
+            "en": "Likely a very old Indo-European loan into Finnic",
+            "uk": "Імовірно дуже давнє індоєвропейське запозичення у фінські"
+          }
+        },
+        {
+          "lang": "arabic",
+          "form": "milḥ",
+          "origin": "milh",
+          "native": "ملح"
+        },
+        {
+          "lang": "hebrew",
+          "form": "melach",
+          "origin": "milh",
+          "native": "מלח"
+        },
+        {
+          "lang": "persian",
+          "form": "namak",
+          "origin": "namak",
+          "native": "نمک"
+        },
+        {
+          "lang": "hindi",
+          "form": "namak",
+          "origin": "namak",
+          "native": "नमक"
+        },
+        {
+          "lang": "turkish",
+          "form": "tuz",
+          "origin": "other"
+        },
+        {
+          "lang": "hungarian",
+          "form": "só",
+          "origin": "other"
+        },
+        {
+          "lang": "mandarin",
+          "form": "yán",
+          "origin": "other",
+          "native": "盐"
+        },
+        {
+          "lang": "japanese",
+          "form": "shio",
+          "origin": "other",
+          "native": "塩"
+        },
+        {
+          "lang": "korean",
+          "form": "sogeum",
+          "origin": "other",
+          "native": "소금"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "muối",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "kluea",
+          "origin": "other",
+          "native": "เกลือ"
+        },
+        {
+          "lang": "indonesian",
+          "form": "garam",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "asin",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "chumvi",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "marili",
+          "origin": "other",
+          "native": "მარილი"
+        }
+      ],
+      "source": "etymonline.com/word/salt; ЕСУМ (сіль); Wiktionary translations"
+    },
+    {
+      "id": "orange-word",
+      "icon": "🍊",
+      "gloss": {
+        "en": "orange",
+        "uk": "апельсин"
+      },
+      "origins": [
+        {
+          "id": "naranga",
+          "label": "nāraṅga",
+          "story": {
+            "en": "Sanskrit nāraṅga → Persian → Arabic → Spanish naranja; French lost the n- (une norenge → une orenge) and passed 'orange' on.",
+            "uk": "Санскр. nāraṅga → перська → арабська → іспанське naranja; французька загубила n- (une norenge → une orenge) і передала «orange» далі."
+          }
+        },
+        {
+          "id": "portokal",
+          "label": "portokál (Portugal!)",
+          "story": {
+            "en": "Half the eastern Mediterranean names the fruit after PORTUGAL — whose traders brought the sweet variety.",
+            "uk": "Пів східного Середземномор'я називає фрукт іменем ПОРТУГАЛІЇ, чиї торговці привезли солодкий сорт."
+          }
+        },
+        {
+          "id": "chinaapple",
+          "label": "'apple from China'",
+          "story": {
+            "en": "The northern route: Dutch sinaasappel, Swedish apelsin, Ukrainian апельсин — all 'Chinese apple'.",
+            "uk": "Північний маршрут: нід. sinaasappel, шв. apelsin, укр. апельсин — усі «китайське яблуко»."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Independent names: Hebrew 'golden apple' coinage, native citrus words across Asia.",
+            "uk": "Незалежні назви: івритський новотвір «золоте яблуко», питомі цитрусові слова Азії."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 25,
+        "lon": 80,
+        "label": {
+          "en": "India — Sanskrit nāraṅga",
+          "uk": "Індія — санскритське nāraṅga"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "orange",
+          "origin": "naranga"
+        },
+        {
+          "lang": "french",
+          "form": "orange",
+          "origin": "naranga",
+          "note": {
+            "en": "Where the n was lost to the article",
+            "uk": "Тут n загубилося в артиклі"
+          }
+        },
+        {
+          "lang": "german",
+          "form": "Orange",
+          "origin": "naranga"
+        },
+        {
+          "lang": "spanish",
+          "form": "naranja",
+          "origin": "naranga"
+        },
+        {
+          "lang": "portuguese",
+          "form": "laranja",
+          "origin": "naranga"
+        },
+        {
+          "lang": "italian",
+          "form": "arancia",
+          "origin": "naranga"
+        },
+        {
+          "lang": "hungarian",
+          "form": "narancs",
+          "origin": "naranga"
+        },
+        {
+          "lang": "polish",
+          "form": "pomarańcza",
+          "origin": "naranga",
+          "note": {
+            "en": "Via Italian pomo + arancia",
+            "uk": "Через італійське pomo + arancia"
+          }
+        },
+        {
+          "lang": "czech",
+          "form": "pomeranč",
+          "origin": "naranga"
+        },
+        {
+          "lang": "japanese",
+          "form": "orenji",
+          "origin": "naranga",
+          "native": "オレンジ"
+        },
+        {
+          "lang": "korean",
+          "form": "orenji",
+          "origin": "naranga",
+          "native": "오렌지"
+        },
+        {
+          "lang": "greek",
+          "form": "portokáli",
+          "origin": "portokal",
+          "native": "πορτοκάλι"
+        },
+        {
+          "lang": "turkish",
+          "form": "portakal",
+          "origin": "portokal"
+        },
+        {
+          "lang": "romanian",
+          "form": "portocală",
+          "origin": "portokal"
+        },
+        {
+          "lang": "arabic",
+          "form": "burtuqāl",
+          "origin": "portokal",
+          "native": "برتقال"
+        },
+        {
+          "lang": "persian",
+          "form": "porteghâl",
+          "origin": "portokal",
+          "native": "پرتقال"
+        },
+        {
+          "lang": "georgian",
+          "form": "portokhali",
+          "origin": "portokal",
+          "native": "ფორთოხალი"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "apelsyn",
+          "origin": "chinaapple",
+          "native": "апельсин"
+        },
+        {
+          "lang": "russian",
+          "form": "apelsin",
+          "origin": "chinaapple",
+          "native": "апельсин"
+        },
+        {
+          "lang": "swedish",
+          "form": "apelsin",
+          "origin": "chinaapple"
+        },
+        {
+          "lang": "finnish",
+          "form": "appelsiini",
+          "origin": "chinaapple"
+        },
+        {
+          "lang": "dutch",
+          "form": "sinaasappel",
+          "origin": "chinaapple",
+          "note": {
+            "en": "Literally 'China's apple'",
+            "uk": "Буквально «китайське яблуко»"
+          }
+        },
+        {
+          "lang": "hebrew",
+          "form": "tapuz",
+          "origin": "other",
+          "native": "תפוז",
+          "note": {
+            "en": "Coined from tapuach zahav, 'golden apple'",
+            "uk": "Новотвір від tapuach zahav — «золоте яблуко»"
+          }
+        },
+        {
+          "lang": "hindi",
+          "form": "santara",
+          "origin": "other",
+          "native": "संतरा"
+        },
+        {
+          "lang": "mandarin",
+          "form": "chéngzi",
+          "origin": "other",
+          "native": "橙子"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "cam",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "som",
+          "origin": "other",
+          "native": "ส้ม"
+        },
+        {
+          "lang": "indonesian",
+          "form": "jeruk",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "chungwa",
+          "origin": "other"
+        }
+      ],
+      "source": "etymonline.com/word/orange; Wiktionary translations"
+    },
+    {
+      "id": "potato",
+      "icon": "🥔",
+      "gloss": {
+        "en": "potato",
+        "uk": "картопля"
+      },
+      "origins": [
+        {
+          "id": "patata",
+          "label": "batata/patata (Taíno)",
+          "story": {
+            "en": "Caribbean Taíno batata (sweet potato), confused with the Andean papa — Europe shipped the mix everywhere.",
+            "uk": "Карибське таїно batata (батат), переплутане з андською papa, — Європа розвезла цю суміш усюди."
+          }
+        },
+        {
+          "id": "kartoffel",
+          "label": "Kartoffel (← 'truffle')",
+          "story": {
+            "en": "Italian tartufolo 'truffle' → German Kartoffel → eastward to картопля.",
+            "uk": "Італійське tartufolo «трюфель» → німецьке Kartoffel → на схід до картоплі."
+          }
+        },
+        {
+          "id": "erdapfel",
+          "label": "'earth apple' calques",
+          "story": {
+            "en": "French pomme de terre, Dutch aardappel, Hebrew tapuach adama, Persian sib-zamini — the same metaphor, four scripts.",
+            "uk": "Фр. pomme de terre, нід. aardappel, івр. tapuach adama, перс. sib-zamini — та сама метафора, чотири письма."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "The toponym club: Czech brambor (Brandenburg!), Japanese jagaimo (Jakarta!), Thai 'foreigner tuber'.",
+            "uk": "Клуб топонімів: чес. brambor (Бранденбург!), яп. jagaimo (Джакарта!), тайське «бульба чужинців»."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": -13,
+        "lon": -72,
+        "label": {
+          "en": "The Andes — papa's homeland",
+          "uk": "Анди — батьківщина papa"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "potato",
+          "origin": "patata"
+        },
+        {
+          "lang": "spanish",
+          "form": "patata",
+          "origin": "patata",
+          "note": {
+            "en": "In Latin America: papa, the original Quechua word",
+            "uk": "У Латинській Америці: papa, первісне слово кечуа"
+          }
+        },
+        {
+          "lang": "italian",
+          "form": "patata",
+          "origin": "patata"
+        },
+        {
+          "lang": "portuguese",
+          "form": "batata",
+          "origin": "patata"
+        },
+        {
+          "lang": "greek",
+          "form": "patáta",
+          "origin": "patata",
+          "native": "πατάτα"
+        },
+        {
+          "lang": "turkish",
+          "form": "patates",
+          "origin": "patata"
+        },
+        {
+          "lang": "arabic",
+          "form": "baṭāṭis",
+          "origin": "patata",
+          "native": "بطاطس"
+        },
+        {
+          "lang": "swedish",
+          "form": "potatis",
+          "origin": "patata"
+        },
+        {
+          "lang": "tagalog",
+          "form": "patatas",
+          "origin": "patata"
+        },
+        {
+          "lang": "hindi",
+          "form": "ālū",
+          "origin": "other",
+          "native": "आलू"
+        },
+        {
+          "lang": "german",
+          "form": "Kartoffel",
+          "origin": "kartoffel"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "kartoplia",
+          "origin": "kartoffel",
+          "native": "картопля"
+        },
+        {
+          "lang": "russian",
+          "form": "kartofel",
+          "origin": "kartoffel",
+          "native": "картофель"
+        },
+        {
+          "lang": "romanian",
+          "form": "cartof",
+          "origin": "kartoffel"
+        },
+        {
+          "lang": "georgian",
+          "form": "kartopili",
+          "origin": "kartoffel",
+          "native": "კარტოფილი"
+        },
+        {
+          "lang": "french",
+          "form": "pomme de terre",
+          "origin": "erdapfel"
+        },
+        {
+          "lang": "dutch",
+          "form": "aardappel",
+          "origin": "erdapfel"
+        },
+        {
+          "lang": "hebrew",
+          "form": "tapuach adama",
+          "origin": "erdapfel",
+          "native": "תפוח אדמה"
+        },
+        {
+          "lang": "persian",
+          "form": "sib-zamini",
+          "origin": "erdapfel",
+          "native": "سیب‌زمینی"
+        },
+        {
+          "lang": "polish",
+          "form": "ziemniak",
+          "origin": "erdapfel",
+          "note": {
+            "en": "'Earth-thing' — same idea, Polish build",
+            "uk": "«Земляк від землі» — та сама ідея, польська збірка"
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "tǔdòu",
+          "origin": "erdapfel",
+          "native": "土豆",
+          "note": {
+            "en": "'Earth bean'",
+            "uk": "«Земляний біб»"
+          }
+        },
+        {
+          "lang": "czech",
+          "form": "brambor",
+          "origin": "other",
+          "note": {
+            "en": "From Brandenburg — the importer became the name",
+            "uk": "Від Бранденбургу — імпортер став назвою"
+          }
+        },
+        {
+          "lang": "japanese",
+          "form": "jagaimo",
+          "origin": "other",
+          "native": "じゃがいも",
+          "note": {
+            "en": "From Jakarta: jaga(tara)imo, 'Jakarta tuber'",
+            "uk": "Від Джакарти: jaga(tara)imo — «джакартська бульба»"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "man farang",
+          "origin": "other",
+          "native": "มันฝรั่ง",
+          "note": {
+            "en": "'Foreigner tuber'",
+            "uk": "«Бульба чужинців»"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "khoai tây",
+          "origin": "other",
+          "note": {
+            "en": "'Western tuber'",
+            "uk": "«Західна бульба»"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "burgonya",
+          "origin": "unclear",
+          "note": {
+            "en": "Often linked to Burgundy — debated",
+            "uk": "Часто пов'язують із Бургундією — дискусійно"
+          }
+        },
+        {
+          "lang": "finnish",
+          "form": "peruna",
+          "origin": "other",
+          "note": {
+            "en": "From Swedish päron, 'pear'",
+            "uk": "Від шведського päron — «груша»"
+          }
+        },
+        {
+          "lang": "korean",
+          "form": "gamja",
+          "origin": "other",
+          "native": "감자"
+        },
+        {
+          "lang": "indonesian",
+          "form": "kentang",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "kiazi",
+          "origin": "other"
+        }
+      ],
+      "source": "etymonline.com/word/potato; Wiktionary translations"
+    },
+    {
+      "id": "lemon",
+      "icon": "🍋",
+      "gloss": {
+        "en": "lemon",
+        "uk": "лимон"
+      },
+      "origins": [
+        {
+          "id": "limon",
+          "label": "līmū → laymūn",
+          "story": {
+            "en": "Persian līmū through Arabic laymūn and Italian limone — the main road.",
+            "uk": "Перське līmū через арабське laymūn та італійське limone — головна дорога."
+          }
+        },
+        {
+          "id": "citron",
+          "label": "citrus (Latin)",
+          "story": {
+            "en": "Northern Europe took Latin citrus instead: Zitrone, citron, cytryna, sitruuna.",
+            "uk": "Північна Європа натомість узяла латинське citrus: Zitrone, citron, cytryna, sitruuna."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Native citrus words of Southeast Asia.",
+            "uk": "Питомі цитрусові слова Південно-Східної Азії."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 30,
+        "lon": 55,
+        "label": {
+          "en": "Persia — līmū",
+          "uk": "Персія — līmū"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "lemon",
+          "origin": "limon"
+        },
+        {
+          "lang": "spanish",
+          "form": "limón",
+          "origin": "limon"
+        },
+        {
+          "lang": "italian",
+          "form": "limone",
+          "origin": "limon"
+        },
+        {
+          "lang": "portuguese",
+          "form": "limão",
+          "origin": "limon"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "lymon",
+          "origin": "limon",
+          "native": "лимон"
+        },
+        {
+          "lang": "russian",
+          "form": "limon",
+          "origin": "limon",
+          "native": "лимон"
+        },
+        {
+          "lang": "romanian",
+          "form": "lămâie",
+          "origin": "limon"
+        },
+        {
+          "lang": "greek",
+          "form": "lemóni",
+          "origin": "limon",
+          "native": "λεμόνι"
+        },
+        {
+          "lang": "turkish",
+          "form": "limon",
+          "origin": "limon"
+        },
+        {
+          "lang": "arabic",
+          "form": "laymūn",
+          "origin": "limon",
+          "native": "ليمون"
+        },
+        {
+          "lang": "hebrew",
+          "form": "limon",
+          "origin": "limon",
+          "native": "לימון"
+        },
+        {
+          "lang": "persian",
+          "form": "limu",
+          "origin": "limon",
+          "native": "لیمو"
+        },
+        {
+          "lang": "hindi",
+          "form": "nīmbū",
+          "origin": "limon",
+          "native": "नींबू",
+          "note": {
+            "en": "The Indian sibling of the same word family",
+            "uk": "Індійський родич тієї самої словесної родини"
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "níngméng",
+          "origin": "limon",
+          "native": "柠檬"
+        },
+        {
+          "lang": "japanese",
+          "form": "remon",
+          "origin": "limon",
+          "native": "レモン"
+        },
+        {
+          "lang": "korean",
+          "form": "remon",
+          "origin": "limon",
+          "native": "레몬"
+        },
+        {
+          "lang": "indonesian",
+          "form": "lemon",
+          "origin": "limon"
+        },
+        {
+          "lang": "swahili",
+          "form": "limau",
+          "origin": "limon"
+        },
+        {
+          "lang": "georgian",
+          "form": "limoni",
+          "origin": "limon",
+          "native": "ლიმონი"
+        },
+        {
+          "lang": "french",
+          "form": "citron",
+          "origin": "citron"
+        },
+        {
+          "lang": "german",
+          "form": "Zitrone",
+          "origin": "citron"
+        },
+        {
+          "lang": "dutch",
+          "form": "citroen",
+          "origin": "citron"
+        },
+        {
+          "lang": "polish",
+          "form": "cytryna",
+          "origin": "citron"
+        },
+        {
+          "lang": "czech",
+          "form": "citron",
+          "origin": "citron"
+        },
+        {
+          "lang": "swedish",
+          "form": "citron",
+          "origin": "citron"
+        },
+        {
+          "lang": "finnish",
+          "form": "sitruuna",
+          "origin": "citron"
+        },
+        {
+          "lang": "hungarian",
+          "form": "citrom",
+          "origin": "citron"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "chanh",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "manao",
+          "origin": "other",
+          "native": "มะนาว"
+        },
+        {
+          "lang": "tagalog",
+          "form": "limon",
+          "origin": "limon"
+        }
+      ],
+      "source": "etymonline.com/word/lemon; Wiktionary translations"
+    },
+    {
+      "id": "night",
+      "icon": "🌙",
+      "gloss": {
+        "en": "night",
+        "uk": "ніч"
+      },
+      "origins": [
+        {
+          "id": "nokwts",
+          "label": "*nókʷts (PIE)",
+          "story": {
+            "en": "The textbook Proto-Indo-European root — night, Nacht, nuit, noche, ніч, nakts, nýchta all answer to it.",
+            "uk": "Підручниковий праіндоєвропейський корінь — night, Nacht, nuit, noche, ніч, nakts, nýchta усі відгукуються на нього."
+          }
+        },
+        {
+          "id": "layl",
+          "label": "layl- (Semitic)",
+          "story": {
+            "en": "The Semitic night: Arabic layl, Hebrew layla.",
+            "uk": "Семітська ніч: араб. layl, івр. layla."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Each family keeps its own night.",
+            "uk": "Кожна родина береже власну ніч."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *nókʷts",
+          "uk": "Понтійсько-каспійський степ — *nókʷts"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "night",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "french",
+          "form": "nuit",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "german",
+          "form": "Nacht",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "dutch",
+          "form": "nacht",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "spanish",
+          "form": "noche",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "italian",
+          "form": "notte",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "portuguese",
+          "form": "noite",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "polish",
+          "form": "noc",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "czech",
+          "form": "noc",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "nich",
+          "origin": "nokwts",
+          "native": "ніч",
+          "note": {
+            "en": "With Ukrainian's signature o→i shift",
+            "uk": "З фірмовим українським переходом о→і"
+          }
+        },
+        {
+          "lang": "russian",
+          "form": "noch",
+          "origin": "nokwts",
+          "native": "ночь"
+        },
+        {
+          "lang": "swedish",
+          "form": "natt",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "romanian",
+          "form": "noapte",
+          "origin": "nokwts"
+        },
+        {
+          "lang": "greek",
+          "form": "nýchta",
+          "origin": "nokwts",
+          "native": "νύχτα"
+        },
+        {
+          "lang": "hindi",
+          "form": "rāt",
+          "origin": "other",
+          "native": "रात",
+          "note": {
+            "en": "Sanskrit rātri — a different IE root",
+            "uk": "Санскр. rātri — інший ІЄ корінь"
+          }
+        },
+        {
+          "lang": "persian",
+          "form": "shab",
+          "origin": "other",
+          "native": "شب"
+        },
+        {
+          "lang": "arabic",
+          "form": "layl",
+          "origin": "layl",
+          "native": "ليل"
+        },
+        {
+          "lang": "hebrew",
+          "form": "layla",
+          "origin": "layl",
+          "native": "לילה"
+        },
+        {
+          "lang": "finnish",
+          "form": "yö",
+          "origin": "other"
+        },
+        {
+          "lang": "hungarian",
+          "form": "éjszaka",
+          "origin": "other"
+        },
+        {
+          "lang": "turkish",
+          "form": "gece",
+          "origin": "other"
+        },
+        {
+          "lang": "mandarin",
+          "form": "yè",
+          "origin": "other",
+          "native": "夜"
+        },
+        {
+          "lang": "japanese",
+          "form": "yoru",
+          "origin": "other",
+          "native": "夜"
+        },
+        {
+          "lang": "korean",
+          "form": "bam",
+          "origin": "other",
+          "native": "밤"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "đêm",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "klang khuen",
+          "origin": "other",
+          "native": "กลางคืน"
+        },
+        {
+          "lang": "indonesian",
+          "form": "malam",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "gabi",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "usiku",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "ghame",
+          "origin": "other",
+          "native": "ღამე"
+        }
+      ],
+      "source": "etymonline.com/word/night; ЕСУМ (ніч); Wiktionary translations"
+    },
+    {
+      "id": "three",
+      "icon": "3️⃣",
+      "gloss": {
+        "en": "three",
+        "uk": "три"
+      },
+      "origins": [
+        {
+          "id": "pie",
+          "label": "*tréyes (PIE)",
+          "story": {
+            "en": "Numbers are ultra-stable: three, drei, trois, tres, три, trys, se, tīn — six millennia, one root.",
+            "uk": "Числівники надстабільні: three, drei, trois, tres, три, trys, se, tīn — шість тисячоліть, один корінь."
+          }
+        },
+        {
+          "id": "semitic",
+          "label": "*ṯalāṯ (Semitic)",
+          "story": {
+            "en": "Arabic thalātha, Hebrew shalosh — note the regular th↔sh correspondence.",
+            "uk": "Араб. thalātha, івр. shalosh — зверніть увагу на регулярну відповідність th↔sh."
+          }
+        },
+        {
+          "id": "uralic",
+          "label": "*kolme (Uralic)",
+          "story": {
+            "en": "Finnish kolme and Hungarian három are cognates inside Uralic.",
+            "uk": "Фінське kolme та угорське három — когнати всередині уральської."
+          }
+        },
+        {
+          "id": "sinitic",
+          "label": "三 sān (Sinitic)",
+          "story": {
+            "en": "Chinese 三 was borrowed for counting by Japanese (san), Korean (sam) and Thai (sǎam).",
+            "uk": "Китайське 三 запозичили для лічби японська (san), корейська (sam) і тайська (sǎam)."
+          }
+        },
+        {
+          "id": "austronesian",
+          "label": "*telu (Austronesian)",
+          "story": {
+            "en": "Indonesian tiga and Tagalog tatlo both descend from Proto-Austronesian *telu.",
+            "uk": "Індонезійське tiga і тагальське tatlo походять від праавстронезійського *telu."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Turkish üç, Vietnamese ba, Georgian sami, Swahili tatu (a Bantu lookalike of tatlo — pure coincidence).",
+            "uk": "Турецьке üç, в'єтнамське ba, грузинське sami, суахілі tatu (схоже на tatlo — чистий збіг)."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *tréyes",
+          "uk": "Понтійсько-каспійський степ — *tréyes"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "three",
+          "origin": "pie"
+        },
+        {
+          "lang": "german",
+          "form": "drei",
+          "origin": "pie"
+        },
+        {
+          "lang": "dutch",
+          "form": "drie",
+          "origin": "pie"
+        },
+        {
+          "lang": "swedish",
+          "form": "tre",
+          "origin": "pie"
+        },
+        {
+          "lang": "french",
+          "form": "trois",
+          "origin": "pie"
+        },
+        {
+          "lang": "spanish",
+          "form": "tres",
+          "origin": "pie"
+        },
+        {
+          "lang": "italian",
+          "form": "tre",
+          "origin": "pie"
+        },
+        {
+          "lang": "portuguese",
+          "form": "três",
+          "origin": "pie"
+        },
+        {
+          "lang": "romanian",
+          "form": "trei",
+          "origin": "pie"
+        },
+        {
+          "lang": "polish",
+          "form": "trzy",
+          "origin": "pie"
+        },
+        {
+          "lang": "czech",
+          "form": "tři",
+          "origin": "pie"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "try",
+          "origin": "pie",
+          "native": "три"
+        },
+        {
+          "lang": "russian",
+          "form": "tri",
+          "origin": "pie",
+          "native": "три"
+        },
+        {
+          "lang": "greek",
+          "form": "tría",
+          "origin": "pie",
+          "native": "τρία"
+        },
+        {
+          "lang": "persian",
+          "form": "se",
+          "origin": "pie",
+          "native": "سه"
+        },
+        {
+          "lang": "hindi",
+          "form": "tīn",
+          "origin": "pie",
+          "native": "तीन"
+        },
+        {
+          "lang": "bengali",
+          "form": "tin",
+          "origin": "pie",
+          "native": "তিন"
+        },
+        {
+          "lang": "arabic",
+          "form": "thalātha",
+          "origin": "semitic",
+          "native": "ثلاثة"
+        },
+        {
+          "lang": "hebrew",
+          "form": "shalosh",
+          "origin": "semitic",
+          "native": "שלוש"
+        },
+        {
+          "lang": "finnish",
+          "form": "kolme",
+          "origin": "uralic"
+        },
+        {
+          "lang": "hungarian",
+          "form": "három",
+          "origin": "uralic"
+        },
+        {
+          "lang": "mandarin",
+          "form": "sān",
+          "origin": "sinitic",
+          "native": "三"
+        },
+        {
+          "lang": "japanese",
+          "form": "san",
+          "origin": "sinitic",
+          "native": "三",
+          "note": {
+            "en": "Native counting keeps mittsu",
+            "uk": "Питома лічба зберігає mittsu"
+          }
+        },
+        {
+          "lang": "korean",
+          "form": "sam",
+          "origin": "sinitic",
+          "native": "삼",
+          "note": {
+            "en": "Native counting keeps set",
+            "uk": "Питома лічба зберігає set"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "sǎam",
+          "origin": "sinitic",
+          "native": "สาม"
+        },
+        {
+          "lang": "indonesian",
+          "form": "tiga",
+          "origin": "austronesian"
+        },
+        {
+          "lang": "tagalog",
+          "form": "tatlo",
+          "origin": "austronesian"
+        },
+        {
+          "lang": "turkish",
+          "form": "üç",
+          "origin": "other"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "ba",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "sami",
+          "origin": "other",
+          "native": "სამი"
+        },
+        {
+          "lang": "swahili",
+          "form": "tatu",
+          "origin": "other",
+          "note": {
+            "en": "Bantu — the tatlo resemblance is coincidence",
+            "uk": "Банту — схожість із tatlo є збігом"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/three; Wiktionary *tréyes"
+    },
+    {
+      "id": "name",
+      "icon": "🏷️",
+      "gloss": {
+        "en": "name",
+        "uk": "ім'я"
+      },
+      "origins": [
+        {
+          "id": "pie",
+          "label": "*h₁nómn̥ (PIE)",
+          "story": {
+            "en": "One of the most widespread roots on Earth — name, nom, nombre, ónoma, nām, and in heavy disguise Slavic ім'я (*jьmę). Indonesian nama took it via Sanskrit.",
+            "uk": "Один із найпоширеніших коренів Землі — name, nom, nombre, ónoma, nām, і в щільній масці слов'янське ім'я (*jьmę). Індонезійське nama взяло його через санскрит."
+          }
+        },
+        {
+          "id": "nime",
+          "label": "*nime (Uralic)",
+          "story": {
+            "en": "Finnish nimi, Hungarian név — a Uralic root that eerily resembles the PIE one; linguists still debate ancient contact vs. coincidence.",
+            "uk": "Фінське nimi, угорське név — уральський корінь, моторошно схожий на ПІЄ; лінгвісти досі сперечаються: давній контакт чи збіг."
+          }
+        },
+        {
+          "id": "ism",
+          "label": "ism (Semitic)",
+          "story": {
+            "en": "Arabic ism, Hebrew shem; Turkish borrowed isim.",
+            "uk": "Араб. ism, івр. shem; турецька запозичила isim."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Japanese namae looks like 'name' — textbook coincidence. The rest are unrelated natives.",
+            "uk": "Японське namae схоже на name — підручниковий збіг. Решта — неспоріднені питомі слова."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *h₁nómn̥",
+          "uk": "Понтійсько-каспійський степ — *h₁nómn̥"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "name",
+          "origin": "pie"
+        },
+        {
+          "lang": "german",
+          "form": "Name",
+          "origin": "pie"
+        },
+        {
+          "lang": "dutch",
+          "form": "naam",
+          "origin": "pie"
+        },
+        {
+          "lang": "swedish",
+          "form": "namn",
+          "origin": "pie"
+        },
+        {
+          "lang": "french",
+          "form": "nom",
+          "origin": "pie"
+        },
+        {
+          "lang": "spanish",
+          "form": "nombre",
+          "origin": "pie"
+        },
+        {
+          "lang": "italian",
+          "form": "nome",
+          "origin": "pie"
+        },
+        {
+          "lang": "portuguese",
+          "form": "nome",
+          "origin": "pie"
+        },
+        {
+          "lang": "romanian",
+          "form": "nume",
+          "origin": "pie"
+        },
+        {
+          "lang": "greek",
+          "form": "ónoma",
+          "origin": "pie",
+          "native": "όνομα"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "imia",
+          "origin": "pie",
+          "native": "ім'я",
+          "note": {
+            "en": "Proto-Slavic *jьmę — the same root, heavy disguise",
+            "uk": "Праслов'янське *jьmę — той самий корінь у щільній масці"
+          }
+        },
+        {
+          "lang": "polish",
+          "form": "imię",
+          "origin": "pie"
+        },
+        {
+          "lang": "czech",
+          "form": "jméno",
+          "origin": "pie"
+        },
+        {
+          "lang": "russian",
+          "form": "imya",
+          "origin": "pie",
+          "native": "имя"
+        },
+        {
+          "lang": "persian",
+          "form": "nâm",
+          "origin": "pie",
+          "native": "نام"
+        },
+        {
+          "lang": "hindi",
+          "form": "nām",
+          "origin": "pie",
+          "native": "नाम"
+        },
+        {
+          "lang": "bengali",
+          "form": "nam",
+          "origin": "pie",
+          "native": "নাম"
+        },
+        {
+          "lang": "indonesian",
+          "form": "nama",
+          "origin": "pie",
+          "note": {
+            "en": "Via Sanskrit nāma — an Indian Ocean loan",
+            "uk": "Через санскритське nāma — запозичення Індійського океану"
+          }
+        },
+        {
+          "lang": "finnish",
+          "form": "nimi",
+          "origin": "nime"
+        },
+        {
+          "lang": "hungarian",
+          "form": "név",
+          "origin": "nime"
+        },
+        {
+          "lang": "arabic",
+          "form": "ism",
+          "origin": "ism",
+          "native": "اسم"
+        },
+        {
+          "lang": "hebrew",
+          "form": "shem",
+          "origin": "ism",
+          "native": "שם"
+        },
+        {
+          "lang": "turkish",
+          "form": "isim",
+          "origin": "ism"
+        },
+        {
+          "lang": "japanese",
+          "form": "namae",
+          "origin": "other",
+          "native": "名前",
+          "note": {
+            "en": "Resembles 'name' purely by coincidence — a linguistics-classroom classic",
+            "uk": "Схоже на name суто випадково — класика лінгвістичних аудиторій"
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "míngzi",
+          "origin": "other",
+          "native": "名字"
+        },
+        {
+          "lang": "korean",
+          "form": "ireum",
+          "origin": "other",
+          "native": "이름"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "tên",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "chûe",
+          "origin": "other",
+          "native": "ชื่อ"
+        },
+        {
+          "lang": "tagalog",
+          "form": "pangalan",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "jina",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "sakheli",
+          "origin": "other",
+          "native": "სახელი"
+        }
+      ],
+      "source": "etymonline.com/word/name; Wiktionary *h₁nómn̥"
+    },
+    {
+      "id": "water",
+      "icon": "💧",
+      "gloss": {
+        "en": "water",
+        "uk": "вода"
+      },
+      "origins": [
+        {
+          "id": "wodr",
+          "label": "*wódr̥ (PIE)",
+          "story": {
+            "en": "Water, Wasser, вода, woda — the Germanic-Slavic side of the great PIE water word.",
+            "uk": "Water, Wasser, вода, woda — германсько-слов'янський бік великого ПІЄ-слова про воду."
+          }
+        },
+        {
+          "id": "aqua",
+          "label": "aqua (Latin)",
+          "story": {
+            "en": "The Romance languages all drink from Latin aqua: eau, agua, acqua, apă.",
+            "uk": "Романські мови п'ють із латинського aqua: eau, agua, acqua, apă."
+          }
+        },
+        {
+          "id": "wete",
+          "label": "*wete (Uralic)",
+          "story": {
+            "en": "Finnish vesi, Hungarian víz — the second famous Uralic-PIE lookalike (after 'name').",
+            "uk": "Фінське vesi, угорське víz — друга знаменита уральсько-ПІЄ схожість (після «імені»)."
+          }
+        },
+        {
+          "id": "semitic",
+          "label": "māʔ- (Semitic)",
+          "story": {
+            "en": "Arabic māʾ, Hebrew mayim.",
+            "uk": "Араб. māʾ, івр. mayim."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "su, âb (itself an IE root), shuǐ, mizu, nước — water words run deep everywhere.",
+            "uk": "su, âb (сам по собі ІЄ корінь), shuǐ, mizu, nước — слова про воду всюди глибокі."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *wódr̥",
+          "uk": "Понтійсько-каспійський степ — *wódr̥"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "water",
+          "origin": "wodr"
+        },
+        {
+          "lang": "german",
+          "form": "Wasser",
+          "origin": "wodr"
+        },
+        {
+          "lang": "dutch",
+          "form": "water",
+          "origin": "wodr"
+        },
+        {
+          "lang": "swedish",
+          "form": "vatten",
+          "origin": "wodr"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "voda",
+          "origin": "wodr",
+          "native": "вода"
+        },
+        {
+          "lang": "polish",
+          "form": "woda",
+          "origin": "wodr"
+        },
+        {
+          "lang": "czech",
+          "form": "voda",
+          "origin": "wodr"
+        },
+        {
+          "lang": "russian",
+          "form": "voda",
+          "origin": "wodr",
+          "native": "вода"
+        },
+        {
+          "lang": "french",
+          "form": "eau",
+          "origin": "aqua"
+        },
+        {
+          "lang": "spanish",
+          "form": "agua",
+          "origin": "aqua"
+        },
+        {
+          "lang": "italian",
+          "form": "acqua",
+          "origin": "aqua"
+        },
+        {
+          "lang": "portuguese",
+          "form": "água",
+          "origin": "aqua"
+        },
+        {
+          "lang": "romanian",
+          "form": "apă",
+          "origin": "aqua"
+        },
+        {
+          "lang": "finnish",
+          "form": "vesi",
+          "origin": "wete"
+        },
+        {
+          "lang": "hungarian",
+          "form": "víz",
+          "origin": "wete"
+        },
+        {
+          "lang": "arabic",
+          "form": "māʾ",
+          "origin": "semitic",
+          "native": "ماء"
+        },
+        {
+          "lang": "hebrew",
+          "form": "mayim",
+          "origin": "semitic",
+          "native": "מים"
+        },
+        {
+          "lang": "greek",
+          "form": "neró",
+          "origin": "other",
+          "native": "νερό",
+          "note": {
+            "en": "Modern, from 'fresh'; ancient hydōr is the PIE cognate",
+            "uk": "Сучасне, від «свіжий»; давнє hydōr — когнат ПІЄ"
+          }
+        },
+        {
+          "lang": "persian",
+          "form": "âb",
+          "origin": "other",
+          "native": "آب",
+          "note": {
+            "en": "From PIE *h₂ep- — a different IE water root",
+            "uk": "Від ПІЄ *h₂ep- — інший ІЄ корінь води"
+          }
+        },
+        {
+          "lang": "hindi",
+          "form": "pānī",
+          "origin": "other",
+          "native": "पानी"
+        },
+        {
+          "lang": "turkish",
+          "form": "su",
+          "origin": "other"
+        },
+        {
+          "lang": "mandarin",
+          "form": "shuǐ",
+          "origin": "other",
+          "native": "水"
+        },
+        {
+          "lang": "japanese",
+          "form": "mizu",
+          "origin": "other",
+          "native": "水"
+        },
+        {
+          "lang": "korean",
+          "form": "mul",
+          "origin": "other",
+          "native": "물"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "nước",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "nám",
+          "origin": "other",
+          "native": "น้ำ"
+        },
+        {
+          "lang": "indonesian",
+          "form": "air",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "tubig",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "maji",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "ts'qali",
+          "origin": "other",
+          "native": "წყალი"
+        }
+      ],
+      "source": "etymonline.com/word/water; ЕСУМ (вода); Wiktionary *wódr̥"
+    },
+    {
+      "id": "school",
+      "icon": "🏫",
+      "gloss": {
+        "en": "school",
+        "uk": "школа"
+      },
+      "origins": [
+        {
+          "id": "schole",
+          "label": "scholḗ ('leisure'!)",
+          "story": {
+            "en": "Greek scholḗ meant 'free time' — Latin and every European empire passed the irony along. Swahili shule came via German colonists; Finnish koulu via Swedish.",
+            "uk": "Грецьке scholḗ означало «дозвілля» — латина і всі європейські імперії передали іронію далі. Суахілі shule прийшло від німецьких колоністів; фінське koulu — через шведську."
+          }
+        },
+        {
+          "id": "madrasa",
+          "label": "madrasa (Arabic)",
+          "story": {
+            "en": "The Arabic d-r-s 'study' root: madrasa, Persian madrese.",
+            "uk": "Арабський корінь d-r-s «вчитися»: madrasa, перське madrese."
+          }
+        },
+        {
+          "id": "sinitic",
+          "label": "學校 (Sinitic)",
+          "story": {
+            "en": "The Chinese 'study hall' compound: xuéxiào, gakkō, hakgyo.",
+            "uk": "Китайська сполука «зала навчання»: xuéxiào, gakkō, hakgyo."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Turkish okul (a 1930s language-reform coinage), Hebrew 'house of book', native builds.",
+            "uk": "Турецьке okul (новотвір мовної реформи 1930-х), івритський «дім книги», питомі конструкції."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 38,
+        "lon": 23.7,
+        "label": {
+          "en": "Athens — scholḗ, 'leisure'",
+          "uk": "Афіни — scholḗ, «дозвілля»"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "school",
+          "origin": "schole"
+        },
+        {
+          "lang": "french",
+          "form": "école",
+          "origin": "schole"
+        },
+        {
+          "lang": "german",
+          "form": "Schule",
+          "origin": "schole"
+        },
+        {
+          "lang": "dutch",
+          "form": "school",
+          "origin": "schole"
+        },
+        {
+          "lang": "spanish",
+          "form": "escuela",
+          "origin": "schole"
+        },
+        {
+          "lang": "italian",
+          "form": "scuola",
+          "origin": "schole"
+        },
+        {
+          "lang": "portuguese",
+          "form": "escola",
+          "origin": "schole"
+        },
+        {
+          "lang": "polish",
+          "form": "szkoła",
+          "origin": "schole"
+        },
+        {
+          "lang": "czech",
+          "form": "škola",
+          "origin": "schole"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "shkola",
+          "origin": "schole",
+          "native": "школа"
+        },
+        {
+          "lang": "russian",
+          "form": "shkola",
+          "origin": "schole",
+          "native": "школа"
+        },
+        {
+          "lang": "swedish",
+          "form": "skola",
+          "origin": "schole"
+        },
+        {
+          "lang": "finnish",
+          "form": "koulu",
+          "origin": "schole",
+          "note": {
+            "en": "Via Swedish skola",
+            "uk": "Через шведське skola"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "iskola",
+          "origin": "schole"
+        },
+        {
+          "lang": "romanian",
+          "form": "școală",
+          "origin": "schole"
+        },
+        {
+          "lang": "greek",
+          "form": "scholeío",
+          "origin": "schole",
+          "native": "σχολείο"
+        },
+        {
+          "lang": "hindi",
+          "form": "skūl",
+          "origin": "schole",
+          "native": "स्कूल"
+        },
+        {
+          "lang": "indonesian",
+          "form": "sekolah",
+          "origin": "schole",
+          "note": {
+            "en": "Via Dutch",
+            "uk": "Через нідерландську"
+          }
+        },
+        {
+          "lang": "swahili",
+          "form": "shule",
+          "origin": "schole",
+          "note": {
+            "en": "From German Schule — a colonial-era trace",
+            "uk": "Від німецького Schule — слід колоніальної доби"
+          }
+        },
+        {
+          "lang": "georgian",
+          "form": "sk'ola",
+          "origin": "schole",
+          "native": "სკოლა"
+        },
+        {
+          "lang": "tagalog",
+          "form": "eskuwela",
+          "origin": "schole",
+          "note": {
+            "en": "Via Spanish; native paaralan also used",
+            "uk": "Через іспанську; вживається й питоме paaralan"
+          }
+        },
+        {
+          "lang": "arabic",
+          "form": "madrasa",
+          "origin": "madrasa",
+          "native": "مدرسة"
+        },
+        {
+          "lang": "persian",
+          "form": "madrese",
+          "origin": "madrasa",
+          "native": "مدرسه"
+        },
+        {
+          "lang": "mandarin",
+          "form": "xuéxiào",
+          "origin": "sinitic",
+          "native": "学校"
+        },
+        {
+          "lang": "japanese",
+          "form": "gakkō",
+          "origin": "sinitic",
+          "native": "学校"
+        },
+        {
+          "lang": "korean",
+          "form": "hakgyo",
+          "origin": "sinitic",
+          "native": "학교"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "trường học",
+          "origin": "sinitic",
+          "note": {
+            "en": "A Sino-Vietnamese build",
+            "uk": "Сино-в'єтнамська конструкція"
+          }
+        },
+        {
+          "lang": "turkish",
+          "form": "okul",
+          "origin": "other",
+          "note": {
+            "en": "1930s coinage from okumak 'to read', nudged by French école",
+            "uk": "Новотвір 1930-х від okumak «читати», з оглядкою на французьке école"
+          }
+        },
+        {
+          "lang": "hebrew",
+          "form": "beit sefer",
+          "origin": "other",
+          "native": "בית ספר",
+          "note": {
+            "en": "'House of the book'",
+            "uk": "«Дім книги»"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "rong rian",
+          "origin": "other",
+          "native": "โรงเรียน"
+        }
+      ],
+      "source": "etymonline.com/word/school; Wiktionary translations"
+    },
+    {
+      "id": "church",
+      "icon": "⛪",
+      "gloss": {
+        "en": "church",
+        "uk": "церква"
+      },
+      "origins": [
+        {
+          "id": "kyriakon",
+          "label": "kyriakón ('the Lord's')",
+          "story": {
+            "en": "Greek kyriakón → Germanic church/Kirche → East Slavic церква, plus Finnish kirkko via Swedish.",
+            "uk": "Грецьке kyriakón → германські church/Kirche → східнослов'янське церква, плюс фінське kirkko через шведську."
+          }
+        },
+        {
+          "id": "ecclesia",
+          "label": "ekklēsía ('assembly')",
+          "story": {
+            "en": "The other Greek word took the southern route: église, iglesia, chiesa, kilise, kelisâ, gereja (via Portuguese to Indonesia!).",
+            "uk": "Інше грецьке слово пішло південним маршрутом: église, iglesia, chiesa, kilise, kelisâ, gereja (через португальську аж до Індонезії!)."
+          }
+        },
+        {
+          "id": "kanisa",
+          "label": "kanīsā (Aramaic)",
+          "story": {
+            "en": "Aramaic knishta → Arabic kanīsa, Hebrew knesiya, Swahili kanisa.",
+            "uk": "Арамейське knishta → арабське kanīsa, івритське knesiya, суахілі kanisa."
+          }
+        },
+        {
+          "id": "castellum",
+          "label": "kościół (← castellum)",
+          "story": {
+            "en": "Polish and Czech took Latin castellum 'fort' — churches were fortified.",
+            "uk": "Польська й чеська взяли латинське castellum «укріплення» — церкви були оборонними."
+          }
+        },
+        {
+          "id": "sinitic",
+          "label": "教會/教堂 (Sinitic)",
+          "story": {
+            "en": "The Chinese 'teaching hall' compounds: jiàotáng, kyōkai, gyohoe.",
+            "uk": "Китайські сполуки «зала вчення»: jiàotáng, kyōkai, gyohoe."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Romanian biserică (← basilica!), Hungarian templom (← templum), native builds.",
+            "uk": "Румунське biserică (← basilica!), угорське templom (← templum), питомі конструкції."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 38,
+        "lon": 23.7,
+        "label": {
+          "en": "Greece — two words, two routes",
+          "uk": "Греція — два слова, два маршрути"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "church",
+          "origin": "kyriakon"
+        },
+        {
+          "lang": "german",
+          "form": "Kirche",
+          "origin": "kyriakon"
+        },
+        {
+          "lang": "dutch",
+          "form": "kerk",
+          "origin": "kyriakon"
+        },
+        {
+          "lang": "swedish",
+          "form": "kyrka",
+          "origin": "kyriakon"
+        },
+        {
+          "lang": "finnish",
+          "form": "kirkko",
+          "origin": "kyriakon"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "tserkva",
+          "origin": "kyriakon",
+          "native": "церква"
+        },
+        {
+          "lang": "russian",
+          "form": "tserkov",
+          "origin": "kyriakon",
+          "native": "церковь"
+        },
+        {
+          "lang": "french",
+          "form": "église",
+          "origin": "ecclesia"
+        },
+        {
+          "lang": "spanish",
+          "form": "iglesia",
+          "origin": "ecclesia"
+        },
+        {
+          "lang": "italian",
+          "form": "chiesa",
+          "origin": "ecclesia"
+        },
+        {
+          "lang": "portuguese",
+          "form": "igreja",
+          "origin": "ecclesia"
+        },
+        {
+          "lang": "greek",
+          "form": "ekklisía",
+          "origin": "ecclesia",
+          "native": "εκκλησία"
+        },
+        {
+          "lang": "turkish",
+          "form": "kilise",
+          "origin": "ecclesia"
+        },
+        {
+          "lang": "persian",
+          "form": "kelisâ",
+          "origin": "ecclesia",
+          "native": "کلیسا"
+        },
+        {
+          "lang": "indonesian",
+          "form": "gereja",
+          "origin": "ecclesia",
+          "note": {
+            "en": "Via Portuguese igreja",
+            "uk": "Через португальське igreja"
+          }
+        },
+        {
+          "lang": "georgian",
+          "form": "ek'lesia",
+          "origin": "ecclesia",
+          "native": "ეკლესია"
+        },
+        {
+          "lang": "arabic",
+          "form": "kanīsa",
+          "origin": "kanisa",
+          "native": "كنيسة"
+        },
+        {
+          "lang": "hebrew",
+          "form": "knesiya",
+          "origin": "kanisa",
+          "native": "כנסייה"
+        },
+        {
+          "lang": "swahili",
+          "form": "kanisa",
+          "origin": "kanisa"
+        },
+        {
+          "lang": "polish",
+          "form": "kościół",
+          "origin": "castellum"
+        },
+        {
+          "lang": "czech",
+          "form": "kostel",
+          "origin": "castellum"
+        },
+        {
+          "lang": "mandarin",
+          "form": "jiàotáng",
+          "origin": "sinitic",
+          "native": "教堂"
+        },
+        {
+          "lang": "japanese",
+          "form": "kyōkai",
+          "origin": "sinitic",
+          "native": "教会"
+        },
+        {
+          "lang": "korean",
+          "form": "gyohoe",
+          "origin": "sinitic",
+          "native": "교회"
+        },
+        {
+          "lang": "romanian",
+          "form": "biserică",
+          "origin": "other",
+          "note": {
+            "en": "From Latin basilica — unique in Europe",
+            "uk": "Від латинського basilica — унікально для Європи"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "templom",
+          "origin": "other",
+          "note": {
+            "en": "From Latin templum",
+            "uk": "Від латинського templum"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "nhà thờ",
+          "origin": "other",
+          "note": {
+            "en": "'Worship house'",
+            "uk": "«Дім поклоніння»"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "bòt",
+          "origin": "other",
+          "native": "โบสถ์"
+        },
+        {
+          "lang": "tagalog",
+          "form": "simbahan",
+          "origin": "other"
+        },
+        {
+          "lang": "hindi",
+          "form": "charch",
+          "origin": "kyriakon",
+          "native": "चर्च",
+          "note": {
+            "en": "Via English",
+            "uk": "Через англійську"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/church; Wiktionary translations"
+    },
+    {
+      "id": "bank",
+      "icon": "🏦",
+      "gloss": {
+        "en": "bank",
+        "uk": "банк"
+      },
+      "origins": [
+        {
+          "id": "banca",
+          "label": "banca ('bench')",
+          "story": {
+            "en": "The Italian money-changer's bench went global — bank, banque, банк, pankki, benki. Bankrupt is banca rotta, 'broken bench'.",
+            "uk": "Лава італійського міняйла стала глобальною — bank, banque, банк, pankki, benki. Банкрут — banca rotta, «розбита лава»."
+          }
+        },
+        {
+          "id": "trapeza",
+          "label": "trápeza ('table')",
+          "story": {
+            "en": "Greek alone kept its own furniture: trápeza, the money-changer's TABLE — the same metaphor, refused as an import.",
+            "uk": "Лише грецька зберегла власні меблі: trápeza, СТІЛ міняйла — та сама метафора, відмова від імпорту."
+          }
+        },
+        {
+          "id": "sinitic",
+          "label": "銀行 ('silver guild')",
+          "story": {
+            "en": "The Chinese compound 'silver house': yínháng, ginkō, eunhaeng, ngân hàng.",
+            "uk": "Китайська сполука «срібний дім»: yínháng, ginkō, eunhaeng, ngân hàng."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Thai thanakhan builds on Sanskrit dhana 'wealth'.",
+            "uk": "Тайське thanakhan будується на санскритському dhana «багатство»."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 43.8,
+        "lon": 11.3,
+        "label": {
+          "en": "Florence — the moneylenders' benches",
+          "uk": "Флоренція — лави лихварів"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "french",
+          "form": "banque",
+          "origin": "banca"
+        },
+        {
+          "lang": "german",
+          "form": "Bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "dutch",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "spanish",
+          "form": "banco",
+          "origin": "banca"
+        },
+        {
+          "lang": "italian",
+          "form": "banca",
+          "origin": "banca"
+        },
+        {
+          "lang": "portuguese",
+          "form": "banco",
+          "origin": "banca"
+        },
+        {
+          "lang": "polish",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "czech",
+          "form": "banka",
+          "origin": "banca"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "bank",
+          "origin": "banca",
+          "native": "банк"
+        },
+        {
+          "lang": "russian",
+          "form": "bank",
+          "origin": "banca",
+          "native": "банк"
+        },
+        {
+          "lang": "swedish",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "finnish",
+          "form": "pankki",
+          "origin": "banca",
+          "note": {
+            "en": "Finnish p- for foreign b-",
+            "uk": "Фінське p- замість чужого b-"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "romanian",
+          "form": "bancă",
+          "origin": "banca"
+        },
+        {
+          "lang": "turkish",
+          "form": "banka",
+          "origin": "banca"
+        },
+        {
+          "lang": "arabic",
+          "form": "bank",
+          "origin": "banca",
+          "native": "بنك"
+        },
+        {
+          "lang": "hebrew",
+          "form": "bank",
+          "origin": "banca",
+          "native": "בנק"
+        },
+        {
+          "lang": "persian",
+          "form": "bânk",
+          "origin": "banca",
+          "native": "بانک"
+        },
+        {
+          "lang": "hindi",
+          "form": "baink",
+          "origin": "banca",
+          "native": "बैंक"
+        },
+        {
+          "lang": "indonesian",
+          "form": "bank",
+          "origin": "banca"
+        },
+        {
+          "lang": "tagalog",
+          "form": "bangko",
+          "origin": "banca",
+          "note": {
+            "en": "Via Spanish",
+            "uk": "Через іспанську"
+          }
+        },
+        {
+          "lang": "swahili",
+          "form": "benki",
+          "origin": "banca"
+        },
+        {
+          "lang": "georgian",
+          "form": "bank'i",
+          "origin": "banca",
+          "native": "ბანკი"
+        },
+        {
+          "lang": "greek",
+          "form": "trápeza",
+          "origin": "trapeza",
+          "native": "τράπεζα"
+        },
+        {
+          "lang": "mandarin",
+          "form": "yínháng",
+          "origin": "sinitic",
+          "native": "银行"
+        },
+        {
+          "lang": "japanese",
+          "form": "ginkō",
+          "origin": "sinitic",
+          "native": "銀行"
+        },
+        {
+          "lang": "korean",
+          "form": "eunhaeng",
+          "origin": "sinitic",
+          "native": "은행"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "ngân hàng",
+          "origin": "sinitic"
+        },
+        {
+          "lang": "thai",
+          "form": "thanakhan",
+          "origin": "other",
+          "native": "ธนาคาร",
+          "note": {
+            "en": "From Sanskrit dhana 'wealth' + agara 'house'",
+            "uk": "Від санскр. dhana «багатство» + agara «дім»"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/bank; Wiktionary translations"
+    },
+    {
+      "id": "computer",
+      "icon": "💻",
+      "gloss": {
+        "en": "computer",
+        "uk": "комп'ютер"
+      },
+      "origins": [
+        {
+          "id": "computer",
+          "label": "computer (English)",
+          "story": {
+            "en": "The English word, borrowed wholesale across most of the planet within one generation.",
+            "uk": "Англійське слово, запозичене цілком більшістю планети за одне покоління."
+          }
+        },
+        {
+          "id": "calque",
+          "label": "translated machines",
+          "story": {
+            "en": "The resistance: French ordinateur, Swedish dator, Finnish 'knowledge machine', Turkish 'knowledge counter', Chinese 'electric brain', Hebrew 'thinker' — languages that built their own word.",
+            "uk": "Опір: французьке ordinateur, шведське dator, фінська «машина знань», турецький «лічильник знань», китайський «електричний мозок», івритський «мислитель» — мови, що збудували власне слово."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 51.5,
+        "lon": -0.1,
+        "label": {
+          "en": "England — computing's vocabulary takes off",
+          "uk": "Англія — злет обчислювальної лексики"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "computer",
+          "origin": "computer"
+        },
+        {
+          "lang": "german",
+          "form": "Computer",
+          "origin": "computer"
+        },
+        {
+          "lang": "dutch",
+          "form": "computer",
+          "origin": "computer"
+        },
+        {
+          "lang": "italian",
+          "form": "computer",
+          "origin": "computer"
+        },
+        {
+          "lang": "portuguese",
+          "form": "computador",
+          "origin": "computer"
+        },
+        {
+          "lang": "polish",
+          "form": "komputer",
+          "origin": "computer"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "kompiuter",
+          "origin": "computer",
+          "native": "комп'ютер"
+        },
+        {
+          "lang": "russian",
+          "form": "kompyuter",
+          "origin": "computer",
+          "native": "компьютер"
+        },
+        {
+          "lang": "hindi",
+          "form": "kampyūṭar",
+          "origin": "computer",
+          "native": "कंप्यूटर"
+        },
+        {
+          "lang": "japanese",
+          "form": "konpyūtā",
+          "origin": "computer",
+          "native": "コンピューター"
+        },
+        {
+          "lang": "korean",
+          "form": "keompyuteo",
+          "origin": "computer",
+          "native": "컴퓨터"
+        },
+        {
+          "lang": "thai",
+          "form": "khomphiutoe",
+          "origin": "computer",
+          "native": "คอมพิวเตอร์"
+        },
+        {
+          "lang": "indonesian",
+          "form": "komputer",
+          "origin": "computer"
+        },
+        {
+          "lang": "tagalog",
+          "form": "kompyuter",
+          "origin": "computer"
+        },
+        {
+          "lang": "swahili",
+          "form": "kompyuta",
+          "origin": "computer"
+        },
+        {
+          "lang": "georgian",
+          "form": "k'omp'iut'eri",
+          "origin": "computer",
+          "native": "კომპიუტერი"
+        },
+        {
+          "lang": "bengali",
+          "form": "kompiutar",
+          "origin": "computer",
+          "native": "কম্পিউটার"
+        },
+        {
+          "lang": "french",
+          "form": "ordinateur",
+          "origin": "calque",
+          "note": {
+            "en": "A 1955 coinage commissioned by IBM France",
+            "uk": "Новотвір 1955 року на замовлення IBM France"
+          }
+        },
+        {
+          "lang": "spanish",
+          "form": "ordenador",
+          "origin": "calque",
+          "note": {
+            "en": "Spain; Latin America says computadora",
+            "uk": "Іспанія; Латинська Америка каже computadora"
+          }
+        },
+        {
+          "lang": "swedish",
+          "form": "dator",
+          "origin": "calque",
+          "note": {
+            "en": "A 1968 Swedish coinage",
+            "uk": "Шведський новотвір 1968 року"
+          }
+        },
+        {
+          "lang": "finnish",
+          "form": "tietokone",
+          "origin": "calque",
+          "note": {
+            "en": "'Knowledge machine'",
+            "uk": "«Машина знань»"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "számítógép",
+          "origin": "calque",
+          "note": {
+            "en": "'Counting machine'",
+            "uk": "«Лічильна машина»"
+          }
+        },
+        {
+          "lang": "czech",
+          "form": "počítač",
+          "origin": "calque",
+          "note": {
+            "en": "'Counter'",
+            "uk": "«Лічильник»"
+          }
+        },
+        {
+          "lang": "romanian",
+          "form": "calculator",
+          "origin": "calque"
+        },
+        {
+          "lang": "greek",
+          "form": "ypologistís",
+          "origin": "calque",
+          "native": "υπολογιστής",
+          "note": {
+            "en": "'Calculator'",
+            "uk": "«Обчислювач»"
+          }
+        },
+        {
+          "lang": "turkish",
+          "form": "bilgisayar",
+          "origin": "calque",
+          "note": {
+            "en": "'Knowledge counter' — a celebrated 1970s coinage",
+            "uk": "«Лічильник знань» — славетний новотвір 1970-х"
+          }
+        },
+        {
+          "lang": "arabic",
+          "form": "ḥāsūb",
+          "origin": "calque",
+          "native": "حاسوب",
+          "note": {
+            "en": "'Calculator'; kombyutar also common",
+            "uk": "«Обчислювач»; поширене й kombyutar"
+          }
+        },
+        {
+          "lang": "hebrew",
+          "form": "machshev",
+          "origin": "calque",
+          "native": "מחשב",
+          "note": {
+            "en": "'Thinker'",
+            "uk": "«Мислитель»"
+          }
+        },
+        {
+          "lang": "persian",
+          "form": "râyâne",
+          "origin": "calque",
+          "native": "رایانه",
+          "note": {
+            "en": "An Academy coinage; kâmpyuter common too",
+            "uk": "Новотвір Академії; поширене й kâmpyuter"
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "diànnǎo",
+          "origin": "calque",
+          "native": "电脑",
+          "note": {
+            "en": "'Electric brain'",
+            "uk": "«Електричний мозок»"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "máy tính",
+          "origin": "calque",
+          "note": {
+            "en": "'Counting machine'",
+            "uk": "«Лічильна машина»"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/computer; Wiktionary translations"
+    },
+    {
+      "id": "internet",
+      "icon": "🌐",
+      "gloss": {
+        "en": "internet",
+        "uk": "інтернет"
+      },
+      "origins": [
+        {
+          "id": "internet",
+          "label": "internet",
+          "story": {
+            "en": "The fastest total vocabulary conquest ever recorded: one word, every language, thirty years.",
+            "uk": "Найшвидше тотальне лексичне завоювання в історії: одне слово, всі мови, тридцять років."
+          }
+        },
+        {
+          "id": "calque",
+          "label": "translated nets",
+          "story": {
+            "en": "Almost nobody resisted — except Chinese hùliánwǎng, 'mutually-linked net'.",
+            "uk": "Майже ніхто не опирався — крім китайського hùliánwǎng, «взаємно з'єднана мережа»."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 38,
+        "lon": -100,
+        "label": {
+          "en": "USA — ARPANET's child",
+          "uk": "США — дитя ARPANET"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "french",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "german",
+          "form": "Internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "dutch",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "spanish",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "italian",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "portuguese",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "polish",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "czech",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "internet",
+          "origin": "internet",
+          "native": "інтернет"
+        },
+        {
+          "lang": "russian",
+          "form": "internet",
+          "origin": "internet",
+          "native": "интернет"
+        },
+        {
+          "lang": "swedish",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "finnish",
+          "form": "internetti",
+          "origin": "internet"
+        },
+        {
+          "lang": "hungarian",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "romanian",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "greek",
+          "form": "internet",
+          "origin": "internet",
+          "native": "ίντερνετ"
+        },
+        {
+          "lang": "turkish",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "arabic",
+          "form": "intarnit",
+          "origin": "internet",
+          "native": "إنترنت"
+        },
+        {
+          "lang": "hebrew",
+          "form": "internet",
+          "origin": "internet",
+          "native": "אינטרנט"
+        },
+        {
+          "lang": "persian",
+          "form": "internet",
+          "origin": "internet",
+          "native": "اینترنت"
+        },
+        {
+          "lang": "hindi",
+          "form": "inṭaraneṭ",
+          "origin": "internet",
+          "native": "इंटरनेट"
+        },
+        {
+          "lang": "bengali",
+          "form": "intarnet",
+          "origin": "internet",
+          "native": "ইন্টারনেট"
+        },
+        {
+          "lang": "japanese",
+          "form": "intānetto",
+          "origin": "internet",
+          "native": "インターネット"
+        },
+        {
+          "lang": "korean",
+          "form": "inteonet",
+          "origin": "internet",
+          "native": "인터넷"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "thai",
+          "form": "inthoenet",
+          "origin": "internet",
+          "native": "อินเทอร์เน็ต"
+        },
+        {
+          "lang": "indonesian",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "tagalog",
+          "form": "internet",
+          "origin": "internet"
+        },
+        {
+          "lang": "swahili",
+          "form": "intaneti",
+          "origin": "internet"
+        },
+        {
+          "lang": "georgian",
+          "form": "int'ernet'i",
+          "origin": "internet",
+          "native": "ინტერნეტი"
+        },
+        {
+          "lang": "mandarin",
+          "form": "hùliánwǎng",
+          "origin": "calque",
+          "native": "互联网",
+          "note": {
+            "en": "'Mutually-linked net' — the lone translator",
+            "uk": "«Взаємно з'єднана мережа» — самотній перекладач"
+          }
+        }
+      ],
+      "source": "etymonline.com/word/internet; Wiktionary translations"
     }
   ]
 }

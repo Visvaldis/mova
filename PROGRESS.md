@@ -263,3 +263,18 @@ Phases:
 - Labels/strokes/pulse scale inversely with zoom — constant on-screen size, so zooming genuinely
   declutters dense Europe. Click-vs-drag disambiguated (pan movement suppresses region clicks).
   View clamped to map bounds; max zoom 8×.
+
+## ✅ Update — 2026-06-10 (Word Atlas M2 complete: 24 words)
+
+- **+16 words → all 24 from the spec**: wine (Caucasus homeland, *wayn wander-word, Hungarian bor
+  outlier), beer (bier/pivo/cerveza/ale four-way), bread (Gothic hlaifs in хліб; Japanese pan via
+  Portuguese missionaries), salt, orange (the PORTUGAL group: portokáli/burtuqāl/портокал!),
+  potato (Brandenburg→brambor, Jakarta→jagaimo, 'earth-apple' calques), lemon (limon vs citron),
+  night, three (PIE/Semitic/Uralic/Sinitic/Austronesian — five families on one map), name (the
+  Uralic nimi lookalike + Japanese namae coincidence), water, school (scholḗ 'leisure'; Swahili
+  shule via German colonists), church (kyriakón vs ekklēsía two routes; Polish kościół ← castellum),
+  bank (Greek trápeza 'table' — the lone metaphor hold-out), computer (the calque resistance:
+  ordinateur, dator, bilgisayar, 电脑 'electric brain'), internet (the fastest conquest; only
+  Chinese translated it).
+- 725 total forms, all integrity-checked (no unknown langs/origins/dups, bilingual notes complete).
+- Island now 41.5 KB gz (data-heavy; M3 candidate: split word data into a lazy sub-chunk).
