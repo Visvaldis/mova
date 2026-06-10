@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
-import { LANGS, useTranslations, langFromId, type Lang } from '../../i18n/utils';
+import { LANGS, useTranslations, localizedPath, langFromId, type Lang } from '../../i18n/utils';
 import { topicNames } from '../../i18n/ui';
 
 export function getStaticPaths() {
@@ -39,6 +39,19 @@ const topics = [...new Set(articles.map((a) => a.data.topic))];
           </button>
         ))
       }
+      {
+        topics.map((topic) => (
+          <a
+            class="topic-link"
+            data-topic-link={topic}
+            data-topic={topic}
+            href={localizedPath(lang, 'topic', topic)}
+            hidden
+          >
+            {t('home.openTopic')} →
+          </a>
+        ))
+      }
     </div>
 
     <div class="card-grid">
@@ -65,12 +78,18 @@ const topics = [...new Set(articles.map((a) => a.data.topic))];
   const chips = Array.from(bar?.querySelectorAll<HTMLButtonElement>('.filter-chip') ?? []);
   const cards = Array.from(document.querySelectorAll<HTMLElement>('.card-grid .card'));
 
+  const links = Array.from(document.querySelectorAll<HTMLElement>('[data-topic-link]'));
+
   function apply(topic: string) {
     for (const chip of chips) {
       chip.setAttribute('aria-pressed', String((chip.dataset.filter ?? '') === topic));
     }
     for (const card of cards) {
       card.hidden = topic !== '' && card.dataset.topic !== topic;
+    }
+    // "Open topic page →" appears only for the active topic.
+    for (const link of links) {
+      link.hidden = link.dataset.topicLink !== topic;
     }
   }
 

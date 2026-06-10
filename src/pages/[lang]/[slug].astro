@@ -66,7 +66,7 @@ const topicName = topicNames[entry.data.topic]?.[lang] ?? entry.data.topic;
       <h1>{entry.data.title}</h1>
       <p class="summary">{entry.data.summary}</p>
       <div class="meta">
-        <span class="chip">{topicName}</span>
+        <a class="chip" href={localizedPath(lang, 'topic', entry.data.topic)}>{topicName}</a>
         <span>{entry.data.readingTime} {t('card.minRead')}</span>
       </div>
     </header>

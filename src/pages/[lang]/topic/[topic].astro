@@ -1,0 +1,109 @@
+---
+// Topic hub (task 330): one page per topic — the article, the topic's moments
+// from the master timeline, and related playground toys.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+import { LANGS, useTranslations, localizedPath, langFromId, type Lang, type UIKey } from '../../../i18n/utils';
+import { topicNames } from '../../../i18n/ui';
+import { TIMELINE_EVENTS } from '../../../data/timelineEvents';
+import { TOYS } from '../../../components/playground/registry';
+
+export async function getStaticPaths() {
+  const all = await getCollection('articles');
+  const topics = [...new Set(all.map((e) => e.data.topic))];
+  return LANGS.flatMap((lang) => topics.map((topic) => ({ params: { lang, topic } })));
+}
+
+const { lang, topic } = Astro.params as { lang: Lang; topic: string };
+const t = useTranslations(lang);
+
+const articles = (
+  await getCollection('articles', (e) => langFromId(e.id) === lang && e.data.topic === topic)
+).sort((a, b) => a.data.order - b.data.order);
+
+const topicName = topicNames[topic]?.[lang] ?? topic;
+const slugs = new Set(articles.map((a) => a.data.slug));
+
+// This topic's dated moments from the master timeline.
+const events = TIMELINE_EVENTS.filter((e) => e.topic === topic).sort((a, b) => a.year - b.year);
+
+// Toys that list one of this topic's articles as related reading.
+const toys = TOYS.filter((toy) => toy.related.some((slug) => slugs.has(slug)));
+
+function fmtYear(year: number): string {
+  if (year <= -10000) {
+    const k = Math.round(-year / 1000);
+    return lang === 'uk' ? `~${k.toLocaleString('uk-UA')} тис. р. до н.е.` : `~${k.toLocaleString('en-US')},000 BCE`;
+  }
+  if (year < 0) return lang === 'uk' ? `${-year} до н.е.` : `${-year} BCE`;
+  return String(year);
+}
+---
+
+<BaseLayout lang={lang} title={topicName} description={articles[0]?.data.summary ?? topicName} topic={topic}>
+  <section class="container hero topic-hero" data-topic={topic}>
+    <p class="kicker">{t('topic.kicker')}</p>
+    <h1>{topicName}</h1>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">{t('topic.read')}</h2>
+    <div class="card-grid">
+      {
+        articles.map((a) => (
+          <ArticleCard
+            lang={lang}
+            slug={a.data.slug}
+            title={a.data.title}
+            summary={a.data.summary}
+            topic={a.data.topic}
+            readingTime={a.data.readingTime}
+            interactive={a.data.interactive}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    events.length > 0 && (
+      <section class="container" data-topic={topic}>
+        <h2 class="section-title">{t('topic.onTimeline')}</h2>
+        <ol class="event-list">
+          {events.map((e) => (
+            <li class="event-row">
+              <span class="event-year">{fmtYear(e.year)}</span>
+              <span>
+                <strong>{e.title[lang]}</strong>
+                <span class="event-blurb"> — {e.blurb[lang]}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
+        <a class="btn" href={localizedPath(lang, 'timeline')}>
+          {t('topic.openTimeline')} →
+        </a>
+      </section>
+    )
+  }
+
+  {
+    toys.length > 0 && (
+      <section class="container" data-topic={topic}>
+        <h2 class="section-title">{t('topic.play')}</h2>
+        <div class="toy-links">
+          {toys.map((toy) => (
+            <a class="btn" href={localizedPath(lang, 'playground', toy.id)}>
+              <span aria-hidden="true">{toy.icon}</span> {t(`${toy.key}.title` as UIKey)}
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="container" style="margin-top: 2rem;">
+    <a class="btn" href={localizedPath(lang)}>← {t('topic.backHome')}</a>
+  </section>
+</BaseLayout>

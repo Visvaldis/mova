@@ -179,8 +179,31 @@ a:hover { text-decoration-color: var(--accent); }
 .filter-chip[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 @media (prefers-reduced-motion: reduce) { .filter-chip { transition: none; } }
 
+.topic-link {
+  display: inline-flex; align-items: center; padding: 0.3rem 0.5rem;
+  font-size: 0.84rem; font-weight: 700; color: var(--accent); text-decoration: none;
+}
+.topic-link:hover { text-decoration: underline; }
+.topic-link[hidden] { display: none; }
+
 .card-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
 .card[hidden] { display: none; }
+
+/* ---- Topic hub pages ---------------------------------------- */
+.topic-hero { padding-bottom: 1.5rem; }
+.topic-hero .kicker { color: var(--accent); }
+.event-list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: grid; gap: 0.7rem; }
+.event-row { display: flex; gap: 0.9rem; align-items: baseline; }
+.event-year {
+  flex: 0 0 auto; min-width: 6.5rem; font-weight: 800; color: var(--accent);
+  font-variant-numeric: tabular-nums; font-size: 0.9rem;
+}
+.event-blurb { color: var(--muted); }
+.toy-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+@media (max-width: 540px) {
+  .event-row { flex-direction: column; gap: 0.1rem; }
+  .event-year { min-width: 0; }
+}
 
 .card {
   display: flex; flex-direction: column; gap: 0.75rem;

@@ -356,3 +356,10 @@ CSS modules.
 - Progressive enhancement: cards render in Astro; a small inline script toggles [hidden] via data-topic. JS off → all cards show. Filter is shareable via #topic=<id> and restored on load.
 - 2 new home.filter* keys (EN+UK). Keyboard: native buttons + aria-pressed. Chips wrap at 375px.
 - Verified: build clean, 19 chips and localized labels in both /en/ and /uk/, filter script inlined.
+
+## 2026-06-10 — Topic hub pages (task 330)
+
+- Since each topic has exactly one article, plain landing pages would be empty — built rich hubs instead (per Seva): /{lang}/topic/{id}/ with topic-accent hero, the article card, that topic's dated moments from the master timeline (event list + link to full timeline), and related playground toys (via the toy registry's related-slugs, inverted).
+- Entry points: article-header topic chip now links to its hub; home filter shows an "Open topic page →" link when a topic chip is active (same progressive-enhancement script).
+- 7 new keys (topic.* + home.openTopic), EN+UK. Event rows stack at ≤540px.
+- Verified: tsc + build clean, 18×2 hub pages generated, sections conditionally render (no empty "Keep playing" when no toy relates).

@@ -30,6 +30,14 @@ export const ui = {
     'home.articles': 'Articles',
     'home.filterAria': 'Filter articles by topic',
     'home.filterAll': 'All topics',
+    'home.openTopic': 'Open topic page',
+
+    'topic.kicker': 'Topic',
+    'topic.read': 'The article',
+    'topic.onTimeline': 'Key moments on the timeline',
+    'topic.openTimeline': 'Open the full timeline',
+    'topic.play': 'Keep playing',
+    'topic.backHome': 'All articles',
 
     'card.read': 'Read',
     'card.minRead': 'min read',
@@ -702,6 +710,14 @@ export const ui = {
     'home.articles': 'Статті',
     'home.filterAria': 'Фільтрувати статті за темою',
     'home.filterAll': 'Усі теми',
+    'home.openTopic': 'Відкрити сторінку теми',
+
+    'topic.kicker': 'Тема',
+    'topic.read': 'Стаття',
+    'topic.onTimeline': 'Ключові моменти на шкалі',
+    'topic.openTimeline': 'Відкрити повну шкалу',
+    'topic.play': 'Грайте далі',
+    'topic.backHome': 'Усі статті',
 
     'card.read': 'Читати',
     'card.minRead': 'хв читання',
