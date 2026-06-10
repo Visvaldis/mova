@@ -34,7 +34,8 @@ import ConlangWorkbench from './interactive/ConlangWorkbench.tsx';
 import CodeVsSpeech from './interactive/CodeVsSpeech.tsx';
 import NameSmith from './interactive/NameSmith.tsx';
 import EsperantoMachine from './interactive/EsperantoMachine.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas', 'conlang-workbench', 'code-vs-speech', 'name-smith', 'esperanto-machine']);
+import AlienGrammarGym from './interactive/AlienGrammarGym.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas', 'conlang-workbench', 'code-vs-speech', 'name-smith', 'esperanto-machine', 'alien-grammar-gym']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -59,6 +60,7 @@ const isBuilt = BUILT.has(id);
   {id === 'code-vs-speech' && <CodeVsSpeech client:visible lang={lang} />}
   {id === 'name-smith' && <NameSmith client:visible lang={lang} />}
   {id === 'esperanto-machine' && <EsperantoMachine client:visible lang={lang} />}
+  {id === 'alien-grammar-gym' && <AlienGrammarGym client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder

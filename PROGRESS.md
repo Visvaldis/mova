@@ -404,3 +404,12 @@ CSS modules.
 - Built the Middle-earth name forge for tolkien-languages: 6 attested element tiles; mor+dor / mor+ia / mith+randir reveal the article's canonical glosses and notes, any other combo gets the "Tolkien might object" badge with literal element glosses only (no invented Elvish).
 - Quenya vs Sindarin sound-palette cards (Finnish vs Welsh models, article sample lines) with a flavor highlighter that marks long vowels / Welsh-style clusters; derivation mini-tree (Primitive Elvish → sound laws → two daughters), caption "Grimm's Law, but fictional".
 - 14 nameSmith.* keys EN+UK; BUILT set + explicit island render in Interactive.astro. Bundle 3.1 KB gz; tsc/build clean (other agent's in-flight esperanto-machine excluded from checks).
+
+## 2026-06-10 — alien-grammar-gym interactive (task 280)
+
+- OVS scrambler: tap S/V/O tiles into any of the six orders; the frequency strip (WALS 81A approximate shares, cited in caption) lights up your order — building OVS earns the Klingon salute.
+- Alien-o-meter: pick 3 of 9 real phonemes; common picks read "too human", the article's Okrand ensemble (retroflex D + uvular q + tlh) maxes the meter with the "nothing impossible — the ensemble is" line.
+- Designer match: Okrand/Frommer/Peterson ↔ Klingon/Na'vi/Dothraki+Valyrian, each correct match revealing the article's method note.
+- 27 alienGym.* keys (EN+UK); wired into Interactive.astro on top of the other agent's freshly landed esperanto-machine (waited for their commit to avoid sweeping their staged work). Bundle 3.3 KB gz; tsc/build clean.
+
+All three conlang-series interactives are now live: esperanto-machine (other agent, task 260), name-smith (270), alien-grammar-gym (280).

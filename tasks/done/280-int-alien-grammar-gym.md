@@ -32,3 +32,7 @@ accent → `conlangs`. `interactiveInfo` entry already in `ui.ts`; add to BUILT 
 
 - [ ] `npm run build` → 0 errors; 375px; keyboard accessible; reduced-motion honored.
 - [ ] Facts traceable to the article (or marked TODO(seva)).
+
+## Done — 2026-06-10
+
+Built AlienGrammarGym.tsx + alienGym.data.ts (3.3 KB gz): OVS scrambler with WALS-81A-cited frequency strip (per-card note: figures sourced to WALS, cited in UI caption, since the article is qualitative), 9-phoneme alien-o-meter maxed by the Okrand ensemble, designer match with article method notes. 27 alienGym.* keys EN+UK. Data integrity ALL OK; SSR verified both languages.
