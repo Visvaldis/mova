@@ -76,6 +76,37 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
   const target = challenge !== null ? CHALLENGES[challenge] : null;
   const solved = target ? eq(target.answer, parts) : false;
 
+  // Canonical slot order: prefix < root < suffixes (click order) < o/a < j.
+  const rank = (id: string) => {
+    const m = mof(id);
+    if (m.kind === 'prefix') return 0;
+    if (m.kind === 'root') return 1;
+    if (m.kind === 'suffix') return 2;
+    return m.id === 'j' ? 4 : 3; // plural -j stacks after -o/-a
+  };
+
+  /** Toggle a morpheme with real Esperanto slot rules: one prefix, one root,
+   *  one of -o/-a (replace), stackable distinct suffixes, -j after the ending.
+   *  Tapping a selected tile removes it. */
+  const pick = (m: Morpheme) => {
+    setParts((p) => {
+      if (p.includes(m.id)) return p.filter((id) => id !== m.id);
+      let next = p;
+      if (m.kind === 'prefix' || m.kind === 'root') {
+        next = p.filter((id) => mof(id).kind !== m.kind);
+      } else if (m.kind === 'ending' && m.id !== 'j') {
+        next = p.filter((id) => !(mof(id).kind === 'ending' && id !== 'j'));
+      }
+      const out = [...next];
+      let at = out.length;
+      for (let i = 0; i < out.length; i++) {
+        if (rank(out[i]) > rank(m.id)) { at = i; break; }
+      }
+      out.splice(at, 0, m.id);
+      return out;
+    });
+  };
+
   const group = (title: string, items: Morpheme[]) => (
     <div className={c.group}>
       <span className={c.groupLabel}>{title}</span>
@@ -85,8 +116,9 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
             key={m.id}
             className={c.tile}
             data-src={m.source}
+            aria-pressed={parts.includes(m.id)}
             aria-label={`${t('esperantoMachine.add')} ${m.form}- — ${m.gloss[lang]}`}
-            onClick={() => setParts((p) => [...p, m.id])}
+            onClick={() => pick(m)}
           >
             <span className={c.tileForm}>{m.kind === 'prefix' ? `${m.form}-` : m.kind === 'root' ? m.form : `-${m.form}`}</span>
             <span className={c.tileGloss}>{m.gloss[lang]}</span>

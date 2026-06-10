@@ -63,6 +63,15 @@
   background: color-mix(in srgb, var(--accent-soft) 50%, var(--bg));
   border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
+/* Selected tiles (currently in the word) — overrides both src variants */
+.tile[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.tile[aria-pressed='true'] .tileGloss {
+  color: color-mix(in srgb, var(--on-accent) 82%, transparent);
+}
 .tileForm {
   font-weight: 800;
   font-size: 1rem;
