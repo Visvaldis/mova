@@ -131,3 +131,27 @@ Phases:
   branch in tree view). `TODO(seva)`: speaker counts & attestation dates in `familyTree.data.ts`
   are rough public figures, not from the article — verify before publishing.
 - Board: 110, 120 → done. Build green: 64 pages, islands verified SSR in both languages.
+
+## ✅ Update — 2026-06-10 (interactive 130)
+
+- **`ukrainian-timeline` live** (task 130): vertical scroll-driven timeline, 9 article-grounded eras
+  (Kyivan Rus → Eneida 1798 → Kobzar 1840 → Valuev 1863 → Ems 1876 → korenizatsiia → Executed
+  Renaissance/russification → state language 1989–91 → post-2014/2022 revival). Spine + dots track the
+  active era via IntersectionObserver; Prev/Next + clickable status-chart points give the tap/keyboard
+  fallback. Bans get a red strikethrough motif (`--ut-ban` token, light+dark); the abolished letter ґ is
+  struck through. Each era card carries an article-sourced language sample. A schematic SVG "official
+  standing" line chart stands in for the speakers chart.
+- `TODO(seva)` in `ukrainianTimeline.data.ts`: (1) Galicia-Volhynia & Lithuanian-Polish era are in the
+  spec but not the article — omitted, not invented; (2) no speaker figures in the article, so the chart
+  is a schematic status arc, not measured counts; (3) no verbatim period line for *Eneida*/*Kobzar* —
+  work titles stand in.
+- Board: 130 → done. Build green: 58 pages, island verified SSR in both EN and UK.
+
+## ✅ Update — 2026-06-10 (Stratigraph expansion)
+
+- Lexicon grown 255 → **490 lemmas** (all layers; layer labels widened: Germanic now covers
+  Gothic-era loans like хліб/князь/скло, Eastern covers Arabic via French like магазин,
+  coined covers 19th–20th c. like світлина/довкілля).
+- Stemmer (`uk-stem.ts`): reflexive -ся/-сь handling, present-tense endings, -нути verbs,
+  thematic-vowel second pass, verb-prefix stripping (з-будував → будувати), і↔о alternation
+  stems on more lemmas. Test paragraph coverage: 41/41; function words don't false-positive.
