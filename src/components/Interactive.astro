@@ -25,7 +25,8 @@ import CreoleLab from './interactive/CreoleLab.tsx';
 import VitalityMap from './interactive/VitalityMap.tsx';
 import ScriptEvolver from './interactive/ScriptEvolver.tsx';
 import WordTraveler from './interactive/WordTraveler.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler']);
+import WordXray from './interactive/WordXray.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -41,6 +42,7 @@ const isBuilt = BUILT.has(id);
   {id === 'vitality-map' && <VitalityMap client:visible lang={lang} />}
   {id === 'script-evolver' && <ScriptEvolver client:visible lang={lang} />}
   {id === 'word-traveler' && <WordTraveler client:visible lang={lang} />}
+  {id === 'word-xray' && <WordXray client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder
