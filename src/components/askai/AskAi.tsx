@@ -9,6 +9,7 @@ import {
   newConversation, listConversations, saveConversation, deleteConversation, clearHistory,
   displayContent, downloadMarkdown, type Conversation,
 } from '../../lib/askai-store';
+import { readInteractiveContext } from '../../lib/page-context';
 
 const SYSTEM: Record<Lang, string> = {
   en: `You are the reading companion of "Mova", a bilingual (English/Ukrainian) website about language evolution: etymology, sound change, language families, the history of Ukrainian, writing systems, sociolinguistics. The reader selected a passage and wants help. Answer in English unless asked otherwise. Be concise — under 150 words unless asked for more. It is good to say "linguists aren't sure" when that is true. Never invent etymologies; if a popular story is folk etymology, say so. Plain text only, no markdown headings.`,
@@ -163,9 +164,19 @@ export default function AskAi({ lang }: { lang: Lang }) {
       setMessages([...next, { role: 'assistant', content: '' }]);
       setBusy(true);
       abortRef.current = new AbortController();
+      // Live interactive state (read per message, so it stays current as the reader
+      // keeps tinkering) folds into the system prompt — never into a visible bubble.
+      const ictx = readInteractiveContext();
+      const system = ictx
+        ? `${SYSTEM[lang]}\n\n${
+            lang === 'uk'
+              ? `Контекст сторінки — читач зараз взаємодіє з інтерактивом. Враховуй його стан, відповідаючи: ${ictx}`
+              : `Page context — the reader is interacting with an on-page interactive. Take its state into account when answering: ${ictx}`
+          }`
+        : SYSTEM[lang];
       let acc = '';
       try {
-        for await (const delta of stream(cfg, SYSTEM[lang], next, abortRef.current.signal)) {
+        for await (const delta of stream(cfg, system, next, abortRef.current.signal)) {
           acc += delta;
           setMessages([...next, { role: 'assistant', content: acc }]);
         }

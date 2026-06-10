@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import {
   TOPONYMS,
   UKRAINE_OUTLINE,
@@ -65,6 +66,21 @@ function PlacesView({ lang, t }: { lang: Lang; t: T }) {
   }, []);
 
   const activePin = sel?.kind === 'pin' ? sel.id : null;
+
+  const pin = activePin ? TOPONYMS.find((x) => x.id === activePin) : null;
+  const detail = pin
+    ? `${pin.name} — ${pin.origin[lang]}: ${pin.story[lang]}`
+    : sel?.kind === 'slavhorod'
+    ? `${SLAV_HOROD.name} — ${SLAV_HOROD.origin[lang]}: ${SLAV_HOROD.story[lang]}`
+    : sel?.kind === 'ukraina'
+    ? `${UKRAINA_DEBATE.name}: ${UKRAINA_DEBATE.note[lang]}`
+    : null;
+  useInteractiveContext(
+    'name-map',
+    lang === 'uk'
+      ? `Інтерактив «Карта назв», вкладка «топоніми»: карта України з назвами місць. ${detail ? `Читач розглядає: ${detail}` : 'Місце ще не вибрано.'}`
+      : `"Name Map" interactive, "toponyms" tab: a map of Ukraine with place names. ${detail ? `The reader is looking at: ${detail}` : 'No place selected yet.'}`,
+  );
 
   return (
     <div className={c.placesWrap}>
@@ -183,6 +199,21 @@ function MonthsView({ lang, t }: { lang: Lang; t: T }) {
   const gloss = mode === 'roman' ? m.enGloss : m.ukGloss;
   const centerName = mode === 'roman' ? m.en : m.uk;
 
+  const modeLabel =
+    lang === 'uk'
+      ? mode === 'roman'
+        ? 'римські/англійські назви'
+        : 'український природний календар'
+      : mode === 'roman'
+      ? 'Roman/English names'
+      : 'Ukrainian nature calendar';
+  useInteractiveContext(
+    'name-map',
+    lang === 'uk'
+      ? `Інтерактив «Карта назв», вкладка «колесо місяців», режим: ${modeLabel}. Вибраний місяць: ${centerName} (${mode === 'roman' ? m.uk : m.en}).${gloss ? ` Дослівно: ${gloss[lang]}` : ''}`
+      : `"Name Map" interactive, "month wheel" tab, mode: ${modeLabel}. Selected month: ${centerName} (${mode === 'roman' ? m.uk : m.en}).${gloss ? ` Literal sense: ${gloss[lang]}` : ''}`,
+  );
+
   return (
     <div className={c.monthsWrap}>
       <p className={c.intro}>{t('nameMap.monthsIntro')}</p>
@@ -261,6 +292,14 @@ function SurnamesView({ lang, t }: { lang: Lang; t: T }) {
     [],
   );
   const done = matched.length === SURNAMES.length;
+
+  const pickedEn = selEn ? SURNAMES.find((p) => p.id === selEn) : null;
+  useInteractiveContext(
+    'name-map',
+    lang === 'uk'
+      ? `Інтерактив «Карта назв», вкладка «прізвища»: гра на зіставлення англійських та українських професійних прізвищ. Зіставлено ${matched.length} із ${SURNAMES.length}.${done ? ' Гру завершено.' : pickedEn ? ` Зараз вибрано англійське прізвище: ${pickedEn.en}.` : ''}`
+      : `"Name Map" interactive, "surnames" tab: a game matching English and Ukrainian occupational surnames. Matched ${matched.length} of ${SURNAMES.length}.${done ? ' The game is complete.' : pickedEn ? ` Currently picked English surname: ${pickedEn.en}.` : ''}`,
+  );
 
   function pickEn(id: string) {
     if (matched.includes(id)) return;

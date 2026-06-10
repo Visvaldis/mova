@@ -6,6 +6,7 @@
 import { useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import {
   DIALECT_ZONES,
   SURZHYK,
@@ -88,6 +89,18 @@ function MapView({ lang, t }: { lang: Lang; t: T }) {
   const selectZone = (id: string) =>
     setSel(activeZone === id ? null : { kind: 'zone', id });
 
+  const detail = zone
+    ? `${zone.name[lang]}: ${zone.features[lang]}`
+    : sel?.kind === 'surzhyk'
+    ? `${SURZHYK.name[lang]}: ${SURZHYK.features[lang]}`
+    : null;
+  useInteractiveContext(
+    'accent-atlas',
+    lang === 'uk'
+      ? `Інтерактив «Атлас вимови», вкладка «діалектна карта України». ${detail ? `Читач розглядає: ${detail}.` : 'Регіон ще не вибрано.'}`
+      : `"Accent Atlas" interactive, "dialect map of Ukraine" tab. ${detail ? `The reader is looking at: ${detail}.` : 'No region selected yet.'}`,
+  );
+
   return (
     <div className={c.mapWrap}>
       <p className={c.intro}>{t('accentAtlas.mapIntro')}</p>
@@ -169,6 +182,13 @@ function ContinuumView({ lang, t }: { lang: Lang; t: T }) {
   const n = CONTINUUM.villages;
   const [border, setBorder] = useState(Math.floor(n / 2)); // 1..n-1
 
+  useInteractiveContext(
+    'accent-atlas',
+    lang === 'uk'
+      ? `Інтерактив «Атлас вимови», вкладка «діалект чи мова?»: континуум сіл між ${CONTINUUM.cityA[lang]} та ${CONTINUUM.cityB[lang]}. Читач поставив межу «мови» на позицію ${border} із ${n}.`
+      : `"Accent Atlas" interactive, "dialect or language?" continuum tab: a chain of villages between ${CONTINUUM.cityA[lang]} and ${CONTINUUM.cityB[lang]}. The reader has placed the "language border" at position ${border} of ${n}.`,
+  );
+
   return (
     <div className={c.contWrap}>
       <p className={c.intro}>{t('accentAtlas.contIntro')}</p>
@@ -233,6 +253,14 @@ function ContinuumView({ lang, t }: { lang: Lang; t: T }) {
 function ShibbolethView({ lang, t }: { lang: Lang; t: T }) {
   const tellChars = SHIBBOLETH.tells.map((x) => x.ch);
   const [active, setActive] = useState<string | null>(null);
+
+  const tell = active ? SHIBBOLETH.tells.find((x) => x.ch === active) : null;
+  useInteractiveContext(
+    'accent-atlas',
+    lang === 'uk'
+      ? `Інтерактив «Атлас вимови», вкладка «шиболет»: тестове слово «${SHIBBOLETH.word}». ${tell ? `Читач виділив літеру «${tell.ch}» (${tell.label[lang]}): ${tell.note[lang]}` : 'Жодну літеру ще не виділено.'}`
+      : `"Accent Atlas" interactive, "shibboleth" tab: the test word "${SHIBBOLETH.word}". ${tell ? `The reader highlighted the letter "${tell.ch}" (${tell.label[lang]}): ${tell.note[lang]}` : 'No letter highlighted yet.'}`,
+  );
 
   return (
     <div className={c.shibWrap}>
