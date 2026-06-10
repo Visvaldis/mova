@@ -215,3 +215,18 @@ Phases:
   languages, dots colored by etymological origin group (tea/chai generalized). 24 curated words,
   hero-8 first (tea, coffee, pineapple/ananas, tomato, chocolate, mother, robot, sugar).
   Board task: `tasks/todo/510-word-atlas.md`.
+
+## ✅ Update — 2026-06-10 (Word Atlas M1, task 510)
+
+- **Word Atlas live** (spec: `docs/WORD-ATLAS.md`): world map of how a word sounds in ~30 languages,
+  dots colored by etymological origin group. Hero-8 words shipped: tea (te/cha split), coffee
+  (one qahwa, every continent), pineapple (ananas vs lonely English), chocolate & tomato (Nahuatl),
+  mother (the dot colors trace the IE family border), robot (Prague 1920), sugar (śarkarā vs 糖).
+- `src/lib/geo.ts`: equirectangular projection + schematic world silhouette from lat/lon rings
+  (no D3/topojson). `src/data/playground/word-atlas.json`: 31-language registry (capital anchors),
+  241 forms, every word sourced; native scripts included; "other" group renders hollow/dashed.
+- Component: picker pills, tap-to-isolate legend, origin-point pulse (reduced-motion gated,
+  finite repeat), detail card with native script + family, keyboard focus targets on dots,
+  horizontal-pan map under 640px. Island 11.3 KB gz incl. data.
+- Integrity script: no unknown langs/origins, bilingual notes complete. Board: 510 → done.
+- M2 backlog: remaining 16 words; M3: speechSynthesis 🔊, arrow-key dot walk, PNG share.

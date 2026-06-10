@@ -57,4 +57,11 @@ export const TOYS: ToyMeta[] = [
     minutes: 2,
     related: ['language-families', 'everyday-etymologies', 'etymology-myths'],
   },
+  {
+    id: 'word-atlas',
+    icon: '🌐',
+    key: 'pg.atlas',
+    minutes: 5,
+    related: ['traveling-words', 'language-families', 'sound-change'],
+  },
 ];

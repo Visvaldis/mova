@@ -9,6 +9,7 @@ import SoundShiftSandbox from '../../../components/playground/SoundShiftSandbox'
 import Stratigraph from '../../../components/playground/Stratigraph';
 import ConlangForge from '../../../components/playground/ConlangForge';
 import CognateRush from '../../../components/playground/CognateRush';
+import WordAtlas from '../../../components/playground/WordAtlas';
 
 export function getStaticPaths() {
   return LANGS.flatMap((lang) => TOYS.map((toy) => ({ params: { lang, toy: toy.id } })));
@@ -41,6 +42,7 @@ const related = toy.related
     {toy.id === 'stratigraph' && <Stratigraph client:visible lang={lang} />}
     {toy.id === 'conlang-forge' && <ConlangForge client:visible lang={lang} />}
     {toy.id === 'cognate-rush' && <CognateRush client:visible lang={lang} />}
+    {toy.id === 'word-atlas' && <WordAtlas client:visible lang={lang} />}
 
     {
       related.length > 0 && (

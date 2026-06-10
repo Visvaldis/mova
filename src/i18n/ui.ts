@@ -166,6 +166,15 @@ export const ui = {
     'pg.cgr.root': 'PIE root',
     'pg.cgr.note': 'Cognate sets from the language-families and sound-change articles; false friends curated from standard EN↔UK pitfall lists.',
 
+    'pg.atlas.title': 'Word Atlas',
+    'pg.atlas.blurb': 'Pick a word and see how the whole world says it — colors show where each form really came from.',
+    'pg.atlas.pick': 'Pick a word',
+    'pg.atlas.legend': 'Origin groups — same color, same source',
+    'pg.atlas.started': 'Where it started',
+    'pg.atlas.mapAria': 'World map of word forms',
+    'pg.atlas.mapNote': 'Dots are schematic anchors (capital cities), not language territories. Hollow dashed dots = independent local words.',
+    'pg.atlas.note': 'Forms verified against Wiktionary translation tables, cross-checked with etymonline / ЕСУМ. Tap a legend chip to isolate a group; tap a dot for the native script.',
+
     'soundShift.stage0': 'PIE / Latin',
     'soundShift.stage1': 'The shift fires',
     'soundShift.stage2': 'Modern English',
@@ -558,6 +567,15 @@ export const ui = {
     'pg.cgr.timeUp': 'Час вийшов!',
     'pg.cgr.root': 'ПІЄ-корінь',
     'pg.cgr.note': 'Когнатні ряди — зі статей про мовні родини та звукові зміни; фальшиві друзі — зі стандартних списків пасток EN↔UK.',
+
+    'pg.atlas.title': 'Атлас слів',
+    'pg.atlas.blurb': 'Оберіть слово і подивіться, як його каже весь світ — кольори показують, звідки кожна форма насправді прийшла.',
+    'pg.atlas.pick': 'Оберіть слово',
+    'pg.atlas.legend': 'Групи походження — один колір, одне джерело',
+    'pg.atlas.started': 'Де це почалося',
+    'pg.atlas.mapAria': 'Світова мапа форм слова',
+    'pg.atlas.mapNote': 'Крапки — схематичні якорі (столиці), а не території мов. Порожні пунктирні крапки — незалежні місцеві слова.',
+    'pg.atlas.note': 'Форми звірено з таблицями перекладів Wiktionary та перехресно з etymonline / ЕСУМ. Торкніться чипа в легенді, щоб ізолювати групу; торкніться крапки — побачите рідне письмо.',
 
     'soundShift.stage0': 'ПІЄ / латина',
     'soundShift.stage1': 'Зсув спрацьовує',
