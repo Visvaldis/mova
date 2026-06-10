@@ -250,6 +250,41 @@ export const ui = {
     'slangDecoder.wrong': 'Not that one — try another job.',
     'slangDecoder.matched': 'Matched all four — that’s emoji as gesture.',
     'slangDecoder.reset': 'Reset',
+
+    'aiLanguageLab.tabSim': 'Drift simulator',
+    'aiLanguageLab.tabQuiz': 'Human or AI?',
+    'aiLanguageLab.disclaimerTag': 'Illustrative model — not research.',
+    'aiLanguageLab.disclaimerBody':
+      'A teaching cartoon of two forces the article describes, not a measurement of any real corpus.',
+    'aiLanguageLab.simIntro':
+      'Two participants now shape language. Set how much text AI generates and how fast humans coin new forms, then watch vocabulary diversity drift across generations.',
+    'aiLanguageLab.aiShare': 'AI-generated text share',
+    'aiLanguageLab.innovation': 'Human innovation rate',
+    'aiLanguageLab.chartAria':
+      'Line chart of simulated vocabulary diversity across generations, indexed to 100 at today; it rises with human innovation and falls with AI share.',
+    'aiLanguageLab.yHigh': 'more diverse',
+    'aiLanguageLab.xAxis': 'generations →',
+    'aiLanguageLab.baselineLabel': 'today',
+    'aiLanguageLab.replay': 'Replay',
+    'aiLanguageLab.favored':
+      'Early evidence: after 2023 the chatbot-favored words delve, boast, and tapestry measurably spiked in human-written abstracts and emails.',
+    'aiLanguageLab.quizIntro':
+      'One idea, two ways to say it. The article’s tells: AI leans on safe, generic, fluent prose; humans keep the concrete, odd detail.',
+    'aiLanguageLab.question': 'Question',
+    'aiLanguageLab.of': 'of',
+    'aiLanguageLab.pickPrompt': 'Which one was written by AI?',
+    'aiLanguageLab.pickAria': 'Choose this as the AI-written sentence',
+    'aiLanguageLab.tagAi': 'AI',
+    'aiLanguageLab.tagHuman': 'Human',
+    'aiLanguageLab.correct': 'Correct.',
+    'aiLanguageLab.incorrect': 'Not quite.',
+    'aiLanguageLab.next': 'Next',
+    'aiLanguageLab.seeScore': 'See score',
+    'aiLanguageLab.scoreLead': 'score',
+    'aiLanguageLab.scoreMsgHigh': 'Sharp eye — but the article’s point stands: the tells are fading fast.',
+    'aiLanguageLab.scoreMsgMid': 'A coin-flip on the hard ones — which is the article’s point: it’s getting hard to tell.',
+    'aiLanguageLab.scoreMsgLow': 'Tricky, isn’t it? That blur is exactly what the article is about.',
+    'aiLanguageLab.restart': 'Play again',
   },
   uk: {
     'brand': 'Мова',
@@ -492,6 +527,41 @@ export const ui = {
     'slangDecoder.wrong': 'Не це — спробуйте іншу роль.',
     'slangDecoder.matched': 'Усі чотири зіставлено — ось вам емодзі як жест.',
     'slangDecoder.reset': 'Скинути',
+
+    'aiLanguageLab.tabSim': 'Симулятор дрейфу',
+    'aiLanguageLab.tabQuiz': 'Людина чи ШІ?',
+    'aiLanguageLab.disclaimerTag': 'Ілюстративна модель — не дослідження.',
+    'aiLanguageLab.disclaimerBody':
+      'Навчальна карикатура двох сил, описаних у статті, а не вимірювання реального корпусу.',
+    'aiLanguageLab.simIntro':
+      'Тепер мову формують двоє учасників. Задайте, скільки тексту генерує ШІ і як швидко люди створюють нові форми, — і дивіться, як різноманіття словника дрейфує крізь покоління.',
+    'aiLanguageLab.aiShare': 'Частка тексту, згенерованого ШІ',
+    'aiLanguageLab.innovation': 'Темп людських новотворів',
+    'aiLanguageLab.chartAria':
+      'Лінійний графік змодельованого різноманіття словника крізь покоління, з індексом 100 на «сьогодні»; він зростає від людських новотворів і падає від частки ШІ.',
+    'aiLanguageLab.yHigh': 'різноманітніше',
+    'aiLanguageLab.xAxis': 'покоління →',
+    'aiLanguageLab.baselineLabel': 'сьогодні',
+    'aiLanguageLab.replay': 'Відтворити',
+    'aiLanguageLab.favored':
+      'Перші докази: після 2023 року улюблені слова чат-ботів delve, boast і tapestry помітно почастішали в людських анотаціях та листах.',
+    'aiLanguageLab.quizIntro':
+      'Одна думка, два способи сказати. Підказки зі статті: ШІ тяжіє до безпечної, загальної, гладенької прози; люди зберігають конкретну, дивну деталь.',
+    'aiLanguageLab.question': 'Питання',
+    'aiLanguageLab.of': 'з',
+    'aiLanguageLab.pickPrompt': 'Що з цього написав ШІ?',
+    'aiLanguageLab.pickAria': 'Обрати це як речення, написане ШІ',
+    'aiLanguageLab.tagAi': 'ШІ',
+    'aiLanguageLab.tagHuman': 'Людина',
+    'aiLanguageLab.correct': 'Правильно.',
+    'aiLanguageLab.incorrect': 'Не зовсім.',
+    'aiLanguageLab.next': 'Далі',
+    'aiLanguageLab.seeScore': 'Результат',
+    'aiLanguageLab.scoreLead': 'рахунок',
+    'aiLanguageLab.scoreMsgHigh': 'Гостре око — але теза статті лишається: підказки швидко зникають.',
+    'aiLanguageLab.scoreMsgMid': 'На складних — як підкидання монетки; у цьому й суть статті: розрізнити дедалі важче.',
+    'aiLanguageLab.scoreMsgLow': 'Підступно, чи не так? Саме про це розмиття і йдеться у статті.',
+    'aiLanguageLab.restart': 'Ще раз',
   },
 } as const;
 
