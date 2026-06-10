@@ -1,0 +1,538 @@
+/* ============================================================
+   vitality-map — split view (death | revival) + a revival-recipe gauge.
+
+   CSS Module: locally scoped, can't leak into `.prose`. Every color is a topic
+   variable inherited from <body data-topic="revival"> — never bare hex.
+   ============================================================ */
+
+.wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ---- split: death (left) | revival (right) ---- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 720px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.col {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.colTitle {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.colTitle .dot {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ============================================================
+   Death side
+   ============================================================ */
+
+/* counter */
+.counter {
+  display: grid;
+  gap: 0.7rem;
+}
+.statBig {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.statNum {
+  font-size: clamp(2rem, 8vw, 2.7rem);
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.statUnit {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.endangered {
+  display: grid;
+  gap: 0.35rem;
+}
+.endHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.endPct {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.bar {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.barFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+/* falling-silent ticker (candle motif) */
+.ticker {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+}
+.tickerLabel {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.candles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.45rem 0 0.4rem;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+.candle {
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.candleOut {
+  opacity: 0.22;
+  filter: grayscale(1);
+}
+.tickerNote {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* last-speaker stories */
+.storyList {
+  display: grid;
+  gap: 0.4rem;
+}
+.storyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  text-align: left;
+  width: 100%;
+  border: 1.5px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.storyBtn:hover {
+  border-color: var(--accent);
+}
+.storyBtn[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.storyName {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.storyLang {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.storyChevron {
+  color: var(--accent);
+  font-weight: 800;
+}
+.storyCard {
+  border-left: 4px solid var(--accent);
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  animation: fadeIn 0.3s ease both;
+}
+.storyMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0 0 0.45rem;
+}
+.metaItem {
+  font-size: 0.74rem;
+}
+.metaLabel {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-right: 0.3rem;
+}
+.storyText {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* death-by-shift */
+.shift {
+  display: grid;
+  gap: 0.5rem;
+}
+.shiftRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+.shiftStep {
+  display: grid;
+  gap: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.65rem;
+  background: var(--bg-elev);
+}
+.shiftWho {
+  font-weight: 800;
+  font-size: 0.86rem;
+}
+.shiftState {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.shiftMeter {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.shiftMeterFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* ============================================================
+   Revival side
+   ============================================================ */
+.hebrewCard {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.6rem 0.6rem;
+}
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.grid {
+  stroke: var(--line);
+  stroke-width: 0.6;
+  opacity: 0.6;
+}
+.gridLabel {
+  fill: var(--muted);
+  font-size: 7px;
+  font-weight: 700;
+}
+.axisLabel {
+  fill: var(--muted);
+  font-size: 7.5px;
+  font-weight: 700;
+}
+.curve {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+.anchor {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 1.4;
+}
+.anchorLabel {
+  fill: var(--text);
+  font-size: 7.5px;
+  font-weight: 800;
+}
+.replayRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.4rem;
+}
+.hebrewNote {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0.5rem 0 0;
+}
+.hebrewBody {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0.6rem 0 0;
+}
+
+/* mini-cases */
+.miniGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.miniBtn {
+  display: grid;
+  gap: 0.05rem;
+  text-align: left;
+  border: 1.5px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.miniBtn:hover {
+  border-color: var(--accent);
+}
+.miniBtn[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.miniName {
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.miniTag {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.miniDetail {
+  border-left: 4px solid var(--accent);
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  animation: fadeIn 0.3s ease both;
+}
+.miniDetail p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Revival recipe — gauge + toggles
+   ============================================================ */
+.recipe {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .recipe {
+    grid-template-columns: minmax(0, 280px) 1fr;
+    align-items: start;
+  }
+}
+
+.gaugeBox {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+}
+.gaugeSvg {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+}
+.gaugeTrack {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+.gaugeFill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 16;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+.needle {
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.needleLine {
+  stroke: var(--text);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.needleHub {
+  fill: var(--text);
+}
+.gaugePct {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.gaugeBand {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.toggles {
+  display: grid;
+  gap: 0.5rem;
+}
+.toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-align: left;
+  width: 100%;
+  border: 1.5px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.toggle:hover {
+  border-color: var(--accent);
+}
+.toggle[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.toggleBox {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  color: var(--on-accent);
+  margin-top: 0.05rem;
+}
+.toggle[aria-pressed='true'] .toggleBox {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.toggleMain {
+  display: grid;
+  gap: 0.12rem;
+}
+.toggleTop {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.toggleLabel {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.weightTag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.02rem 0.4rem;
+}
+.heaviest {
+  color: var(--on-accent);
+  background: var(--accent);
+}
+.toggleNote {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.recipeFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.illus {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+.intro {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.sectionHead {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 420px) {
+  .statNum { font-size: 2rem; }
+}

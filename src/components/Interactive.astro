@@ -22,7 +22,8 @@ import UkrainianTimeline from './interactive/UkrainianTimeline.tsx';
 import SlangDecoder from './interactive/SlangDecoder.tsx';
 import AiLanguageLab from './interactive/AiLanguageLab.tsx';
 import CreoleLab from './interactive/CreoleLab.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab']);
+import VitalityMap from './interactive/VitalityMap.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -35,6 +36,7 @@ const isBuilt = BUILT.has(id);
   {id === 'slang-decoder' && <SlangDecoder client:visible lang={lang} />}
   {id === 'ai-language-lab' && <AiLanguageLab client:visible lang={lang} />}
   {id === 'creole-lab' && <CreoleLab client:visible lang={lang} />}
+  {id === 'vitality-map' && <VitalityMap client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder

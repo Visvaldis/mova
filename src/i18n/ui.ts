@@ -357,6 +357,50 @@ export const ui = {
     'creoleLab.typeSign': 'Sign language',
     'creoleLab.typeCreole': 'Creole',
     'creoleLab.mapHint': 'Tap a marker to see its story.',
+
+    'vitalityMap.intro':
+      'A language falls silent roughly every few weeks — yet the silence has a reverse gear. The death of languages on the left; their resurrection on the right.',
+    'vitalityMap.deathTitle': 'How languages fall silent',
+    'vitalityMap.revivalTitle': 'The silence can be reversed',
+    'vitalityMap.livingUnit': 'living languages',
+    'vitalityMap.endangeredLabel': 'classified endangered',
+    'vitalityMap.tickerLabel': 'Falling silent',
+    'vitalityMap.tickerNote':
+      'Illustrative pace — not a live count. At current rates a language loses its last speaker every few weeks, and half of today’s languages may fall silent this century.',
+    'vitalityMap.lastSpeakerTitle': 'Last speaker',
+    'vitalityMap.lastSpeakerHint': 'Tap a name to read the story.',
+    'vitalityMap.died': 'Died',
+    'vitalityMap.place': 'Place',
+    'vitalityMap.shiftTitle': 'Death by shift',
+    'vitalityMap.shiftNote':
+      'Languages almost never die because their speakers die — they die by shift, as each generation passes on less. Three generations is all it takes.',
+    'vitalityMap.hebrewTitle': 'Hebrew: the resurrection that worked',
+    'vitalityMap.hebrewBody':
+      'In 1880 Hebrew had not been anyone’s mother tongue for ~1,700 years. Eliezer Ben-Yehuda raised his son as the first native speaker in centuries, coined thousands of words, and pushed Hebrew into schools. Within two generations it was a society’s native tongue — today around nine million speakers. It remains the only complete revival of a language with zero native speakers.',
+    'vitalityMap.hebrewNote':
+      'Native speakers, log scale. Only the two endpoints are article facts; the curve between them is schematic, not year-by-year data.',
+    'vitalityMap.chartAria':
+      'Line chart on a logarithmic scale: Hebrew native speakers rise from roughly zero in 1880 to about nine million today.',
+    'vitalityMap.chartStart': '≈0 native speakers',
+    'vitalityMap.chartEnd': '~9M today',
+    'vitalityMap.grid1k': '1K',
+    'vitalityMap.grid1m': '1M',
+    'vitalityMap.today': 'today',
+    'vitalityMap.replay': 'Replay',
+    'vitalityMap.miniTitle': 'More revivals',
+    'vitalityMap.miniHint': 'Tap a case to see what it used.',
+    'vitalityMap.recipeTitle': 'Build a revival',
+    'vitalityMap.recipeIntro':
+      'Switch on the ingredients of a revival and watch the vitality gauge respond. One of them weighs more than all the rest.',
+    'vitalityMap.gaugeAria': 'Vitality gauge',
+    'vitalityMap.heaviest': 'heaviest',
+    'vitalityMap.togglesAria': 'Revival ingredients',
+    'vitalityMap.homeOnNote':
+      'Home use is on — the one ingredient a revival cannot skip. It lifts the needle more than any other single switch.',
+    'vitalityMap.homeOffNote':
+      'Home use is off. It is the hardest ingredient and the one that matters most — nothing reaches full vitality without it. A million apps cannot replace one grandmother.',
+    'vitalityMap.illustrative': 'Illustrative model — not measured weights.',
+    'vitalityMap.reset': 'Reset',
   },
   uk: {
     'brand': 'Мова',
@@ -706,6 +750,50 @@ export const ui = {
     'creoleLab.typeSign': 'Жестова мова',
     'creoleLab.typeCreole': 'Креол',
     'creoleLab.mapHint': 'Торкніться позначки, щоб побачити її історію.',
+
+    'vitalityMap.intro':
+      'Приблизно кожні кілька тижнів якась мова замовкає — але в тиші є задня передача. Зліва — смерть мов; справа — їхнє воскресіння.',
+    'vitalityMap.deathTitle': 'Як мови замовкають',
+    'vitalityMap.revivalTitle': 'Тишу можна повернути назад',
+    'vitalityMap.livingUnit': 'живих мов',
+    'vitalityMap.endangeredLabel': 'класифіковано як загрожені',
+    'vitalityMap.tickerLabel': 'Замовкають',
+    'vitalityMap.tickerNote':
+      'Ілюстративний темп — не живий лічильник. За нинішніх темпів мова втрачає останнього мовця кожні кілька тижнів, а половина сьогоднішніх мов може замовкнути ще цього століття.',
+    'vitalityMap.lastSpeakerTitle': 'Останній мовець',
+    'vitalityMap.lastSpeakerHint': 'Торкніться імені, щоб прочитати історію.',
+    'vitalityMap.died': 'Померла',
+    'vitalityMap.place': 'Місце',
+    'vitalityMap.shiftTitle': 'Смерть через зсув',
+    'vitalityMap.shiftNote':
+      'Мови майже ніколи не помирають через смерть мовців — вони помирають через зсув, бо кожне покоління передає менше. Трьох поколінь достатньо.',
+    'vitalityMap.hebrewTitle': 'Іврит: воскресіння, що вдалося',
+    'vitalityMap.hebrewBody':
+      '1880 року іврит уже близько 1 700 років не був нічиєю рідною мовою. Еліезер Бен-Єгуда виховав свого сина першим за століття носієм івриту від народження, укарбував тисячі слів і проштовхнув іврит у школи. За два покоління він став рідною мовою цілого суспільства — сьогодні близько дев’яти мільйонів мовців. Це досі єдине повне відродження мови з нулем носіїв.',
+    'vitalityMap.hebrewNote':
+      'Носії від народження, логарифмічна шкала. Лише дві крайні точки — факти зі статті; крива між ними схематична, а не дані рік за роком.',
+    'vitalityMap.chartAria':
+      'Лінійний графік у логарифмічній шкалі: кількість носіїв івриту від народження зростає приблизно з нуля 1880 року до близько дев’яти мільйонів сьогодні.',
+    'vitalityMap.chartStart': '≈0 носіїв',
+    'vitalityMap.chartEnd': '~9 млн сьогодні',
+    'vitalityMap.grid1k': '1 тис.',
+    'vitalityMap.grid1m': '1 млн',
+    'vitalityMap.today': 'сьогодні',
+    'vitalityMap.replay': 'Відтворити',
+    'vitalityMap.miniTitle': 'Інші відродження',
+    'vitalityMap.miniHint': 'Торкніться випадку, щоб побачити, що він використав.',
+    'vitalityMap.recipeTitle': 'Збудуйте відродження',
+    'vitalityMap.recipeIntro':
+      'Вмикайте інгредієнти відродження й дивіться, як реагує шкала життєздатності. Один із них важить більше за всі решту разом.',
+    'vitalityMap.gaugeAria': 'Шкала життєздатності',
+    'vitalityMap.heaviest': 'найважливіше',
+    'vitalityMap.togglesAria': 'Інгредієнти відродження',
+    'vitalityMap.homeOnNote':
+      'Вживання вдома ввімкнено — єдиний інгредієнт, який відродження не може пропустити. Він піднімає стрілку більше за будь-який інший окремий перемикач.',
+    'vitalityMap.homeOffNote':
+      'Вживання вдома вимкнено. Це найважчий інгредієнт і найважливіший — ніщо не досягає повної життєздатності без нього. Мільйон застосунків не замінить однієї бабусі.',
+    'vitalityMap.illustrative': 'Ілюстративна модель — не виміряні ваги.',
+    'vitalityMap.reset': 'Скинути',
   },
 } as const;
 
