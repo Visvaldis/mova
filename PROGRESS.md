@@ -278,3 +278,11 @@ Phases:
   Chinese translated it).
 - 725 total forms, all integrity-checked (no unknown langs/origins/dups, bilingual notes complete).
 - Island now 41.5 KB gz (data-heavy; M3 candidate: split word data into a lazy sub-chunk).
+
+## 📐 Planned — 2026-06-10 (Journey + Word Index)
+
+- `docs/JOURNEY.md` — guided course mode: 6 chapters over all 18 articles + 6 toys, 36 sourced
+  checkpoint questions, localStorage progress, Grimm's-Law certificate PNG. Board: tasks/todo/520.
+- `docs/WORD-INDEX.md` — `/words/`: build-time aggregation of the five curated datasets
+  (~1,000 entries) into one searchable, crawlable index; deep-link params for WordAtlas/WTM.
+  Board: tasks/todo/530.
