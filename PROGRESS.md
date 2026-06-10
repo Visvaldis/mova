@@ -118,3 +118,16 @@ Phases:
   `BUILT` set for the placeholder fallback. Follow this pattern for the remaining 16.
 - Board: moved 050, 055, 100, 230, 400 → done (050/055 were closed by the content session; 400 by
   Playground P1+P2). Build green: 64 pages.
+
+## ✅ Update — 2026-06-10 (interactives 110 + 120)
+
+- **`origins-timeline` live** (task 110): log-scale SVG axis 7 Mya → today, six milestone nodes
+  (click + keyboard + prev/next step buttons for mobile), explainer cards condensed from the article,
+  compare-hypotheses toggle with three schematic bands. Undated-in-article milestones (Homo erectus,
+  FOXP2) carry `dateTodo` / `TODO(seva)` flags in `originsTimeline.data.ts`.
+- **`family-tree` live** (task 120): collapsible PIE tree — 10 branches, 27 languages; EN/UK
+  "you are here" stars; extinct = dashed/grey/†; hover = speakers + first attestation; click a leaf →
+  mother/three/night cognate card with PIE forms; tree ⇄ schematic-map toggle (map dots open the
+  branch in tree view). `TODO(seva)`: speaker counts & attestation dates in `familyTree.data.ts`
+  are rough public figures, not from the article — verify before publishing.
+- Board: 110, 120 → done. Build green: 64 pages, islands verified SSR in both languages.

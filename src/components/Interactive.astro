@@ -16,13 +16,17 @@ const desc = info?.desc[lang] ?? '';
 // below; ids not in BUILT render the styled Placeholder.
 import SoundShift from './interactive/SoundShift.tsx';
 import MythBuster from './interactive/MythBuster.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster']);
+import OriginsTimeline from './interactive/OriginsTimeline.tsx';
+import FamilyTree from './interactive/FamilyTree.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree']);
 const isBuilt = BUILT.has(id);
 ---
 
 <div class="interactive-wrap" data-interactive={id}>
   {id === 'sound-shift' && <SoundShift client:visible lang={lang} />}
   {id === 'myth-buster' && <MythBuster client:visible lang={lang} />}
+  {id === 'origins-timeline' && <OriginsTimeline client:visible lang={lang} />}
+  {id === 'family-tree' && <FamilyTree client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder
