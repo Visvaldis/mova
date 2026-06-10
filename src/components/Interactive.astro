@@ -32,7 +32,8 @@ import ThoughtLens from './interactive/ThoughtLens.tsx';
 import AccentAtlas from './interactive/AccentAtlas.tsx';
 import ConlangWorkbench from './interactive/ConlangWorkbench.tsx';
 import CodeVsSpeech from './interactive/CodeVsSpeech.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas', 'conlang-workbench', 'code-vs-speech']);
+import NameSmith from './interactive/NameSmith.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map', 'thought-lens', 'accent-atlas', 'conlang-workbench', 'code-vs-speech', 'name-smith']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -55,6 +56,7 @@ const isBuilt = BUILT.has(id);
   {id === 'accent-atlas' && <AccentAtlas client:visible lang={lang} />}
   {id === 'conlang-workbench' && <ConlangWorkbench client:visible lang={lang} />}
   {id === 'code-vs-speech' && <CodeVsSpeech client:visible lang={lang} />}
+  {id === 'name-smith' && <NameSmith client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder

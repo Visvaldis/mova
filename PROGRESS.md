@@ -398,3 +398,9 @@ CSS modules.
 - Each pair: identical frontmatter, INTERACTIVE marker, pull quote, 4 sources, cross-links to sound-change / names / language-death / new-languages articles.
 - 3 new interactive specs added to CLAUDE.md (esperanto-machine, name-smith, alien-grammar-gym) + interactiveInfo entries (EN+UK) so placeholders render localized; board cards 260/270/280 created in tasks/todo/ for the build agent.
 - Verified: build clean, 6 pages render, home grid 21 cards, conlangs topic hub lists 4 articles, frontmatter pairs consistent.
+
+## 2026-06-10 — name-smith interactive (task 270)
+
+- Built the Middle-earth name forge for tolkien-languages: 6 attested element tiles; mor+dor / mor+ia / mith+randir reveal the article's canonical glosses and notes, any other combo gets the "Tolkien might object" badge with literal element glosses only (no invented Elvish).
+- Quenya vs Sindarin sound-palette cards (Finnish vs Welsh models, article sample lines) with a flavor highlighter that marks long vowels / Welsh-style clusters; derivation mini-tree (Primitive Elvish → sound laws → two daughters), caption "Grimm's Law, but fictional".
+- 14 nameSmith.* keys EN+UK; BUILT set + explicit island render in Interactive.astro. Bundle 3.1 KB gz; tsc/build clean (other agent's in-flight esperanto-machine excluded from checks).

@@ -65,6 +65,20 @@ export const ui = {
     'timeline.next': 'Later',
     'timeline.openArticle': 'Read the article',
 
+    'nameSmith.forgeTitle': 'Forge a name',
+    'nameSmith.forgeHint': 'Pick two attested elements — the map of Middle-earth is a lexicon in disguise.',
+    'nameSmith.clear': 'Clear',
+    'nameSmith.attested': 'Attested — Tolkien wrote this one',
+    'nameSmith.unattested': 'Unattested — Tolkien might object',
+    'nameSmith.literally': 'literally:',
+    'nameSmith.paletteTitle': 'Two flavors of Elvish',
+    'nameSmith.highlight': 'Highlight the flavor',
+    'nameSmith.model': 'Real-world model',
+    'nameSmith.treeTitle': 'One ancestor, two daughters',
+    'nameSmith.proto': 'Primitive Elvish',
+    'nameSmith.soundLaws': 'sound laws',
+    'nameSmith.treeCaption': 'Tolkien derived both languages from one invented ancestor by rule-bound sound changes — Grimm’s Law, but fictional.',
+
     'about.title': 'About Mova',
     'about.p1':
       'Mova — Ukrainian for “language” — is an interactive, bilingual project about how human language came to be, and how it keeps changing.',
@@ -816,6 +830,20 @@ export const ui = {
     'timeline.prev': 'Раніше',
     'timeline.next': 'Пізніше',
     'timeline.openArticle': 'Читати статтю',
+
+    'nameSmith.forgeTitle': 'Викуйте ім’я',
+    'nameSmith.forgeHint': 'Оберіть два засвідчені елементи — мапа Середзем’я є замаскованим лексиконом.',
+    'nameSmith.clear': 'Очистити',
+    'nameSmith.attested': 'Засвідчено — Толкін це написав',
+    'nameSmith.unattested': 'Не засвідчено — Толкін міг би заперечити',
+    'nameSmith.literally': 'дослівно:',
+    'nameSmith.paletteTitle': 'Два смаки ельфійської',
+    'nameSmith.highlight': 'Підсвітити смак',
+    'nameSmith.model': 'Земна модель',
+    'nameSmith.treeTitle': 'Один предок, дві доньки',
+    'nameSmith.proto': 'Прадавня ельфійська',
+    'nameSmith.soundLaws': 'звукові закони',
+    'nameSmith.treeCaption': 'Толкін вивів обидві мови з одного вигаданого предка законослухняними звуковими змінами — закон Ґрімма, але художній.',
 
     'about.title': 'Про Мову',
     'about.p1':

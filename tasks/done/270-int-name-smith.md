@@ -30,3 +30,7 @@ accent → `conlangs`. `interactiveInfo` entry already in `ui.ts`; add to BUILT 
 
 - [ ] `npm run build` → 0 errors; 375px; keyboard accessible; reduced-motion honored.
 - [ ] No invented Elvish — only article-attested elements and lines.
+
+## Done — 2026-06-10
+
+Built NameSmith.tsx + nameSmith.data.ts (3.1 KB gz): forge with 6 attested elements (canonical Mordor/Moria/Mithrandir with article glosses, unattested badge otherwise), Quenya/Sindarin palette comparator with flavor highlighter, derivation mini-tree. 14 nameSmith.* keys EN+UK. Data integrity script ALL OK; island SSR verified in both languages.
