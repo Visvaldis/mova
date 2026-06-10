@@ -1,384 +1,2091 @@
 {
   "_comment": "Word Atlas data (docs/WORD-ATLAS.md). Forms verified against Wiktionary translation tables cross-checked with etymonline/ЕСУМ; uncertain forms are omitted, debated origins go to the 'unclear' group. Coordinates are capital-city anchors (schematic), not territories. Group colors are assigned per word by order: teal, amber, violet, rose, blue, green; 'unclear' renders hollow grey.",
   "languages": {
-    "english":    { "name": { "en": "English", "uk": "Англійська" },       "lat": 51.5,  "lon": -0.1,  "family": { "en": "Indo-European · Germanic", "uk": "Індоєвропейська · германська" } },
-    "ukrainian":  { "name": { "en": "Ukrainian", "uk": "Українська" },     "lat": 50.4,  "lon": 30.5,  "family": { "en": "Indo-European · Slavic", "uk": "Індоєвропейська · слов'янська" } },
-    "spanish":    { "name": { "en": "Spanish", "uk": "Іспанська" },        "lat": 40.4,  "lon": -3.7,  "family": { "en": "Indo-European · Romance", "uk": "Індоєвропейська · романська" } },
-    "french":     { "name": { "en": "French", "uk": "Французька" },        "lat": 48.9,  "lon": 2.4,   "family": { "en": "Indo-European · Romance", "uk": "Індоєвропейська · романська" } },
-    "german":     { "name": { "en": "German", "uk": "Німецька" },          "lat": 52.5,  "lon": 13.4,  "family": { "en": "Indo-European · Germanic", "uk": "Індоєвропейська · германська" } },
-    "italian":    { "name": { "en": "Italian", "uk": "Італійська" },       "lat": 41.9,  "lon": 12.5,  "family": { "en": "Indo-European · Romance", "uk": "Індоєвропейська · романська" } },
-    "portuguese": { "name": { "en": "Portuguese", "uk": "Португальська" }, "lat": 38.7,  "lon": -9.1,  "family": { "en": "Indo-European · Romance", "uk": "Індоєвропейська · романська" } },
-    "dutch":      { "name": { "en": "Dutch", "uk": "Нідерландська" },      "lat": 52.4,  "lon": 4.9,   "family": { "en": "Indo-European · Germanic", "uk": "Індоєвропейська · германська" } },
-    "polish":     { "name": { "en": "Polish", "uk": "Польська" },          "lat": 52.2,  "lon": 21.0,  "family": { "en": "Indo-European · Slavic", "uk": "Індоєвропейська · слов'янська" } },
-    "czech":      { "name": { "en": "Czech", "uk": "Чеська" },             "lat": 50.1,  "lon": 14.4,  "family": { "en": "Indo-European · Slavic", "uk": "Індоєвропейська · слов'янська" } },
-    "russian":    { "name": { "en": "Russian", "uk": "Російська" },        "lat": 55.8,  "lon": 37.6,  "family": { "en": "Indo-European · Slavic", "uk": "Індоєвропейська · слов'янська" } },
-    "swedish":    { "name": { "en": "Swedish", "uk": "Шведська" },         "lat": 59.3,  "lon": 18.1,  "family": { "en": "Indo-European · Germanic", "uk": "Індоєвропейська · германська" } },
-    "finnish":    { "name": { "en": "Finnish", "uk": "Фінська" },          "lat": 60.2,  "lon": 24.9,  "family": { "en": "Uralic", "uk": "Уральська" } },
-    "hungarian":  { "name": { "en": "Hungarian", "uk": "Угорська" },       "lat": 47.5,  "lon": 19.0,  "family": { "en": "Uralic", "uk": "Уральська" } },
-    "romanian":   { "name": { "en": "Romanian", "uk": "Румунська" },       "lat": 44.4,  "lon": 26.1,  "family": { "en": "Indo-European · Romance", "uk": "Індоєвропейська · романська" } },
-    "greek":      { "name": { "en": "Greek", "uk": "Грецька" },            "lat": 38.0,  "lon": 23.7,  "family": { "en": "Indo-European · Hellenic", "uk": "Індоєвропейська · грецька" } },
-    "turkish":    { "name": { "en": "Turkish", "uk": "Турецька" },         "lat": 39.9,  "lon": 32.9,  "family": { "en": "Turkic", "uk": "Тюркська" } },
-    "arabic":     { "name": { "en": "Arabic", "uk": "Арабська" },          "lat": 30.0,  "lon": 31.2,  "family": { "en": "Afro-Asiatic · Semitic", "uk": "Афразійська · семітська" } },
-    "hebrew":     { "name": { "en": "Hebrew", "uk": "Іврит" },             "lat": 31.8,  "lon": 35.2,  "family": { "en": "Afro-Asiatic · Semitic", "uk": "Афразійська · семітська" } },
-    "persian":    { "name": { "en": "Persian", "uk": "Перська" },          "lat": 35.7,  "lon": 51.4,  "family": { "en": "Indo-European · Iranian", "uk": "Індоєвропейська · іранська" } },
-    "hindi":      { "name": { "en": "Hindi", "uk": "Гінді" },              "lat": 28.6,  "lon": 77.2,  "family": { "en": "Indo-European · Indo-Aryan", "uk": "Індоєвропейська · індоарійська" } },
-    "bengali":    { "name": { "en": "Bengali", "uk": "Бенгальська" },      "lat": 23.8,  "lon": 90.4,  "family": { "en": "Indo-European · Indo-Aryan", "uk": "Індоєвропейська · індоарійська" } },
-    "mandarin":   { "name": { "en": "Mandarin", "uk": "Китайська" },       "lat": 39.9,  "lon": 116.4, "family": { "en": "Sino-Tibetan", "uk": "Сино-тибетська" } },
-    "japanese":   { "name": { "en": "Japanese", "uk": "Японська" },        "lat": 35.7,  "lon": 139.7, "family": { "en": "Japonic", "uk": "Японська родина" } },
-    "korean":     { "name": { "en": "Korean", "uk": "Корейська" },         "lat": 37.6,  "lon": 127.0, "family": { "en": "Koreanic", "uk": "Корейська родина" } },
-    "vietnamese": { "name": { "en": "Vietnamese", "uk": "В'єтнамська" },   "lat": 21.0,  "lon": 105.8, "family": { "en": "Austroasiatic", "uk": "Австроазійська" } },
-    "thai":       { "name": { "en": "Thai", "uk": "Тайська" },             "lat": 13.8,  "lon": 100.5, "family": { "en": "Kra-Dai", "uk": "Кра-дай" } },
-    "indonesian": { "name": { "en": "Indonesian", "uk": "Індонезійська" }, "lat": -6.2,  "lon": 106.8, "family": { "en": "Austronesian", "uk": "Австронезійська" } },
-    "tagalog":    { "name": { "en": "Tagalog", "uk": "Тагальська" },       "lat": 14.6,  "lon": 121.0, "family": { "en": "Austronesian", "uk": "Австронезійська" } },
-    "swahili":    { "name": { "en": "Swahili", "uk": "Суахілі" },          "lat": -1.3,  "lon": 36.8,  "family": { "en": "Niger-Congo · Bantu", "uk": "Нігеро-конголезька · банту" } },
-    "georgian":   { "name": { "en": "Georgian", "uk": "Грузинська" },      "lat": 41.7,  "lon": 44.8,  "family": { "en": "Kartvelian", "uk": "Картвельська" } }
+    "english": {
+      "name": {
+        "en": "English",
+        "uk": "Англійська"
+      },
+      "lat": 51.5,
+      "lon": -0.1,
+      "family": {
+        "en": "Indo-European · Germanic",
+        "uk": "Індоєвропейська · германська"
+      }
+    },
+    "ukrainian": {
+      "name": {
+        "en": "Ukrainian",
+        "uk": "Українська"
+      },
+      "lat": 50.4,
+      "lon": 30.5,
+      "family": {
+        "en": "Indo-European · Slavic",
+        "uk": "Індоєвропейська · слов'янська"
+      }
+    },
+    "spanish": {
+      "name": {
+        "en": "Spanish",
+        "uk": "Іспанська"
+      },
+      "lat": 40.4,
+      "lon": -3.7,
+      "family": {
+        "en": "Indo-European · Romance",
+        "uk": "Індоєвропейська · романська"
+      }
+    },
+    "french": {
+      "name": {
+        "en": "French",
+        "uk": "Французька"
+      },
+      "lat": 48.9,
+      "lon": 2.4,
+      "family": {
+        "en": "Indo-European · Romance",
+        "uk": "Індоєвропейська · романська"
+      }
+    },
+    "german": {
+      "name": {
+        "en": "German",
+        "uk": "Німецька"
+      },
+      "lat": 52.5,
+      "lon": 13.4,
+      "family": {
+        "en": "Indo-European · Germanic",
+        "uk": "Індоєвропейська · германська"
+      }
+    },
+    "italian": {
+      "name": {
+        "en": "Italian",
+        "uk": "Італійська"
+      },
+      "lat": 41.9,
+      "lon": 12.5,
+      "family": {
+        "en": "Indo-European · Romance",
+        "uk": "Індоєвропейська · романська"
+      }
+    },
+    "portuguese": {
+      "name": {
+        "en": "Portuguese",
+        "uk": "Португальська"
+      },
+      "lat": 38.7,
+      "lon": -9.1,
+      "family": {
+        "en": "Indo-European · Romance",
+        "uk": "Індоєвропейська · романська"
+      }
+    },
+    "dutch": {
+      "name": {
+        "en": "Dutch",
+        "uk": "Нідерландська"
+      },
+      "lat": 52.4,
+      "lon": 4.9,
+      "family": {
+        "en": "Indo-European · Germanic",
+        "uk": "Індоєвропейська · германська"
+      }
+    },
+    "polish": {
+      "name": {
+        "en": "Polish",
+        "uk": "Польська"
+      },
+      "lat": 52.2,
+      "lon": 21.0,
+      "family": {
+        "en": "Indo-European · Slavic",
+        "uk": "Індоєвропейська · слов'янська"
+      }
+    },
+    "czech": {
+      "name": {
+        "en": "Czech",
+        "uk": "Чеська"
+      },
+      "lat": 50.1,
+      "lon": 14.4,
+      "family": {
+        "en": "Indo-European · Slavic",
+        "uk": "Індоєвропейська · слов'янська"
+      }
+    },
+    "russian": {
+      "name": {
+        "en": "Russian",
+        "uk": "Російська"
+      },
+      "lat": 55.8,
+      "lon": 37.6,
+      "family": {
+        "en": "Indo-European · Slavic",
+        "uk": "Індоєвропейська · слов'янська"
+      }
+    },
+    "swedish": {
+      "name": {
+        "en": "Swedish",
+        "uk": "Шведська"
+      },
+      "lat": 59.3,
+      "lon": 18.1,
+      "family": {
+        "en": "Indo-European · Germanic",
+        "uk": "Індоєвропейська · германська"
+      }
+    },
+    "finnish": {
+      "name": {
+        "en": "Finnish",
+        "uk": "Фінська"
+      },
+      "lat": 60.2,
+      "lon": 24.9,
+      "family": {
+        "en": "Uralic",
+        "uk": "Уральська"
+      }
+    },
+    "hungarian": {
+      "name": {
+        "en": "Hungarian",
+        "uk": "Угорська"
+      },
+      "lat": 47.5,
+      "lon": 19.0,
+      "family": {
+        "en": "Uralic",
+        "uk": "Уральська"
+      }
+    },
+    "romanian": {
+      "name": {
+        "en": "Romanian",
+        "uk": "Румунська"
+      },
+      "lat": 44.4,
+      "lon": 26.1,
+      "family": {
+        "en": "Indo-European · Romance",
+        "uk": "Індоєвропейська · романська"
+      }
+    },
+    "greek": {
+      "name": {
+        "en": "Greek",
+        "uk": "Грецька"
+      },
+      "lat": 38.0,
+      "lon": 23.7,
+      "family": {
+        "en": "Indo-European · Hellenic",
+        "uk": "Індоєвропейська · грецька"
+      }
+    },
+    "turkish": {
+      "name": {
+        "en": "Turkish",
+        "uk": "Турецька"
+      },
+      "lat": 39.9,
+      "lon": 32.9,
+      "family": {
+        "en": "Turkic",
+        "uk": "Тюркська"
+      }
+    },
+    "arabic": {
+      "name": {
+        "en": "Arabic",
+        "uk": "Арабська"
+      },
+      "lat": 30.0,
+      "lon": 31.2,
+      "family": {
+        "en": "Afro-Asiatic · Semitic",
+        "uk": "Афразійська · семітська"
+      }
+    },
+    "hebrew": {
+      "name": {
+        "en": "Hebrew",
+        "uk": "Іврит"
+      },
+      "lat": 31.8,
+      "lon": 35.2,
+      "family": {
+        "en": "Afro-Asiatic · Semitic",
+        "uk": "Афразійська · семітська"
+      }
+    },
+    "persian": {
+      "name": {
+        "en": "Persian",
+        "uk": "Перська"
+      },
+      "lat": 35.7,
+      "lon": 51.4,
+      "family": {
+        "en": "Indo-European · Iranian",
+        "uk": "Індоєвропейська · іранська"
+      }
+    },
+    "hindi": {
+      "name": {
+        "en": "Hindi",
+        "uk": "Гінді"
+      },
+      "lat": 28.6,
+      "lon": 77.2,
+      "family": {
+        "en": "Indo-European · Indo-Aryan",
+        "uk": "Індоєвропейська · індоарійська"
+      }
+    },
+    "bengali": {
+      "name": {
+        "en": "Bengali",
+        "uk": "Бенгальська"
+      },
+      "lat": 23.8,
+      "lon": 90.4,
+      "family": {
+        "en": "Indo-European · Indo-Aryan",
+        "uk": "Індоєвропейська · індоарійська"
+      }
+    },
+    "mandarin": {
+      "name": {
+        "en": "Mandarin",
+        "uk": "Китайська"
+      },
+      "lat": 39.9,
+      "lon": 116.4,
+      "family": {
+        "en": "Sino-Tibetan",
+        "uk": "Сино-тибетська"
+      }
+    },
+    "japanese": {
+      "name": {
+        "en": "Japanese",
+        "uk": "Японська"
+      },
+      "lat": 35.7,
+      "lon": 139.7,
+      "family": {
+        "en": "Japonic",
+        "uk": "Японська родина"
+      }
+    },
+    "korean": {
+      "name": {
+        "en": "Korean",
+        "uk": "Корейська"
+      },
+      "lat": 37.6,
+      "lon": 127.0,
+      "family": {
+        "en": "Koreanic",
+        "uk": "Корейська родина"
+      }
+    },
+    "vietnamese": {
+      "name": {
+        "en": "Vietnamese",
+        "uk": "В'єтнамська"
+      },
+      "lat": 21.0,
+      "lon": 105.8,
+      "family": {
+        "en": "Austroasiatic",
+        "uk": "Австроазійська"
+      }
+    },
+    "thai": {
+      "name": {
+        "en": "Thai",
+        "uk": "Тайська"
+      },
+      "lat": 13.8,
+      "lon": 100.5,
+      "family": {
+        "en": "Kra-Dai",
+        "uk": "Кра-дай"
+      }
+    },
+    "indonesian": {
+      "name": {
+        "en": "Indonesian",
+        "uk": "Індонезійська"
+      },
+      "lat": -6.2,
+      "lon": 106.8,
+      "family": {
+        "en": "Austronesian",
+        "uk": "Австронезійська"
+      }
+    },
+    "tagalog": {
+      "name": {
+        "en": "Tagalog",
+        "uk": "Тагальська"
+      },
+      "lat": 14.6,
+      "lon": 121.0,
+      "family": {
+        "en": "Austronesian",
+        "uk": "Австронезійська"
+      }
+    },
+    "swahili": {
+      "name": {
+        "en": "Swahili",
+        "uk": "Суахілі"
+      },
+      "lat": -1.3,
+      "lon": 36.8,
+      "family": {
+        "en": "Niger-Congo · Bantu",
+        "uk": "Нігеро-конголезька · банту"
+      }
+    },
+    "georgian": {
+      "name": {
+        "en": "Georgian",
+        "uk": "Грузинська"
+      },
+      "lat": 41.7,
+      "lon": 44.8,
+      "family": {
+        "en": "Kartvelian",
+        "uk": "Картвельська"
+      }
+    }
   },
   "words": [
     {
       "id": "tea",
       "icon": "🍵",
-      "gloss": { "en": "tea", "uk": "чай" },
+      "gloss": {
+        "en": "tea",
+        "uk": "чай"
+      },
       "origins": [
-        { "id": "te",  "label": "te",        "story": { "en": "Min Chinese 'te' — bought BY SEA from Dutch traders at the port of Amoy (Fujian).", "uk": "Міньське «te» — куплене МОРЕМ у голландських торговців у порту Амой (Фуцзянь)." } },
-        { "id": "cha", "label": "chá → chay", "story": { "en": "Mandarin 'chá', picked up BY LAND along the Silk Road, gaining Persian -y.", "uk": "Мандаринське «chá», підхоплене СУХОДОЛОМ уздовж Шовкового шляху, з перським -й." } }
+        {
+          "id": "te",
+          "label": "te",
+          "story": {
+            "en": "Min Chinese 'te' — bought BY SEA from Dutch traders at the port of Amoy (Fujian).",
+            "uk": "Міньське «te» — куплене МОРЕМ у голландських торговців у порту Амой (Фуцзянь)."
+          }
+        },
+        {
+          "id": "cha",
+          "label": "chá → chay",
+          "story": {
+            "en": "Mandarin 'chá', picked up BY LAND along the Silk Road, gaining Persian -y.",
+            "uk": "Мандаринське «chá», підхоплене СУХОДОЛОМ уздовж Шовкового шляху, з перським -й."
+          }
+        }
       ],
-      "originPoint": { "lat": 26, "lon": 118, "label": { "en": "Fujian, China — one character 茶, two readings", "uk": "Фуцзянь, Китай — один ієрогліф 茶, два читання" } },
+      "originPoint": {
+        "lat": 26,
+        "lon": 118,
+        "label": {
+          "en": "Fujian, China — one character 茶, two readings",
+          "uk": "Фуцзянь, Китай — один ієрогліф 茶, два читання"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "tea", "origin": "te" },
-        { "lang": "french", "form": "thé", "origin": "te" },
-        { "lang": "german", "form": "Tee", "origin": "te" },
-        { "lang": "dutch", "form": "thee", "origin": "te" },
-        { "lang": "spanish", "form": "té", "origin": "te" },
-        { "lang": "italian", "form": "tè", "origin": "te" },
-        { "lang": "swedish", "form": "te", "origin": "te" },
-        { "lang": "finnish", "form": "tee", "origin": "te" },
-        { "lang": "hungarian", "form": "tea", "origin": "te" },
-        { "lang": "indonesian", "form": "teh", "origin": "te" },
-        { "lang": "hebrew", "form": "te", "native": "תה", "origin": "te" },
-        { "lang": "polish", "form": "herbata", "origin": "te", "note": { "en": "Latin herba + te: 'tea herb' — the famous hybrid", "uk": "Лат. herba + te: «трава чаю» — знаменитий гібрид" } },
-        { "lang": "ukrainian", "form": "chai", "native": "чай", "origin": "cha" },
-        { "lang": "czech", "form": "čaj", "origin": "cha" },
-        { "lang": "russian", "form": "chay", "native": "чай", "origin": "cha" },
-        { "lang": "romanian", "form": "ceai", "origin": "cha" },
-        { "lang": "greek", "form": "tsái", "native": "τσάι", "origin": "cha" },
-        { "lang": "turkish", "form": "çay", "origin": "cha" },
-        { "lang": "arabic", "form": "shāy", "native": "شاي", "origin": "cha" },
-        { "lang": "persian", "form": "chāy", "native": "چای", "origin": "cha" },
-        { "lang": "hindi", "form": "chāy", "native": "चाय", "origin": "cha" },
-        { "lang": "bengali", "form": "chā", "native": "চা", "origin": "cha" },
-        { "lang": "mandarin", "form": "chá", "native": "茶", "origin": "cha" },
-        { "lang": "japanese", "form": "cha", "native": "茶", "origin": "cha" },
-        { "lang": "korean", "form": "cha", "native": "차", "origin": "cha" },
-        { "lang": "vietnamese", "form": "trà", "origin": "cha" },
-        { "lang": "thai", "form": "chaa", "native": "ชา", "origin": "cha" },
-        { "lang": "swahili", "form": "chai", "origin": "cha" },
-        { "lang": "georgian", "form": "chai", "native": "ჩაი", "origin": "cha" }
+        {
+          "lang": "english",
+          "form": "tea",
+          "origin": "te"
+        },
+        {
+          "lang": "french",
+          "form": "thé",
+          "origin": "te"
+        },
+        {
+          "lang": "german",
+          "form": "Tee",
+          "origin": "te"
+        },
+        {
+          "lang": "dutch",
+          "form": "thee",
+          "origin": "te"
+        },
+        {
+          "lang": "spanish",
+          "form": "té",
+          "origin": "te"
+        },
+        {
+          "lang": "italian",
+          "form": "tè",
+          "origin": "te"
+        },
+        {
+          "lang": "swedish",
+          "form": "te",
+          "origin": "te"
+        },
+        {
+          "lang": "finnish",
+          "form": "tee",
+          "origin": "te"
+        },
+        {
+          "lang": "hungarian",
+          "form": "tea",
+          "origin": "te"
+        },
+        {
+          "lang": "indonesian",
+          "form": "teh",
+          "origin": "te"
+        },
+        {
+          "lang": "hebrew",
+          "form": "te",
+          "native": "תה",
+          "origin": "te"
+        },
+        {
+          "lang": "polish",
+          "form": "herbata",
+          "origin": "te",
+          "note": {
+            "en": "Latin herba + te: 'tea herb' — the famous hybrid",
+            "uk": "Лат. herba + te: «трава чаю» — знаменитий гібрид"
+          }
+        },
+        {
+          "lang": "ukrainian",
+          "form": "chai",
+          "native": "чай",
+          "origin": "cha"
+        },
+        {
+          "lang": "czech",
+          "form": "čaj",
+          "origin": "cha"
+        },
+        {
+          "lang": "russian",
+          "form": "chay",
+          "native": "чай",
+          "origin": "cha"
+        },
+        {
+          "lang": "romanian",
+          "form": "ceai",
+          "origin": "cha"
+        },
+        {
+          "lang": "greek",
+          "form": "tsái",
+          "native": "τσάι",
+          "origin": "cha"
+        },
+        {
+          "lang": "turkish",
+          "form": "çay",
+          "origin": "cha"
+        },
+        {
+          "lang": "arabic",
+          "form": "shāy",
+          "native": "شاي",
+          "origin": "cha"
+        },
+        {
+          "lang": "persian",
+          "form": "chāy",
+          "native": "چای",
+          "origin": "cha"
+        },
+        {
+          "lang": "hindi",
+          "form": "chāy",
+          "native": "चाय",
+          "origin": "cha"
+        },
+        {
+          "lang": "bengali",
+          "form": "chā",
+          "native": "চা",
+          "origin": "cha"
+        },
+        {
+          "lang": "mandarin",
+          "form": "chá",
+          "native": "茶",
+          "origin": "cha"
+        },
+        {
+          "lang": "japanese",
+          "form": "cha",
+          "native": "茶",
+          "origin": "cha"
+        },
+        {
+          "lang": "korean",
+          "form": "cha",
+          "native": "차",
+          "origin": "cha"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "trà",
+          "origin": "cha"
+        },
+        {
+          "lang": "thai",
+          "form": "chaa",
+          "native": "ชา",
+          "origin": "cha"
+        },
+        {
+          "lang": "swahili",
+          "form": "chai",
+          "origin": "cha"
+        },
+        {
+          "lang": "georgian",
+          "form": "chai",
+          "native": "ჩაი",
+          "origin": "cha"
+        },
+        {
+          "lang": "portuguese",
+          "form": "chá",
+          "origin": "cha",
+          "note": {
+            "en": "The famous European exception: Portugal traded at Macau (Cantonese chá), not Amoy — sea route, cha word.",
+            "uk": "Знаменитий європейський виняток: Португалія торгувала в Макао (кантонське chá), а не в Амої — морський шлях, але слово cha."
+          }
+        }
       ],
       "source": "qz.com/1176962; etymonline.com/word/tea; Wiktionary translations"
     },
     {
       "id": "coffee",
       "icon": "☕",
-      "gloss": { "en": "coffee", "uk": "кава" },
+      "gloss": {
+        "en": "coffee",
+        "uk": "кава"
+      },
       "origins": [
-        { "id": "qahwa", "label": "qahwa", "story": { "en": "One Arabic word — qahwa — conquered every continent, splitting only in pronunciation en route (Turkish kahve, Italian caffè, Dutch koffie).", "uk": "Одне арабське слово — qahwa — завоювало всі континенти, розщеплюючись дорогою лише у вимові (тур. kahve, іт. caffè, нід. koffie)." } }
+        {
+          "id": "qahwa",
+          "label": "qahwa",
+          "story": {
+            "en": "One Arabic word — qahwa — conquered every continent, splitting only in pronunciation en route (Turkish kahve, Italian caffè, Dutch koffie).",
+            "uk": "Одне арабське слово — qahwa — завоювало всі континенти, розщеплюючись дорогою лише у вимові (тур. kahve, іт. caffè, нід. koffie)."
+          }
+        }
       ],
-      "originPoint": { "lat": 15, "lon": 44, "label": { "en": "Yemen — Sufi monasteries, ~15th century", "uk": "Ємен — суфійські обителі, ~XV століття" } },
+      "originPoint": {
+        "lat": 15,
+        "lon": 44,
+        "label": {
+          "en": "Yemen — Sufi monasteries, ~15th century",
+          "uk": "Ємен — суфійські обителі, ~XV століття"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "coffee", "origin": "qahwa" },
-        { "lang": "french", "form": "café", "origin": "qahwa" },
-        { "lang": "german", "form": "Kaffee", "origin": "qahwa" },
-        { "lang": "dutch", "form": "koffie", "origin": "qahwa" },
-        { "lang": "spanish", "form": "café", "origin": "qahwa" },
-        { "lang": "italian", "form": "caffè", "origin": "qahwa" },
-        { "lang": "portuguese", "form": "café", "origin": "qahwa" },
-        { "lang": "polish", "form": "kawa", "origin": "qahwa" },
-        { "lang": "czech", "form": "káva", "origin": "qahwa" },
-        { "lang": "ukrainian", "form": "kava", "native": "кава", "origin": "qahwa" },
-        { "lang": "russian", "form": "kofe", "native": "кофе", "origin": "qahwa" },
-        { "lang": "swedish", "form": "kaffe", "origin": "qahwa" },
-        { "lang": "finnish", "form": "kahvi", "origin": "qahwa" },
-        { "lang": "hungarian", "form": "kávé", "origin": "qahwa" },
-        { "lang": "romanian", "form": "cafea", "origin": "qahwa" },
-        { "lang": "greek", "form": "kafés", "native": "καφές", "origin": "qahwa" },
-        { "lang": "turkish", "form": "kahve", "origin": "qahwa" },
-        { "lang": "arabic", "form": "qahwa", "native": "قهوة", "origin": "qahwa" },
-        { "lang": "hebrew", "form": "kafe", "native": "קפה", "origin": "qahwa" },
-        { "lang": "persian", "form": "qahve", "native": "قهوه", "origin": "qahwa" },
-        { "lang": "hindi", "form": "kŏfī", "native": "कॉफ़ी", "origin": "qahwa" },
-        { "lang": "bengali", "form": "kofi", "native": "কফি", "origin": "qahwa" },
-        { "lang": "mandarin", "form": "kāfēi", "native": "咖啡", "origin": "qahwa" },
-        { "lang": "japanese", "form": "kōhī", "native": "コーヒー", "origin": "qahwa" },
-        { "lang": "korean", "form": "keopi", "native": "커피", "origin": "qahwa" },
-        { "lang": "vietnamese", "form": "cà phê", "origin": "qahwa" },
-        { "lang": "thai", "form": "gaafae", "native": "กาแฟ", "origin": "qahwa" },
-        { "lang": "indonesian", "form": "kopi", "origin": "qahwa" },
-        { "lang": "tagalog", "form": "kape", "origin": "qahwa" },
-        { "lang": "swahili", "form": "kahawa", "origin": "qahwa" },
-        { "lang": "georgian", "form": "q'ava", "native": "ყავა", "origin": "qahwa" }
+        {
+          "lang": "english",
+          "form": "coffee",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "french",
+          "form": "café",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "german",
+          "form": "Kaffee",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "dutch",
+          "form": "koffie",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "spanish",
+          "form": "café",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "italian",
+          "form": "caffè",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "portuguese",
+          "form": "café",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "polish",
+          "form": "kawa",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "czech",
+          "form": "káva",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "kava",
+          "native": "кава",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "russian",
+          "form": "kofe",
+          "native": "кофе",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "swedish",
+          "form": "kaffe",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "finnish",
+          "form": "kahvi",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "hungarian",
+          "form": "kávé",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "romanian",
+          "form": "cafea",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "greek",
+          "form": "kafés",
+          "native": "καφές",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "turkish",
+          "form": "kahve",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "arabic",
+          "form": "qahwa",
+          "native": "قهوة",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "hebrew",
+          "form": "kafe",
+          "native": "קפה",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "persian",
+          "form": "qahve",
+          "native": "قهوه",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "hindi",
+          "form": "kŏfī",
+          "native": "कॉफ़ी",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "bengali",
+          "form": "kofi",
+          "native": "কফি",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "mandarin",
+          "form": "kāfēi",
+          "native": "咖啡",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "japanese",
+          "form": "kōhī",
+          "native": "コーヒー",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "korean",
+          "form": "keopi",
+          "native": "커피",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "cà phê",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "thai",
+          "form": "gaafae",
+          "native": "กาแฟ",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "indonesian",
+          "form": "kopi",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "tagalog",
+          "form": "kape",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "swahili",
+          "form": "kahawa",
+          "origin": "qahwa"
+        },
+        {
+          "lang": "georgian",
+          "form": "q'ava",
+          "native": "ყავა",
+          "origin": "qahwa"
+        }
       ],
       "source": "etymonline.com/word/coffee; ЕСУМ (кава); Wiktionary translations"
     },
     {
       "id": "pineapple",
       "icon": "🍍",
-      "gloss": { "en": "pineapple", "uk": "ананас" },
+      "gloss": {
+        "en": "pineapple",
+        "uk": "ананас"
+      },
       "origins": [
-        { "id": "ananas", "label": "ananás", "story": { "en": "Tupi-Guarani 'nanas' (excellent fruit), carried worldwide by Portuguese traders. Nearly the whole planet says it.", "uk": "Тупі-гуарані «nanas» (чудовий плід), рознесене світом португальськими торговцями. Так каже майже вся планета." } },
-        { "id": "pineapple", "label": "pineapple", "story": { "en": "English alone went its own way: 'pine' + 'apple', for the pinecone look.", "uk": "Англійська пішла своїм шляхом: «соснове яблуко» — за схожість із шишкою." } },
-        { "id": "pina", "label": "piña", "story": { "en": "Spanish also saw a pinecone — piña — and passed it to the Philippines.", "uk": "Іспанська теж побачила шишку — piña — і передала це Філіппінам." } },
-        { "id": "other", "label": "—", "story": { "en": "Native coinages that ignored both ships: Mandarin bōluó, Vietnamese dứa, Thai sapparot.", "uk": "Питомі назви, що проігнорували обидва кораблі: кит. bōluó, в'єт. dứa, тай. sapparot." } }
+        {
+          "id": "ananas",
+          "label": "ananás",
+          "story": {
+            "en": "Tupi-Guarani 'nanas' (excellent fruit), carried worldwide by Portuguese traders. Nearly the whole planet says it.",
+            "uk": "Тупі-гуарані «nanas» (чудовий плід), рознесене світом португальськими торговцями. Так каже майже вся планета."
+          }
+        },
+        {
+          "id": "pineapple",
+          "label": "pineapple",
+          "story": {
+            "en": "English alone went its own way: 'pine' + 'apple', for the pinecone look.",
+            "uk": "Англійська пішла своїм шляхом: «соснове яблуко» — за схожість із шишкою."
+          }
+        },
+        {
+          "id": "pina",
+          "label": "piña",
+          "story": {
+            "en": "Spanish also saw a pinecone — piña — and passed it to the Philippines.",
+            "uk": "Іспанська теж побачила шишку — piña — і передала це Філіппінам."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Native coinages that ignored both ships: Mandarin bōluó, Vietnamese dứa, Thai sapparot.",
+            "uk": "Питомі назви, що проігнорували обидва кораблі: кит. bōluó, в'єт. dứa, тай. sapparot."
+          }
+        }
       ],
-      "originPoint": { "lat": -10, "lon": -55, "label": { "en": "Tupi-Guarani lands, Brazil", "uk": "Землі тупі-гуарані, Бразилія" } },
+      "originPoint": {
+        "lat": -10,
+        "lon": -55,
+        "label": {
+          "en": "Tupi-Guarani lands, Brazil",
+          "uk": "Землі тупі-гуарані, Бразилія"
+        }
+      },
       "forms": [
-        { "lang": "french", "form": "ananas", "origin": "ananas" },
-        { "lang": "german", "form": "Ananas", "origin": "ananas" },
-        { "lang": "dutch", "form": "ananas", "origin": "ananas" },
-        { "lang": "portuguese", "form": "ananás", "origin": "ananas", "note": { "en": "In Brazil: abacaxi — a second Tupi word!", "uk": "У Бразилії: abacaxi — друге слово тупі!" } },
-        { "lang": "polish", "form": "ananas", "origin": "ananas" },
-        { "lang": "czech", "form": "ananas", "origin": "ananas" },
-        { "lang": "ukrainian", "form": "ananas", "native": "ананас", "origin": "ananas" },
-        { "lang": "russian", "form": "ananas", "native": "ананас", "origin": "ananas" },
-        { "lang": "swedish", "form": "ananas", "origin": "ananas" },
-        { "lang": "finnish", "form": "ananas", "origin": "ananas" },
-        { "lang": "hungarian", "form": "ananász", "origin": "ananas" },
-        { "lang": "romanian", "form": "ananas", "origin": "ananas" },
-        { "lang": "greek", "form": "ananás", "native": "ανανάς", "origin": "ananas" },
-        { "lang": "turkish", "form": "ananas", "origin": "ananas" },
-        { "lang": "arabic", "form": "anānās", "native": "أناناس", "origin": "ananas" },
-        { "lang": "hebrew", "form": "ananas", "native": "אננס", "origin": "ananas" },
-        { "lang": "persian", "form": "ānānās", "native": "آناناس", "origin": "ananas" },
-        { "lang": "hindi", "form": "anānās", "native": "अनानास", "origin": "ananas" },
-        { "lang": "indonesian", "form": "nanas", "origin": "ananas" },
-        { "lang": "swahili", "form": "nanasi", "origin": "ananas" },
-        { "lang": "georgian", "form": "ananasi", "native": "ანანასი", "origin": "ananas" },
-        { "lang": "english", "form": "pineapple", "origin": "pineapple" },
-        { "lang": "japanese", "form": "painappuru", "native": "パイナップル", "origin": "pineapple" },
-        { "lang": "korean", "form": "painaepeul", "native": "파인애플", "origin": "pineapple" },
-        { "lang": "spanish", "form": "piña", "origin": "pina" },
-        { "lang": "tagalog", "form": "pinya", "origin": "pina" },
-        { "lang": "mandarin", "form": "bōluó", "native": "菠萝", "origin": "other" },
-        { "lang": "vietnamese", "form": "dứa", "origin": "other" },
-        { "lang": "thai", "form": "sapparot", "native": "สับปะรด", "origin": "other" }
+        {
+          "lang": "french",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "german",
+          "form": "Ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "dutch",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "portuguese",
+          "form": "ananás",
+          "origin": "ananas",
+          "note": {
+            "en": "In Brazil: abacaxi — a second Tupi word!",
+            "uk": "У Бразилії: abacaxi — друге слово тупі!"
+          }
+        },
+        {
+          "lang": "polish",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "czech",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "ananas",
+          "native": "ананас",
+          "origin": "ananas"
+        },
+        {
+          "lang": "russian",
+          "form": "ananas",
+          "native": "ананас",
+          "origin": "ananas"
+        },
+        {
+          "lang": "swedish",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "finnish",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "hungarian",
+          "form": "ananász",
+          "origin": "ananas"
+        },
+        {
+          "lang": "romanian",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "greek",
+          "form": "ananás",
+          "native": "ανανάς",
+          "origin": "ananas"
+        },
+        {
+          "lang": "turkish",
+          "form": "ananas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "arabic",
+          "form": "anānās",
+          "native": "أناناس",
+          "origin": "ananas"
+        },
+        {
+          "lang": "hebrew",
+          "form": "ananas",
+          "native": "אננס",
+          "origin": "ananas"
+        },
+        {
+          "lang": "persian",
+          "form": "ānānās",
+          "native": "آناناس",
+          "origin": "ananas"
+        },
+        {
+          "lang": "hindi",
+          "form": "anānās",
+          "native": "अनानास",
+          "origin": "ananas"
+        },
+        {
+          "lang": "indonesian",
+          "form": "nanas",
+          "origin": "ananas"
+        },
+        {
+          "lang": "swahili",
+          "form": "nanasi",
+          "origin": "ananas"
+        },
+        {
+          "lang": "georgian",
+          "form": "ananasi",
+          "native": "ანანასი",
+          "origin": "ananas"
+        },
+        {
+          "lang": "english",
+          "form": "pineapple",
+          "origin": "pineapple"
+        },
+        {
+          "lang": "japanese",
+          "form": "painappuru",
+          "native": "パイナップル",
+          "origin": "pineapple"
+        },
+        {
+          "lang": "korean",
+          "form": "painaepeul",
+          "native": "파인애플",
+          "origin": "pineapple"
+        },
+        {
+          "lang": "spanish",
+          "form": "piña",
+          "origin": "pina"
+        },
+        {
+          "lang": "tagalog",
+          "form": "pinya",
+          "origin": "pina"
+        },
+        {
+          "lang": "mandarin",
+          "form": "bōluó",
+          "native": "菠萝",
+          "origin": "other"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "dứa",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "sapparot",
+          "native": "สับปะรด",
+          "origin": "other"
+        }
       ],
       "source": "etymonline.com/word/pineapple; Wiktionary translations (ananas)"
     },
     {
       "id": "chocolate",
       "icon": "🍫",
-      "gloss": { "en": "chocolate", "uk": "шоколад" },
+      "gloss": {
+        "en": "chocolate",
+        "uk": "шоколад"
+      },
       "origins": [
-        { "id": "chocolatl", "label": "chocolātl", "story": { "en": "Nahuatl (Aztec) chocolātl via Spanish, ~1600 — one Mesoamerican word, every language on Earth.", "uk": "Науатль (ацтекське) chocolātl через іспанську, ~1600 — одне месоамериканське слово, всі мови Землі." } }
+        {
+          "id": "chocolatl",
+          "label": "chocolātl",
+          "story": {
+            "en": "Nahuatl (Aztec) chocolātl via Spanish, ~1600 — one Mesoamerican word, every language on Earth.",
+            "uk": "Науатль (ацтекське) chocolātl через іспанську, ~1600 — одне месоамериканське слово, всі мови Землі."
+          }
+        }
       ],
-      "originPoint": { "lat": 19, "lon": -99, "label": { "en": "Aztec Mexico — Nahuatl", "uk": "Ацтекська Мексика — науатль" } },
+      "originPoint": {
+        "lat": 19,
+        "lon": -99,
+        "label": {
+          "en": "Aztec Mexico — Nahuatl",
+          "uk": "Ацтекська Мексика — науатль"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "chocolate", "origin": "chocolatl" },
-        { "lang": "spanish", "form": "chocolate", "origin": "chocolatl" },
-        { "lang": "french", "form": "chocolat", "origin": "chocolatl" },
-        { "lang": "german", "form": "Schokolade", "origin": "chocolatl" },
-        { "lang": "dutch", "form": "chocolade", "origin": "chocolatl" },
-        { "lang": "italian", "form": "cioccolato", "origin": "chocolatl" },
-        { "lang": "portuguese", "form": "chocolate", "origin": "chocolatl" },
-        { "lang": "polish", "form": "czekolada", "origin": "chocolatl" },
-        { "lang": "czech", "form": "čokoláda", "origin": "chocolatl" },
-        { "lang": "ukrainian", "form": "shokolad", "native": "шоколад", "origin": "chocolatl" },
-        { "lang": "russian", "form": "shokolad", "native": "шоколад", "origin": "chocolatl" },
-        { "lang": "swedish", "form": "choklad", "origin": "chocolatl" },
-        { "lang": "finnish", "form": "suklaa", "origin": "chocolatl" },
-        { "lang": "hungarian", "form": "csokoládé", "origin": "chocolatl" },
-        { "lang": "romanian", "form": "ciocolată", "origin": "chocolatl" },
-        { "lang": "greek", "form": "sokoláta", "native": "σοκολάτα", "origin": "chocolatl" },
-        { "lang": "turkish", "form": "çikolata", "origin": "chocolatl" },
-        { "lang": "arabic", "form": "shūkūlāta", "native": "شوكولاتة", "origin": "chocolatl" },
-        { "lang": "hebrew", "form": "shokolad", "native": "שוקולד", "origin": "chocolatl" },
-        { "lang": "persian", "form": "shokolāt", "native": "شکلات", "origin": "chocolatl" },
-        { "lang": "hindi", "form": "chŏklet", "native": "चॉकलेट", "origin": "chocolatl" },
-        { "lang": "bengali", "form": "chôkolet", "native": "চকলেট", "origin": "chocolatl" },
-        { "lang": "mandarin", "form": "qiǎokèlì", "native": "巧克力", "origin": "chocolatl" },
-        { "lang": "japanese", "form": "chokorēto", "native": "チョコレート", "origin": "chocolatl" },
-        { "lang": "korean", "form": "chokollit", "native": "초콜릿", "origin": "chocolatl" },
-        { "lang": "vietnamese", "form": "sô-cô-la", "origin": "chocolatl" },
-        { "lang": "thai", "form": "chokkolaet", "native": "ช็อกโกแลต", "origin": "chocolatl" },
-        { "lang": "indonesian", "form": "cokelat", "origin": "chocolatl" },
-        { "lang": "tagalog", "form": "tsokolate", "origin": "chocolatl" },
-        { "lang": "swahili", "form": "chokoleti", "origin": "chocolatl" },
-        { "lang": "georgian", "form": "shokoladi", "native": "შოკოლადი", "origin": "chocolatl" }
+        {
+          "lang": "english",
+          "form": "chocolate",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "spanish",
+          "form": "chocolate",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "french",
+          "form": "chocolat",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "german",
+          "form": "Schokolade",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "dutch",
+          "form": "chocolade",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "italian",
+          "form": "cioccolato",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "portuguese",
+          "form": "chocolate",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "polish",
+          "form": "czekolada",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "czech",
+          "form": "čokoláda",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "shokolad",
+          "native": "шоколад",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "russian",
+          "form": "shokolad",
+          "native": "шоколад",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "swedish",
+          "form": "choklad",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "finnish",
+          "form": "suklaa",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "hungarian",
+          "form": "csokoládé",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "romanian",
+          "form": "ciocolată",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "greek",
+          "form": "sokoláta",
+          "native": "σοκολάτα",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "turkish",
+          "form": "çikolata",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "arabic",
+          "form": "shūkūlāta",
+          "native": "شوكولاتة",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "hebrew",
+          "form": "shokolad",
+          "native": "שוקולד",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "persian",
+          "form": "shokolāt",
+          "native": "شکلات",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "hindi",
+          "form": "chŏklet",
+          "native": "चॉकलेट",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "bengali",
+          "form": "chôkolet",
+          "native": "চকলেট",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "mandarin",
+          "form": "qiǎokèlì",
+          "native": "巧克力",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "japanese",
+          "form": "chokorēto",
+          "native": "チョコレート",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "korean",
+          "form": "chokollit",
+          "native": "초콜릿",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "sô-cô-la",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "thai",
+          "form": "chokkolaet",
+          "native": "ช็อกโกแลต",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "indonesian",
+          "form": "cokelat",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "tagalog",
+          "form": "tsokolate",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "swahili",
+          "form": "chokoleti",
+          "origin": "chocolatl"
+        },
+        {
+          "lang": "georgian",
+          "form": "shokoladi",
+          "native": "შოკოლადი",
+          "origin": "chocolatl"
+        }
       ],
       "source": "etymonline.com/word/chocolate; Wiktionary translations"
     },
     {
       "id": "tomato",
       "icon": "🍅",
-      "gloss": { "en": "tomato", "uk": "помідор" },
+      "gloss": {
+        "en": "tomato",
+        "uk": "помідор"
+      },
       "origins": [
-        { "id": "tomatl", "label": "tomatl", "story": { "en": "Nahuatl tomatl via Spanish tomate — the Atlantic route.", "uk": "Науатль tomatl через іспанське tomate — атлантичний маршрут." } },
-        { "id": "pomodoro", "label": "pomodoro", "story": { "en": "Italian pomo d'oro, 'golden apple' — the route Ukrainian took (помідор).", "uk": "Італійське pomo d'oro, «золоте яблуко» — маршрут, яким пішла українська (помідор)." } },
-        { "id": "other", "label": "—", "story": { "en": "Local re-namings: Hungarian 'paradise', Romanian 'red one', Hebrew coinage, Mandarin 'foreign eggplant'.", "uk": "Локальні перейменування: угорське «райський», румунське «червоний», івритський новотвір, кит. «чужоземний баклажан»." } }
+        {
+          "id": "tomatl",
+          "label": "tomatl",
+          "story": {
+            "en": "Nahuatl tomatl via Spanish tomate — the Atlantic route.",
+            "uk": "Науатль tomatl через іспанське tomate — атлантичний маршрут."
+          }
+        },
+        {
+          "id": "pomodoro",
+          "label": "pomodoro",
+          "story": {
+            "en": "Italian pomo d'oro, 'golden apple' — the route Ukrainian took (помідор).",
+            "uk": "Італійське pomo d'oro, «золоте яблуко» — маршрут, яким пішла українська (помідор)."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Local re-namings: Hungarian 'paradise', Romanian 'red one', Hebrew coinage, Mandarin 'foreign eggplant'.",
+            "uk": "Локальні перейменування: угорське «райський», румунське «червоний», івритський новотвір, кит. «чужоземний баклажан»."
+          }
+        }
       ],
-      "originPoint": { "lat": 19, "lon": -99, "label": { "en": "Aztec Mexico — Nahuatl tomatl", "uk": "Ацтекська Мексика — науатль tomatl" } },
+      "originPoint": {
+        "lat": 19,
+        "lon": -99,
+        "label": {
+          "en": "Aztec Mexico — Nahuatl tomatl",
+          "uk": "Ацтекська Мексика — науатль tomatl"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "tomato", "origin": "tomatl" },
-        { "lang": "spanish", "form": "tomate", "origin": "tomatl" },
-        { "lang": "french", "form": "tomate", "origin": "tomatl" },
-        { "lang": "german", "form": "Tomate", "origin": "tomatl" },
-        { "lang": "dutch", "form": "tomaat", "origin": "tomatl" },
-        { "lang": "portuguese", "form": "tomate", "origin": "tomatl" },
-        { "lang": "swedish", "form": "tomat", "origin": "tomatl" },
-        { "lang": "finnish", "form": "tomaatti", "origin": "tomatl" },
-        { "lang": "turkish", "form": "domates", "origin": "tomatl" },
-        { "lang": "greek", "form": "domáta", "native": "ντομάτα", "origin": "tomatl" },
-        { "lang": "arabic", "form": "ṭamāṭim", "native": "طماطم", "origin": "tomatl" },
-        { "lang": "hindi", "form": "ṭamāṭar", "native": "टमाटर", "origin": "tomatl" },
-        { "lang": "japanese", "form": "tomato", "native": "トマト", "origin": "tomatl" },
-        { "lang": "korean", "form": "tomato", "native": "토마토", "origin": "tomatl" },
-        { "lang": "indonesian", "form": "tomat", "origin": "tomatl" },
-        { "lang": "tagalog", "form": "kamatis", "origin": "tomatl" },
-        { "lang": "thai", "form": "makhuea thet", "native": "มะเขือเทศ", "origin": "other", "note": { "en": "'Foreign eggplant'", "uk": "«Чужоземний баклажан»" } },
-        { "lang": "italian", "form": "pomodoro", "origin": "pomodoro" },
-        { "lang": "ukrainian", "form": "pomidor", "native": "помідор", "origin": "pomodoro" },
-        { "lang": "polish", "form": "pomidor", "origin": "pomodoro" },
-        { "lang": "russian", "form": "pomidor", "native": "помидор", "origin": "pomodoro" },
-        { "lang": "georgian", "form": "pomidori", "native": "პომიდორი", "origin": "pomodoro" },
-        { "lang": "czech", "form": "rajče", "origin": "other", "note": { "en": "From rajské jablko, 'paradise apple'", "uk": "Від rajské jablko — «райське яблуко»" } },
-        { "lang": "hungarian", "form": "paradicsom", "origin": "other", "note": { "en": "Literally 'paradise'", "uk": "Буквально «рай»" } },
-        { "lang": "romanian", "form": "roșie", "origin": "other", "note": { "en": "'The red one'", "uk": "«Червоний»" } },
-        { "lang": "hebrew", "form": "agvania", "native": "עגבנייה", "origin": "other", "note": { "en": "A 19th-c. Hebrew coinage", "uk": "Івритський новотвір XIX ст." } },
-        { "lang": "mandarin", "form": "fānqié", "native": "番茄", "origin": "other", "note": { "en": "'Foreign eggplant'", "uk": "«Чужоземний баклажан»" } },
-        { "lang": "vietnamese", "form": "cà chua", "origin": "other", "note": { "en": "'Sour eggplant'", "uk": "«Кислий баклажан»" } },
-        { "lang": "swahili", "form": "nyanya", "origin": "other" }
+        {
+          "lang": "english",
+          "form": "tomato",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "spanish",
+          "form": "tomate",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "french",
+          "form": "tomate",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "german",
+          "form": "Tomate",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "dutch",
+          "form": "tomaat",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "portuguese",
+          "form": "tomate",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "swedish",
+          "form": "tomat",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "finnish",
+          "form": "tomaatti",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "turkish",
+          "form": "domates",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "greek",
+          "form": "domáta",
+          "native": "ντομάτα",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "arabic",
+          "form": "ṭamāṭim",
+          "native": "طماطم",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "hindi",
+          "form": "ṭamāṭar",
+          "native": "टमाटर",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "japanese",
+          "form": "tomato",
+          "native": "トマト",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "korean",
+          "form": "tomato",
+          "native": "토마토",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "indonesian",
+          "form": "tomat",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "tagalog",
+          "form": "kamatis",
+          "origin": "tomatl"
+        },
+        {
+          "lang": "thai",
+          "form": "makhuea thet",
+          "native": "มะเขือเทศ",
+          "origin": "other",
+          "note": {
+            "en": "'Foreign eggplant'",
+            "uk": "«Чужоземний баклажан»"
+          }
+        },
+        {
+          "lang": "italian",
+          "form": "pomodoro",
+          "origin": "pomodoro"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "pomidor",
+          "native": "помідор",
+          "origin": "pomodoro"
+        },
+        {
+          "lang": "polish",
+          "form": "pomidor",
+          "origin": "pomodoro"
+        },
+        {
+          "lang": "russian",
+          "form": "pomidor",
+          "native": "помидор",
+          "origin": "pomodoro"
+        },
+        {
+          "lang": "georgian",
+          "form": "pomidori",
+          "native": "პომიდორი",
+          "origin": "pomodoro"
+        },
+        {
+          "lang": "czech",
+          "form": "rajče",
+          "origin": "other",
+          "note": {
+            "en": "From rajské jablko, 'paradise apple'",
+            "uk": "Від rajské jablko — «райське яблуко»"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "paradicsom",
+          "origin": "other",
+          "note": {
+            "en": "Literally 'paradise'",
+            "uk": "Буквально «рай»"
+          }
+        },
+        {
+          "lang": "romanian",
+          "form": "roșie",
+          "origin": "other",
+          "note": {
+            "en": "'The red one'",
+            "uk": "«Червоний»"
+          }
+        },
+        {
+          "lang": "hebrew",
+          "form": "agvania",
+          "native": "עגבנייה",
+          "origin": "other",
+          "note": {
+            "en": "A 19th-c. Hebrew coinage",
+            "uk": "Івритський новотвір XIX ст."
+          }
+        },
+        {
+          "lang": "mandarin",
+          "form": "fānqié",
+          "native": "番茄",
+          "origin": "other",
+          "note": {
+            "en": "'Foreign eggplant'",
+            "uk": "«Чужоземний баклажан»"
+          }
+        },
+        {
+          "lang": "vietnamese",
+          "form": "cà chua",
+          "origin": "other",
+          "note": {
+            "en": "'Sour eggplant'",
+            "uk": "«Кислий баклажан»"
+          }
+        },
+        {
+          "lang": "swahili",
+          "form": "nyanya",
+          "origin": "other"
+        }
       ],
       "source": "etymonline.com/word/tomato; ЕСУМ (помідор); Wiktionary translations"
     },
     {
       "id": "mother",
       "icon": "👩",
-      "gloss": { "en": "mother", "uk": "мати" },
+      "gloss": {
+        "en": "mother",
+        "uk": "мати"
+      },
       "origins": [
-        { "id": "pie", "label": "*méh₂tēr", "story": { "en": "The Proto-Indo-European root — the color boundary on this map IS the Indo-European family border.", "uk": "Праіндоєвропейський корінь — кольорова межа на цій мапі і Є кордоном індоєвропейської родини." } },
-        { "id": "semitic", "label": "ʔumm-", "story": { "en": "The Semitic root: Arabic umm, Hebrew em.", "uk": "Семітський корінь: араб. umm, івр. em." } },
-        { "id": "other", "label": "—", "story": { "en": "Each family has its own — though baby-talk m-sounds appear nearly everywhere. Georgian famously flips: 'deda' is mother, 'mama' is father. Finnish äiti is an old Gothic loan.", "uk": "У кожної родини своє — хоча дитячі м-звуки трапляються майже скрізь. Грузинська знаменито навпаки: «deda» — мати, «mama» — батько. Фінське äiti — давнє готське запозичення." } }
+        {
+          "id": "pie",
+          "label": "*méh₂tēr",
+          "story": {
+            "en": "The Proto-Indo-European root — the color boundary on this map IS the Indo-European family border.",
+            "uk": "Праіндоєвропейський корінь — кольорова межа на цій мапі і Є кордоном індоєвропейської родини."
+          }
+        },
+        {
+          "id": "semitic",
+          "label": "ʔumm-",
+          "story": {
+            "en": "The Semitic root: Arabic umm, Hebrew em.",
+            "uk": "Семітський корінь: араб. umm, івр. em."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Each family has its own — though baby-talk m-sounds appear nearly everywhere. Georgian famously flips: 'deda' is mother, 'mama' is father. Finnish äiti is an old Gothic loan.",
+            "uk": "У кожної родини своє — хоча дитячі м-звуки трапляються майже скрізь. Грузинська знаменито навпаки: «deda» — мати, «mama» — батько. Фінське äiti — давнє готське запозичення."
+          }
+        }
       ],
-      "originPoint": { "lat": 48, "lon": 40, "label": { "en": "Pontic-Caspian steppe — *méh₂tēr", "uk": "Понтійсько-каспійський степ — *méh₂tēr" } },
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *méh₂tēr",
+          "uk": "Понтійсько-каспійський степ — *méh₂tēr"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "mother", "origin": "pie" },
-        { "lang": "ukrainian", "form": "maty", "native": "мати", "origin": "pie" },
-        { "lang": "german", "form": "Mutter", "origin": "pie" },
-        { "lang": "dutch", "form": "moeder", "origin": "pie" },
-        { "lang": "swedish", "form": "mor", "origin": "pie" },
-        { "lang": "french", "form": "mère", "origin": "pie" },
-        { "lang": "spanish", "form": "madre", "origin": "pie" },
-        { "lang": "italian", "form": "madre", "origin": "pie" },
-        { "lang": "portuguese", "form": "mãe", "origin": "pie" },
-        { "lang": "polish", "form": "matka", "origin": "pie" },
-        { "lang": "czech", "form": "matka", "origin": "pie" },
-        { "lang": "russian", "form": "mat'", "native": "мать", "origin": "pie" },
-        { "lang": "romanian", "form": "mamă", "origin": "pie" },
-        { "lang": "greek", "form": "mitéra", "native": "μητέρα", "origin": "pie" },
-        { "lang": "persian", "form": "mādar", "native": "مادر", "origin": "pie" },
-        { "lang": "hindi", "form": "mātā", "native": "माता", "origin": "pie" },
-        { "lang": "bengali", "form": "mā", "native": "মা", "origin": "pie" },
-        { "lang": "arabic", "form": "umm", "native": "أم", "origin": "semitic" },
-        { "lang": "hebrew", "form": "em", "native": "אם", "origin": "semitic" },
-        { "lang": "finnish", "form": "äiti", "origin": "other", "note": { "en": "An ancient Gothic loan (aiþei)", "uk": "Давнє готське запозичення (aiþei)" } },
-        { "lang": "hungarian", "form": "anya", "origin": "other" },
-        { "lang": "turkish", "form": "anne", "origin": "other" },
-        { "lang": "mandarin", "form": "māma", "native": "妈妈", "origin": "other", "note": { "en": "The near-universal nursery m-word", "uk": "Майже універсальне дитяче м-слово" } },
-        { "lang": "japanese", "form": "haha", "native": "母", "origin": "other", "note": { "en": "Historically *papa → fafa → haha", "uk": "Історично *papa → fafa → haha" } },
-        { "lang": "korean", "form": "eomeoni", "native": "어머니", "origin": "other" },
-        { "lang": "vietnamese", "form": "mẹ", "origin": "other" },
-        { "lang": "thai", "form": "mâe", "native": "แม่", "origin": "other" },
-        { "lang": "indonesian", "form": "ibu", "origin": "other" },
-        { "lang": "tagalog", "form": "ina", "origin": "other" },
-        { "lang": "swahili", "form": "mama", "origin": "other" },
-        { "lang": "georgian", "form": "deda", "native": "დედა", "origin": "other", "note": { "en": "And 'mama' means father!", "uk": "А «mama» означає батько!" } }
+        {
+          "lang": "english",
+          "form": "mother",
+          "origin": "pie"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "maty",
+          "native": "мати",
+          "origin": "pie"
+        },
+        {
+          "lang": "german",
+          "form": "Mutter",
+          "origin": "pie"
+        },
+        {
+          "lang": "dutch",
+          "form": "moeder",
+          "origin": "pie"
+        },
+        {
+          "lang": "swedish",
+          "form": "mor",
+          "origin": "pie"
+        },
+        {
+          "lang": "french",
+          "form": "mère",
+          "origin": "pie"
+        },
+        {
+          "lang": "spanish",
+          "form": "madre",
+          "origin": "pie"
+        },
+        {
+          "lang": "italian",
+          "form": "madre",
+          "origin": "pie"
+        },
+        {
+          "lang": "portuguese",
+          "form": "mãe",
+          "origin": "pie"
+        },
+        {
+          "lang": "polish",
+          "form": "matka",
+          "origin": "pie"
+        },
+        {
+          "lang": "czech",
+          "form": "matka",
+          "origin": "pie"
+        },
+        {
+          "lang": "russian",
+          "form": "mat'",
+          "native": "мать",
+          "origin": "pie"
+        },
+        {
+          "lang": "romanian",
+          "form": "mamă",
+          "origin": "pie"
+        },
+        {
+          "lang": "greek",
+          "form": "mitéra",
+          "native": "μητέρα",
+          "origin": "pie"
+        },
+        {
+          "lang": "persian",
+          "form": "mādar",
+          "native": "مادر",
+          "origin": "pie"
+        },
+        {
+          "lang": "hindi",
+          "form": "mātā",
+          "native": "माता",
+          "origin": "pie"
+        },
+        {
+          "lang": "bengali",
+          "form": "mā",
+          "native": "মা",
+          "origin": "pie"
+        },
+        {
+          "lang": "arabic",
+          "form": "umm",
+          "native": "أم",
+          "origin": "semitic"
+        },
+        {
+          "lang": "hebrew",
+          "form": "em",
+          "native": "אם",
+          "origin": "semitic"
+        },
+        {
+          "lang": "finnish",
+          "form": "äiti",
+          "origin": "other",
+          "note": {
+            "en": "An ancient Gothic loan (aiþei)",
+            "uk": "Давнє готське запозичення (aiþei)"
+          }
+        },
+        {
+          "lang": "hungarian",
+          "form": "anya",
+          "origin": "other"
+        },
+        {
+          "lang": "turkish",
+          "form": "anne",
+          "origin": "other"
+        },
+        {
+          "lang": "mandarin",
+          "form": "māma",
+          "native": "妈妈",
+          "origin": "other",
+          "note": {
+            "en": "The near-universal nursery m-word",
+            "uk": "Майже універсальне дитяче м-слово"
+          }
+        },
+        {
+          "lang": "japanese",
+          "form": "haha",
+          "native": "母",
+          "origin": "other",
+          "note": {
+            "en": "Historically *papa → fafa → haha",
+            "uk": "Історично *papa → fafa → haha"
+          }
+        },
+        {
+          "lang": "korean",
+          "form": "eomeoni",
+          "native": "어머니",
+          "origin": "other"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "mẹ",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "mâe",
+          "native": "แม่",
+          "origin": "other"
+        },
+        {
+          "lang": "indonesian",
+          "form": "ibu",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "ina",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "mama",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "deda",
+          "native": "დედა",
+          "origin": "other",
+          "note": {
+            "en": "And 'mama' means father!",
+            "uk": "А «mama» означає батько!"
+          }
+        }
       ],
       "source": "etymonline.com/word/mother; Wiktionary *méh₂tēr; ЕСУМ (мати)"
     },
     {
       "id": "robot",
       "icon": "🤖",
-      "gloss": { "en": "robot", "uk": "робот" },
+      "gloss": {
+        "en": "robot",
+        "uk": "робот"
+      },
       "origins": [
-        { "id": "robota", "label": "robota", "story": { "en": "Czech robota 'forced labor', coined for Čapek's play R.U.R. (1920) — the rare Slavic word that conquered the world.", "uk": "Чеське robota «панщина», укарбоване для п'єси Чапека R.U.R. (1920) — рідкісне слов'янське слово, що завоювало світ." } },
-        { "id": "calque", "label": "calque", "story": { "en": "A few languages translated the idea instead: Mandarin jīqìrén and Thai hùnyon both mean 'machine person'.", "uk": "Кілька мов переклали ідею: кит. jīqìrén і тай. hùnyon означають «машинна людина»." } }
+        {
+          "id": "robota",
+          "label": "robota",
+          "story": {
+            "en": "Czech robota 'forced labor', coined for Čapek's play R.U.R. (1920) — the rare Slavic word that conquered the world.",
+            "uk": "Чеське robota «панщина», укарбоване для п'єси Чапека R.U.R. (1920) — рідкісне слов'янське слово, що завоювало світ."
+          }
+        },
+        {
+          "id": "calque",
+          "label": "calque",
+          "story": {
+            "en": "A few languages translated the idea instead: Mandarin jīqìrén and Thai hùnyon both mean 'machine person'.",
+            "uk": "Кілька мов переклали ідею: кит. jīqìrén і тай. hùnyon означають «машинна людина»."
+          }
+        }
       ],
-      "originPoint": { "lat": 50.1, "lon": 14.4, "label": { "en": "Prague, 1920 — a word with a birth certificate", "uk": "Прага, 1920 — слово зі свідоцтвом про народження" } },
+      "originPoint": {
+        "lat": 50.1,
+        "lon": 14.4,
+        "label": {
+          "en": "Prague, 1920 — a word with a birth certificate",
+          "uk": "Прага, 1920 — слово зі свідоцтвом про народження"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "robot", "origin": "robota" },
-        { "lang": "czech", "form": "robot", "origin": "robota" },
-        { "lang": "ukrainian", "form": "robot", "native": "робот", "origin": "robota" },
-        { "lang": "polish", "form": "robot", "origin": "robota" },
-        { "lang": "russian", "form": "robot", "native": "робот", "origin": "robota" },
-        { "lang": "french", "form": "robot", "origin": "robota" },
-        { "lang": "german", "form": "Roboter", "origin": "robota" },
-        { "lang": "dutch", "form": "robot", "origin": "robota" },
-        { "lang": "spanish", "form": "robot", "origin": "robota" },
-        { "lang": "italian", "form": "robot", "origin": "robota" },
-        { "lang": "portuguese", "form": "robô", "origin": "robota" },
-        { "lang": "swedish", "form": "robot", "origin": "robota" },
-        { "lang": "finnish", "form": "robotti", "origin": "robota" },
-        { "lang": "hungarian", "form": "robot", "origin": "robota" },
-        { "lang": "romanian", "form": "robot", "origin": "robota" },
-        { "lang": "greek", "form": "robót", "native": "ρομπότ", "origin": "robota" },
-        { "lang": "turkish", "form": "robot", "origin": "robota" },
-        { "lang": "arabic", "form": "rūbūt", "native": "روبوت", "origin": "robota" },
-        { "lang": "hebrew", "form": "robot", "native": "רובוט", "origin": "robota" },
-        { "lang": "persian", "form": "robāt", "native": "ربات", "origin": "robota" },
-        { "lang": "hindi", "form": "robot", "native": "रोबोट", "origin": "robota" },
-        { "lang": "bengali", "form": "robot", "native": "রোবট", "origin": "robota" },
-        { "lang": "japanese", "form": "robotto", "native": "ロボット", "origin": "robota" },
-        { "lang": "korean", "form": "robot", "native": "로봇", "origin": "robota" },
-        { "lang": "vietnamese", "form": "rô-bốt", "origin": "robota" },
-        { "lang": "indonesian", "form": "robot", "origin": "robota" },
-        { "lang": "tagalog", "form": "robot", "origin": "robota" },
-        { "lang": "swahili", "form": "roboti", "origin": "robota" },
-        { "lang": "georgian", "form": "roboti", "native": "რობოტი", "origin": "robota" },
-        { "lang": "mandarin", "form": "jīqìrén", "native": "机器人", "origin": "calque", "note": { "en": "'Machine person'", "uk": "«Машинна людина»" } },
-        { "lang": "thai", "form": "hùnyon", "native": "หุ่นยนต์", "origin": "calque", "note": { "en": "'Mechanical figure'", "uk": "«Механічна фігура»" } }
+        {
+          "lang": "english",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "czech",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "robot",
+          "native": "робот",
+          "origin": "robota"
+        },
+        {
+          "lang": "polish",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "russian",
+          "form": "robot",
+          "native": "робот",
+          "origin": "robota"
+        },
+        {
+          "lang": "french",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "german",
+          "form": "Roboter",
+          "origin": "robota"
+        },
+        {
+          "lang": "dutch",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "spanish",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "italian",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "portuguese",
+          "form": "robô",
+          "origin": "robota"
+        },
+        {
+          "lang": "swedish",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "finnish",
+          "form": "robotti",
+          "origin": "robota"
+        },
+        {
+          "lang": "hungarian",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "romanian",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "greek",
+          "form": "robót",
+          "native": "ρομπότ",
+          "origin": "robota"
+        },
+        {
+          "lang": "turkish",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "arabic",
+          "form": "rūbūt",
+          "native": "روبوت",
+          "origin": "robota"
+        },
+        {
+          "lang": "hebrew",
+          "form": "robot",
+          "native": "רובוט",
+          "origin": "robota"
+        },
+        {
+          "lang": "persian",
+          "form": "robāt",
+          "native": "ربات",
+          "origin": "robota"
+        },
+        {
+          "lang": "hindi",
+          "form": "robot",
+          "native": "रोबोट",
+          "origin": "robota"
+        },
+        {
+          "lang": "bengali",
+          "form": "robot",
+          "native": "রোবট",
+          "origin": "robota"
+        },
+        {
+          "lang": "japanese",
+          "form": "robotto",
+          "native": "ロボット",
+          "origin": "robota"
+        },
+        {
+          "lang": "korean",
+          "form": "robot",
+          "native": "로봇",
+          "origin": "robota"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "rô-bốt",
+          "origin": "robota"
+        },
+        {
+          "lang": "indonesian",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "tagalog",
+          "form": "robot",
+          "origin": "robota"
+        },
+        {
+          "lang": "swahili",
+          "form": "roboti",
+          "origin": "robota"
+        },
+        {
+          "lang": "georgian",
+          "form": "roboti",
+          "native": "რობოტი",
+          "origin": "robota"
+        },
+        {
+          "lang": "mandarin",
+          "form": "jīqìrén",
+          "native": "机器人",
+          "origin": "calque",
+          "note": {
+            "en": "'Machine person'",
+            "uk": "«Машинна людина»"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "hùnyon",
+          "native": "หุ่นยนต์",
+          "origin": "calque",
+          "note": {
+            "en": "'Mechanical figure'",
+            "uk": "«Механічна фігура»"
+          }
+        }
       ],
       "source": "etymonline.com/word/robot; Wiktionary translations"
     },
     {
       "id": "sugar",
       "icon": "🍬",
-      "gloss": { "en": "sugar", "uk": "цукор" },
+      "gloss": {
+        "en": "sugar",
+        "uk": "цукор"
+      },
       "origins": [
-        { "id": "sarkara", "label": "śarkarā", "story": { "en": "Sanskrit śarkarā 'gravel' → Persian shakar → Arabic sukkar → west with the trade. Ukrainian цукор and English sugar are the same Indian gravel via different middlemen.", "uk": "Санскр. śarkarā «жорства» → перс. shakar → араб. sukkar → на захід із торгівлею. Українське цукор і англ. sugar — та сама індійська жорства через різних посередників." } },
-        { "id": "tang", "label": "táng 糖", "story": { "en": "East Asia uses Chinese 糖 (táng): Japanese satō, Korean seoltang, Vietnamese đường.", "uk": "Східна Азія вживає китайське 糖 (táng): яп. satō, кор. seoltang, в'єт. đường." } },
-        { "id": "other", "label": "—", "story": { "en": "Indonesian gula goes back to another Sanskrit word (guḷa); Thai namtaan is native ('palm water'); Hindi chīnī literally means 'Chinese'.", "uk": "Індонезійське gula сягає іншого санскритського слова (guḷa); тайське namtaan — питоме («пальмова вода»); гінді chīnī буквально «китайський»." } }
+        {
+          "id": "sarkara",
+          "label": "śarkarā",
+          "story": {
+            "en": "Sanskrit śarkarā 'gravel' → Persian shakar → Arabic sukkar → west with the trade. Ukrainian цукор and English sugar are the same Indian gravel via different middlemen.",
+            "uk": "Санскр. śarkarā «жорства» → перс. shakar → араб. sukkar → на захід із торгівлею. Українське цукор і англ. sugar — та сама індійська жорства через різних посередників."
+          }
+        },
+        {
+          "id": "tang",
+          "label": "táng 糖",
+          "story": {
+            "en": "East Asia uses Chinese 糖 (táng): Japanese satō, Korean seoltang, Vietnamese đường.",
+            "uk": "Східна Азія вживає китайське 糖 (táng): яп. satō, кор. seoltang, в'єт. đường."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Indonesian gula goes back to another Sanskrit word (guḷa); Thai namtaan is native ('palm water'); Hindi chīnī literally means 'Chinese'.",
+            "uk": "Індонезійське gula сягає іншого санскритського слова (guḷa); тайське namtaan — питоме («пальмова вода»); гінді chīnī буквально «китайський»."
+          }
+        }
       ],
-      "originPoint": { "lat": 23, "lon": 80, "label": { "en": "India — Sanskrit śarkarā, 'gravel'", "uk": "Індія — санскр. śarkarā, «жорства»" } },
+      "originPoint": {
+        "lat": 23,
+        "lon": 80,
+        "label": {
+          "en": "India — Sanskrit śarkarā, 'gravel'",
+          "uk": "Індія — санскр. śarkarā, «жорства»"
+        }
+      },
       "forms": [
-        { "lang": "english", "form": "sugar", "origin": "sarkara" },
-        { "lang": "french", "form": "sucre", "origin": "sarkara" },
-        { "lang": "german", "form": "Zucker", "origin": "sarkara" },
-        { "lang": "dutch", "form": "suiker", "origin": "sarkara" },
-        { "lang": "spanish", "form": "azúcar", "origin": "sarkara", "note": { "en": "With the Arabic article al- fused on", "uk": "З прирослим арабським артиклем аль-" } },
-        { "lang": "italian", "form": "zucchero", "origin": "sarkara" },
-        { "lang": "portuguese", "form": "açúcar", "origin": "sarkara" },
-        { "lang": "polish", "form": "cukier", "origin": "sarkara" },
-        { "lang": "czech", "form": "cukr", "origin": "sarkara" },
-        { "lang": "ukrainian", "form": "tsukor", "native": "цукор", "origin": "sarkara" },
-        { "lang": "russian", "form": "sakhar", "native": "сахар", "origin": "sarkara", "note": { "en": "Via Greek sákcharon — a different branch of the same journey", "uk": "Через грец. sákcharon — інша гілка тієї самої подорожі" } },
-        { "lang": "swedish", "form": "socker", "origin": "sarkara" },
-        { "lang": "finnish", "form": "sokeri", "origin": "sarkara" },
-        { "lang": "hungarian", "form": "cukor", "origin": "sarkara" },
-        { "lang": "romanian", "form": "zahăr", "origin": "sarkara" },
-        { "lang": "greek", "form": "záchari", "native": "ζάχαρη", "origin": "sarkara" },
-        { "lang": "turkish", "form": "şeker", "origin": "sarkara" },
-        { "lang": "arabic", "form": "sukkar", "native": "سكر", "origin": "sarkara" },
-        { "lang": "hebrew", "form": "sukar", "native": "סוכר", "origin": "sarkara" },
-        { "lang": "persian", "form": "shekar", "native": "شکر", "origin": "sarkara" },
-        { "lang": "hindi", "form": "shakkar", "native": "शक्कर", "origin": "sarkara", "note": { "en": "Also chīnī — literally 'Chinese'", "uk": "Також chīnī — буквально «китайський»" } },
-        { "lang": "tagalog", "form": "asukal", "origin": "sarkara" },
-        { "lang": "swahili", "form": "sukari", "origin": "sarkara" },
-        { "lang": "georgian", "form": "shakari", "native": "შაქარი", "origin": "sarkara" },
-        { "lang": "mandarin", "form": "táng", "native": "糖", "origin": "tang" },
-        { "lang": "japanese", "form": "satō", "native": "砂糖", "origin": "tang" },
-        { "lang": "korean", "form": "seoltang", "native": "설탕", "origin": "tang" },
-        { "lang": "vietnamese", "form": "đường", "origin": "tang" },
-        { "lang": "indonesian", "form": "gula", "origin": "other", "note": { "en": "Sanskrit guḷa — a different Indian sugar word", "uk": "Санскр. guḷa — інше індійське слово для цукру" } },
-        { "lang": "thai", "form": "namtaan", "native": "น้ำตาล", "origin": "other", "note": { "en": "Native: 'palm water'", "uk": "Питоме: «пальмова вода»" } }
+        {
+          "lang": "english",
+          "form": "sugar",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "french",
+          "form": "sucre",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "german",
+          "form": "Zucker",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "dutch",
+          "form": "suiker",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "spanish",
+          "form": "azúcar",
+          "origin": "sarkara",
+          "note": {
+            "en": "With the Arabic article al- fused on",
+            "uk": "З прирослим арабським артиклем аль-"
+          }
+        },
+        {
+          "lang": "italian",
+          "form": "zucchero",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "portuguese",
+          "form": "açúcar",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "polish",
+          "form": "cukier",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "czech",
+          "form": "cukr",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "ukrainian",
+          "form": "tsukor",
+          "native": "цукор",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "russian",
+          "form": "sakhar",
+          "native": "сахар",
+          "origin": "sarkara",
+          "note": {
+            "en": "Via Greek sákcharon — a different branch of the same journey",
+            "uk": "Через грец. sákcharon — інша гілка тієї самої подорожі"
+          }
+        },
+        {
+          "lang": "swedish",
+          "form": "socker",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "finnish",
+          "form": "sokeri",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "hungarian",
+          "form": "cukor",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "romanian",
+          "form": "zahăr",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "greek",
+          "form": "záchari",
+          "native": "ζάχαρη",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "turkish",
+          "form": "şeker",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "arabic",
+          "form": "sukkar",
+          "native": "سكر",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "hebrew",
+          "form": "sukar",
+          "native": "סוכר",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "persian",
+          "form": "shekar",
+          "native": "شکر",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "hindi",
+          "form": "shakkar",
+          "native": "शक्कर",
+          "origin": "sarkara",
+          "note": {
+            "en": "Also chīnī — literally 'Chinese'",
+            "uk": "Також chīnī — буквально «китайський»"
+          }
+        },
+        {
+          "lang": "tagalog",
+          "form": "asukal",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "swahili",
+          "form": "sukari",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "georgian",
+          "form": "shakari",
+          "native": "შაქარი",
+          "origin": "sarkara"
+        },
+        {
+          "lang": "mandarin",
+          "form": "táng",
+          "native": "糖",
+          "origin": "tang"
+        },
+        {
+          "lang": "japanese",
+          "form": "satō",
+          "native": "砂糖",
+          "origin": "tang"
+        },
+        {
+          "lang": "korean",
+          "form": "seoltang",
+          "native": "설탕",
+          "origin": "tang"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "đường",
+          "origin": "tang"
+        },
+        {
+          "lang": "indonesian",
+          "form": "gula",
+          "origin": "other",
+          "note": {
+            "en": "Sanskrit guḷa — a different Indian sugar word",
+            "uk": "Санскр. guḷa — інше індійське слово для цукру"
+          }
+        },
+        {
+          "lang": "thai",
+          "form": "namtaan",
+          "native": "น้ำตาล",
+          "origin": "other",
+          "note": {
+            "en": "Native: 'palm water'",
+            "uk": "Питоме: «пальмова вода»"
+          }
+        }
       ],
       "source": "etymonline.com/word/sugar; ЕСУМ (цукор); Wiktionary translations"
     }
