@@ -26,7 +26,9 @@ import VitalityMap from './interactive/VitalityMap.tsx';
 import ScriptEvolver from './interactive/ScriptEvolver.tsx';
 import WordTraveler from './interactive/WordTraveler.tsx';
 import WordXray from './interactive/WordXray.tsx';
-const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray']);
+import RootsGarden from './interactive/RootsGarden.tsx';
+import NameMap from './interactive/NameMap.tsx';
+const BUILT = new Set(['sound-shift', 'myth-buster', 'origins-timeline', 'family-tree', 'ukrainian-timeline', 'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map', 'script-evolver', 'word-traveler', 'word-xray', 'roots-garden', 'name-map']);
 const isBuilt = BUILT.has(id);
 ---
 
@@ -43,6 +45,8 @@ const isBuilt = BUILT.has(id);
   {id === 'script-evolver' && <ScriptEvolver client:visible lang={lang} />}
   {id === 'word-traveler' && <WordTraveler client:visible lang={lang} />}
   {id === 'word-xray' && <WordXray client:visible lang={lang} />}
+  {id === 'roots-garden' && <RootsGarden client:visible lang={lang} />}
+  {id === 'name-map' && <NameMap client:visible lang={lang} />}
   {
     !isBuilt && (
       <Placeholder

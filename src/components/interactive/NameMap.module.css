@@ -1,0 +1,357 @@
+/* name-map — toponyms, month wheel, surname matcher.
+   Scoped via CSS modules; every colour is a topic accent var (names) or a
+   color-mix of it, so the island matches the article in light AND dark mode.
+   No hardcoded hex. All motion is pure CSS → neutralized under reduced-motion. */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* ── tabs ─────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.tab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.muted {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.story {
+  margin: 0.2rem 0 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* ── shared card head ─────────────────────────────────────────────── */
+.cardBody {
+  min-width: 0;
+}
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.cardWord {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.originTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+
+/* ── Tab 1: places ────────────────────────────────────────────────── */
+.placesWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.map {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  background: color-mix(in srgb, var(--accent-soft) 22%, var(--bg));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: block;
+}
+.land {
+  fill: color-mix(in srgb, var(--accent-soft) 65%, var(--bg));
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.pin {
+  cursor: pointer;
+}
+.pin:focus {
+  outline: none;
+}
+.pinDot {
+  fill: var(--accent);
+  stroke: var(--bg-elev);
+  stroke-width: 2.5;
+  transition: r 0.15s ease;
+}
+.pin:hover .pinDot {
+  fill: var(--accent-2);
+}
+.pin:focus-visible .pinDot {
+  stroke: var(--accent-2);
+  stroke-width: 3.5;
+}
+.pinOn .pinDot {
+  fill: var(--accent-2);
+}
+.pinLabel {
+  fill: var(--text);
+  font-size: 19px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--bg-elev);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.chip {
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.chip:hover {
+  border-color: var(--accent);
+}
+.chipOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Україна debate */
+.debateTag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+.debateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 0.5rem 0;
+}
+.debateView {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-soft) 28%, var(--bg));
+  padding: 0.6rem 0.7rem;
+}
+.debateLabel {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+.debateNote {
+  margin: 0.3rem 0 0;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ── Tab 2: month wheel ───────────────────────────────────────────── */
+.monthsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.wheel {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  margin: 0.2rem auto;
+}
+.month {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 2.6vw, 0.92rem);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.12s;
+}
+.month:hover {
+  border-color: var(--accent);
+}
+/* months the article actually glosses get a soft accent fill as a hint */
+.month[data-gloss='yes'] {
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--bg));
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+.monthOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.monthOn[data-gloss='yes'] {
+  background: var(--accent);
+}
+.wheelCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  pointer-events: none;
+}
+.wheelMonth {
+  font-size: clamp(1.1rem, 5vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--accent-2);
+}
+.wheelOther {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── Tab 3: surname matcher ───────────────────────────────────────── */
+.surnameWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.matcher {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.colHead {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  text-align: center;
+}
+.surn {
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border: 1.5px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, transform 0.12s;
+}
+.surn:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.surnSel {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.surnOpen {
+  font-style: italic;
+}
+.surnDone {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  cursor: default;
+}
+.surn:disabled {
+  cursor: default;
+}
+
+.fbOk {
+  margin: 0;
+  color: var(--accent-2);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.fbNo {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ── mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .debateGrid {
+    grid-template-columns: 1fr;
+  }
+  .pinLabel {
+    font-size: 22px;
+  }
+}

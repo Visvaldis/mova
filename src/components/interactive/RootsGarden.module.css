@@ -1,0 +1,505 @@
+/* roots-garden — a stratigraphy of Ukrainian vocabulary by historical layer.
+   Scoped via CSS modules; every colour is a topic accent var (roots) or a
+   color-mix of it, so the island matches the article in light AND dark mode.
+   No hardcoded hex. */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* ── tabs ─────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.tab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hint,
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ── the strata ───────────────────────────────────────────────────── */
+.strata {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.layer {
+  /* deeper layer (higher --d) = stronger accent tint, like sediment. */
+  background: color-mix(in srgb, var(--accent-soft) calc(22% + var(--d, 0) * 11%), var(--bg));
+  border-left: 4px solid var(--accent);
+  padding: 0.7rem 0.9rem;
+  /* the layer slides up into place; pure CSS → neutralized under reduced-motion. */
+  animation: rgSettle 0.45s ease both;
+  animation-delay: calc(var(--row, 0) * 70ms);
+}
+
+@keyframes rgSettle {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.layerHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.layerName {
+  font-weight: 800;
+  font-size: 0.98rem;
+}
+.layerEra {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.layerBlurb {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  /* chips drop into the layer, staggered by --i; pure CSS, reduced-motion-safe. */
+  animation: rgDrop 0.4s ease both;
+  animation-delay: calc(var(--row, 0) * 70ms + var(--i, 0) * 45ms + 120ms);
+  transition: border-color 0.15s, transform 0.15s, background 0.15s;
+}
+.chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.chipActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.chipStar {
+  border-style: dashed;
+  border-color: var(--accent);
+}
+
+@keyframes rgDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.emptyLayer {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ── word detail panel ────────────────────────────────────────────── */
+.panel {
+  margin-top: 0.4rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.panelBody {
+  min-width: 0;
+}
+.panelHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.headword {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.gloss {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+.layerTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+}
+.originTag {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  align-self: center;
+}
+.story {
+  margin: 0.3rem 0 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+.close {
+  appearance: none;
+  margin-top: 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.close:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ── route mini-map ───────────────────────────────────────────────── */
+.mapWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.map {
+  width: 100%;
+  height: auto;
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--bg));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  display: block;
+}
+.land {
+  fill: color-mix(in srgb, var(--muted) 28%, var(--bg));
+  stroke: var(--line);
+  stroke-width: 0.4;
+}
+.route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  animation: rgDraw 0.7s ease both;
+}
+@keyframes rgDraw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.srcDot {
+  fill: var(--bg-elev);
+  stroke: var(--accent);
+  stroke-width: 1.2;
+}
+.ukDot {
+  fill: var(--accent);
+  stroke: var(--bg-elev);
+  stroke-width: 1.2;
+}
+.bornDot {
+  fill: var(--accent);
+}
+.bornText {
+  fill: var(--accent-2);
+  font-size: 7px;
+  font-weight: 700;
+}
+.mapCaption {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── birth certificate (мрія) ─────────────────────────────────────── */
+.cert {
+  grid-template-columns: 1fr;
+  border-width: 2px;
+  border-style: double;
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--bg));
+}
+.certInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.certBadge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+.certWord {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+.certGloss {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.certRows {
+  margin: 0.3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.certRow {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+  border-bottom: 1px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+  padding-bottom: 0.3rem;
+}
+.certRow dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.certRow dd {
+  margin: 0;
+  font-weight: 600;
+}
+.certVerb {
+  font-weight: 800;
+  color: var(--accent-2);
+}
+.certVerbGloss {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.certNote {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* ── sentence tab ─────────────────────────────────────────────────── */
+.sentenceWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sentence {
+  font-size: 1.5rem;
+  line-height: 1.9;
+  font-weight: 500;
+  margin: 0;
+}
+@media (max-width: 480px) {
+  .sentence {
+    font-size: 1.2rem;
+  }
+}
+
+.token {
+  appearance: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.1em 0.4em;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.token:hover {
+  transform: translateY(-2px);
+}
+.tokenActive {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* native Slavic frame — plain, no fill; borrowings carry the accent. */
+.token[data-layer='pie'],
+.token[data-layer='slavic'] {
+  background: transparent;
+  color: var(--muted);
+  border-style: dotted;
+}
+.token[data-layer='turkic'] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+.token[data-layer='german'] {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-color: var(--accent);
+  border-style: dashed;
+}
+.token[data-layer='greek'],
+.token[data-layer='coined'],
+.token[data-layer='english'] {
+  background: color-mix(in srgb, var(--accent-soft) 60%, var(--bg));
+  border-color: var(--accent);
+}
+
+.tokenHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.tokenWord {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+/* legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.legendSwatch {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  display: inline-block;
+}
+.legendSwatch[data-layer='pie'],
+.legendSwatch[data-layer='slavic'] {
+  background: transparent;
+  border-style: dotted;
+  border-color: var(--muted);
+}
+.legendSwatch[data-layer='turkic'] {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.legendSwatch[data-layer='german'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  border-style: dashed;
+}
+.legendSwatch[data-layer='greek'],
+.legendSwatch[data-layer='coined'],
+.legendSwatch[data-layer='english'] {
+  background: color-mix(in srgb, var(--accent-soft) 60%, var(--bg));
+  border-color: var(--accent);
+}
+
+/* ── mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+  .certRow {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
