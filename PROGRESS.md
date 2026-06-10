@@ -385,3 +385,9 @@ CSS modules.
 - Sample output grew to four lines: statement with adjective, question, past, plural; passport copy includes the new settings and sentences.
 - 31 new pg.clf.* keys (EN+UK). 20 unit assertions on the lib (determinism, stem stability, harmony/ablaut correctness, sentence arrangement, drift monotonicity) — all green. Build clean, island 4.6 KB gz.
 - Note: ConlangWorkbench tsc errors in the tree are the other agent's in-flight task (untracked files, keys pending) — not introduced by this change.
+
+## 2026-06-10 — Ask-AI pill redesign (user request)
+
+- The selection pill went from a solid accent button to frosted glass: translucent blurred background (backdrop-filter + saturate), hairline accent border, accent-tinted ✦ glyph, soft accent-colored glow instead of the heavy shadow, slight letter-spacing.
+- Motion: gentle 0.16s pop with a soft overshoot, −1.5px lift on hover, scale-down on press; all disabled under prefers-reduced-motion.
+- Styling moved from inline to the component's CSS block (transform conflicts with hover states resolved); works in both themes via color-mix on existing tokens.

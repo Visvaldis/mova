@@ -194,16 +194,9 @@ export default function AskAi({ lang }: { lang: Lang }) {
           onClick={startFromSelection}
           onMouseDown={(e) => e.preventDefault() /* keep the selection */}
           className="askai-pill"
-          style={{
-            position: 'absolute', left: pill.x, top: pill.y, transform: 'translateX(-50%)',
-            zIndex: 90, border: 'none', borderRadius: 999, cursor: 'pointer',
-            background: 'var(--accent)', color: 'var(--on-accent)',
-            padding: '0.18rem 0.6rem', fontWeight: 600, fontSize: '0.78rem',
-            lineHeight: 1.5, boxShadow: 'var(--shadow)', font: 'inherit',
-            display: 'inline-flex', alignItems: 'center', gap: 4, whiteSpace: 'nowrap',
-          }}
+          style={{ position: 'absolute', left: pill.x, top: pill.y, zIndex: 90 }}
         >
-          ✨ {t('askai.pill')}
+          <span className="askai-spark" aria-hidden="true">✦</span> {t('askai.pill')}
         </button>
       )}
 
@@ -366,10 +359,32 @@ export default function AskAi({ lang }: { lang: Lang }) {
         </div>
       )}
       <style>{`
-        .askai-pill { animation: askai-pop 0.12s ease-out; }
-        .askai-pill:hover { box-shadow: var(--shadow-lg); }
-        @keyframes askai-pop { from { opacity: 0; transform: translateX(-50%) translateY(3px) scale(0.95); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
-        @media (prefers-reduced-motion: reduce) { .askai-pill { animation: none; } }
+        .askai-pill {
+          transform: translateX(-50%);
+          border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--line));
+          border-radius: 999px;
+          background: color-mix(in srgb, var(--bg-elev) 72%, transparent);
+          -webkit-backdrop-filter: blur(10px) saturate(1.5);
+          backdrop-filter: blur(10px) saturate(1.5);
+          color: var(--text);
+          font: inherit; font-weight: 600; font-size: 0.78rem; line-height: 1.5;
+          letter-spacing: 0.01em;
+          padding: 0.2rem 0.7rem;
+          display: inline-flex; align-items: center; gap: 0.34rem; white-space: nowrap;
+          cursor: pointer;
+          box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 15%, transparent), 0 1px 2px rgba(0, 0, 0, 0.05);
+          animation: askai-pop 0.16s cubic-bezier(0.2, 0.9, 0.3, 1.15);
+          transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+        }
+        .askai-pill:hover {
+          transform: translateX(-50%) translateY(-1.5px);
+          border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+          box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 24%, transparent), 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        .askai-pill:active { transform: translateX(-50%) scale(0.97); }
+        .askai-spark { color: var(--accent); font-size: 0.9em; }
+        @keyframes askai-pop { from { opacity: 0; transform: translateX(-50%) translateY(4px) scale(0.92); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
+        @media (prefers-reduced-motion: reduce) { .askai-pill { animation: none; transition: none; } .askai-pill:hover { transform: translateX(-50%); } }
         @media (max-width: 640px) { .askai-drawer { inset: auto 0 0 0 !important; width: 100vw !important; height: min(75dvh, 560px) !important; border-left: none !important; border-top: 1px solid var(--line) !important; } }
       `}</style>
     </div>
