@@ -1,6 +1,7 @@
-// word-atlas — pick a word, see how the world says it; dot color = origin group
+// word-atlas — pick a word, see how the world says it; region color = origin group
 // (same color = same etymological source). Spec: docs/WORD-ATLAS.md.
-import { useMemo, useState } from 'react';
+// Zoom/pan: viewBox-based, no libs — buttons, double-click, ctrl+wheel, pinch, drag.
+import { useMemo, useRef, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
@@ -53,6 +54,92 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
   const [reduced] = useState(
     () => typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
   );
+
+  // ---- zoom & pan (viewBox) ------------------------------------------------
+  const [view, setView] = useState({ x: 0, y: 0, w: MAP_W, h: MAP_H });
+  const svgRef = useRef<SVGSVGElement>(null);
+  const pointers = useRef(new Map<number, { x: number; y: number }>());
+  const pinchStart = useRef<{ dist: number; view: typeof view } | null>(null);
+  const panMoved = useRef(false);
+  const MIN_W = MAP_W / 8;
+  const zoom = MAP_W / view.w;
+
+  /** Screen px → current viewBox coordinates. */
+  const toSvg = (clientX: number, clientY: number) => {
+    const r = svgRef.current!.getBoundingClientRect();
+    return {
+      x: view.x + ((clientX - r.left) / r.width) * view.w,
+      y: view.y + ((clientY - r.top) / r.height) * view.h,
+    };
+  };
+
+  const clamp = (v: { x: number; y: number; w: number; h: number }) => {
+    const w = Math.min(MAP_W, Math.max(MIN_W, v.w));
+    const h = (w / MAP_W) * MAP_H;
+    return {
+      w, h,
+      x: Math.min(Math.max(v.x, 0), MAP_W - w),
+      y: Math.min(Math.max(v.y, 0), MAP_H - h),
+    };
+  };
+
+  /** Zoom by factor keeping the svg point (cx, cy) stationary on screen. */
+  const zoomAt = (factor: number, cx: number, cy: number) => {
+    setView((v) => {
+      const w = v.w / factor;
+      const h = v.h / factor;
+      return clamp({ w, h, x: cx - ((cx - v.x) / v.w) * w, y: cy - ((cy - v.y) / v.h) * h });
+    });
+  };
+  const zoomCenter = (factor: number) => zoomAt(factor, view.x + view.w / 2, view.y + view.h / 2);
+  const resetView = () => setView({ x: 0, y: 0, w: MAP_W, h: MAP_H });
+
+  const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
+    (e.target as Element).setPointerCapture?.(e.pointerId);
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    panMoved.current = false;
+    if (pointers.current.size === 2) {
+      const [a, b] = [...pointers.current.values()];
+      pinchStart.current = { dist: Math.hypot(a.x - b.x, a.y - b.y), view };
+    }
+  };
+  const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (!pointers.current.has(e.pointerId)) return;
+    const prev = pointers.current.get(e.pointerId)!;
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.current.size === 2 && pinchStart.current) {
+      const [a, b] = [...pointers.current.values()];
+      const dist = Math.hypot(a.x - b.x, a.y - b.y);
+      const factor = dist / pinchStart.current.dist;
+      const s = pinchStart.current.view;
+      const mid = toSvg((a.x + b.x) / 2, (a.y + b.y) / 2);
+      const w = s.w / factor;
+      setView(clamp({ w, h: (w / MAP_W) * MAP_H, x: mid.x - (mid.x - s.x) / factor, y: mid.y - (mid.y - s.y) / factor }));
+    } else if (pointers.current.size === 1 && zoom > 1.01) {
+      const r = svgRef.current!.getBoundingClientRect();
+      const dx = ((e.clientX - prev.x) / r.width) * view.w;
+      const dy = ((e.clientY - prev.y) / r.height) * view.h;
+      if (Math.abs(e.clientX - prev.x) + Math.abs(e.clientY - prev.y) > 2) panMoved.current = true;
+      setView((v) => clamp({ ...v, x: v.x - dx, y: v.y - dy }));
+    }
+  };
+  const onPointerUp = (e: React.PointerEvent<SVGSVGElement>) => {
+    pointers.current.delete(e.pointerId);
+    if (pointers.current.size < 2) pinchStart.current = null;
+  };
+  const onWheel = (e: React.WheelEvent<SVGSVGElement>) => {
+    if (!e.ctrlKey && !e.metaKey) return; // don't hijack page scroll
+    e.preventDefault();
+    const p = toSvg(e.clientX, e.clientY);
+    zoomAt(e.deltaY < 0 ? 1.25 : 0.8, p.x, p.y);
+  };
+  const onDoubleClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    const p = toSvg(e.clientX, e.clientY);
+    zoomAt(2, p.x, p.y);
+  };
+
+  /** Keep on-screen sizes constant while zooming (viewBox units shrink). */
+  const sc = view.w / MAP_W;
 
   const word = WORDS.find((w) => w.id === wordId)!;
 
@@ -107,14 +194,33 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
       </div>
 
       {/* map */}
-      <div style={{ overflowX: 'auto', marginTop: '0.8rem' }}>
+      <div style={{ position: 'relative', marginTop: '0.8rem' }}>
+        <div role="group" aria-label={t('pg.atlas.zoom')} style={{ position: 'absolute', top: 8, right: 8, zIndex: 2, display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {([['+', () => zoomCenter(1.5), t('pg.atlas.zoomIn')], ['−', () => zoomCenter(1 / 1.5), t('pg.atlas.zoomOut')], ['⊙', resetView, t('pg.atlas.zoomReset')]] as const).map(([label, fn, aria]) => (
+            <button key={label} onClick={fn} aria-label={aria} title={aria}
+              style={{ width: 30, height: 30, borderRadius: 8, border: '1px solid var(--line)', background: 'var(--bg-elev)', color: 'var(--text)', cursor: 'pointer', font: 'inherit', fontSize: '1rem', lineHeight: 1, boxShadow: 'var(--shadow)' }}>
+              {label}
+            </button>
+          ))}
+        </div>
         <svg
-          viewBox={`0 0 ${MAP_W} ${MAP_H}`}
+          ref={svgRef}
+          viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`}
           role="img"
           aria-label={`${t('pg.atlas.mapAria')}: ${word.gloss[lang]}`}
-          style={{ minWidth: 640, width: '100%', height: 'auto', background: 'var(--accent-soft)', borderRadius: 12 }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onWheel={onWheel}
+          onDoubleClick={onDoubleClick}
+          style={{
+            width: '100%', height: 'auto', background: 'var(--accent-soft)', borderRadius: 12,
+            touchAction: zoom > 1.01 ? 'none' : 'pan-y pinch-zoom',
+            cursor: zoom > 1.01 ? 'grab' : 'default',
+          }}
         >
-          <path d={WORLD_PATH} fill="var(--bg-elev)" stroke="var(--line)" strokeWidth="1" />
+          <path d={WORLD_PATH} fill="var(--bg-elev)" stroke="var(--line)" strokeWidth={1 * sc} />
 
           {/* colored language regions (Amazing-Maps style) */}
           {word.forms.map((f) => {
@@ -131,21 +237,21 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
                 fill={c}
                 fillOpacity={isDim ? 0.08 : hollow ? 0.25 : isActive ? 0.85 : 0.6}
                 stroke={isActive ? 'var(--text)' : 'var(--bg)'}
-                strokeWidth={isActive ? 1.4 : 0.7}
-                strokeDasharray={hollow ? '3 2' : undefined}
+                strokeWidth={(isActive ? 1.4 : 0.7) * sc}
+                strokeDasharray={hollow ? `${3 * sc} ${2 * sc}` : undefined}
                 style={{ cursor: 'pointer', transition: 'fill-opacity 0.2s' }}
-                onClick={() => setActiveForm(isActive ? null : f)}
+                onClick={() => !panMoved.current && setActiveForm(isActive ? null : f)}
               />
             );
           })}
 
           {/* origin point */}
           <g>
-            <circle cx={originPt.x} cy={originPt.y} r={14} fill="none" stroke="var(--accent)" strokeWidth="2" opacity="0.9">
-              {!reduced && <animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="3" />}
+            <circle cx={originPt.x} cy={originPt.y} r={14 * sc} fill="none" stroke="var(--accent)" strokeWidth={2 * sc} opacity="0.9">
+              {!reduced && <animate attributeName="r" values={`${10 * sc};${18 * sc};${10 * sc}`} dur="2.4s" repeatCount="3" />}
               {!reduced && <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.4s" repeatCount="3" />}
             </circle>
-            <text x={originPt.x} y={originPt.y - 20} textAnchor="middle" fontSize="13" fill="var(--accent)" fontWeight="700">
+            <text x={originPt.x} y={originPt.y - 20 * sc} textAnchor="middle" fontSize={13 * sc} fill="var(--accent)" fontWeight="700">
               📍
             </text>
           </g>
@@ -161,19 +267,19 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
               <g
                 key={f.lang}
                 style={{ cursor: 'pointer', opacity: isDim ? 0.15 : 1, transition: 'opacity 0.2s' }}
-                onClick={() => setActiveForm(isActive ? null : f)}
+                onClick={() => !panMoved.current && setActiveForm(isActive ? null : f)}
               >
                 <text
-                  x={p.x} y={p.y + dy + 4} textAnchor="middle"
-                  fontSize={isActive ? 13 : 11.5} fontWeight={isActive ? 800 : 700}
-                  fill="var(--text)" stroke="var(--bg-elev)" strokeWidth="3.5" paintOrder="stroke"
+                  x={p.x} y={p.y + dy + 4 * sc} textAnchor="middle"
+                  fontSize={(isActive ? 13 : 11.5) * sc} fontWeight={isActive ? 800 : 700}
+                  fill="var(--text)" stroke="var(--bg-elev)" strokeWidth={3.5 * sc} paintOrder="stroke"
                   style={{ textTransform: 'uppercase', letterSpacing: '0.02em' }}
                 >
                   {f.form}
                 </text>
                 {/* invisible hit/focus target */}
                 <circle
-                  cx={p.x} cy={p.y + dy} r={16} fill="transparent" tabIndex={0} role="button"
+                  cx={p.x} cy={p.y + dy} r={16 * sc} fill="transparent" tabIndex={0} role="button"
                   aria-label={`${reg.name[lang]}: ${f.form}`}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {

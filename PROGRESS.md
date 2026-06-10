@@ -254,3 +254,12 @@ Phases:
 - Country→language assignment is deliberately coarse (one primary language per country, only
   clear-cut cases; multilingual states skipped or simplified) and the map caption says so.
 - Click region or label → detail card; legend isolation dims whole regions. Island 24 KB gz.
+
+## ✅ Update — 2026-06-10 (Word Atlas zoom & pan)
+
+- Map is now zoomable: viewBox-based, zero libs. Inputs: +/−/⊙ buttons (top-right), double-click
+  to zoom at point, Ctrl/Cmd+scroll (plain scroll untouched), two-finger pinch, one-finger drag
+  to pan when zoomed (touchAction flips to 'none' only while zoomed, so page scroll survives).
+- Labels/strokes/pulse scale inversely with zoom — constant on-screen size, so zooming genuinely
+  declutters dense Europe. Click-vs-drag disambiguated (pan movement suppresses region clicks).
+  View clamped to map bounds; max zoom 8×.
