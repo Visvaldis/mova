@@ -34,3 +34,24 @@ range ~135,000 BCE → today, log-scaled.
 ## Notes
 
 - Keep this the single source of truth so adding an article = adding rows here, then the UI updates.
+
+## Done — 2026-06-10
+
+Shipped `src/data/timelineEvents.ts`: a typed (`TimelineEvent`), bilingual dataset of **40 events**
+spanning ~7 Mya (chimp-lineage split) → 2023 (machines join language change). Each row has EN+UK
+`title`/`blurb`, a `topic`, and a source `slug` linking back to its article.
+
+**Sourcing audit.** Verified every event's core claim against `content/en/<slug>.md`. All 40 trace
+to an article — after one removal:
+
+- **Removed** an unsourced event: *"1920 — 'Robot' is born in Prague"* (Čapek / R.U.R. / `robota`).
+  Neither `content/en/machine-languages.md` nor the UK pair mentions robot/Čapek/R.U.R./Prague, so
+  per the hard rule (omit or `TODO(seva)`) it was dropped rather than invented.
+
+`TODO(seva)`: a few `year` values are **plot anchors** that position a documented event on the log
+axis rather than exact dates stated in prose — the *fact* is sourced, the year just places it:
+`deadline`=1864 (article: "Civil War", 1861–65); Grimm's Law "fires"=−500 (article: "first
+millennium BCE"); Chomsky hierarchy=1956 (article: "the 1950s"); PIE spoken=−3500 (article:
+"5,000–6,000 years ago"). Flagged in the file header comment — confirm they read acceptably.
+
+Files: `src/data/timelineEvents.ts`. `npm run build` → 0 errors.

@@ -155,11 +155,6 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     blurb: { en: 'Zamenhof’s sixteen exception-free rules; today up to two million learners — and native-speaking children who bend the rules.', uk: 'Шістнадцять правил Заменгофа без винятків; нині до двох мільйонів учнів — і діти-носії, що гнуть правила.' },
   },
   {
-    year: 1920, topic: 'machine', slug: 'machine-languages',
-    title: { en: '“Robot” is born in Prague', uk: 'У Празі народжується «робот»' },
-    blurb: { en: 'Czech robota, coined for Čapek’s R.U.R. — a Slavic word conquers the world.', uk: 'Чеське robota, укарбоване для R.U.R. Чапека, — слов’янське слово завойовує світ.' },
-  },
-  {
     year: 1923, topic: 'ukrainian', slug: 'ukrainian-language-history',
     title: { en: 'Korenizatsiia', uk: 'Коренізація' },
     blurb: { en: 'The 1920s briefly push Ukrainian into schools and publishing — before a brutal reversal.', uk: '1920-ті ненадовго просувають українську в школи та видавництва — перед брутальним розворотом.' },
