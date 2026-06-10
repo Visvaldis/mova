@@ -172,7 +172,7 @@ export const ui = {
     'pg.atlas.legend': 'Origin groups — same color, same source',
     'pg.atlas.started': 'Where it started',
     'pg.atlas.mapAria': 'World map of word forms',
-    'pg.atlas.mapNote': 'Dots are schematic anchors (capital cities), not language territories. Hollow dashed dots = independent local words.',
+    'pg.atlas.mapNote': 'Countries are colored by their primary language among our 31 — a simplification (most countries are multilingual). Grey land = not in our set yet. Dashed fill = independent local words.',
     'pg.atlas.note': 'Forms verified against Wiktionary translation tables, cross-checked with etymonline / ЕСУМ. Tap a legend chip to isolate a group; tap a dot for the native script.',
 
     'soundShift.stage0': 'PIE / Latin',
@@ -574,7 +574,7 @@ export const ui = {
     'pg.atlas.legend': 'Групи походження — один колір, одне джерело',
     'pg.atlas.started': 'Де це почалося',
     'pg.atlas.mapAria': 'Світова мапа форм слова',
-    'pg.atlas.mapNote': 'Крапки — схематичні якорі (столиці), а не території мов. Порожні пунктирні крапки — незалежні місцеві слова.',
+    'pg.atlas.mapNote': 'Країни зафарбовано за їхньою основною мовою з наших 31 — це спрощення (більшість країн багатомовні). Сіра суша — ще не в нашому наборі. Пунктирна заливка — незалежні місцеві слова.',
     'pg.atlas.note': 'Форми звірено з таблицями перекладів Wiktionary та перехресно з etymonline / ЕСУМ. Торкніться чипа в легенді, щоб ізолювати групу; торкніться крапки — побачите рідне письмо.',
 
     'soundShift.stage0': 'ПІЄ / латина',

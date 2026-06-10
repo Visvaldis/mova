@@ -243,3 +243,14 @@ Phases:
   Greenland all present, dots land on the right coasts.
 - **Regenerate**: `npm i --no-save world-atlas topojson-client`, then the generator script in this
   entry's commit (gen-world) → paste output into `WORLD_PATH`.
+
+## ✅ Update — 2026-06-10 (Word Atlas: choropleth regions)
+
+- Dots → **colored country regions** (Amazing-Maps style): ~60 countries extracted from Natural
+  Earth countries-110m into `src/data/playground/word-atlas-regions.json` (keyed by language id,
+  13 KB gz; same projection/simplification pipeline as the land silhouette). Each region fills with
+  its language's origin-group color for the selected word; uppercase form labels with halo sit on
+  the regions; dashed translucent fill = independent local words; grey land = language not in set.
+- Country→language assignment is deliberately coarse (one primary language per country, only
+  clear-cut cases; multilingual states skipped or simplified) and the map caption says so.
+- Click region or label → detail card; legend isolation dims whole regions. Island 24 KB gz.

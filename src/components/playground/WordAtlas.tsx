@@ -5,6 +5,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
 import data from '../../data/playground/word-atlas.json';
+import regionsData from '../../data/playground/word-atlas-regions.json';
 
 interface AtlasLanguage {
   name: Record<Lang, string>;
@@ -37,6 +38,8 @@ interface AtlasWord {
 
 const LANGS_REG = (data as unknown as { languages: Record<string, AtlasLanguage> }).languages;
 const WORDS = (data as unknown as { words: AtlasWord[] }).words;
+/** Per-language country region paths (Natural Earth countries-110m, pre-simplified). */
+const REGIONS = (regionsData as unknown as { regions: Record<string, string> }).regions;
 
 // Fixed per-word palette by origin order; 'unclear'/'other' renders hollow grey.
 const PALETTE = ['#0d9488', '#d97706', '#7c3aed', '#db2777', '#2563eb', '#65a30d'];
@@ -113,6 +116,29 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
         >
           <path d={WORLD_PATH} fill="var(--bg-elev)" stroke="var(--line)" strokeWidth="1" />
 
+          {/* colored language regions (Amazing-Maps style) */}
+          {word.forms.map((f) => {
+            const path = REGIONS[f.lang];
+            if (!path) return null;
+            const c = colorOf(f.origin);
+            const hollow = f.origin === 'other' || f.origin === 'unclear';
+            const isDim = dimmed !== null && dimmed !== f.origin;
+            const isActive = activeForm?.lang === f.lang;
+            return (
+              <path
+                key={`r-${f.lang}`}
+                d={path}
+                fill={c}
+                fillOpacity={isDim ? 0.08 : hollow ? 0.25 : isActive ? 0.85 : 0.6}
+                stroke={isActive ? 'var(--text)' : 'var(--bg)'}
+                strokeWidth={isActive ? 1.4 : 0.7}
+                strokeDasharray={hollow ? '3 2' : undefined}
+                style={{ cursor: 'pointer', transition: 'fill-opacity 0.2s' }}
+                onClick={() => setActiveForm(isActive ? null : f)}
+              />
+            );
+          })}
+
           {/* origin point */}
           <g>
             <circle cx={originPt.x} cy={originPt.y} r={14} fill="none" stroke="var(--accent)" strokeWidth="2" opacity="0.9">
@@ -128,33 +154,26 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
             const reg = LANGS_REG[f.lang];
             if (!reg) return null;
             const p = project(reg.lat, reg.lon);
-            const c = colorOf(f.origin);
-            const hollow = f.origin === 'other' || f.origin === 'unclear';
             const isDim = dimmed !== null && dimmed !== f.origin;
             const isActive = activeForm?.lang === f.lang;
             const dy = f.dy ?? 0;
             return (
               <g
                 key={f.lang}
-                style={{ cursor: 'pointer', opacity: isDim ? 0.18 : 1, transition: 'opacity 0.2s' }}
+                style={{ cursor: 'pointer', opacity: isDim ? 0.15 : 1, transition: 'opacity 0.2s' }}
                 onClick={() => setActiveForm(isActive ? null : f)}
               >
-                <circle
-                  cx={p.x} cy={p.y + dy} r={isActive ? 8 : 5.5}
-                  fill={hollow ? 'var(--bg-elev)' : c}
-                  stroke={c} strokeWidth={hollow ? 2 : isActive ? 2.5 : 1}
-                  strokeDasharray={hollow ? '2 2' : undefined}
-                />
                 <text
-                  x={p.x} y={p.y + dy - 9} textAnchor="middle"
-                  fontSize="11.5" fontWeight={isActive ? 800 : 600}
-                  fill="var(--text)" stroke="var(--bg-elev)" strokeWidth="3" paintOrder="stroke"
+                  x={p.x} y={p.y + dy + 4} textAnchor="middle"
+                  fontSize={isActive ? 13 : 11.5} fontWeight={isActive ? 800 : 700}
+                  fill="var(--text)" stroke="var(--bg-elev)" strokeWidth="3.5" paintOrder="stroke"
+                  style={{ textTransform: 'uppercase', letterSpacing: '0.02em' }}
                 >
                   {f.form}
                 </text>
-                {/* larger invisible hit/focus target */}
+                {/* invisible hit/focus target */}
                 <circle
-                  cx={p.x} cy={p.y + dy} r={14} fill="transparent" tabIndex={0} role="button"
+                  cx={p.x} cy={p.y + dy} r={16} fill="transparent" tabIndex={0} role="button"
                   aria-label={`${reg.name[lang]}: ${f.form}`}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
