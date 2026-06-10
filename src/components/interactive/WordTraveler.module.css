@@ -1,0 +1,408 @@
+/* ============================================================
+   word-traveler — animated journey map + "guess the origin" quiz.
+
+   CSS Module: locally scoped, never leaks into `.prose`. Every colour is a
+   topic variable inherited from <body data-topic="borrowing"> — no bare hex.
+   sea-vs-land (and the two forks) are distinguished by SOLID vs DASHED +
+   FILLED vs HOLLOW, so they read without relying on a second hue.
+   ============================================================ */
+
+.wrap {
+  display: grid;
+  gap: 0;
+}
+
+.intro {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* ---- word picker ---- */
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.wordBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem 0.35rem 0.55rem;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.wordBtn:hover {
+  border-color: var(--accent);
+}
+.wordBtn[data-active='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.wordBtn[data-kind='export'] {
+  border-style: dashed;
+}
+.wordBtn[data-active='true'][data-kind='export'] {
+  border-style: solid;
+}
+.wordEmoji {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.wordName {
+  white-space: nowrap;
+}
+
+.gloss {
+  margin: 0.9rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---- map ---- */
+.mapWrap {
+  display: grid;
+  gap: 0.5rem;
+}
+.map {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.land {
+  fill: var(--accent-soft);
+  stroke: var(--line);
+  stroke-width: 0.6;
+  opacity: 0.55;
+}
+
+.route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  animation: draw 0.7s ease forwards;
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.routeDashed {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 7 5;
+  opacity: 0.85;
+}
+
+.originDot {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
+.dot {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
+.dotHollow {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 2.4;
+}
+.originDot[data-focused='true'],
+.dot[data-focused='true'],
+.dotHollow[data-focused='true'] {
+  stroke: var(--accent);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 4px var(--accent));
+}
+
+/* legend for the tea sea/land split */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.swatchSolid,
+.swatchDashed {
+  width: 22px;
+  height: 0;
+  border-top: 2.6px solid var(--accent);
+  display: inline-block;
+}
+.swatchDashed {
+  border-top-style: dashed;
+}
+
+/* ---- controls ---- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+.count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.controls .range {
+  flex: 1 1 160px;
+  min-width: 120px;
+}
+
+/* ---- form trail ---- */
+.trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0 0.85rem;
+}
+.trailLabel {
+  flex-basis: 100%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.1rem;
+}
+.trailRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  flex-basis: 100%;
+}
+.trailGroup {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 5.5rem;
+}
+.chipGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.arrow {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.chip {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.6rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, transform 0.12s ease;
+}
+.chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.chip[data-hollow='true'] {
+  border-style: dashed;
+}
+.chip[data-origin='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.chip[data-focused='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* ---- focused stop-card ---- */
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.cardForm {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.unknown {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.cardPlace {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.badge {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+}
+.badge[data-kind='export'] {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px dashed var(--accent);
+}
+.cardNote {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.teaLegend {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* ---- quiz ---- */
+.quizMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.6rem;
+}
+.quizWord {
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0.3rem 0 0.2rem;
+}
+.quizPrompt {
+  margin: 0 0 0.9rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+.option {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, transform 0.12s ease;
+}
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.option:disabled {
+  cursor: default;
+}
+.option[data-state='correct'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.option[data-state='wrong'] {
+  border-style: dashed;
+  border-color: var(--accent);
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+.option[data-state='dim'] {
+  opacity: 0.5;
+}
+
+.feedback {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.feedback {
+  font-weight: 700;
+}
+.feedbackText {
+  font-weight: 400;
+}
+
+/* ---- quiz result ---- */
+.result {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.resultTitle {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.resultScore {
+  font-size: clamp(2.4rem, 10vw, 3.4rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.resultNote {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 32ch;
+}
+
+/* narrow screens */
+@media (max-width: 460px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+  .trailGroup {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+}
