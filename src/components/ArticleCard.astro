@@ -1,6 +1,7 @@
 ---
 import { localizedPath, useTranslations, type Lang } from '../i18n/utils';
 import { topicNames, interactiveInfo } from '../i18n/ui';
+import CardPreview from './CardPreview.astro';
 
 interface Props {
   lang: Lang;
@@ -19,7 +20,7 @@ const topicName = topicNames[topic]?.[lang] ?? topic;
 ---
 
 <a class="card" href={localizedPath(lang, slug)} data-topic={topic}>
-  <div class="preview" aria-hidden="true">{icon}</div>
+  <div class="preview" aria-hidden="true"><CardPreview interactive={interactive} icon={icon} /></div>
   <h3>{title}</h3>
   <p>{summary}</p>
   <div class="meta">

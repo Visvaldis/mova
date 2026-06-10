@@ -1,0 +1,356 @@
+---
+// CardPreview — a small, hydration-free animated preview of each article's
+// interactive, shown in the home-page card's `.preview` box (CLAUDE.md › Pages ›
+// Home). One inline SVG scene per interactive id, animated with pure CSS so the
+// home grid ships zero JS. Colors come only from the inherited topic variables
+// (the card sets `data-topic`), so each scene auto-matches its accent in light
+// and dark mode. Animations are neutralized under prefers-reduced-motion by the
+// global rule in global.css. Any id without a scene falls back to the emoji.
+interface Props {
+  interactive: string;
+  icon: string;
+}
+const { interactive, icon } = Astro.props;
+
+const SCENES = new Set([
+  'origins-timeline', 'family-tree', 'sound-shift', 'ukrainian-timeline',
+  'slang-decoder', 'ai-language-lab', 'creole-lab', 'vitality-map',
+  'script-evolver', 'word-traveler', 'word-xray', 'roots-garden',
+  'name-map', 'myth-buster', 'thought-lens', 'accent-atlas',
+  'conlang-workbench', 'code-vs-speech',
+]);
+const hasScene = SCENES.has(interactive);
+---
+
+{!hasScene && <span class="cp-emoji">{icon}</span>}
+
+{/* origins-timeline — a marker travels a deep-time line of milestone nodes */}
+{interactive === 'origins-timeline' && (
+  <svg class="cp cp-origins" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <line class="base" x1="16" y1="50" x2="144" y2="50" />
+    <circle class="node" cx="28" cy="50" r="5" />
+    <circle class="node" cx="64" cy="50" r="5" />
+    <circle class="node" cx="100" cy="50" r="5" />
+    <circle class="node" cx="136" cy="50" r="5" />
+    <circle class="trav" cx="28" cy="50" r="6.5" />
+  </svg>
+)}
+
+{/* family-tree — branches from a root, leaves popping in turn */}
+{interactive === 'family-tree' && (
+  <svg class="cp cp-tree" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <path class="branch" d="M80 18 L80 38 M80 38 L42 64 M80 38 L80 64 M80 38 L118 64" />
+    <circle class="root" cx="80" cy="16" r="5" />
+    <circle class="leaf l1" cx="42" cy="68" r="6" />
+    <circle class="leaf l2" cx="80" cy="68" r="6" />
+    <circle class="leaf l3" cx="118" cy="68" r="6" />
+  </svg>
+)}
+
+{/* sound-shift — a consonant morphs p → f (Grimm's Law) */}
+{interactive === 'sound-shift' && (
+  <svg class="cp cp-sound" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <text class="g g1" x="80" y="60">p</text>
+    <text class="g g2" x="80" y="60">f</text>
+  </svg>
+)}
+
+{/* ukrainian-timeline — a marker descends a vertical era spine */}
+{interactive === 'ukrainian-timeline' && (
+  <svg class="cp cp-uk" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <line class="spine" x1="80" y1="16" x2="80" y2="72" />
+    <line class="tick" x1="70" y1="28" x2="90" y2="28" />
+    <line class="tick" x1="70" y1="44" x2="90" y2="44" />
+    <line class="tick" x1="70" y1="60" x2="90" y2="60" />
+    <circle class="marker" cx="80" cy="16" r="6" />
+  </svg>
+)}
+
+{/* slang-decoder — chat bubbles rising in turn */}
+{interactive === 'slang-decoder' && (
+  <svg class="cp cp-slang" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <g class="grp g1">
+      <rect class="bub" x="20" y="20" width="80" height="24" rx="12" />
+      <circle class="dot" cx="38" cy="32" r="3" />
+      <circle class="dot" cx="50" cy="32" r="3" />
+      <circle class="dot" cx="62" cy="32" r="3" />
+    </g>
+    <g class="grp g2">
+      <rect class="bub alt" x="60" y="50" width="80" height="24" rx="12" />
+      <circle class="dot" cx="100" cy="62" r="3" />
+      <circle class="dot" cx="112" cy="62" r="3" />
+      <circle class="dot" cx="124" cy="62" r="3" />
+    </g>
+  </svg>
+)}
+
+{/* ai-language-lab — two trends draw: homogenize vs diversify */}
+{interactive === 'ai-language-lab' && (
+  <svg class="cp cp-ai" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <path class="axis" d="M22 70 H140 M22 70 V18" />
+    <path class="up" d="M22 58 C 60 50, 92 30, 140 20" />
+    <path class="down" d="M22 32 C 60 42, 92 58, 140 66" />
+  </svg>
+)}
+
+{/* creole-lab — scattered home signs converge into an ordered row */}
+{interactive === 'creole-lab' && (
+  <svg class="cp cp-creole" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <circle class="s s1" cx="30" cy="24" r="6.5" />
+    <circle class="s s2" cx="122" cy="30" r="6.5" />
+    <circle class="s s3" cx="72" cy="66" r="6.5" />
+  </svg>
+)}
+
+{/* vitality-map — a revival curve climbing from near-zero */}
+{interactive === 'vitality-map' && (
+  <svg class="cp cp-vital" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <line class="floor" x1="20" y1="72" x2="140" y2="72" />
+    <path class="curve" d="M22 72 C 64 70, 96 60, 138 18" />
+    <circle class="climber" cx="0" cy="0" r="6" />
+  </svg>
+)}
+
+{/* script-evolver — a glyph morphs across scripts Δ → A */}
+{interactive === 'script-evolver' && (
+  <svg class="cp cp-script" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <text class="g g1" x="80" y="60">Δ</text>
+    <text class="g g2" x="80" y="60">A</text>
+  </svg>
+)}
+
+{/* word-traveler — a word travels a borrowing route between stops */}
+{interactive === 'word-traveler' && (
+  <svg class="cp cp-travel" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <path class="route" d="M22 64 C 52 18, 108 18, 138 56" />
+    <circle class="stop" cx="22" cy="64" r="4.5" />
+    <circle class="stop" cx="80" cy="22" r="4.5" />
+    <circle class="stop" cx="138" cy="56" r="4.5" />
+    <circle class="ship" cx="0" cy="0" r="5.5" />
+  </svg>
+)}
+
+{/* word-xray — a word peels apart into its morphemes */}
+{interactive === 'word-xray' && (
+  <svg class="cp cp-xray" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <g class="half h1">
+      <rect class="blk" x="46" y="34" width="34" height="20" rx="5" />
+      <line class="ln" x1="52" y1="44" x2="74" y2="44" />
+    </g>
+    <g class="half h2">
+      <rect class="blk" x="80" y="34" width="34" height="20" rx="5" />
+      <line class="ln" x1="86" y1="44" x2="108" y2="44" />
+    </g>
+  </svg>
+)}
+
+{/* roots-garden — stratigraphy layers deposit bottom-up */}
+{interactive === 'roots-garden' && (
+  <svg class="cp cp-roots" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <rect class="layer ly1" x="26" y="58" width="108" height="12" rx="3" />
+    <rect class="layer ly2" x="26" y="44" width="108" height="12" rx="3" />
+    <rect class="layer ly3" x="26" y="30" width="108" height="12" rx="3" />
+  </svg>
+)}
+
+{/* name-map — a pin drops onto a place, with a ripple */}
+{interactive === 'name-map' && (
+  <svg class="cp cp-name" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <ellipse class="ripple" cx="80" cy="68" rx="16" ry="5" />
+    <g class="pingrp">
+      <path class="pin" d="M80 20 C 67 20 59 30 59 41 C 59 54 80 66 80 66 C 80 66 101 54 101 41 C 101 30 93 20 80 20 Z" />
+      <circle class="hole" cx="80" cy="40" r="6" />
+    </g>
+  </svg>
+)}
+
+{/* myth-buster — a verdict card flips between true and false */}
+{interactive === 'myth-buster' && (
+  <svg class="cp cp-myth" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <g class="flip">
+      <rect class="face" x="50" y="22" width="60" height="44" rx="9" />
+      <text class="mark m1" x="80" y="54">✓</text>
+      <text class="mark m2" x="80" y="54">✗</text>
+    </g>
+  </svg>
+)}
+
+{/* thought-lens — a boundary sweeps across a colour continuum */}
+{interactive === 'thought-lens' && (
+  <svg class="cp cp-thought" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="cpThoughtGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop class="s0" offset="0%" />
+        <stop class="s1" offset="100%" />
+      </linearGradient>
+    </defs>
+    <rect class="strip" x="20" y="34" width="120" height="22" rx="7" fill="url(#cpThoughtGrad)" />
+    <line class="bound" x1="0" y1="28" x2="0" y2="62" />
+  </svg>
+)}
+
+{/* accent-atlas — a speech waveform of varied dialect "voices" */}
+{interactive === 'accent-atlas' && (
+  <svg class="cp cp-accent" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <rect class="bar b1" x="48" y="24" width="8" height="40" rx="4" />
+    <rect class="bar b2" x="62" y="24" width="8" height="40" rx="4" />
+    <rect class="bar b3" x="76" y="24" width="8" height="40" rx="4" />
+    <rect class="bar b4" x="90" y="24" width="8" height="40" rx="4" />
+    <rect class="bar b5" x="104" y="24" width="8" height="40" rx="4" />
+  </svg>
+)}
+
+{/* conlang-workbench — two word-tiles slide together to compound */}
+{interactive === 'conlang-workbench' && (
+  <svg class="cp cp-conlang" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <rect class="tile t1" x="30" y="33" width="28" height="22" rx="6" />
+    <text class="plus" x="80" y="51">+</text>
+    <rect class="tile t2" x="102" y="33" width="28" height="22" rx="6" />
+  </svg>
+)}
+
+{/* code-vs-speech — a design-feature scorecard with toggling lights */}
+{interactive === 'code-vs-speech' && (
+  <svg class="cp cp-code" viewBox="0 0 160 88" preserveAspectRatio="xMidYMid meet">
+    <rect class="rowbar" x="30" y="26" width="64" height="6" rx="3" />
+    <circle class="light l1" cx="118" cy="29" r="6" />
+    <rect class="rowbar" x="30" y="44" width="64" height="6" rx="3" />
+    <circle class="light l2" cx="118" cy="47" r="6" />
+    <rect class="rowbar" x="30" y="62" width="64" height="6" rx="3" />
+    <circle class="light l3" cx="118" cy="65" r="6" />
+  </svg>
+)}
+
+<style>
+  .cp { width: 100%; height: 100%; }
+  .cp-emoji { font-size: 2.2rem; line-height: 1; }
+
+  /* Shared helpers */
+  .cp text { font-family: var(--font-sans); }
+
+  /* origins-timeline */
+  .cp-origins .base { stroke: color-mix(in srgb, var(--accent) 40%, var(--bg)); stroke-width: 3; stroke-linecap: round; }
+  .cp-origins .node { fill: color-mix(in srgb, var(--accent) 45%, var(--bg)); }
+  .cp-origins .trav { fill: var(--accent); animation: cp-origins-move 4s ease-in-out infinite; }
+  @keyframes cp-origins-move { 0% { transform: translateX(0); } 50% { transform: translateX(108px); } 100% { transform: translateX(0); } }
+
+  /* family-tree */
+  .cp-tree .branch { fill: none; stroke: color-mix(in srgb, var(--accent) 50%, var(--bg)); stroke-width: 3; stroke-linecap: round; }
+  .cp-tree .root { fill: var(--accent); }
+  .cp-tree .leaf { fill: var(--accent); transform-box: fill-box; transform-origin: center; animation: cp-pop 3s ease-in-out infinite; }
+  .cp-tree .l2 { animation-delay: 0.3s; }
+  .cp-tree .l3 { animation-delay: 0.6s; }
+  @keyframes cp-pop { 0%, 65%, 100% { transform: scale(1); } 32% { transform: scale(1.55); } }
+
+  /* sound-shift + script-evolver glyph crossfade */
+  .cp-sound .g, .cp-script .g { font-size: 46px; font-weight: 800; fill: var(--accent); text-anchor: middle; }
+  .cp-sound .g1, .cp-script .g1 { animation: cp-swap-a 3.2s ease-in-out infinite; }
+  .cp-sound .g2, .cp-script .g2 { animation: cp-swap-b 3.2s ease-in-out infinite; }
+  @keyframes cp-swap-a { 0%, 38% { opacity: 1; } 55%, 95% { opacity: 0; } 100% { opacity: 1; } }
+  @keyframes cp-swap-b { 0%, 38% { opacity: 0; } 55%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+  /* ukrainian-timeline */
+  .cp-uk .spine { stroke: color-mix(in srgb, var(--accent) 45%, var(--bg)); stroke-width: 3; stroke-linecap: round; }
+  .cp-uk .tick { stroke: color-mix(in srgb, var(--accent) 35%, var(--bg)); stroke-width: 3; stroke-linecap: round; }
+  .cp-uk .marker { fill: var(--accent-2); animation: cp-uk-move 4s ease-in-out infinite; }
+  @keyframes cp-uk-move { 0% { transform: translateY(0); } 50% { transform: translateY(56px); } 100% { transform: translateY(0); } }
+
+  /* slang-decoder */
+  .cp-slang .bub { fill: color-mix(in srgb, var(--accent) 20%, var(--bg)); stroke: var(--accent); stroke-width: 2.5; }
+  .cp-slang .bub.alt { fill: color-mix(in srgb, var(--accent) 38%, var(--bg)); }
+  .cp-slang .dot { fill: var(--accent); }
+  .cp-slang .g1 { animation: cp-rise 3s ease-in-out infinite; }
+  .cp-slang .g2 { animation: cp-rise 3s ease-in-out infinite 0.4s; }
+  @keyframes cp-rise { 0%, 100% { opacity: 0.4; transform: translateY(4px); } 50% { opacity: 1; transform: translateY(0); } }
+
+  /* ai-language-lab */
+  .cp-ai .axis { fill: none; stroke: color-mix(in srgb, var(--accent) 30%, var(--bg)); stroke-width: 2.5; stroke-linecap: round; }
+  .cp-ai .up, .cp-ai .down { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 170; stroke-dashoffset: 170; animation: cp-draw 3.6s ease-in-out infinite; }
+  .cp-ai .up { stroke: var(--accent); }
+  .cp-ai .down { stroke: color-mix(in srgb, var(--accent) 55%, var(--bg)); animation-delay: 0.2s; }
+  @keyframes cp-draw { 0% { stroke-dashoffset: 170; } 55%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 170; } }
+
+  /* creole-lab */
+  .cp-creole .s { fill: var(--accent); }
+  .cp-creole .s1 { animation: cp-cr1 4s ease-in-out infinite; }
+  .cp-creole .s2 { animation: cp-cr2 4s ease-in-out infinite; }
+  .cp-creole .s3 { animation: cp-cr3 4s ease-in-out infinite; }
+  @keyframes cp-cr1 { 0%, 100% { transform: translate(0, 0); } 45%, 72% { transform: translate(18px, 20px); } }
+  @keyframes cp-cr2 { 0%, 100% { transform: translate(0, 0); } 45%, 72% { transform: translate(-10px, 14px); } }
+  @keyframes cp-cr3 { 0%, 100% { transform: translate(0, 0); } 45%, 72% { transform: translate(8px, -22px); } }
+
+  /* vitality-map */
+  .cp-vital .floor { stroke: color-mix(in srgb, var(--accent) 25%, var(--bg)); stroke-width: 2; stroke-linecap: round; }
+  .cp-vital .curve { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+  .cp-vital .climber { fill: var(--accent-2); offset-path: path('M22 72 C 64 70, 96 60, 138 18'); offset-distance: 0%; animation: cp-climb 4s ease-in-out infinite; }
+  @keyframes cp-climb { 0% { offset-distance: 0%; } 60%, 100% { offset-distance: 100%; } }
+
+  /* word-traveler */
+  .cp-travel .route { fill: none; stroke: color-mix(in srgb, var(--accent) 45%, var(--bg)); stroke-width: 2.5; stroke-dasharray: 5 6; stroke-linecap: round; }
+  .cp-travel .stop { fill: var(--accent); }
+  .cp-travel .ship { fill: var(--accent); offset-path: path('M22 64 C 52 18, 108 18, 138 56'); offset-distance: 0%; animation: cp-travel-go 4.4s ease-in-out infinite; }
+  @keyframes cp-travel-go { 0% { offset-distance: 0%; } 50% { offset-distance: 100%; } 100% { offset-distance: 0%; } }
+
+  /* word-xray */
+  .cp-xray .blk { fill: color-mix(in srgb, var(--accent) 24%, var(--bg)); stroke: var(--accent); stroke-width: 2.5; }
+  .cp-xray .ln { stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
+  .cp-xray .h1 { animation: cp-xray-l 3.6s ease-in-out infinite; }
+  .cp-xray .h2 { animation: cp-xray-r 3.6s ease-in-out infinite; }
+  @keyframes cp-xray-l { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-13px); } }
+  @keyframes cp-xray-r { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(13px); } }
+
+  /* roots-garden */
+  .cp-roots .layer { transform-box: fill-box; transform-origin: left center; animation: cp-layer 3.6s ease-in-out infinite; }
+  .cp-roots .ly1 { fill: color-mix(in srgb, var(--accent) 45%, var(--bg)); }
+  .cp-roots .ly2 { fill: color-mix(in srgb, var(--accent) 65%, var(--bg)); animation-delay: 0.35s; }
+  .cp-roots .ly3 { fill: var(--accent); animation-delay: 0.7s; }
+  @keyframes cp-layer { 0%, 100% { transform: scaleX(0.62); opacity: 0.5; } 50% { transform: scaleX(1); opacity: 1; } }
+
+  /* name-map */
+  .cp-name .pin { fill: var(--accent); }
+  .cp-name .hole { fill: var(--bg-elev); }
+  .cp-name .pingrp { animation: cp-drop 3s ease-in-out infinite; }
+  .cp-name .ripple { fill: none; stroke: var(--accent); stroke-width: 2; transform-box: fill-box; transform-origin: center; opacity: 0; animation: cp-ripple 3s ease-in-out infinite; }
+  @keyframes cp-drop { 0% { transform: translateY(-30px); } 26% { transform: translateY(0); } 36% { transform: translateY(-7px); } 48%, 100% { transform: translateY(0); } }
+  @keyframes cp-ripple { 0%, 26% { transform: scale(0.4); opacity: 0; } 30% { opacity: 0.7; } 62% { transform: scale(1.5); opacity: 0; } 100% { opacity: 0; } }
+
+  /* myth-buster */
+  .cp-myth .flip { transform-box: fill-box; transform-origin: center; animation: cp-flip 3.6s ease-in-out infinite; }
+  .cp-myth .face { fill: color-mix(in srgb, var(--accent) 18%, var(--bg)); stroke: var(--accent); stroke-width: 2.5; }
+  .cp-myth .mark { font-size: 26px; font-weight: 800; fill: var(--accent); text-anchor: middle; }
+  .cp-myth .m1 { animation: cp-half-a 3.6s steps(1, end) infinite; }
+  .cp-myth .m2 { animation: cp-half-b 3.6s steps(1, end) infinite; }
+  @keyframes cp-flip { 0%, 100% { transform: scaleX(1); } 48%, 52% { transform: scaleX(0.04); } }
+  @keyframes cp-half-a { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+  @keyframes cp-half-b { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+  /* thought-lens */
+  .cp-thought .s0 { stop-color: var(--accent-soft); }
+  .cp-thought .s1 { stop-color: var(--accent); }
+  .cp-thought .bound { stroke: var(--text); stroke-width: 3; stroke-linecap: round; animation: cp-sweep 4s ease-in-out infinite; }
+  @keyframes cp-sweep { 0% { transform: translateX(36px); } 50% { transform: translateX(124px); } 100% { transform: translateX(36px); } }
+
+  /* accent-atlas */
+  .cp-accent .bar { fill: var(--accent); transform-box: fill-box; transform-origin: center; animation: cp-eq 1.5s ease-in-out infinite; }
+  .cp-accent .b2 { animation-delay: 0.18s; }
+  .cp-accent .b3 { animation-delay: 0.36s; }
+  .cp-accent .b4 { animation-delay: 0.12s; }
+  .cp-accent .b5 { animation-delay: 0.3s; }
+  @keyframes cp-eq { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+  /* conlang-workbench */
+  .cp-conlang .tile { fill: color-mix(in srgb, var(--accent) 28%, var(--bg)); stroke: var(--accent); stroke-width: 2.5; }
+  .cp-conlang .t1 { animation: cp-cl-l 3.6s ease-in-out infinite; }
+  .cp-conlang .t2 { animation: cp-cl-r 3.6s ease-in-out infinite; }
+  .cp-conlang .plus { font-size: 22px; font-weight: 800; fill: var(--accent); text-anchor: middle; animation: cp-cl-plus 3.6s ease-in-out infinite; }
+  @keyframes cp-cl-l { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(22px); } }
+  @keyframes cp-cl-r { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-22px); } }
+  @keyframes cp-cl-plus { 0%, 22% { opacity: 1; } 42%, 60% { opacity: 0; } 80%, 100% { opacity: 1; } }
+
+  /* code-vs-speech */
+  .cp-code .rowbar { fill: color-mix(in srgb, var(--accent) 30%, var(--bg)); }
+  .cp-code .light { fill: color-mix(in srgb, var(--accent) 22%, var(--bg)); animation: cp-blink 2.4s ease-in-out infinite; }
+  .cp-code .l2 { animation-delay: 0.35s; }
+  .cp-code .l3 { animation-delay: 0.7s; }
+  @keyframes cp-blink { 0%, 100% { fill: color-mix(in srgb, var(--accent) 22%, var(--bg)); } 50% { fill: var(--accent); } }
+</style>
