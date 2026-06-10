@@ -183,3 +183,17 @@ Phases:
 - New feature spec: `docs/ASK-AI.md` — BYOK "select text → ask AI" chat drawer (Anthropic browser
   CORS as primary path, OpenAI-compatible as secondary; key in localStorage with session-only
   option, forget-key, honest security copy). Board task: `tasks/todo/500-ask-ai-selection-chat.md`.
+
+## ✅ Update — 2026-06-10 (Ask-AI shipped, task 500)
+
+- **Ask-AI selection chat is live** (spec: `docs/ASK-AI.md`): select text → "✨ Ask about this" pill →
+  chat drawer (right panel; bottom sheet ≤640px). BYOK: setup sheet validates the key with a 1-token
+  ping before storing (`mova:askai:v1`, localStorage or session-only), forget-key in the footer.
+- `src/lib/llm.ts`: anthropic (direct-browser CORS header) + openai-compatible adapters, manual SSE
+  streaming, AbortController; SSE parser + 401→auth error mapping unit-tested against fixtures.
+- `src/lib/askai-store.ts`: config + per-page thread (sessionStorage, dies with tab).
+- `src/components/askai/AskAi.tsx` mounted `client:idle` in BaseLayout — **5.5 KB gz** (budget 25).
+- Context sent: title + selection + surrounding paragraph (truncated); system prompt forbids invented
+  etymologies; suggested questions; streaming with stop; Esc/focus-return; aria-live log.
+- Board: 500 → done. Build green. NOTE for deploy: feature calls api.anthropic.com / user's base URL
+  from the browser — if a CSP is ever added, allow-list these.
