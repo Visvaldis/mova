@@ -26,7 +26,7 @@ export const ui = {
     'home.hero.kicker': 'Bilingual · interactive · open',
     'home.hero.title': 'How language evolves',
     'home.hero.subtitle':
-      'From the first human words to artificial intelligence — six interactive stories about where language came from and where it is going.',
+      'From the first human words to artificial intelligence — eighteen interactive stories about where language came from and where it is going.',
     'home.articles': 'Articles',
     'home.filterAria': 'Filter articles by topic',
     'home.filterAll': 'All topics',
@@ -706,7 +706,7 @@ export const ui = {
     'home.hero.kicker': 'Двомовний · інтерактивний · відкритий',
     'home.hero.title': 'Як еволюціонує мова',
     'home.hero.subtitle':
-      'Від перших людських слів до штучного інтелекту — шість інтерактивних історій про те, звідки прийшла мова і куди вона прямує.',
+      'Від перших людських слів до штучного інтелекту — вісімнадцять інтерактивних історій про те, звідки прийшла мова і куди вона прямує.',
     'home.articles': 'Статті',
     'home.filterAria': 'Фільтрувати статті за темою',
     'home.filterAll': 'Усі теми',

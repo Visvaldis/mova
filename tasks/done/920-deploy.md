@@ -33,3 +33,7 @@ can't click GitHub settings.
 
 - Re-runnable: every push to `main` redeploys. Not really "done" so much as "live" — keep at the
   bottom of the queue and run when ready.
+
+## Done — 2026-06-10
+
+Deployed by Seva to https://visvaldis.github.io/mova/ — live site verified (root redirect, /en/ + /uk/, topic filter, all 18 articles, self-hosted fonts build).

@@ -370,3 +370,8 @@ CSS modules.
 - @font-face in global.css registers them as family "Inter" with unicode-range splits — the font stack and weights (400–800) keep working unchanged, pages only download the subsets they render.
 - BaseLayout: googleapis link + 2 preconnects removed; latin subset preloaded everywhere, cyrillic additionally on UK pages.
 - Verified: build clean, zero external font references in dist, bundled CSS urls resolve under /mova/fonts/, preloads present (EN 1, UK 2).
+
+## 2026-06-10 — Deploy confirmed (task 920) + hero copy fix
+
+- Seva deployed to GitHub Pages; live site verified at https://visvaldis.github.io/mova/ (current build: filter chips, hubs, fonts all present). Board card 920 → done.
+- Fixed stale hero subtitle: "six interactive stories" → "eighteen" (EN+UK).
