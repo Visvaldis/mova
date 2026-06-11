@@ -9,27 +9,10 @@ import { useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { SCENE, STAGES, CONTACT, type Chip, type ContactLang } from './creoleLab.data';
+import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
 import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './CreoleLab.module.css';
-
-// Equirectangular projection into the 360×180 map viewBox.
-const MAP_W = 360;
-const MAP_H = 180;
-const projX = (lon: number) => lon + 180;
-const projY = (lat: number) => 90 - lat;
-
-// Rough continent silhouettes (equirectangular) — a schematic backdrop so the
-// dots read as "around the world"; not a precise basemap.
-const CONTINENTS = [
-  '40,35 96,30 110,46 96,70 74,68 60,76 48,60 40,46',
-  '120,22 136,20 133,38 121,35',
-  '95,96 112,92 119,112 105,150 95,134 92,112',
-  '170,40 206,38 209,55 185,63 172,55',
-  '172,68 211,66 215,96 198,128 185,120 178,96',
-  '208,32 300,30 323,56 300,82 255,84 226,70 210,52',
-  '288,112 323,110 327,132 300,138 288,126',
-];
 
 export default function CreoleLab({ lang }: { lang: Lang }) {
   const t = useTranslations(lang);
@@ -207,31 +190,22 @@ export default function CreoleLab({ lang }: { lang: Lang }) {
                 viewBox={`0 0 ${MAP_W} ${MAP_H}`}
                 role="img"
                 aria-label={t('creoleLab.mapAria')}
+                preserveAspectRatio="xMidYMid meet"
               >
-                <rect className={c.ocean} x="0" y="0" width={MAP_W} height={MAP_H} rx="4" />
-                {/* graticule */}
-                {[45, 90, 135, 180, 225, 270, 315].map((x) => (
-                  <line key={`v${x}`} className={c.graticule} x1={x} y1="0" x2={x} y2={MAP_H} />
-                ))}
-                {[45, 90, 135].map((y) => (
-                  <line key={`h${y}`} className={c.graticule} x1="0" y1={y} x2={MAP_W} y2={y} />
-                ))}
-                {CONTINENTS.map((pts, i) => (
-                  <polygon key={i} className={c.continent} points={pts} />
-                ))}
+                <rect className={c.ocean} x="0" y="0" width={MAP_W} height={MAP_H} rx="8" />
+                <path className={c.land} d={WORLD_PATH} />
 
                 {CONTACT.map((cl) => {
-                  const cx = projX(cl.lon);
-                  const cy = projY(cl.lat);
+                  const p = project(cl.lat, cl.lon);
                   const on = cl.id === active;
                   return (
                     <g key={cl.id} className={on ? c.dotActive : ''} onClick={() => setActive(cl.id)}>
-                      <circle className={c.dotRing} cx={cx} cy={cy} r={on ? 7 : 5} />
-                      <circle className={c.dot} cx={cx} cy={cy} r={on ? 4 : 3} />
+                      <circle className={c.dotRing} cx={p.x} cy={p.y} r={on ? 18 : 13} />
+                      <circle className={c.dot} cx={p.x} cy={p.y} r={on ? 10 : 7} />
                       {/* generous transparent hit target for touch */}
-                      <circle className={c.dotHit} cx={cx} cy={cy} r={9} />
+                      <circle className={c.dotHit} cx={p.x} cy={p.y} r={22} />
                       {on && (
-                        <text className={c.dotLabel} x={cx} y={cy - 9} textAnchor="middle">
+                        <text className={c.dotLabel} x={p.x} y={p.y - 22} textAnchor="middle">
                           {cl.place[lang]}
                         </text>
                       )}

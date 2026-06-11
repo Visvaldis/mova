@@ -304,26 +304,21 @@
 .ocean {
   fill: var(--bg-elev);
 }
-.continent {
+.land {
   fill: var(--line);
-  opacity: 0.55;
-}
-.graticule {
-  stroke: var(--line);
-  stroke-width: 0.4;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 .dot {
   fill: var(--accent);
   stroke: var(--bg);
-  stroke-width: 1.2;
+  stroke-width: 2.5;
   cursor: pointer;
   transition: r 0.12s ease;
 }
 .dotRing {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 1.4;
+  stroke-width: 2.5;
   opacity: 0;
   transition: opacity 0.12s ease;
 }
@@ -336,7 +331,7 @@
 }
 .dotLabel {
   fill: var(--text);
-  font-size: 6.5px;
+  font-size: 16px;
   font-weight: 700;
   pointer-events: none;
 }
