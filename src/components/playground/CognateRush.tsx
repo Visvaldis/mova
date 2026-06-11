@@ -63,7 +63,7 @@ export default function CognateRush({ lang }: { lang: Lang }) {
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_SECONDS);
-  const [flash, setFlash] = useState<{ kind: 'hit' | 'trap' | 'miss'; pair?: Pair } | null>(null);
+  const [flash, setFlash] = useState<{ kind: 'hit' | 'trap' | 'miss' | 'spotted' | 'wasReal'; pair?: Pair } | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => setBest(loadBest()), []);
@@ -147,6 +147,20 @@ export default function CognateRush({ lang }: { lang: Lang }) {
     setSelected(null);
   };
 
+  const callNotPair = () => {
+    if (!selected) return;
+    const pair = PAIRS.find((p) => p.id === selected.pairId)!;
+    setMatched((m) => new Set(m).add(selected.pairId));
+    if (pair.false) {
+      setScore((s) => s + 10);
+      setFlash({ kind: 'spotted', pair });
+    } else {
+      setScore((s) => s - 5);
+      setFlash({ kind: 'wasReal', pair });
+    }
+    setSelected(null);
+  };
+
   return (
     <div className="toy" data-toy="cognate-rush">
       <p className="muted" style={{ fontSize: '0.9rem' }}>{t('pg.cgr.how')}</p>
@@ -202,6 +216,18 @@ export default function CognateRush({ lang }: { lang: Lang }) {
             })}
           </div>
 
+          {selected && (
+            <div style={{ marginTop: '0.6rem', textAlign: 'center' }}>
+              <button
+                className="pill"
+                onClick={callNotPair}
+                style={{ fontSize: '0.9rem', padding: '0.4rem 1rem' }}
+              >
+                {t('pg.cgr.notPair')}
+              </button>
+            </div>
+          )}
+
           {flash && (
             <div className="stage-card" style={{ marginTop: '0.8rem' }} aria-live="assertive">
               {flash.kind === 'miss' && <span className="muted">{t('pg.cgr.miss')}</span>}
@@ -215,6 +241,19 @@ export default function CognateRush({ lang }: { lang: Lang }) {
               {flash.kind === 'trap' && flash.pair && (
                 <>
                   <strong style={{ color: '#dc2626' }}>−5 · {t('pg.cgr.trap')}</strong>{' '}
+                  <span className="muted">{flash.pair.note[lang]}</span>
+                </>
+              )}
+              {flash.kind === 'spotted' && flash.pair && (
+                <>
+                  <strong className="accent">+10 · {t('pg.cgr.spotted')}</strong>{' '}
+                  <span className="muted">{flash.pair.note[lang]}</span>
+                </>
+              )}
+              {flash.kind === 'wasReal' && flash.pair && (
+                <>
+                  <strong style={{ color: '#dc2626' }}>−5 · {t('pg.cgr.wasReal')}</strong>{' '}
+                  {flash.pair.root && <span className="muted">{t('pg.cgr.root')}: {flash.pair.root} — </span>}
                   <span className="muted">{flash.pair.note[lang]}</span>
                 </>
               )}
