@@ -1,0 +1,42 @@
+---
+import Placeholder from './interactive/Placeholder.tsx';
+import { interactiveInfo } from '../i18n/ui';
+import { useTranslations, type Lang } from '../i18n/utils';
+
+const { id, lang } = Astro.props as { id: string; lang: Lang };
+const t = useTranslations(lang);
+
+const info = interactiveInfo[id];
+const icon = info?.icon ?? '✦';
+const title = info?.title[lang] ?? id;
+const desc = info?.desc[lang] ?? '';
+
+// -------------------------------------------------------------------------
+// REGISTER A BUILT ISLAND  (3 steps — do all three):
+//   1. import it below
+//   2. add its id to the BUILT set
+//   3. add a `{id === '<id>' && <Component client:visible lang={lang} />}` line
+// Astro can't attach a client directive to a dynamic component variable, so
+// each built id gets an explicit conditional render. Unbuilt ids fall through
+// to the styled Placeholder (which shows the interactiveInfo blurb).
+// -------------------------------------------------------------------------
+import SampleToy from './interactive/SampleToy.tsx';
+
+const BUILT = new Set(['sample-toy']);
+const isBuilt = BUILT.has(id);
+---
+
+<div class="interactive-wrap" data-interactive={id}>
+  {id === 'sample-toy' && <SampleToy client:visible lang={lang} />}
+
+  {!isBuilt && (
+    <Placeholder
+      icon={icon}
+      title={title}
+      desc={desc}
+      badge={t('interactive.badge')}
+      comingSoon={t('interactive.comingSoon')}
+      note={t('interactive.note')}
+    />
+  )}
+</div>

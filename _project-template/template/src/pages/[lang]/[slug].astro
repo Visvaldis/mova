@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import { marked } from 'marked';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
+import Interactive from '../../components/Interactive.astro';
+import SourcesPanel from '../../components/SourcesPanel.astro';
+import { useTranslations, localizedPath, langFromId, type Lang } from '../../i18n/utils';
+import { topicNames } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const all = await getCollection('articles');
+  return all.map((entry) => ({
+    params: { lang: langFromId(entry.id), slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang; slug: string };
+const { entry } = Astro.props;
+const t = useTranslations(lang);
+
+// Split the raw markdown so the interactive island sits at the <!-- INTERACTIVE -->
+// marker (fallback: just before the first H2, i.e. after the intro).
+const MARKER = '<!-- INTERACTIVE -->';
+const raw = entry.body ?? '';
+let before = raw, after = '';
+if (raw.includes(MARKER)) {
+  const parts = raw.split(MARKER);
+  before = parts[0];
+  after = parts.slice(1).join(MARKER);
+} else {
+  const h2 = raw.search(/\n## /);
+  if (h2 >= 0) { before = raw.slice(0, h2); after = raw.slice(h2); }
+}
+
+marked.setOptions({ gfm: true });
+const beforeHtml = marked.parse(before) as string;
+const afterHtml = after ? (marked.parse(after) as string) : '';
+
+const siblings = (await getCollection('articles', (e) => langFromId(e.id) === lang)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const i = siblings.findIndex((e) => e.data.slug === entry.data.slug);
+const prev = i > 0 ? siblings[i - 1] : null;
+const next = i >= 0 && i < siblings.length - 1 ? siblings[i + 1] : null;
+
+const topicName = topicNames[entry.data.topic]?.[lang] ?? entry.data.topic;
+---
+
+<BaseLayout
+  lang={lang} title={entry.data.title} description={entry.data.summary}
+  topic={entry.data.topic} slug={entry.data.slug}
+>
+  <ReadingProgress />
+  <article class="container">
+    <header class="article-head">
+      <h1>{entry.data.title}</h1>
+      <p class="summary">{entry.data.summary}</p>
+      <div class="meta">
+        <span class="chip">{topicName}</span>
+        <span>{entry.data.readingTime} {t('card.minRead')}</span>
+      </div>
+    </header>
+
+    <div class="prose" set:html={beforeHtml} />
+    <Interactive id={entry.data.interactive} lang={lang} />
+    {afterHtml && <div class="prose" set:html={afterHtml} />}
+
+    <SourcesPanel lang={lang} sources={entry.data.sources} />
+
+    <nav class="pager" aria-label="Article navigation">
+      {prev ? (
+        <a href={localizedPath(lang, prev.data.slug)}>
+          <div class="dir">‹ {t('article.previous')}</div>
+          <div class="ttl">{prev.data.title}</div>
+        </a>
+      ) : <span class="empty" />}
+      {next ? (
+        <a class="next" href={localizedPath(lang, next.data.slug)}>
+          <div class="dir">{t('article.next')} ›</div>
+          <div class="ttl">{next.data.title}</div>
+        </a>
+      ) : <span class="empty" />}
+    </nav>
+  </article>
+</BaseLayout>
