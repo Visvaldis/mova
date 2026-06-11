@@ -1650,6 +1650,247 @@
       "source": "etymonline.com/word/mother; Wiktionary *méh₂tēr; ЕСУМ (мати)"
     },
     {
+      "id": "father",
+      "icon": "👨",
+      "gloss": {
+        "en": "father",
+        "uk": "батько"
+      },
+      "origins": [
+        {
+          "id": "pie",
+          "label": "*ph₂tḗr",
+          "story": {
+            "en": "The Proto-Indo-European root — father, Vater, père, padre, patéras, pitā, pedar all descend from it. But most Slavic languages broke away.",
+            "uk": "Праіндоєвропейський корінь — father, Vater, père, padre, patéras, pitā, pedar усі походять від нього. Але більшість слов'янських мов пішли своїм шляхом."
+          }
+        },
+        {
+          "id": "slavic",
+          "label": "*otьcь (Slavic)",
+          "story": {
+            "en": "Most Slavic languages replaced the PIE root: otec, ojciec, отец. Ukrainian went further — батько is its own expressive word, not even the common Slavic otec.",
+            "uk": "Більшість слов'янських мов замінили ПІЄ-корінь: otec, ojciec, отець. Українська пішла далі — батько — її власне експресивне слово, навіть не спільнослов'янське отець."
+          }
+        },
+        {
+          "id": "semitic",
+          "label": "ʔab (Semitic)",
+          "story": {
+            "en": "Arabic ab, Hebrew av — the Semitic father root.",
+            "uk": "Араб. ab, івр. av — семітський корінь «батько»."
+          }
+        },
+        {
+          "id": "other",
+          "label": "—",
+          "story": {
+            "en": "Baby-talk p-/b- sounds generate 'papa'/'baba' worldwide — Turkish baba, Mandarin bàba, Swahili baba. Georgian mama means FATHER (deda = mother) — the famous inversion.",
+            "uk": "Дитячі п-/б-звуки породжують «papa»/«baba» по всьому світу — тур. baba, кит. bàba, суахілі baba. Грузинське mama означає БАТЬКО (deda = мати) — знаменита інверсія."
+          }
+        }
+      ],
+      "originPoint": {
+        "lat": 48,
+        "lon": 40,
+        "label": {
+          "en": "Pontic-Caspian steppe — *ph₂tḗr",
+          "uk": "Понтійсько-каспійський степ — *ph₂tḗr"
+        }
+      },
+      "forms": [
+        {
+          "lang": "english",
+          "form": "father",
+          "origin": "pie"
+        },
+        {
+          "lang": "german",
+          "form": "Vater",
+          "origin": "pie"
+        },
+        {
+          "lang": "dutch",
+          "form": "vader",
+          "origin": "pie"
+        },
+        {
+          "lang": "swedish",
+          "form": "far",
+          "origin": "pie"
+        },
+        {
+          "lang": "french",
+          "form": "père",
+          "origin": "pie"
+        },
+        {
+          "lang": "spanish",
+          "form": "padre",
+          "origin": "pie"
+        },
+        {
+          "lang": "italian",
+          "form": "padre",
+          "origin": "pie"
+        },
+        {
+          "lang": "portuguese",
+          "form": "pai",
+          "origin": "pie"
+        },
+        {
+          "lang": "greek",
+          "form": "patéras",
+          "native": "πατέρας",
+          "origin": "pie"
+        },
+        {
+          "lang": "persian",
+          "form": "pedar",
+          "native": "پدر",
+          "origin": "pie"
+        },
+        {
+          "lang": "hindi",
+          "form": "pitā",
+          "native": "पिता",
+          "origin": "pie"
+        },
+        {
+          "lang": "bengali",
+          "form": "pitā",
+          "native": "পিতা",
+          "origin": "pie",
+          "note": {
+            "en": "Formal; informal bābā is from baby-talk",
+            "uk": "Офіційне; неформальне bābā — з дитячого лепету"
+          }
+        },
+        {
+          "lang": "ukrainian",
+          "form": "bat'ko",
+          "native": "батько",
+          "origin": "slavic",
+          "note": {
+            "en": "Not the common Slavic otec — an expressive formation unique to Ukrainian",
+            "uk": "Не спільнослов'янське отець — експресивне утворення, властиве лише українській"
+          }
+        },
+        {
+          "lang": "polish",
+          "form": "ojciec",
+          "origin": "slavic"
+        },
+        {
+          "lang": "czech",
+          "form": "otec",
+          "origin": "slavic"
+        },
+        {
+          "lang": "russian",
+          "form": "otets",
+          "native": "отец",
+          "origin": "slavic"
+        },
+        {
+          "lang": "arabic",
+          "form": "ab",
+          "native": "أب",
+          "origin": "semitic"
+        },
+        {
+          "lang": "hebrew",
+          "form": "av",
+          "native": "אב",
+          "origin": "semitic"
+        },
+        {
+          "lang": "romanian",
+          "form": "tată",
+          "origin": "other",
+          "note": {
+            "en": "From Latin tata (nursery word), not from pater",
+            "uk": "Від лат. tata (дитяче слово), не від pater"
+          }
+        },
+        {
+          "lang": "finnish",
+          "form": "isä",
+          "origin": "other"
+        },
+        {
+          "lang": "hungarian",
+          "form": "apa",
+          "origin": "other"
+        },
+        {
+          "lang": "turkish",
+          "form": "baba",
+          "origin": "other"
+        },
+        {
+          "lang": "mandarin",
+          "form": "bàba",
+          "native": "爸爸",
+          "origin": "other",
+          "note": {
+            "en": "Baby-talk b-; formal fùqin (父亲) uses an old Chinese root",
+            "uk": "Дитяче б-; офіційне fùqin (父亲) вживає давній китайський корінь"
+          }
+        },
+        {
+          "lang": "japanese",
+          "form": "chichi",
+          "native": "父",
+          "origin": "other"
+        },
+        {
+          "lang": "korean",
+          "form": "abeoji",
+          "native": "아버지",
+          "origin": "other"
+        },
+        {
+          "lang": "vietnamese",
+          "form": "cha",
+          "origin": "other"
+        },
+        {
+          "lang": "thai",
+          "form": "phɔɔ",
+          "native": "พ่อ",
+          "origin": "other"
+        },
+        {
+          "lang": "indonesian",
+          "form": "ayah",
+          "origin": "other"
+        },
+        {
+          "lang": "tagalog",
+          "form": "ama",
+          "origin": "other"
+        },
+        {
+          "lang": "swahili",
+          "form": "baba",
+          "origin": "other"
+        },
+        {
+          "lang": "georgian",
+          "form": "mama",
+          "native": "მამა",
+          "origin": "other",
+          "note": {
+            "en": "And 'deda' means mother! The famous Georgian inversion.",
+            "uk": "А «deda» означає мати! Знаменита грузинська інверсія."
+          }
+        }
+      ],
+      "source": "etymonline.com/word/father; Wiktionary *ph₂tḗr; ЕСУМ (батько)"
+    },
+    {
       "id": "robot",
       "icon": "🤖",
       "gloss": {
