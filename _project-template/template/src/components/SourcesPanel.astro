@@ -1,0 +1,27 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+interface Source { title: string; url: string; note?: string; }
+const { lang, sources } = Astro.props as { lang: Lang; sources: Source[] };
+const t = useTranslations(lang);
+---
+
+{sources && sources.length > 0 && (
+  <aside class="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">{t('sources.title')}</h2>
+    <ul>
+      {sources.map((s) => (
+        <li>
+          <a href={s.url} target="_blank" rel="noopener noreferrer"
+             aria-label={`${s.title} — ${t('sources.newTab')}`}>
+            <span>{s.title}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </a>
+          {s.note && <div class="note">{s.note}</div>}
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

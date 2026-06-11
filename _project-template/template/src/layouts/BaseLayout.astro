@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Topic id → sets the accent color for the whole page (article pages). */
+  topic?: string;
+  /** Current article slug, so the language toggle can keep you on the same page. */
+  slug?: string;
+}
+
+const { lang, title, description, topic, slug } = Astro.props;
+const t = useTranslations(lang);
+const fullTitle = title ? `${title} · ${t('brand')}` : t('brand');
+const favicon = `${import.meta.env.BASE_URL}/favicon.svg`.replace(/\/+/g, '/');
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body data-topic={topic}>
+    <a class="skip-link" href="#main">{t('skip')}</a>
+    <Nav lang={lang} slug={slug} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <script>
+      // Persist the active language (for the root redirect) and restore scroll
+      // after a language toggle. Storage keys are namespaced — rename the prefix
+      // to your project if you like; nothing else depends on the literal value.
+      const lang = document.documentElement.lang;
+      try {
+        localStorage.setItem('site-lang', lang);
+        const y = sessionStorage.getItem('site-scroll');
+        if (y !== null) {
+          window.scrollTo(0, parseInt(y, 10));
+          sessionStorage.removeItem('site-scroll');
+        }
+      } catch {}
+    </script>
+  </body>
+</html>
