@@ -48,6 +48,20 @@ export default function SoundShiftSandbox({ lang }: { lang: Lang }) {
             style={{ marginTop: '0.3rem' }}
           />
         </label>
+        <div className="row" style={{ marginTop: '0.5rem', alignItems: 'center' }}>
+          <span className="muted" style={{ fontSize: '0.82rem', fontWeight: 600 }}>{t('pg.sss.try')}</span>
+          {pack.examples.map((ex) => (
+            <button
+              key={ex}
+              className="pill"
+              aria-pressed={input === ex}
+              onClick={() => setInput(ex)}
+              style={{ fontSize: '0.82rem', padding: '0.2rem 0.55rem' }}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div style={{ marginTop: '1.2rem' }} aria-live="polite">

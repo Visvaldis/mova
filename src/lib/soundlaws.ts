@@ -21,6 +21,8 @@ export interface RulePack {
   /** Which scripts it makes sense for: 'latin' | 'cyrillic' | 'both' */
   script: 'latin' | 'cyrillic' | 'both';
   rules: SoundRule[];
+  /** Clickable example words that showcase the rules firing. */
+  examples: string[];
 }
 
 export const RULE_PACKS: RulePack[] = [
@@ -32,6 +34,7 @@ export const RULE_PACKS: RulePack[] = [
       uk: 'Германський ланцюговий зсув: глухі проривні → фрикативи, дзвінкі → глухі, придихові → дзвінкі.',
     },
     script: 'latin',
+    examples: ['pater', 'tres', 'cornu', 'piscis', 'decem', 'genu'],
     rules: [
       { id: 'bh', label: 'bʰ → b', match: /bh/g, replace: 'b', note: { en: 'Breathy bʰ hardens to b.', uk: 'Придихове bʰ твердне в b.' } },
       { id: 'dh', label: 'dʰ → d', match: /dh/g, replace: 'd', note: { en: 'Breathy dʰ hardens to d.', uk: 'Придихове dʰ твердне в d.' } },
@@ -52,6 +55,7 @@ export const RULE_PACKS: RulePack[] = [
       uk: 'Фірмовий український зсув: о та е перейшли в і в закритих складах — конь → кінь, ночь → ніч.',
     },
     script: 'cyrillic',
+    examples: ['конь', 'ночь', 'печь', 'вовкь', 'шесть'],
     rules: [
       {
         id: 'o-closed', label: 'о → і (closed syllable)',
@@ -75,6 +79,7 @@ export const RULE_PACKS: RulePack[] = [
       uk: 'Довгі голосні англійської піднялися по колу — тому англійський правопис зберігає середньовічну вимову.',
     },
     script: 'latin',
+    examples: ['beet', 'moon', 'name', 'goose', 'make'],
     rules: [
       { id: 'ii', label: 'iː → aɪ', match: /ee/g, replace: 'igh', note: { en: 'Long ee became the "eye" diphthong — meet would now rhyme with might (bite was once "beet-eh").', uk: 'Довге ee стало дифтонгом «ай» — meet римувалося б із might (bite колись звучало як «біте»).' } },
       { id: 'uu', label: 'uː → aʊ', match: /oo/g, replace: 'ow', note: { en: 'Long oo became "ow" (house was "hoos").', uk: 'Довге oo стало «ау» (house звучало як «хус»).' } },
