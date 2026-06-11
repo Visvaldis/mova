@@ -23,7 +23,7 @@ export const DEFAULT_MODEL: Record<Provider, string> = {
   openai: 'gpt-4o-mini',
 };
 export const DEFAULT_OPENAI_BASE = 'https://api.openai.com/v1';
-const MAX_TOKENS = 1024;
+const MAX_TOKENS = 1536;
 
 export class LlmError extends Error {
   kind: 'auth' | 'rate' | 'cors' | 'other';
