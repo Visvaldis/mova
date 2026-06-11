@@ -5,6 +5,7 @@ import { useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { BRANCHES, ROOT_NAME, PIE_FORMS, type Leaf } from './familyTree.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import f from './FamilyTree.module.css';
 
@@ -25,6 +26,13 @@ export default function FamilyTree({ lang }: { lang: Lang }) {
 
   const flagFor = (mark?: 'en' | 'uk') => (mark === 'en' ? '🇬🇧' : mark === 'uk' ? '🇺🇦' : '');
   const leafName = (leaf: Leaf) => `${leaf.name[lang]}${leaf.star ? ` ${flagFor(leaf.star)}` : ''}`;
+
+  useInteractiveContext(
+    'family-tree',
+    lang === 'uk'
+      ? `Інтерактив «Мовне дерево», вигляд: ${view === 'tree' ? 'дерево' : 'карта'}.${activeLeaf ? ` Вибрано мову: ${activeLeaf.name[lang]}.` : ' Мову ще не вибрано.'}`
+      : `"Language Family Tree" interactive, view: ${view}.${activeLeaf ? ` Selected language: ${activeLeaf.name[lang]}.` : ' No language selected yet.'}`,
+  );
 
   const showLeaf = (leaf: Leaf) => {
     setView('tree');

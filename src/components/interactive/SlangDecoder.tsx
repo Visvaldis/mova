@@ -7,6 +7,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { ERAS, EMOJI_FNS, type FnId } from './slangDecoder.data';
 import { useReducedMotion } from './useReducedMotion';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import sd from './slangDecoder.module.css';
 
@@ -32,6 +33,19 @@ export default function SlangDecoder({ lang }: { lang: Lang }) {
   }, [reduced]);
 
   const era = ERAS[eraIdx];
+
+  const matchedCount = Object.keys(placed).length;
+  useInteractiveContext(
+    'slang-decoder',
+    lang === 'uk'
+      ? tab === 'eras'
+        ? `Інтерактив «Інтернет-мова», вкладка «ери»: ${era.decade} · ${era.name[lang]}.`
+        : `Інтерактив «Інтернет-мова», вкладка «емоджі-матчер»: ${matchedCount}/${EMOJI_FNS.length} зіставлено.`
+      : tab === 'eras'
+        ? `"Internet Language" interactive, "eras" tab: ${era.decade} · ${era.name[lang]}.`
+        : `"Internet Language" interactive, "emoji matcher" tab: ${matchedCount}/${EMOJI_FNS.length} matched.`,
+  );
+
   const placedEmojis = Object.values(placed);
   const tray = EMOJI_FNS.filter((e) => !placedEmojis.includes(e.emoji));
   const allDone = Object.keys(placed).length === EMOJI_FNS.length;

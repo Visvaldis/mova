@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { MILESTONES, BANDS, AXIS_MIN, AXIS_MAX } from './originsTimeline.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 
 const W = 720;
@@ -30,6 +31,14 @@ export default function OriginsTimeline({ lang }: { lang: Lang }) {
   const [showBands, setShowBands] = useState(false);
 
   const active = MILESTONES[activeIdx];
+
+  useInteractiveContext(
+    'origins-timeline',
+    lang === 'uk'
+      ? `Інтерактив «Хронологія походження мови», вибрано веху: «${active.title[lang]}» (${fmtYbp(active.ybp, t)}).${showBands ? ' Показано гіпотези (жест / голос / градуалізм).' : ''}`
+      : `"Origins of Language" timeline interactive, selected milestone: "${active.title[lang]}" (${fmtYbp(active.ybp, t)}).${showBands ? ' Hypothesis bands visible (gesture-first / vocal-first / gradualist).' : ''}`,
+  );
+
   const bandsH = showBands ? BANDS.length * 16 + 8 : 0;
   const axisY = 30 + bandsH;
   const H = H_BASE + bandsH;

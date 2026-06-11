@@ -5,6 +5,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
 import data from '../../data/playground/word-atlas.json';
 import regionsData from '../../data/playground/word-atlas-regions.json';
@@ -158,6 +159,13 @@ export default function WordAtlas({ lang }: { lang: Lang }) {
   }, [word]);
 
   const originPt = project(word.originPoint.lat, word.originPoint.lon);
+
+  useInteractiveContext(
+    'word-atlas',
+    lang === 'uk'
+      ? `Гра «Word Atlas»: слово «${word.gloss[lang]}»${activeForm ? `, вибрано ${LANGS_REG[activeForm.lang]?.name[lang] ?? activeForm.lang}: ${activeForm.form}` : ''}${dimmed ? `, фільтр: ${word.origins.find((o) => o.id === dimmed)?.label ?? dimmed}` : ''}.`
+      : `"Word Atlas" playground: word "${word.gloss[lang]}"${activeForm ? `, selected ${LANGS_REG[activeForm.lang]?.name[lang] ?? activeForm.lang}: ${activeForm.form}` : ''}${dimmed ? `, filter: ${word.origins.find((o) => o.id === dimmed)?.label ?? dimmed}` : ''}.`,
+  );
 
   const pick = (w: AtlasWord) => {
     setWordId(w.id);

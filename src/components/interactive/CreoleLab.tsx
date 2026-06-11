@@ -9,6 +9,7 @@ import { useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { SCENE, STAGES, CONTACT, type Chip, type ContactLang } from './creoleLab.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './CreoleLab.module.css';
 
@@ -72,6 +73,17 @@ export default function CreoleLab({ lang }: { lang: Lang }) {
   // ---- (b) map ----
   const [active, setActive] = useState<string | null>(null);
   const sel: ContactLang | undefined = CONTACT.find((x) => x.id === active);
+
+  useInteractiveContext(
+    'creole-lab',
+    lang === 'uk'
+      ? tab === 'gen'
+        ? `Інтерактив «Народження мови», вкладка «покоління»: етап ${gi + 1}/3 — ${stage.name[lang]}.`
+        : `Інтерактив «Народження мови», вкладка «карта».${sel ? ` Вибрано: ${sel.name[lang]}.` : ''}`
+      : tab === 'gen'
+        ? `"Language Birth" interactive, "generations" tab: stage ${gi + 1}/3 — ${stage.name[lang]}.`
+        : `"Language Birth" interactive, "map" tab.${sel ? ` Selected: ${sel.name[lang]}.` : ''}`,
+  );
 
   return (
     <div className={c.wrap} data-interactive-id="creole-lab">

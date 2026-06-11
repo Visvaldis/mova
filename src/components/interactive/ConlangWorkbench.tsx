@@ -14,6 +14,7 @@ import {
   TIMELINE_QUOTE,
   ESPERANTO,
 } from './conlangWorkbench.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './ConlangWorkbench.module.css';
 
@@ -62,6 +63,13 @@ function BuildView({ lang, t }: { lang: Lang; t: T }) {
   const literal = phrase.map(glossOf).join(' ');
   const combo = TOKIPONA_COMBOS.find(
     (cm) => cm.parts.length === phrase.length && cm.parts.every((p, i) => p === phrase[i]),
+  );
+
+  useInteractiveContext(
+    'conlang-workbench',
+    lang === 'uk'
+      ? `Інтерактив «Конланг-верстат», вкладка «Токі Пона»: ${phrase.length === 0 ? 'порожній рядок' : `фраза: ${phrase.join(' ')}${combo ? ` = ${combo.meaning[lang]}` : ''}`}.`
+      : `"Conlang Workbench" interactive, "Toki Pona builder" tab: ${phrase.length === 0 ? 'empty phrase' : `phrase: ${phrase.join(' ')}${combo ? ` = ${combo.meaning[lang]}` : ''}`}.`,
   );
 
   return (
@@ -124,6 +132,13 @@ function BuildView({ lang, t }: { lang: Lang; t: T }) {
 
 /* ── (b) Conlang timeline ─────────────────────────────────────────────────── */
 function TimelineView({ lang, t }: { lang: Lang; t: T }) {
+  useInteractiveContext(
+    'conlang-workbench',
+    lang === 'uk'
+      ? `Інтерактив «Конланг-верстат», вкладка «хронологія конлангів».`
+      : `"Conlang Workbench" interactive, "conlang timeline" tab.`,
+  );
+
   return (
     <div>
       <p className={c.intro}>{t('conlangWorkbench.timelineIntro')}</p>
@@ -154,6 +169,13 @@ function EsperantoView({ lang, t }: { lang: Lang; t: T }) {
   const [revealAll, setRevealAll] = useState(false);
 
   const familiar = words.filter((w) => w.familiar).length;
+
+  useInteractiveContext(
+    'conlang-workbench',
+    lang === 'uk'
+      ? `Інтерактив «Конланг-верстат», вкладка «декодер есперанто»: ${revealAll ? 'усі слова розкрито' : `${familiar}/${words.length} знайомих`}.`
+      : `"Conlang Workbench" interactive, "Esperanto decoder" tab: ${revealAll ? 'all words revealed' : `${familiar}/${words.length} familiar`}.`,
+  );
 
   return (
     <div>

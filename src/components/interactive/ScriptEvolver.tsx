@@ -21,6 +21,7 @@ import {
   type Glyph,
   type TreeNode,
 } from './scriptEvolver.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './ScriptEvolver.module.css';
 
@@ -78,6 +79,13 @@ function TimeMachine({ lang, t, reduced }: { lang: Lang; t: T; reduced: boolean 
   const letter = LETTERS[li];
   const st = STAGES[stage];
   const atModern = stage === LAST;
+
+  useInteractiveContext(
+    'script-evolver',
+    lang === 'uk'
+      ? `Інтерактив «Еволюція письма», вкладка «машина часу»: літера ${letter.name}, етап ${st.name[lang]}.`
+      : `"Script Evolver" interactive, "time machine" tab: letter ${letter.name}, stage ${st.name[lang]}.`,
+  );
 
   // Autoplay — JS-driven motion, so gated on the reduced-motion preference.
   useEffect(() => {
@@ -269,6 +277,13 @@ function ScriptTree({ lang, t }: { lang: Lang; t: T }) {
   const [sel, setSel] = useState<string>(ROOTS[0].id);
   const node = ALL_NODES.find((n) => n.id === sel) ?? ROOTS[0];
 
+  useInteractiveContext(
+    'script-evolver',
+    lang === 'uk'
+      ? `Інтерактив «Еволюція письма», вкладка «дерево систем»: вибрано ${node.place[lang]}.`
+      : `"Script Evolver" interactive, "script family tree" tab: selected ${node.place[lang]}.`,
+  );
+
   const NodeButton = ({ n, sub }: { n: TreeNode; sub?: boolean }) => (
     <button
       className={`${c.node} ${sub ? c.nodeSub : ''} ${sel === n.id ? c.nodeActive : ''}`}
@@ -350,6 +365,13 @@ function RebusMachine({ lang, t }: { lang: Lang; t: T }) {
   const puzzle = puzzles[pi];
   const isPrefix = picked.every((k, i) => k === puzzle.solution[i]);
   const solved = picked.length === puzzle.solution.length && isPrefix;
+
+  useInteractiveContext(
+    'script-evolver',
+    lang === 'uk'
+      ? `Інтерактив «Еволюція письма», вкладка «ребус»: головоломка ${pi + 1}/${puzzles.length}${solved ? ' (розв\'язано)' : ''}.`
+      : `"Script Evolver" interactive, "rebus" tab: puzzle ${pi + 1}/${puzzles.length}${solved ? ' (solved)' : ''}.`,
+  );
   const wrong = picked.length > 0 && !isPrefix;
 
   const pick = (key: string) => {

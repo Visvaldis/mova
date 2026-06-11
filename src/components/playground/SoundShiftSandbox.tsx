@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import { RULE_PACKS, applyPack } from '../../lib/soundlaws';
 
 export default function SoundShiftSandbox({ lang }: { lang: Lang }) {
@@ -11,6 +12,13 @@ export default function SoundShiftSandbox({ lang }: { lang: Lang }) {
   const pack = RULE_PACKS.find((p) => p.id === packId)!;
   const result = useMemo(() => applyPack(pack, input), [pack, input]);
   const changedAnything = result.fired.length > 0 && input.trim().length > 0;
+
+  useInteractiveContext(
+    'sound-shift-sandbox',
+    lang === 'uk'
+      ? `Гра «Sound Shift Sandbox»: правила «${pack.name[lang]}», вхід «${input}» → вихід «${result.output}»${changedAnything ? `, спрацювало ${result.fired.length} правил` : ''}.`
+      : `"Sound Shift Sandbox" playground: rule pack "${pack.name[lang]}", input "${input}" → output "${result.output}"${changedAnything ? `, ${result.fired.length} rules fired` : ''}.`,
+  );
 
   return (
     <div className="toy" data-toy="sound-shift-sandbox">

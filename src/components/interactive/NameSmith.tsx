@@ -10,6 +10,7 @@ import { Fragment, useState } from 'react';
 import type { Lang, UIKey } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { ELEMENTS, CANON, PALETTES } from './nameSmith.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 
 const cap = (w: string) => w.charAt(0).toUpperCase() + w.slice(1);
@@ -57,6 +58,13 @@ export default function NameSmith({ lang }: { lang: Lang }) {
 
   // ---- palettes ----
   const [flavorOn, setFlavorOn] = useState(false);
+
+  useInteractiveContext(
+    'name-smith',
+    lang === 'uk'
+      ? `Інтерактив «Кузня імен»${forgedName ? `: зібрано «${forgedName}» (${canon ? 'канонічне' : 'неатестоване'})` : ': елементи ще не вибрано'}. Палітра звуків: ${flavorOn ? 'підсвічено' : 'вимкнено'}.`
+      : `"Name Smith" interactive${forgedName ? `: forged "${forgedName}" (${canon ? 'attested' : 'unattested'})` : ': no elements selected'}. Sound palette: ${flavorOn ? 'highlighting on' : 'off'}.`,
+  );
 
   return (
     <div className={s.panel} data-interactive-id="name-smith">

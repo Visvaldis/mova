@@ -9,6 +9,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { SIM, simulate, classify, QUIZ, OUTCOMES, type OutcomeId } from './aiLanguageLab.data';
 import { useReducedMotion } from './useReducedMotion';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import al from './AiLanguageLab.module.css';
 
@@ -120,6 +121,17 @@ export default function AiLanguageLab({ lang }: { lang: Lang }) {
       : score >= 3
         ? t('aiLanguageLab.scoreMsgMid')
         : t('aiLanguageLab.scoreMsgLow');
+
+  useInteractiveContext(
+    'ai-language-lab',
+    lang === 'uk'
+      ? tab === 'sim'
+        ? `Інтерактив «ШІ та мова», вкладка «симуляція дрейфу»: частка ШІ ${Math.round(ai * 100)}%, інновації ${Math.round(innovation * 100)}%. Результат: ${OUTCOMES[outcome].name[lang]}.`
+        : `Інтерактив «ШІ та мова», вкладка «вікторина»: ${finished ? `завершено, ${score}/${QUIZ.length}` : `питання ${qi + 1}/${QUIZ.length}, бал ${score}`}.`
+      : tab === 'sim'
+        ? `"AI & Language" interactive, "drift simulator" tab: AI share ${Math.round(ai * 100)}%, innovation ${Math.round(innovation * 100)}%. Outcome: ${OUTCOMES[outcome].name[lang]}.`
+        : `"AI & Language" interactive, "quiz" tab: ${finished ? `finished, ${score}/${QUIZ.length}` : `question ${qi + 1}/${QUIZ.length}, score ${score}`}.`,
+  );
 
   return (
     <div className={al.wrap} data-interactive-id="ai-language-lab">

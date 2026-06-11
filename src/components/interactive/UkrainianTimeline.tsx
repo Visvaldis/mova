@@ -8,6 +8,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { useReducedMotion } from './useReducedMotion';
 import { ERAS, STATUS_MAX } from './ukrainianTimeline.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import u from './ukrainianTimeline.module.css';
 
@@ -31,6 +32,15 @@ export default function UkrainianTimeline({ lang }: { lang: Lang }) {
   const reduced = useReducedMotion();
 
   const [activeIdx, setActiveIdx] = useState(0);
+
+  const activeEra = ERAS[activeIdx];
+  useInteractiveContext(
+    'ukrainian-timeline',
+    lang === 'uk'
+      ? `Інтерактив «Хронологія української мови», ера ${activeIdx + 1}/${ERAS.length}: «${activeEra.title[lang]}» (${activeEra.dateLabel[lang]})${activeEra.tone === 'ban' ? ' — заборона' : activeEra.tone === 'revival' ? ' — відродження' : ''}.`
+      : `"Ukrainian Language Timeline" interactive, era ${activeIdx + 1}/${ERAS.length}: "${activeEra.title[lang]}" (${activeEra.dateLabel[lang]})${activeEra.tone === 'ban' ? ' — ban period' : activeEra.tone === 'revival' ? ' — revival' : ''}.`,
+  );
+
   // Progressive enhancement: only hide-then-reveal cards once JS is up AND motion
   // is allowed. SSR/no-JS markup stays fully visible.
   const [enhanced, setEnhanced] = useState(false);

@@ -9,6 +9,7 @@ import {
   GRAMMAR,
   type GenderKey,
 } from './thoughtLens.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './ThoughtLens.module.css';
 
@@ -56,6 +57,13 @@ function ColorView({ lang, t }: { lang: Lang; t: T }) {
   const [split, setSplit] = useState(50); // your boundary, 0..100
   const [revealed, setRevealed] = useState(false);
   const ukPct = Math.round(COLOR.ukSplit * 100);
+
+  useInteractiveContext(
+    'thought-lens',
+    lang === 'uk'
+      ? `Інтерактив «Лінза думки», вкладка «колір»: межа на ${split}%.${revealed ? ' EN/UK зони показано.' : ''}`
+      : `"Thought Lens" interactive, "color boundary" tab: boundary at ${split}%.${revealed ? ' EN/UK zones revealed.' : ''}`,
+  );
 
   return (
     <div className={s.panel}>
@@ -130,6 +138,13 @@ function ColorView({ lang, t }: { lang: Lang; t: T }) {
 function SpaceView({ lang, t }: { lang: Lang; t: T }) {
   const [seat, setSeat] = useState<'w' | 'e'>('w');
   const [mode, setMode] = useState<'ego' | 'geo'>('ego');
+
+  useInteractiveContext(
+    'thought-lens',
+    lang === 'uk'
+      ? `Інтерактив «Лінза думки», вкладка «простір»: режим ${mode === 'ego' ? 'егоцентричний' : 'географічний'}, погляд з ${seat === 'w' ? 'заходу' : 'сходу'}.`
+      : `"Thought Lens" interactive, "spatial framing" tab: ${mode} mode, viewer facing ${seat === 'w' ? 'east' : 'west'}.`,
+  );
 
   // Cup is north of the plate. Facing east (west seat) → north is on your left;
   // facing west (east seat) → north is on your right. Geo never changes.
@@ -225,6 +240,13 @@ function GenderView({ lang, t }: { lang: Lang; t: T }) {
   const [which, setWhich] = useState<GenderKey>('de');
   const g = GENDER[which];
 
+  useInteractiveContext(
+    'thought-lens',
+    lang === 'uk'
+      ? `Інтерактив «Лінза думки», вкладка «рід»: мова — ${which === 'de' ? 'німецька' : 'іспанська'}, слово «${g.word}» (${g.gender[lang]}).`
+      : `"Thought Lens" interactive, "gender" tab: language — ${which === 'de' ? 'German' : 'Spanish'}, word "${g.word}" (${g.gender[lang]}).`,
+  );
+
   return (
     <div className={s.panel}>
       <p className={s.caption}>{t('thoughtLens.genderIntro')}</p>
@@ -282,6 +304,13 @@ function GenderView({ lang, t }: { lang: Lang; t: T }) {
 
 /* ── Tab 4: what your grammar obliges you to encode ────────────────────────── */
 function GrammarView({ lang, t }: { lang: Lang; t: T }) {
+  useInteractiveContext(
+    'thought-lens',
+    lang === 'uk'
+      ? `Інтерактив «Лінза думки», вкладка «граматика»: порівняння обов'язкових граматичних категорій EN vs UK.`
+      : `"Thought Lens" interactive, "grammar" tab: comparing obligatory grammatical categories EN vs UK.`,
+  );
+
   return (
     <div className={s.panel}>
       <p className={s.caption}>{t('thoughtLens.grammarIntro')}</p>

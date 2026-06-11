@@ -5,6 +5,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { WORDS, RULES, RULE_LABEL, GLOSSES, type RuleId } from './soundShift.data';
 import { useReducedMotion } from './useReducedMotion';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 
 function stageFromSlider(v: number): 0 | 1 | 2 {
@@ -21,6 +22,13 @@ export default function SoundShift({ lang }: { lang: Lang }) {
 
   const stageLabels = [t('soundShift.stage0'), t('soundShift.stage1'), t('soundShift.stage2')];
   const stageNotes = [t('soundShift.note0'), t('soundShift.note1'), t('soundShift.note2')];
+
+  useInteractiveContext(
+    'sound-shift',
+    lang === 'uk'
+      ? `Інтерактив «Закон Грімма», етап: ${stageLabels[stage]}.${activeRule ? ` Вибране правило: ${RULE_LABEL[activeRule]}.` : ''}`
+      : `"Grimm's Law" sound-shift interactive, stage: ${stageLabels[stage]}.${activeRule ? ` Active rule: ${RULE_LABEL[activeRule]}.` : ''}`,
+  );
 
   const onSlider = (v: number) => {
     const prev = stage;

@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import data from '../../data/playground/etymologies.json';
 
 interface Stage {
@@ -45,6 +46,13 @@ export default function WordTimeMachine({ lang }: { lang: Lang }) {
         w.chain.some((s) => s.form.toLowerCase().includes(q)),
     );
   }, [query]);
+
+  useInteractiveContext(
+    'word-time-machine',
+    lang === 'uk'
+      ? `Гра «Word Time Machine»: слово «${word.lemma[lang]}» (${word.chain.length} етапів, ${word.chain[0]?.lang[lang] ?? ''} → ${word.chain[word.chain.length - 1]?.lang[lang] ?? ''}).`
+      : `"Word Time Machine" playground: word "${word.lemma[lang]}" (${word.chain.length} stages, ${word.chain[0]?.lang[lang] ?? ''} → ${word.chain[word.chain.length - 1]?.lang[lang] ?? ''}).`,
+  );
 
   const surprise = () => {
     const others = WORDS.filter((w) => w.id !== activeId);

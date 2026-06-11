@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Lang, UIKey } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import {
   PRESETS, CONCEPTS, CONCEPT_GLOSS, MAX_DRIFT_ROUNDS,
   forge, fastForward, statement, question, pastSentence,
@@ -83,6 +84,13 @@ export default function ConlangForge({ lang }: { lang: Lang }) {
   const pluralShown = drifted
     ? conlang.decorate(drift.newPlural(drift.transform(conlang.lexicon.bird)))
     : show(conlang.plural(conlang.lexicon.bird));
+
+  useInteractiveContext(
+    'conlang-forge',
+    lang === 'uk'
+      ? `Гра «Conlang Forge»: ${forged ? `мова «${conlang.name}», пресет ${presetId}, порядок ${order}${drifted ? `, дрейф +${rounds * 500}р.` : ''}` : 'мову ще не створено'}.`
+      : `"Conlang Forge" playground: ${forged ? `language "${conlang.name}", preset ${presetId}, order ${order}${drifted ? `, drift +${rounds * 500}y` : ''}` : 'no language forged yet'}.`,
+  );
 
   const reforge = () => {
     setSeed(Math.floor(Math.random() * 99999));

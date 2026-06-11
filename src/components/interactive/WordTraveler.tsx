@@ -4,6 +4,7 @@ import { useTranslations } from '../../i18n/utils';
 import { useReducedMotion } from './useReducedMotion';
 import { project, WORLD_PATH, MAP_W, MAP_H } from '../../lib/geo';
 import { WORDS, QUIZ, type Word } from './wordTraveler.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './WordTraveler.module.css';
 
@@ -97,6 +98,15 @@ export default function WordTraveler({ lang }: { lang: Lang }) {
 
   const O = project(word.origin.lat, word.origin.lon);
   const atEnd = progress >= maxStops;
+
+  useInteractiveContext(
+    'word-traveler',
+    tab === 'journey'
+      ? lang === 'uk'
+        ? `Інтерактив «Мандрівник-слово», вкладка «подорож»: слово «${word.name[lang]}» (${word.emoji}), зупинка ${progress}/${maxStops}.`
+        : `"Word Traveler" interactive, "journey" tab: word "${word.name[lang]}" (${word.emoji}), stop ${progress}/${maxStops}.`
+      : null, // QuizView handles its own context
+  );
 
   function onPlayPause() {
     if (playing) {
@@ -387,6 +397,13 @@ function QuizView({
   const [done, setDone] = useState(false);
 
   const q = QUIZ[qi];
+
+  useInteractiveContext(
+    'word-traveler',
+    lang === 'uk'
+      ? `Інтерактив «Мандрівник-слово», вкладка «вікторина»: ${done ? `завершено, ${score}/${QUIZ.length}` : `питання ${qi + 1}/${QUIZ.length}, бал ${score}`}.`
+      : `"Word Traveler" interactive, "quiz" tab: ${done ? `finished, ${score}/${QUIZ.length}` : `question ${qi + 1}/${QUIZ.length}, score ${score}`}.`,
+  );
   const answered = picked !== null;
   const last = qi === QUIZ.length - 1;
 

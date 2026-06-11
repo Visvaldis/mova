@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import data from '../../data/playground/cognates.json';
 
 interface Pair {
@@ -67,6 +68,13 @@ export default function CognateRush({ lang }: { lang: Lang }) {
 
   useEffect(() => setBest(loadBest()), []);
   useEffect(() => () => { if (timerRef.current) clearInterval(timerRef.current); }, []);
+
+  useInteractiveContext(
+    'cognate-rush',
+    lang === 'uk'
+      ? `Гра «Cognate Rush»: ${phase === 'idle' ? 'очікування' : phase === 'play' ? `гра, рахунок ${score}, час ${timeLeft}с, пар ${matched.size}` : `завершено, рахунок ${score}, найкращий ${best}`}.`
+      : `"Cognate Rush" game: ${phase === 'idle' ? 'waiting to start' : phase === 'play' ? `playing, score ${score}, time ${timeLeft}s, matched ${matched.size}` : `done, score ${score}, best ${best}`}.`,
+  );
 
   const start = () => {
     setCards(dealRound());

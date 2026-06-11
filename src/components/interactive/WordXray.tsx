@@ -8,6 +8,7 @@ import {
   type ArtKey,
   type WordEntry,
 } from './wordXray.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import styles from './WordXray.module.css';
 
 type Tab = 'xray' | 'sentence' | 'doublets';
@@ -127,6 +128,13 @@ function XrayMode({ lang, t }: { lang: Lang; t: (k: any) => string }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const open = WORDS.find((w) => w.id === openId) ?? null;
 
+  useInteractiveContext(
+    'word-xray',
+    lang === 'uk'
+      ? `Інтерактив «Рентген слів», вкладка «рентген».${open ? ` Вибране слово: «${open.word}» — ${open.literal[lang]}.` : ' Слово ще не вибрано.'}`
+      : `"Word X-Ray" interactive, "x-ray" tab.${open ? ` Selected word: "${open.word}" — ${open.literal[lang]}.` : ' No word selected yet.'}`,
+  );
+
   return (
     <>
       <p className={styles.intro}>{t('wordXray.xrayIntro')}</p>
@@ -205,6 +213,13 @@ function SentenceMode({ lang, t }: { lang: Lang; t: (k: any) => string }) {
   );
   const [on, setOn] = useState<Set<number>>(new Set());
 
+  useInteractiveContext(
+    'word-xray',
+    lang === 'uk'
+      ? `Інтерактив «Рентген слів», вкладка «буквальне речення»: ${on.size}/${swapIndices.length} слів перемкнуто на буквальне значення.`
+      : `"Word X-Ray" interactive, "literal sentence" tab: ${on.size}/${swapIndices.length} words swapped to literal meaning.`,
+  );
+
   const toggle = (i: number) =>
     setOn((prev) => {
       const next = new Set(prev);
@@ -263,6 +278,13 @@ function DoubletMode({ lang, t }: { lang: Lang; t: (k: any) => string }) {
   const [matched, setMatched] = useState<string[]>([]);
   const [wrongIdx, setWrongIdx] = useState<number | null>(null);
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
+
+  useInteractiveContext(
+    'word-xray',
+    lang === 'uk'
+      ? `Інтерактив «Рентген слів», вкладка «дублети»: ${matched.length}/${DOUBLETS.length} пар зіставлено.`
+      : `"Word X-Ray" interactive, "doublets" tab: ${matched.length}/${DOUBLETS.length} pairs matched.`,
+  );
   const wrongTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const flashWrong = (idx: number) => {

@@ -5,6 +5,7 @@ import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { CLAIMS } from './mythBuster.data';
 import { useReducedMotion } from './useReducedMotion';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 
 export default function MythBuster({ lang }: { lang: Lang }) {
@@ -18,6 +19,13 @@ export default function MythBuster({ lang }: { lang: Lang }) {
   const claim = CLAIMS[index];
   const isLast = index === CLAIMS.length - 1;
   const wasCorrect = answered !== null && answered === claim.real;
+
+  useInteractiveContext(
+    'myth-buster',
+    lang === 'uk'
+      ? `Інтерактив «Руйнівник міфів»: ${finished ? `завершено, ${score}/${CLAIMS.length}` : `картка ${index + 1}/${CLAIMS.length}, бал ${score}`}.`
+      : `"Myth Buster" interactive: ${finished ? `finished, ${score}/${CLAIMS.length}` : `card ${index + 1}/${CLAIMS.length}, score ${score}`}.`,
+  );
 
   const answer = (call: boolean) => {
     if (answered !== null) return;

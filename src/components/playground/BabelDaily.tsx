@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import data from '../../data/playground/babel.json';
 
 interface BabelLang {
@@ -180,6 +181,13 @@ export default function BabelDaily({ lang }: { lang: Lang }) {
 
   const verdictText = (v: Verdict) =>
     v === 'branch' ? t('pg.babel.rightBranch') : v === 'family' ? t('pg.babel.rightFamily') : t('pg.babel.wrongFamily');
+
+  useInteractiveContext(
+    'babel-daily',
+    lang === 'uk'
+      ? `Гра «Babel Daily»${isPractice ? ' (практика)' : ''}: ${done ? (won ? `вгадано за ${guesses.length}/${MAX_GUESSES} — ${answer.name[lang]}` : `програно — це була ${answer.name[lang]}`) : `${guesses.length}/${MAX_GUESSES} спроб`}. Серія: ${stats.streak}.`
+      : `"Babel Daily" game${isPractice ? ' (practice)' : ''}: ${done ? (won ? `guessed in ${guesses.length}/${MAX_GUESSES} — ${answer.name[lang]}` : `lost — it was ${answer.name[lang]}`) : `${guesses.length}/${MAX_GUESSES} guesses`}. Streak: ${stats.streak}.`,
+  );
 
   return (
     <div className="toy" data-toy="babel-daily">

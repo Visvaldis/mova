@@ -17,6 +17,7 @@ import {
   MODALITY_NOTE,
   VERDICT_QUOTE,
 } from './codeVsSpeech.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './CodeVsSpeech.module.css';
 
@@ -30,6 +31,14 @@ export default function CodeVsSpeech({ lang }: { lang: Lang }) {
   const naturalScore = FEATURES.filter((f) => f.natural.pass).length;
   const codeScore = FEATURES.filter((f) => f.code.pass).length;
   const litNetwork = COLUMN_NETWORK[brainCol];
+
+  const openFeature = open >= 0 && open < FEATURES.length ? FEATURES[open] : null;
+  useInteractiveContext(
+    'code-vs-speech',
+    lang === 'uk'
+      ? `Інтерактив «Код vs Мова»: рахунок мова ${naturalScore}/${FEATURES.length}, код ${codeScore}/${FEATURES.length}. Мозок: ${brainCol === 'natural' ? 'мовна мережа' : 'загальна мережа'}.${openFeature ? ` Відкрита ознака: ${openFeature.name[lang]}.` : ''}`
+      : `"Code vs Speech" interactive: score natural ${naturalScore}/${FEATURES.length}, code ${codeScore}/${FEATURES.length}. Brain: ${brainCol === 'natural' ? 'language network' : 'multiple-demand network'}.${openFeature ? ` Open feature: ${openFeature.name[lang]}.` : ''}`,
+  );
 
   return (
     <div className={s.panel}>

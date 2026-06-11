@@ -11,6 +11,7 @@ import { useState } from 'react';
 import type { Lang, UIKey } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
 import { WORDS, ORDERS, PHONEMES, OKRAND_SET, METER_MAX, DESIGNERS } from './alienGym.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 
 type Role = 'S' | 'V' | 'O';
@@ -57,6 +58,14 @@ export default function AlienGrammarGym({ lang }: { lang: Lang }) {
     setPickedDesigner(null);
   };
   const allMatched = DESIGNERS.every((d) => matched[d.id]);
+
+  const matchCount = DESIGNERS.filter((d) => matched[d.id]).length;
+  useInteractiveContext(
+    'alien-grammar-gym',
+    lang === 'uk'
+      ? `Інтерактив «Граматичний зал»: порядок слів ${orderId ?? '(не зібрано)'}${isKlingon ? ' — Клінгон!' : ''}, фонеми ${picked.length}/3${meterNote ? ` (${meterNote})` : ''}, дизайнери ${matchCount}/${DESIGNERS.length}.`
+      : `"Alien Grammar Gym" interactive: word order ${orderId ?? '(not built)'}${isKlingon ? ' — Klingon!' : ''}, phonemes ${picked.length}/3${meterNote ? ` (${meterNote})` : ''}, designers ${matchCount}/${DESIGNERS.length}.`,
+  );
 
   return (
     <div className={s.panel} data-interactive-id="alien-grammar-gym">

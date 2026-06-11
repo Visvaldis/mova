@@ -24,6 +24,7 @@ import {
   RECIPE,
   bandFor,
 } from './vitalityMap.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import v from './VitalityMap.module.css';
 
@@ -172,6 +173,15 @@ export default function VitalityMap({ lang }: { lang: Lang }) {
   const band = bandFor(vitality);
   const needleAngle = (vitality / 100) * 180 - 90;
   const homeOn = active.home;
+
+  const miniName = mini?.name[lang];
+  const storyName = story?.name[lang];
+  useInteractiveContext(
+    'vitality-map',
+    lang === 'uk'
+      ? `Інтерактив «Карта живучості мов». Рецепт відродження: ${vitality}% — ${band.label[lang]}.${storyName ? ` Історія останнього мовця: ${storyName}.` : ''}${miniName ? ` Міні-кейс: ${miniName}.` : ''}${recipeSource ? ` Рецепт: ${recipeSource}.` : ''}`
+      : `"Language Vitality Map" interactive. Revival recipe: ${vitality}% — ${band.label[lang]}.${storyName ? ` Last speaker story: ${storyName}.` : ''}${miniName ? ` Mini-case: ${miniName}.` : ''}${recipeSource ? ` Recipe of: ${recipeSource}.` : ''}`,
+  );
 
   return (
     <div className={v.wrap} data-interactive-id="vitality-map">

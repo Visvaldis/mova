@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import { useInteractiveContext } from '../../lib/page-context';
 import lexData from '../../data/playground/uk-lexicon.json';
 import { buildLexicon, lookup, tokenize, type LexEntry } from '../../lib/uk-stem';
 
@@ -38,6 +39,13 @@ export default function Stratigraph({ lang }: { lang: Lang }) {
   const analyzed = useMemo(
     () => tokens.map((tok) => ({ ...tok, entry: tok.isWord ? lookup(LEX, tok.text) : null })),
     [tokens],
+  );
+
+  useInteractiveContext(
+    'stratigraph',
+    lang === 'uk'
+      ? `Гра «Stratigraph»: ${text.trim() ? `аналіз тексту (${tokens.filter((t) => t.isWord).length} слів)${active ? `, вибрано «${active.l}» — ${LAYERS[active.y]?.uk ?? active.y}` : ''}` : 'текст ще не введено'}.`
+      : `"Stratigraph" playground: ${text.trim() ? `analyzing text (${tokens.filter((t) => t.isWord).length} words)${active ? `, selected "${active.l}" — ${LAYERS[active.y]?.en ?? active.y}` : ''}` : 'no text entered yet'}.`,
   );
 
   const counts = useMemo(() => {

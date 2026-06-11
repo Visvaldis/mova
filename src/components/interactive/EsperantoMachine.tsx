@@ -23,6 +23,7 @@ import {
   GUESS_WORDS,
   type Morpheme,
 } from './esperantoMachine.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './EsperantoMachine.module.css';
 
@@ -75,6 +76,14 @@ function MachineView({ lang, t }: { lang: Lang; t: T }) {
   const featured = FEATURED_WORDS.find((f) => eq(f.parts, parts));
   const target = challenge !== null ? CHALLENGES[challenge] : null;
   const solved = target ? eq(target.answer, parts) : false;
+
+  useInteractiveContext(
+    'esperanto-machine',
+    lang === 'uk'
+      ? `Інтерактив «Есперанто-машина», вкладка «конструктор»: ${word || '(порожньо)'}${featured ? ` = ${featured.meaning[lang]}` : ''}${target ? ` (завдання: ${target.target[lang]}${solved ? ', розв\'язано' : ''})` : ''}.`
+      : `"Esperanto Machine" interactive, "word machine" tab: ${word || '(empty)'}${featured ? ` = ${featured.meaning[lang]}` : ''}${target ? ` (challenge: ${target.target[lang]}${solved ? ', solved' : ''})` : ''}.`,
+  );
+
   // A word "looks finished" once it carries an ending — only then is a
   // non-matching build judged wrong (no nagging mid-assembly).
   const finished = parts.some((id) => mof(id).kind === 'ending');
@@ -219,6 +228,13 @@ function DialView({ lang, t }: { lang: Lang; t: T }) {
   const tense = TENSES[tenseIdx];
   const form = `${root.form}${tense.ending}${tense.ending === 'u' ? '!' : ''}`;
 
+  useInteractiveContext(
+    'esperanto-machine',
+    lang === 'uk'
+      ? `Інтерактив «Есперанто-машина», вкладка «дієслівний диск»: ${form} — ${root.forms[tense.ending][lang]}.`
+      : `"Esperanto Machine" interactive, "verb dial" tab: ${form} — ${root.forms[tense.ending][lang]}.`,
+  );
+
   return (
     <div>
       <p className={c.intro}>{t('esperantoMachine.dialIntro')}</p>
@@ -275,6 +291,13 @@ function GuessView({ lang, t }: { lang: Lang; t: T }) {
   const [open, setOpen] = useState<number | null>(null);
   const [revealAll, setRevealAll] = useState(false);
   const familiar = words.filter((w) => w.familiar).length;
+
+  useInteractiveContext(
+    'esperanto-machine',
+    lang === 'uk'
+      ? `Інтерактив «Есперанто-машина», вкладка «вгадай»: ${revealAll ? 'усі слова розкрито' : `${familiar}/${words.length} знайомих`}.`
+      : `"Esperanto Machine" interactive, "guessability" tab: ${revealAll ? 'all words revealed' : `${familiar}/${words.length} familiar`}.`,
+  );
 
   return (
     <div>

@@ -11,6 +11,7 @@ import {
   type LayerId,
   type RootWord,
 } from './rootsGarden.data';
+import { useInteractiveContext } from '../../lib/page-context';
 import s from './interactive.module.css';
 import c from './RootsGarden.module.css';
 
@@ -57,6 +58,15 @@ export default function RootsGarden({ lang }: { lang: Lang }) {
 /* ── Tab 1: the stratigraphy ───────────────────────────────────────────── */
 function StrataView({ lang, t }: { lang: Lang; t: T }) {
   const [openId, setOpenId] = useState<string | null>(null);
+
+  const openWord = WORDS.find((w) => w.id === openId);
+  useInteractiveContext(
+    'roots-garden',
+    lang === 'uk'
+      ? `Інтерактив «Сад коренів», вкладка «стратиграфія».${openWord ? ` Вибране слово: «${openWord.word}» — шар: ${layerById(openWord.layer).name[lang]}.` : ''}`
+      : `"Roots Garden" interactive, "stratigraphy" tab.${openWord ? ` Selected word: "${openWord.word}" — layer: ${layerById(openWord.layer).name[lang]}.` : ''}`,
+  );
+
   // Bumping this remounts the strata, replaying the CSS settle animation
   // ("re-sort"). The animation is pure CSS, so it's neutralized under
   // prefers-reduced-motion (the layers just appear in their final places).
@@ -284,6 +294,13 @@ function SentenceView({ lang, t }: { lang: Lang; t: T }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const open = openIdx !== null ? SENTENCE[openIdx] : null;
   const openLayer = open?.layer ? layerById(open.layer) : null;
+
+  useInteractiveContext(
+    'roots-garden',
+    lang === 'uk'
+      ? `Інтерактив «Сад коренів», вкладка «речення».${open ? ` Вибрано: «${open.text}» — шар: ${openLayer?.name[lang] ?? '—'}.` : ''}`
+      : `"Roots Garden" interactive, "sentence" tab.${open ? ` Selected: "${open.text}" — layer: ${openLayer?.name[lang] ?? '—'}.` : ''}`,
+  );
 
   return (
     <div className={c.sentenceWrap}>
