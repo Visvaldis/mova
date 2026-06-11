@@ -76,6 +76,13 @@ export default function BabelDaily({ lang }: { lang: Lang }) {
     () => (isPractice ? puzzleFor(practiceSeed!) : puzzleFor(today)),
     [isPractice, practiceSeed, today],
   );
+  const sortedLanguageOptions = useMemo(
+    () =>
+      [...LANGUAGES].sort((a, b) =>
+        a.name[lang].localeCompare(b.name[lang], lang === 'uk' ? 'uk' : 'en'),
+      ),
+    [lang],
+  );
 
   const [guesses, setGuesses] = useState<string[]>([]);
   const [done, setDone] = useState(false);
@@ -218,7 +225,7 @@ export default function BabelDaily({ lang }: { lang: Lang }) {
             style={{ flex: '1 1 12rem' }}
           />
           <datalist id="babel-langs">
-            {LANGUAGES.map((l) => (
+            {sortedLanguageOptions.map((l) => (
               <option key={l.id} value={l.name[lang]} />
             ))}
           </datalist>
