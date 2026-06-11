@@ -3,7 +3,7 @@ slug: ukrainian-word-origins
 lang: uk
 title: "Мрія, лелека, вирій: звідки походять українські слова"
 summary: "Деяким українським словам 6 000 років. Одне з найулюбленіших вигадав поет у 1870-х."
-order: 12
+order: 13
 topic: roots
 readingTime: 8
 interactive: roots-garden

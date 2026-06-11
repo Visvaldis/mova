@@ -28,7 +28,7 @@ Language is at least a hundred thousand years old. Writing is barely five thousa
 
 ## It started as accounting
 
-The romantic guess — writing began as poetry or prayer — is wrong. Archaeologist Denise Schmandt-Besserat traced cuneiform back to small clay tokens used for millennia to count sheep and grain. Tokens got pressed into clay envelopes, the impressions started standing in for the tokens, and eventually someone realized the marks alone sufficed. The first written documents are receipts. Literature came centuries later.
+The romantic guess — writing began as poetry or prayer — is wrong. Archaeologist Denise Schmandt-Besserat traced cuneiform back to small clay tokens used for millennia to count sheep and grain. Tokens got pressed into clay envelopes, the impressions started standing in for the tokens, and eventually someone realized the marks alone sufficed. The first written documents are receipts. Literature came centuries later — and diplomacy not long after: the oldest surviving international treaty, the Egyptian–Hittite peace accord of ~1259 BCE, was recorded in both Akkadian cuneiform and Egyptian hieroglyphs.
 
 The leap from pictures to language was the **rebus principle**: using a picture for its *sound*, not its meaning. In Sumerian, an arrow (*ti*) could write the identical-sounding word "life" (*ti*) — abstract, unpicturable, but pronounceable. Once symbols capture sounds, you can write *anything sayable*.
 

@@ -3,7 +3,7 @@ slug: machine-languages
 lang: uk
 title: "Чи є Python мовою? Код, граматика і мозок"
 summary: "Мови програмування мають синтаксис, діалекти й навіть мертві мови. Але ваш мозок відмовляється сприймати їх як мовлення."
-order: 18
+order: 19
 topic: machine
 readingTime: 7
 interactive: code-vs-speech

@@ -3,7 +3,7 @@ slug: who-wrote-first
 lang: en
 title: "Did the Sumerians Really Write First?"
 summary: "The textbook answer is Mesopotamia, ~3300 BCE. But Egypt may have been just as early, and older marks keep turning up. The answer depends on what you call 'writing'."
-order: 22
+order: 10
 topic: writing
 readingTime: 7
 interactive: writing-detective

@@ -3,7 +3,7 @@ slug: language-and-thought
 lang: en
 title: "Does Your Language Think For You?"
 summary: "Ukrainian has two blues, German bridges are feminine, and one Australian language replaces 'left' with 'north'. How much does grammar steer the mind?"
-order: 15
+order: 16
 topic: thought
 readingTime: 8
 interactive: thought-lens

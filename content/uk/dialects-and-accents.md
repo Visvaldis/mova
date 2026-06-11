@@ -3,7 +3,7 @@ slug: dialects-and-accents
 lang: uk
 title: "Мова — це діалект з армією: акценти, діалекти і паляниця"
 summary: "Акцент мають усі, жоден діалект не є зіпсованою граматикою, а межу між «діалектом» і «мовою» малює політика, не лінгвістика."
-order: 16
+order: 17
 topic: dialects
 readingTime: 8
 interactive: accent-atlas

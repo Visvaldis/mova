@@ -3,7 +3,7 @@ slug: etymology-myths
 lang: en
 title: "Posh Lies: Folk Etymology and Viral Word Myths"
 summary: "No, 'posh' isn't an acronym and Cossacks aren't named after goats. Why fake etymologies are so irresistible — and how the mistakes sometimes become the language."
-order: 14
+order: 15
 topic: myths
 readingTime: 7
 interactive: myth-buster

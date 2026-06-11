@@ -3,7 +3,7 @@ slug: etymology-myths
 lang: uk
 title: "Шикарна брехня: народна етимологія та вірусні міфи про слова"
 summary: "Ні, «posh» — не акронім, а козаки — не від кози. Чому фейкові етимології такі нездоланні — і як помилки іноді стають мовою."
-order: 14
+order: 15
 topic: myths
 readingTime: 7
 interactive: myth-buster

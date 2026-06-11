@@ -3,7 +3,7 @@ slug: tolkien-languages
 lang: en
 title: "A World Built for Its Words: Tolkien's Secret Vice"
 summary: "The Lord of the Rings exists because its author needed somewhere for his invented languages to live. Inside Elvish, real sound laws run on fictional time."
-order: 20
+order: 21
 topic: conlangs
 readingTime: 8
 interactive: name-smith

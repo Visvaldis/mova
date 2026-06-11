@@ -3,7 +3,7 @@ slug: everyday-etymologies
 lang: uk
 title: "Рентген слів: таємне життя повсякденної лексики"
 summary: "М'яз — це маленька миша, катастрофа — лиха зірка, а компаньйон — той, з ким ділиш хліб."
-order: 11
+order: 12
 topic: everyday
 readingTime: 7
 interactive: word-xray

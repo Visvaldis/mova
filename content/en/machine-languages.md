@@ -3,7 +3,7 @@ slug: machine-languages
 lang: en
 title: "Is Python a Language? Code, Grammar, and the Brain"
 summary: "Programming languages have syntax, dialects, and even dead languages. But your brain refuses to treat them as speech."
-order: 18
+order: 19
 topic: machine
 readingTime: 7
 interactive: code-vs-speech

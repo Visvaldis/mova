@@ -3,7 +3,7 @@ slug: constructed-languages
 lang: uk
 title: "Мови, збудовані з нуля: есперанто, клінгонська, токіпона"
 summary: "Що буває, коли одна людина намагається зробити те, що цілі цивілізації робили повільно, — і чому штучні мови постійно тікають від своїх творців."
-order: 17
+order: 18
 topic: conlangs
 readingTime: 8
 interactive: conlang-workbench

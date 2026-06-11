@@ -3,7 +3,7 @@ slug: traveling-words
 lang: uk
 title: "Безбілетники: слова, що мандрують світом"
 summary: "Скажіть «чай» — і ви викажете торговий маршрут 400-річної давнини. Кожне запозичене слово — скам'янілість контакту."
-order: 10
+order: 11
 topic: borrowing
 readingTime: 7
 interactive: word-traveler

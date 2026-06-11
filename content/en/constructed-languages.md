@@ -3,7 +3,7 @@ slug: constructed-languages
 lang: en
 title: "Languages Built From Scratch: Esperanto, Klingon, Toki Pona"
 summary: "What happens when one person tries to do what whole civilizations did slowly — and why invented languages keep escaping their inventors."
-order: 17
+order: 18
 topic: conlangs
 readingTime: 8
 interactive: conlang-workbench

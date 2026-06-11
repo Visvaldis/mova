@@ -3,7 +3,7 @@ slug: language-and-thought
 lang: uk
 title: "Чи думає ваша мова за вас?"
 summary: "Українська має два сині, німецькі мости — жіночого роду, а одна австралійська мова замінює «ліворуч» на «північ». Наскільки граматика кермує розумом?"
-order: 15
+order: 16
 topic: thought
 readingTime: 8
 interactive: thought-lens

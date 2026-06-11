@@ -3,7 +3,7 @@ slug: esperanto
 lang: en
 title: "The Doctor Who Hoped: Esperanto, the Language Built for Peace"
 summary: "An eye doctor from Białystok built a language with sixteen rules and no exceptions. Hitler banned it, Stalin shot its speakers — and it refuses to die."
-order: 19
+order: 20
 topic: conlangs
 readingTime: 8
 interactive: esperanto-machine

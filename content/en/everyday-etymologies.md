@@ -3,7 +3,7 @@ slug: everyday-etymologies
 lang: en
 title: "X-Raying Words: The Secret Lives of Everyday Vocabulary"
 summary: "A muscle is a little mouse, a disaster is a bad star, and your companion is someone you share bread with."
-order: 11
+order: 12
 topic: everyday
 readingTime: 7
 interactive: word-xray

@@ -70,6 +70,11 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     blurb: { en: '~1900–1700 BCE: Semitic workers in Egypt reuse hieroglyphs for first sounds only — thirty-ish signs a child can master.', uk: '~1900–1700 до н.е.: семітські робітники в Єгипті використовують ієрогліфи лише для перших звуків — близько тридцяти знаків, які опанує дитина.' },
   },
   {
+    year: -1259, topic: 'writing', slug: 'writing-systems',
+    title: { en: 'Oldest surviving international treaty', uk: 'Найдавніший міжнародний договір, що зберігся' },
+    blurb: { en: 'The Egyptian–Hittite peace accord — recorded in both Akkadian cuneiform and Egyptian hieroglyphs.', uk: 'Єгипетсько-хеттська мирна угода — записана і аккадським клинописом, і єгипетськими ієрогліфами.' },
+  },
+  {
     year: -1200, topic: 'writing', slug: 'writing-systems',
     title: { en: 'Chinese writing', uk: 'Китайське письмо' },
     blurb: { en: 'The third independent invention.', uk: 'Третій незалежний винахід.' },

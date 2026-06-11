@@ -3,7 +3,7 @@ slug: names-and-places
 lang: en
 title: "The Map Speaks: What Names of Places, People, and Months Remember"
 summary: "Kyiv carries a legend, 'Ukraine' carries a debate, and your calendar is a Roman temple with two months named after egos."
-order: 13
+order: 14
 topic: names
 readingTime: 8
 interactive: name-map

@@ -3,7 +3,7 @@ slug: hollywood-conlangs
 lang: en
 title: "Speaking Klingon: How Hollywood Learned to Build Real Fake Languages"
 summary: "A linguist hired for a 1984 Star Trek film made his language deliberately alien — and fans translated Shakespeare into it. Now every fantasy epic hires a conlanger."
-order: 21
+order: 22
 topic: conlangs
 readingTime: 8
 interactive: alien-grammar-gym

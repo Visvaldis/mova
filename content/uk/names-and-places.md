@@ -3,7 +3,7 @@ slug: names-and-places
 lang: uk
 title: "Мапа говорить: що пам'ятають назви місць, людей і місяців"
 summary: "Київ несе легенду, «Україна» — дискусію, а ваш календар — римський храм із двома цезарями, вмонтованими в рік назавжди."
-order: 13
+order: 14
 topic: names
 readingTime: 8
 interactive: name-map

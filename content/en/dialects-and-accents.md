@@ -3,7 +3,7 @@ slug: dialects-and-accents
 lang: en
 title: "A Language Is a Dialect With an Army: Accents, Dialects, and Паляниця"
 summary: "Everyone has an accent, no dialect is broken grammar, and the border between 'dialect' and 'language' is drawn by politics, not linguistics."
-order: 16
+order: 17
 topic: dialects
 readingTime: 8
 interactive: accent-atlas

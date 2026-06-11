@@ -3,7 +3,7 @@ slug: hollywood-conlangs
 lang: uk
 title: "Розмовляти клінгонською: як Голлівуд навчився будувати справжні фальшиві мови"
 summary: "Лінгвіст, найнятий для фільму Star Trek 1984 року, зробив свою мову навмисно чужою — а фанати переклали нею Шекспіра. Тепер кожен фентезі-епік наймає конлангера."
-order: 21
+order: 22
 topic: conlangs
 readingTime: 8
 interactive: alien-grammar-gym

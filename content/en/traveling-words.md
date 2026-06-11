@@ -3,7 +3,7 @@ slug: traveling-words
 lang: en
 title: "Stowaways: Words That Travel the World"
 summary: "Say 'tea' and you reveal a 400-year-old shipping route. Every borrowed word is a fossil of contact."
-order: 10
+order: 11
 topic: borrowing
 readingTime: 7
 interactive: word-traveler
