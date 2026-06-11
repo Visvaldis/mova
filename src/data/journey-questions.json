@@ -812,6 +812,60 @@
       }
     },
     {
+      "chapter": 5,
+      "article": "who-wrote-first",
+      "q": {
+        "en": "What were the very first cuneiform tablets used for?",
+        "uk": "Для чого використовувалися найперші клинописні таблички?"
+      },
+      "options": [
+        {
+          "en": "Grain inventories and livestock receipts",
+          "uk": "Описи зерна та квитанції на худобу"
+        },
+        {
+          "en": "Religious prayers and hymns",
+          "uk": "Релігійні молитви та гімни"
+        },
+        {
+          "en": "Royal decrees and laws",
+          "uk": "Царські укази та закони"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The first documents are grain inventories, not poems — writing began as accounting.",
+        "uk": "Перші документи — описи зерна, а не вірші — письмо почалося як бухгалтерія."
+      }
+    },
+    {
+      "chapter": 5,
+      "article": "who-wrote-first",
+      "q": {
+        "en": "How many times was writing independently invented from scratch?",
+        "uk": "Скільки разів письмо було незалежно винайдене з нуля?"
+      },
+      "options": [
+        {
+          "en": "At least four (Mesopotamia, Egypt, China, Mesoamerica)",
+          "uk": "Щонайменше чотири (Месопотамія, Єгипет, Китай, Мезоамерика)"
+        },
+        {
+          "en": "Once, in Mesopotamia",
+          "uk": "Один раз, у Месопотамії"
+        },
+        {
+          "en": "Twice (Mesopotamia and China)",
+          "uk": "Двічі (Месопотамія і Китай)"
+        }
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Writing was independently invented at least four times — suggesting it's a convergent technology, not one genius's lightning bolt.",
+        "uk": "Письмо було незалежно винайдене щонайменше чотири рази — це свідчить про конвергентну технологію, а не блискавку генія."
+      }
+    },
+    {
       "chapter": 6,
       "article": "internet-language",
       "q": {

@@ -1,0 +1,258 @@
+/* writing-detective — definition lab · artifact explorer · claims quiz.
+   Scoped via CSS modules; every colour is the topic accent var (writing =
+   sepia) or a color-mix of it. No hardcoded hex. All motion is pure CSS →
+   neutralized under prefers-reduced-motion. */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.intro {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ── (a) definition lab ──────────────────────────────────────────── */
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.toggle input[type='checkbox'] {
+  accent-color: var(--accent);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid var(--line);
+}
+.timelineItem {
+  position: relative;
+  padding: 0.7rem 0 0.7rem 1rem;
+  transition: opacity 0.25s ease;
+}
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 1.05rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-elev);
+  transform: translateX(calc(-50% - 1.5px));
+}
+.timelineFaded {
+  opacity: 0.25;
+}
+.timelineFaded::before {
+  background: var(--muted);
+}
+.timelineName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.timelineMeta {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.timelineNote {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-top: 0.2rem;
+}
+.firstBadge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.defNote {
+  margin: 0.8rem 0 0;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ── (b) artifact explorer ───────────────────────────────────────── */
+.artifacts {
+  display: grid;
+  gap: 0.7rem;
+}
+.artifact {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.artifact:hover {
+  border-color: var(--accent);
+}
+.artifact[data-open='true'] {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--bg));
+}
+.artifactHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.artifactName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.artifactDate {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.artifactDesc {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.artifactDetail {
+  margin: 0.6rem 0 0;
+  padding: 0.6rem 0 0;
+  border-top: 1px dashed var(--line);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.statusBadge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.statusConsensus {
+  background: color-mix(in srgb, #16a34a 15%, var(--bg));
+  color: #16a34a;
+  border: 1px solid color-mix(in srgb, #16a34a 30%, var(--line));
+}
+.statusDebated {
+  background: color-mix(in srgb, #d97706 15%, var(--bg));
+  color: #d97706;
+  border: 1px solid color-mix(in srgb, #d97706 30%, var(--line));
+}
+.statusRejected {
+  background: color-mix(in srgb, #dc2626 12%, var(--bg));
+  color: #dc2626;
+  border: 1px solid color-mix(in srgb, #dc2626 25%, var(--line));
+}
+
+/* ── (c) claims quiz ─────────────────────────────────────────────── */
+.claimCard {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.7rem;
+}
+.claimStatement {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.6rem;
+}
+.claimButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.claimBtn {
+  appearance: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  border: 1.5px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+.claimBtn:hover {
+  border-color: var(--accent);
+}
+.claimBtn[data-chosen='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.claimBtn:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.claimResult {
+  margin: 0.5rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.claimCorrect {
+  color: #16a34a;
+  font-weight: 700;
+}
+.claimWrong {
+  color: #dc2626;
+  font-weight: 700;
+}
+.scoreBar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ── mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .timelineName {
+    font-size: 0.88rem;
+  }
+  .artifactName {
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timelineItem,
+  .artifact,
+  .claimBtn {
+    transition: none;
+  }
+}

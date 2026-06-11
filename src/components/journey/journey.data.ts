@@ -37,7 +37,7 @@ export const CHAPTERS: Chapter[] = [
   {
     num: 5, icon: '✍️',
     title: { en: 'Freezing and reviving', uk: 'Заморозити й відродити' },
-    slugs: ['writing-systems', 'language-death-and-revival'],
+    slugs: ['writing-systems', 'who-wrote-first', 'language-death-and-revival'],
     toy: 'word-time-machine',
   },
   {

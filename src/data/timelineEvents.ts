@@ -35,6 +35,26 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     blurb: { en: '~5,000–6,000 years ago, most likely by herders of the Pontic-Caspian steppe.', uk: '~5 000–6 000 років тому, найімовірніше скотарями понтійсько-каспійського степу.' },
   },
   {
+    year: -6600, topic: 'writing', slug: 'who-wrote-first',
+    title: { en: 'Jiahu symbols', uk: 'Символи Цзяху' },
+    blurb: { en: 'Repeated marks on tortoise shells in central China — systematic, but no evidence of encoding language.', uk: 'Повторювані позначки на черепашачих панцирах у центральному Китаї — систематичні, але без ознак кодування мови.' },
+  },
+  {
+    year: -5500, topic: 'writing', slug: 'who-wrote-first',
+    title: { en: 'Vinca symbols', uk: 'Символи Вінча' },
+    blurb: { en: 'Recurring signs on Neolithic pottery in SE Europe — most scholars reject them as writing.', uk: 'Повторювані знаки на неолітичній кераміці Пд.-Сх. Європи — більшість вчених не визнають їх письмом.' },
+  },
+  {
+    year: -3400, topic: 'writing', slug: 'who-wrote-first',
+    title: { en: 'Sumerian cuneiform — earliest tablets', uk: 'Шумерський клинопис — найдавніші таблички' },
+    blurb: { en: 'Uruk IV clay tablets: the best-documented gradual evolution from accounting tokens to writing.', uk: 'Глиняні таблички Уруку IV: найкраще задокументована поступова еволюція від облікових жетонів до письма.' },
+  },
+  {
+    year: -3250, topic: 'writing', slug: 'who-wrote-first',
+    title: { en: 'Abydos tomb tags — Egyptian hieroglyphs', uk: 'Таблички з Абідоса — єгипетські ієрогліфи' },
+    blurb: { en: '~200 bone and ivory tags from Tomb U-j — barely a century after the earliest Uruk tablets, possibly independent.', uk: '~200 кісткових і з слонової кістки табличок із гробниці U-j — ледь на століття пізніше табличок Уруку, можливо незалежні.' },
+  },
+  {
     year: -3300, topic: 'writing', slug: 'writing-systems',
     title: { en: 'Writing invented in Mesopotamia', uk: 'У Месопотамії винайдено письмо' },
     blurb: { en: 'Cuneiform grows out of clay accounting tokens; the first documents are receipts.', uk: 'Клинопис виростає з глиняних облікових жетонів; перші документи — квитанції.' },
