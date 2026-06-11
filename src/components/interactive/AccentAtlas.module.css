@@ -1,21 +1,15 @@
-/* accent-atlas — dialect map, dialect-vs-language continuum, паляниця shibboleth.
-   Scoped via CSS modules; every colour is the `dialects` topic accent var or a
-   color-mix of it, so the island matches the article in light AND dark mode.
-   The three dialect zones are three tints of the SAME accent (not hardcoded
-   hex). All motion is pure CSS → neutralized under prefers-reduced-motion. */
-
 .root {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
 }
 
-/* ── tabs ─────────────────────────────────────────────────────────── */
 .tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
+
 .tab {
   appearance: none;
   border: 1px solid var(--line);
@@ -29,10 +23,12 @@
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
+
 .tab:hover {
   color: var(--text);
   border-color: var(--accent);
 }
+
 .tabActive {
   background: var(--accent);
   border-color: var(--accent);
@@ -45,17 +41,20 @@
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
 .caption {
   margin: 0;
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.5;
 }
+
 .story {
   margin: 0.2rem 0 0;
   line-height: 1.55;
   color: var(--text);
 }
+
 .muted {
   margin: 0;
   color: var(--muted);
@@ -63,7 +62,6 @@
   line-height: 1.5;
 }
 
-/* shared card head */
 .cardHead {
   display: flex;
   align-items: baseline;
@@ -71,11 +69,13 @@
   flex-wrap: wrap;
   margin-bottom: 0.25rem;
 }
+
 .cardWord {
   font-size: 1.3rem;
   font-weight: 800;
   line-height: 1.1;
 }
+
 .tag {
   font-size: 0.72rem;
   font-weight: 700;
@@ -86,67 +86,152 @@
   padding: 0.2rem 0.55rem;
 }
 
-/* ── Tab 1: dialect map ───────────────────────────────────────────── */
-.mapWrap {
+.mapWrap,
+.contWrap,
+.shibWrap {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
 }
+
 .map {
   width: 100%;
   height: auto;
   max-height: 60vh;
-  background: color-mix(in srgb, var(--accent-soft) 18%, var(--bg));
+  background:
+    radial-gradient(circle at 25% 22%, color-mix(in srgb, var(--accent-soft) 42%, transparent), transparent 30%),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent-soft) 20%, var(--bg)), color-mix(in srgb, var(--accent-soft) 10%, var(--bg)));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   display: block;
 }
+
 .land {
-  fill: color-mix(in srgb, var(--accent-soft) 40%, var(--bg));
-  stroke: var(--accent);
+  fill: color-mix(in srgb, var(--accent-soft) 34%, var(--bg));
+  stroke: color-mix(in srgb, var(--accent) 70%, var(--text));
   stroke-width: 1.6;
   stroke-linejoin: round;
 }
-/* three tints of the one accent, so the zones read as distinct but on-theme */
+
+.coast {
+  fill: none;
+  stroke: color-mix(in srgb, var(--bg) 8%, var(--accent));
+  stroke-width: 3;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
 .zone {
-  stroke: var(--bg-elev);
+  stroke: color-mix(in srgb, var(--bg-elev) 70%, var(--bg));
   stroke-width: 1;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
 .zone:focus {
   outline: none;
 }
+
 .zoneNorth {
-  fill: color-mix(in srgb, var(--accent) 28%, var(--bg));
+  fill: color-mix(in srgb, var(--accent) 25%, var(--bg));
 }
+
 .zoneSouthwest {
-  fill: color-mix(in srgb, var(--accent) 52%, var(--bg));
+  fill: color-mix(in srgb, var(--accent) 50%, var(--bg));
 }
+
 .zoneSoutheast {
   fill: color-mix(in srgb, var(--accent) 78%, var(--bg));
 }
+
 .zone:hover {
-  opacity: 0.82;
+  opacity: 0.88;
 }
+
 .zoneOn {
   stroke: var(--accent-2);
   stroke-width: 3;
 }
+
 .zone:focus-visible {
   stroke: var(--accent-2);
   stroke-width: 3;
 }
+
+.zoneDot {
+  fill: var(--bg-elev);
+  stroke: var(--accent-2);
+  stroke-width: 2;
+  pointer-events: none;
+}
+
 .zoneLabel {
   fill: var(--text);
   font-size: 17px;
   font-weight: 800;
   text-anchor: middle;
   paint-order: stroke;
-  stroke: var(--bg-elev);
-  stroke-width: 4px;
+  stroke: color-mix(in srgb, var(--bg-elev) 75%, transparent);
+  stroke-width: 6px;
   stroke-linejoin: round;
   pointer-events: none;
+}
+
+.zoneKeys {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.zoneKey {
+  appearance: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-elev) 82%, var(--accent-soft));
+  padding: 0.75rem 0.8rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.zoneKey:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.zoneKeyOn {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.zoneSwatch {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 55%, transparent);
+  margin-top: 0.15rem;
+}
+
+.zoneKeyText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.zoneKeyName {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.zoneKeyMeta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 .chips {
@@ -154,6 +239,7 @@
   flex-wrap: wrap;
   gap: 0.45rem;
 }
+
 .chip {
   appearance: none;
   font: inherit;
@@ -167,14 +253,17 @@
   padding: 0.4rem 0.8rem;
   transition: border-color 0.15s, background 0.15s, color 0.15s;
 }
+
 .chip:hover {
   border-color: var(--accent);
 }
+
 .chipOn {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--on-accent);
 }
+
 .varieties {
   margin: 0.4rem 0 0;
   font-size: 0.85rem;
@@ -182,45 +271,131 @@
   color: var(--accent-2);
 }
 
-/* ── Tab 2: continuum ─────────────────────────────────────────────── */
-.contWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
+.casePicker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
 }
+
+.caseButton,
+.case {
+  appearance: none;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-soft) 16%, var(--bg));
+  padding: 0.7rem 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.caseButton:hover,
+.case:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.caseButtonOn,
+.caseOn {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+.caseButtonPair {
+  display: block;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.caseMiniLabel {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+}
+
+.caseSplit {
+  background: color-mix(in srgb, var(--accent) 88%, white);
+  color: var(--on-accent);
+}
+
+.caseLump {
+  background: color-mix(in srgb, var(--accent-soft) 72%, var(--bg));
+  color: var(--accent-2);
+}
+
 .endpoints {
   display: flex;
   justify-content: space-between;
   font-weight: 800;
   font-size: 0.95rem;
 }
-/* the smooth ramp = speech blending village to village (a metaphor, labelled) */
+
 .rail {
   position: relative;
-  height: 26px;
+  height: 46px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: linear-gradient(
     to right,
-    color-mix(in srgb, var(--accent) 12%, var(--bg)),
+    color-mix(in srgb, var(--accent) 10%, var(--bg)),
+    color-mix(in srgb, var(--accent) 55%, var(--bg)),
     var(--accent)
   );
+  overflow: visible;
 }
-.villages {
+
+.villages,
+.villageNums {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
   justify-content: space-around;
+}
+
+.villages {
+  align-items: center;
   pointer-events: none;
 }
+
+.villageNums {
+  align-items: flex-end;
+  padding-bottom: 0.25rem;
+  pointer-events: none;
+}
+
 .village {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--bg-elev);
   border: 2px solid var(--accent-2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--bg) 70%, transparent);
 }
+
+.villageLeft {
+  background: var(--bg-elev);
+}
+
+.villageRight {
+  background: color-mix(in srgb, var(--accent) 65%, white);
+}
+
+.villageBoundary {
+  width: 15px;
+  height: 15px;
+}
+
+.villageNum {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--text) 82%, var(--bg));
+}
+
 .border {
   position: absolute;
   top: -8px;
@@ -230,6 +405,7 @@
   transform: translateX(-50%);
   pointer-events: none;
 }
+
 .borderFlag {
   position: absolute;
   top: -22px;
@@ -237,6 +413,7 @@
   transform: translateX(-50%);
   font-size: 0.95rem;
 }
+
 .sides {
   display: flex;
   justify-content: space-between;
@@ -244,6 +421,39 @@
   color: var(--accent-2);
   font-size: 0.9rem;
 }
+
+.borderReadout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.borderVillage {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  padding: 0.65rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.borderVillageLabel {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.borderVillageBridge {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-2);
+}
+
 .verdict {
   background: var(--bg);
   border: 1px solid var(--line);
@@ -252,7 +462,14 @@
   padding: 0.85rem 1.05rem;
 }
 
-/* real cases */
+.caseLesson {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
 .casesHead {
   font-size: 0.78rem;
   font-weight: 800;
@@ -261,21 +478,19 @@
   color: var(--muted);
   margin: 0.4rem 0 0;
 }
+
 .cases {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.7rem;
 }
-.case {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--accent-soft) 22%, var(--bg));
-  padding: 0.6rem 0.7rem;
-}
+
 .casePair {
   font-weight: 800;
   font-size: 0.95rem;
+  color: var(--text);
 }
+
 .caseVerdict {
   display: inline-block;
   margin: 0.25rem 0;
@@ -284,9 +499,8 @@
   letter-spacing: 0.02em;
   border-radius: 999px;
   padding: 0.12rem 0.5rem;
-  background: var(--accent);
-  color: var(--on-accent);
 }
+
 .caseReality {
   margin: 0.15rem 0 0;
   font-size: 0.88rem;
@@ -294,12 +508,6 @@
   color: var(--text);
 }
 
-/* ── Tab 3: shibboleth ────────────────────────────────────────────── */
-.shibWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
 .word {
   display: flex;
   justify-content: center;
@@ -311,9 +519,11 @@
   line-height: 1.1;
   margin: 0.2rem 0;
 }
+
 .letter {
   color: var(--text);
 }
+
 .tellLetter {
   appearance: none;
   font: inherit;
@@ -327,26 +537,31 @@
   transition: color 0.15s, background 0.15s;
   border-radius: 4px 4px 0 0;
 }
+
 .tellLetter:hover,
 .tellOn {
   background: var(--accent);
   color: var(--on-accent);
 }
+
 .betrays {
   text-align: center;
   font-size: 1rem;
   color: var(--muted);
 }
+
 .betraysWord {
   font-weight: 800;
   font-style: italic;
   color: var(--accent-2);
 }
+
 .tellCards {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .tellCard {
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
@@ -355,13 +570,16 @@
   padding: 0.7rem 0.85rem;
   transition: box-shadow 0.15s;
 }
+
 .tellCardOn {
   box-shadow: 0 0 0 2px var(--accent);
 }
+
 .tellCardHead {
   font-weight: 800;
   margin-bottom: 0.15rem;
 }
+
 .tellGlyph {
   display: inline-block;
   min-width: 1.4em;
@@ -369,6 +587,7 @@
   margin-right: 0.4rem;
   color: var(--accent-2);
 }
+
 .biblical {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -377,13 +596,13 @@
   font-size: 0.92rem;
   line-height: 1.55;
 }
+
 .payoff {
   margin: 0;
   font-weight: 600;
   line-height: 1.55;
 }
 
-/* ── shared framing ───────────────────────────────────────────────── */
 .pullQuote {
   margin: 0;
   font-size: 0.95rem;
@@ -394,12 +613,24 @@
   line-height: 1.55;
 }
 
-/* ── mobile ───────────────────────────────────────────────────────── */
-@media (max-width: 520px) {
+@media (max-width: 760px) {
+  .zoneKeys,
+  .casePicker,
   .cases {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 520px) {
   .zoneLabel {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .borderReadout {
+    grid-template-columns: 1fr;
+  }
+
+  .borderVillageBridge {
+    text-align: center;
   }
 }

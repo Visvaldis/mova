@@ -735,8 +735,14 @@ export const ui = {
     'accentAtlas.contIntro':
       'A dialect continuum: each village blends into the next. So where does one “language” end and the next begin? Drag the border and find out.',
     'accentAtlas.contBorderAria': 'Drag to place the language border between villages',
+    'accentAtlas.contVillage': 'Village',
+    'accentAtlas.contBorderNow': 'border now',
     'accentAtlas.contVerdict':
       'Wherever you cut, the two villages straddling your line still understand each other. The border is political — drawn by flags, schoolbooks and armies, not by the language.',
+    'accentAtlas.contSplitLesson':
+      'This is the Scandinavian pattern: one smooth chain can be split into several named languages once states, schools and flags line up behind it.',
+    'accentAtlas.contLumpLesson':
+      'This is the opposite trick: politics can lump distinct speech under one label, or dismiss a language as a “dialect” when power wants it smaller.',
     'accentAtlas.contMetaphor':
       'The smooth ramp illustrates speech blending village to village — a metaphor, not sampled dialect data.',
     'accentAtlas.contCasesHead': 'It happens for real',
@@ -1608,8 +1614,14 @@ export const ui = {
     'accentAtlas.contIntro':
       'Діалектний континуум: кожне село плавно переходить у наступне. То де ж закінчується одна «мова» й починається інша? Перетягніть кордон і дізнайтеся.',
     'accentAtlas.contBorderAria': 'Перетягніть, щоб поставити мовний кордон між селами',
+    'accentAtlas.contVillage': 'Село',
+    'accentAtlas.contBorderNow': 'межа тут',
     'accentAtlas.contVerdict':
       'Хоч би де ви провели лінію, два села обабіч неї однаково розуміють одне одного. Кордон — політичний: його креслять прапори, підручники й армії, а не мова.',
+    'accentAtlas.contSplitLesson':
+      'Це скандинавський сценарій: один плавний ланцюг мовлення можуть розрізати на кілька окремих мов, щойно за ними стають держави, школи і прапори.',
+    'accentAtlas.contLumpLesson':
+      'Це зворотний трюк: політика може зводити різні види мовлення під один ярлик або зменшувати мову до «діалекту», коли владі так зручніше.',
     'accentAtlas.contMetaphor':
       'Плавний градієнт ілюструє, як мовлення перетікає від села до села, — це метафора, а не зібрані діалектні дані.',
     'accentAtlas.contCasesHead': 'Так буває насправді',
