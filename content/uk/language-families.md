@@ -2,7 +2,7 @@
 slug: language-families
 lang: uk
 title: "Велике родинне дерево: як мови споріднені між собою"
-summary: "Англійська та українська — далекі родички. Половина людства говорить нащадками однієї доісторичної мови."
+summary: "Англійська та українська — далекі родички. Майже половина людства говорить нащадками однієї доісторичної мови."
 order: 2
 topic: families
 readingTime: 8
@@ -10,7 +10,7 @@ interactive: family-tree
 sources:
   - title: "Proto-Indo-European language (Britannica)"
     url: "https://www.britannica.com/topic/Proto-Indo-European-language"
-    note: "Відкриття, реконструкція та структура праіндоєвропейської"
+    note: "Відкриття, реконструкція та структура праіндоєвропейської мови"
   - title: "The Indo-European Language Family (Cambridge University Press)"
     url: "https://www.cambridge.org/core/books/indoeuropean-language-family/"
     note: "Авторитетний академічний огляд, гілка за гілкою"
